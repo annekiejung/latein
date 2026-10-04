@@ -23,6 +23,7 @@ const MAX_SECONDS_PER_CARD = 90;   // längere Pausen zählen nicht als Lernzeit
 const fill = (el, ...parts) => el.replaceChildren(...parts.filter(Boolean));
 
 export async function startQuiz(main, { cards, mode, style, leitner, onDone }) {
+  window.quizActive = true;            // App nicht mitten in der Runde neu laden (app.js)
   const intervals = await getSetting('leitnerIntervals');
   const testTermine = await getTestTermine();
   const today = todayStr();
@@ -222,6 +223,7 @@ export async function startQuiz(main, { cards, mode, style, leitner, onDone }) {
   }
 
   async function finish() {
+    window.quizActive = false;
     await logSeconds(seconds, today);
     const right = results.filter((r) => r.correct).length;
     const wrong = results.filter((r) => !r.correct);

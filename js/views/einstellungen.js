@@ -132,6 +132,13 @@ export async function render(main) {
     h('p', { class: 'muted' }, 'Grundlage: Bildungsplan Baden-Württemberg 2016, Latein, Gymnasium.')
   ));
 
+  /* ----- Hilfe bei Problemen ----- */
+  main.append(h('div', { class: 'card' },
+    h('h2', {}, 'Probleme?'),
+    h('p', { class: 'muted' }, 'Wenn die App an einer alten Version hängt oder seltsam aussieht: App-Speicher zurücksetzen. Deine Vokabeln bleiben dabei erhalten.'),
+    h('a', { class: 'btn secondary block', href: 'reset.html' }, 'App reparieren')
+  ));
+
   main.append(h('p', { class: 'muted', style: 'text-align:center;font-size:.8rem' },
     `Version ${self.APP_VERSION}`));
 }

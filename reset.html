@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Latein-Trainer reparieren</title>
+  <!--
+    Reparatur-Seite: entfernt alte Offline-Kopien der App (Service Worker +
+    Caches), falls ein Gerät an einer alten Version "hängt".
+    Lerndaten (IndexedDB) werden NICHT angefasst.
+    Diese Seite steht bewusst NICHT im Offline-Cache (sw.js), damit sie immer
+    frisch vom Server kommt.
+  -->
+  <style>
+    body { margin: 0; padding: 20px 16px; background: #faf3f4; color: #2a1a1e;
+           font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 520px; margin: 0 auto; }
+    h1 { color: #8c4a5c; font-size: 1.4rem; margin: 0 0 12px; }
+    .card { background: #fff; border: 1px solid #e6d3d8; border-radius: 14px; padding: 14px 16px; margin-bottom: 14px; }
+    .row { display: flex; justify-content: space-between; gap: 10px; padding: 4px 0; }
+    .row b { text-align: right; }
+    button, a.btn { display: flex; align-items: center; justify-content: center; width: 100%;
+             min-height: 50px; border: 0; border-radius: 12px; font: inherit; font-weight: 700;
+             background: #8c4a5c; color: #fff; text-decoration: none; margin-top: 10px; cursor: pointer; }
+    a.btn.secondary { background: #f2e6e9; color: #2a1a1e; }
+    .ok { color: #2f6b2f; } .warn { color: #8a5a00; }
+    #log { font-size: .85rem; color: #6e5a60; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Latein-Trainer reparieren</h1>
+
+  <div class="card">
+    <div class="row"><span>Version auf dem Server</span><b id="server">wird geprüft …</b></div>
+    <div class="row"><span>Offline-Kopien auf diesem Gerät</span><b id="caches">…</b></div>
+    <div class="row"><span>Hintergrund-Dienst</span><b id="sw">…</b></div>
+  </div>
+
+  <div class="card">
+    <p><b>App-Speicher zurücksetzen</b> löscht nur die gespeicherten <b>App-Dateien</b> (die alte Version).
+       Deine <b>Vokabeln und Lernstände bleiben erhalten</b>.</p>
+    <button id="reset">App-Speicher zurücksetzen</button>
+    <a class="btn secondary" href="./">Zur App</a>
+  </div>
+
+  <p id="log"></p>
+</main>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  const log = (t) => { $('log').textContent += t + '\n'; };
+
+  async function status() {
+    try {
+      const r = await fetch('js/version.js?nocache=' + Date.now(), { cache: 'no-store' });
+      const m = (await r.text()).match(/'([\d.]+)'/);
+      $('server').textContent = m ? m[1] : '?';
+    } catch (e) { $('server').textContent = 'offline'; }
+
+    if ('caches' in window) {
+      const keys = await caches.keys();
+      $('caches').textContent = keys.length ? keys.map((k) => k.replace('latein-', 'Version ')).join(', ') : 'keine';
+    } else $('caches').textContent = '–';
+
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      $('sw').textContent = regs.length ? regs.length + ' aktiv' : 'keiner';
+    } else $('sw').textContent = '–';
+  }
+
+  $('reset').addEventListener('click', async () => {
+    $('reset').disabled = true;
+    $('reset').textContent = 'Wird zurückgesetzt …';
+    try {
+      if ('serviceWorker' in navigator) {
+        for (const reg of await navigator.serviceWorker.getRegistrations()) {
+          await reg.unregister();
+          log('Hintergrund-Dienst entfernt.');
+        }
+      }
+      if ('caches' in window) {
+        for (const key of await caches.keys()) {
+          await caches.delete(key);
+          log('Offline-Kopie „' + key + '“ gelöscht.');
+        }
+      }
+      log('Fertig. Die App wird jetzt frisch geladen …');
+      setTimeout(() => { location.href = './?neu=' + Date.now(); }, 1500);
+    } catch (e) {
+      log('Fehler: ' + e.message);
+      $('reset').disabled = false;
+      $('reset').textContent = 'Nochmal versuchen';
+    }
+  });
+
+  status();
+</script>
+</body>
+</html>

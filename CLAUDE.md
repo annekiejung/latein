@@ -44,9 +44,10 @@ noch offen). Die vollständige Anforderung steht in
 index.html            App-Shell: Kopfleiste, <main id="view">, Tab-Leiste, <dialog>
 manifest.webmanifest  PWA-Manifest (relative Pfade → läuft in Unterordner von Pages)
 sw.js                 Service Worker, Cache-first, Cache-Name = 'latein-' + APP_VERSION
+reset.html            Reparatur-Seite: entfernt Service Worker + Caches (NICHT IndexedDB); nicht im Cache
 css/style.css         Farben als CSS-Variablen; Dunkel unter :root[data-theme="dark"]
 js/version.js         APP_VERSION – bei JEDER Änderung hochzählen!
-js/app.js             Router (Hash: #/name/param), SW-Registrierung, Update-Banner
+js/app.js             Router (Hash: #/name/param), SW-Registrierung (sw.js?v=VERSION, updateViaCache none), Auto-Update
 js/db.js              IndexedDB-Wrapper, Stores, Einstellungen mit Defaults
 js/ui.js              h() zum Elementbau (immer Text, nie innerHTML), toast, dialog, applyTheme
 js/backup.js          Export (iOS: navigator.share mit Datei) / Import mit Prüfung + Vorschau
@@ -57,7 +58,7 @@ js/leitner.js         Leitner-Fächer, Fälligkeit, Intensivmodus (Testtermin), 
 js/check.js           Auswertung getippter Antworten (Bedeutung tolerant, Tippfehler → Nutzerin entscheidet)
 js/quiz.js            Abfrage-Runde (Karteikarte/Eingabe), Wiederholung falscher Karten, Zusammenfassung
 js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
-icons/                icon.svg (Quelle), PNG 180/192/512 (-v2; bei Symbol-Änderung neuen Namen wählen) (erzeugt mit qlmanage + sips)
+icons/                icon.svg (Quelle), PNG 180/192/512 (-v2 = aktuell; die alten Namen ohne -v2 enthalten DASSELBE Bild und dürfen nie gelöscht werden, weil alte Offline-Kopien der Seite darauf zeigen – sonst baut iOS ein Ersatz-Symbol mit „L“) (erzeugt mit qlmanage + sips)
 tools/server.pl       Lokaler Testserver (Perl, Port 8080)
 tools/make_pdf.swift  HTML → A4-PDF (WebKit + PDFKit, keine Zusatzsoftware)
 docs/workflow_*.html  Workflow-Anleitungen (in der App offline + Quelle der PDFs)
@@ -164,6 +165,11 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 - **Lokal testen:** `perl tools/server.pl` → http://localhost:8080.
   Hinweis: Der eingebaute Browser der Claude-App blockiert Service Worker –
   Offline-Test nur auf dem iPhone bzw. in Safari möglich.
+- **Updates:** sw.js ruft skipWaiting() auf, Registrierung als `sw.js?v=APP_VERSION`
+  → jede neue Version wird sofort übernommen, Seite lädt neu (nicht während
+  `window.quizActive`). Hintergrund: Ein iPhone hing in Safari an 0.1.0 fest
+  (wartender Service Worker, Hinweis nie angetippt). Notfall: `reset.html`
+  (Einstellungen → „App reparieren“).
 - **Veröffentlichen:** APP_VERSION erhöhen → Nutzerin fragen → `git add`,
   `git commit`, `git push`. GitHub Pages aktualisiert sich nach ~1 Minute.
   Auf dem iPhone erscheint dann „Neue Version verfügbar“.

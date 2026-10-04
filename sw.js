@@ -6,8 +6,10 @@
  * - Beim Installieren werden alle Dateien aus APP_FILES in einen Cache gelegt,
  *   dessen Name die Versionsnummer enthält.
  * - Beim Aktivieren werden alte Caches gelöscht.
- * - Eine neue Version wartet, bis die Seite "SKIP_WAITING" schickt
- *   (Nutzerin tippt auf "Jetzt aktualisieren").
+ * - Neue Versionen übernehmen SOFORT (skipWaiting) – sonst kann ein Gerät
+ *   dauerhaft an einer alten Version hängen bleiben. Die Seite lädt dann neu
+ *   (außer mitten in einer Abfrage, siehe app.js).
+ * - reset.html steht absichtlich NICHT in APP_FILES (Reparatur-Seite, immer frisch).
  */
 importScripts('./js/version.js');
 
@@ -46,7 +48,9 @@ const APP_FILES = [
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_FILES))
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(APP_FILES.map((f) => new Request(f, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
   );
 });
 

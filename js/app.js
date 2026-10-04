@@ -24,6 +24,7 @@ const titleEl = document.getElementById('page-title');
 
 /** Zeigt die Ansicht, die zur aktuellen Adresse passt. */
 async function route() {
+  window.quizActive = false;            // Seitenwechsel beendet eine laufende Abfrage
   // "#/vokabeln/abfrage" → name "vokabeln", params ["abfrage"]
   // (alles nach "?" wird ignoriert – dient nur zum Neu-Zeichnen derselben Seite)
   const [name, ...params] = location.hash.replace(/^#\/?/, '').split('?')[0].split('/');
@@ -49,31 +50,36 @@ async function route() {
   window.scrollTo(0, 0);
 }
 
-/** Service Worker anmelden + Update-Hinweis. */
+/**
+ * Service Worker anmelden + automatische Updates.
+ * - Die Versionsnummer steht in der Adresse (sw.js?v=…): So MUSS das Gerät bei
+ *   jeder neuen Version das Skript neu laden (sonst blieb ein iPhone an 0.1.0 hängen).
+ * - updateViaCache 'none': Skripte nie aus dem Browser-Zwischenspeicher.
+ * - Neue Version übernimmt sofort (skipWaiting in sw.js); die Seite lädt dann neu –
+ *   außer mitten in einer Abfrage: dann erst ein Hinweis-Streifen.
+ */
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   const banner = document.getElementById('update-banner');
+  const hadController = !!navigator.serviceWorker.controller;
   let reloading = false;
 
-  navigator.serviceWorker.register('./sw.js').then((reg) => {
-    const showBanner = (worker) => {
-      banner.hidden = false;
-      document.getElementById('btn-update').onclick = () => worker.postMessage('SKIP_WAITING');
-    };
-    // Schon eine wartende Version vorhanden?
-    if (reg.waiting && navigator.serviceWorker.controller) showBanner(reg.waiting);
-    reg.addEventListener('updatefound', () => {
-      const w = reg.installing;
-      w.addEventListener('statechange', () => {
-        if (w.state === 'installed' && navigator.serviceWorker.controller) showBanner(w);
-      });
-    });
-    // Beim Öffnen der App nach Updates schauen (nur mit Internet möglich).
-    reg.update().catch(() => {});
-  });
+  navigator.serviceWorker
+    .register('./sw.js?v=' + self.APP_VERSION, { updateViaCache: 'none' })
+    .then((reg) => {
+      // Ältere Versionen ohne skipWaiting: wartende Version anstoßen
+      if (reg.waiting) reg.waiting.postMessage('SKIP_WAITING');
+      reg.update().catch(() => {});      // nur mit Internet möglich
+    })
+    .catch((err) => console.warn('Service Worker:', err));
 
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (reloading) return;
+    if (!hadController || reloading) return;   // allererster Start: nichts tun
+    if (window.quizActive) {
+      banner.hidden = false;
+      document.getElementById('btn-update').onclick = () => location.reload();
+      return;
+    }
     reloading = true;
     location.reload();
   });
