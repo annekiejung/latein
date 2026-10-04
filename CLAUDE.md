@@ -50,6 +50,9 @@ js/app.js             Router (Hash: #/name/param), SW-Registrierung, Update-Bann
 js/db.js              IndexedDB-Wrapper, Stores, Einstellungen mit Defaults
 js/ui.js              h() zum Elementbau (immer Text, nie innerHTML), toast, dialog, applyTheme
 js/backup.js          Export (iOS: navigator.share mit Datei) / Import mit Prüfung + Vorschau
+js/vocab.js           Vokabel-Importformat: Prüfung (checkEntry/checkImport), Anzeige (headline),
+                      Formen-Abfrage (formQuestion), Duplikate (dupKey), Prompt (buildPrompt)
+js/vocab-edit.js      Dialog zum Bearbeiten einer Vokabelkarte (Felder je Wortart)
 js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
 icons/                icon.svg (Quelle), PNG 180/192/512 (erzeugt mit qlmanage + sips)
 tools/server.pl       Lokaler Testserver (Perl, Port 8080)
@@ -101,6 +104,33 @@ Einstellungen (Defaults): `theme` 'light', `dailyGoal` 20,
 Import ersetzt **alle** Stores in einer Transaktion (`replaceAll`).
 Neueres `format` als bekannt → Import abgelehnt.
 
+### Vokabel-Import "latein-vokabeln" (Version 1)
+
+Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
+
+```json
+{ "format": "latein-vokabeln", "version": 1, "lektion": "Caesar 1",
+  "vokabeln": [
+    { "latein": "mōs", "wortart": "nomen", "genitiv": "mōris", "genus": "m",
+      "bedeutungen": ["Sitte", "Brauch"] },
+    { "latein": "mittere", "wortart": "verb", "stammformen": ["mittō", "mīsī", "missum"],
+      "bedeutungen": ["schicken"], "hinweis": "…", "unsicher": true } ] }
+```
+
+- Verben: `latein` = **Infinitiv** (Wunsch der Nutzerin), Rest in `stammformen`.
+- Wortarten: nomen (genitiv, genus m/f/n/m/f), verb (stammformen), adjektiv (formen
+  oder genitiv), praeposition (kasus), pronomen/numerale (formen), adverb,
+  konjunktion, subjunktion, sonstiges.
+- `bedeutungen`: häufigste zuerst. `unsicher: true` = Claude konnte das Foto nicht
+  sicher lesen → Badge „bitte prüfen“.
+- Fehler (Karte nicht speicherbar): `latein` oder `bedeutungen` fehlen.
+  Warnungen: fehlende Formen, unbekannte Felder, unsicher.
+- Duplikate: Vergleich ohne Längenzeichen + Wortart (`dupKey`). Vorhandene Karte
+  wird bei Auswahl in die neue Lektion verschoben, Lernstand bleibt.
+- Gespeichert im Store `vocab` mit zusätzlich `id`, `lektion`, `pos` (Reihenfolge
+  wie auf dem Foto), `erstellt`, `geaendert`,
+  `lernstand: { fach, faellig: 'YYYY-MM-DD', richtig, falsch, zuletzt }`.
+
 ## Workflows
 
 - **Lokal testen:** `perl tools/server.pl` → http://localhost:8080.
@@ -113,10 +143,11 @@ Neueres `format` als bekannt → Import abgelehnt.
 
 ## Meilensteine
 
-1. Grundgerüst, Offline, Backup – **gebaut (0.1.0), iPhone-Test offen**
-2. Aktuelle Vokabeln: Importformat + Prüfung/Vorschau/Duplikate/Korrektur,
-   Abfrage L→D, Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak,
-   Intensivmodus + `workflow_vokabeln.pdf`
+1. Grundgerüst, Offline, Backup – **fertig, auf iPhone getestet**
+2. Aktuelle Vokabeln
+   - 2a Importformat, Prüfung, Vorschau, Duplikate, Korrektur, Lektionsliste – **fertig (0.2.0)**
+   - 2b Abfrage L→D + Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak, Intensivmodus – offen
+   - 2c `workflow_vokabeln.pdf` – offen
 3. Grundwortschatz (zuerst 2–3 Quellen-Wege vorschlagen, z. B. DCC Latin Core
    Vocabulary – CC BY-SA, englische Bedeutungen → deutsche Bedeutungen als
    „ergänzt“ kennzeichnen)

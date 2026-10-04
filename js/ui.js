@@ -45,7 +45,7 @@ export function toast(msg, ms = 2500) {
 export function dialog({ title, body, buttons = [{ label: 'OK', value: true }] }) {
   const dlg = document.getElementById('dialog');
   dlg.replaceChildren(
-    h('h2', {}, title),
+    h('h2', { tabindex: -1, autofocus: true }, title),
     typeof body === 'string' ? h('p', {}, body) : body,
     h('div', { class: 'actions' },
       buttons.map((b) => h('button', {
@@ -70,6 +70,65 @@ export function confirmDialog(title, body, yesLabel = 'Ja', danger = false) {
       { label: yesLabel, value: true, class: danger ? 'danger' : '' }
     ]
   });
+}
+
+/**
+ * Dialog mit Formular: "Speichern" schließt nur, wenn onSave() keinen
+ * Fehlertext zurückgibt. Optional ein Lösch-Knopf.
+ * @returns {Promise<'saved'|'deleted'|null>}
+ */
+export function formDialog({ title, body, onSave, onDelete, saveLabel = 'Speichern' }) {
+  const dlg = document.getElementById('dialog');
+  const err = h('p', { class: 'form-error', role: 'alert' });
+  let result = null;
+  const finish = (r) => { result = r; dlg.close(); };
+  dlg.replaceChildren(
+    // Fokus auf die Überschrift statt aufs erste Feld – sonst springt am iPhone sofort die Tastatur auf
+    h('h2', { tabindex: -1, autofocus: true }, title),
+    body,
+    err,
+    h('div', { class: 'actions' },
+      // Löschen in zwei Stufen: erster Tipp fragt nach, zweiter löscht.
+      onDelete ? h('button', {
+        class: 'btn danger', style: 'margin-right:auto',
+        onclick: async (e) => {
+          const btn = e.currentTarget;
+          if (!btn.dataset.armed) { btn.dataset.armed = '1'; btn.textContent = 'Wirklich löschen?'; return; }
+          await onDelete();
+          finish('deleted');
+        }
+      }, 'Löschen') : null,
+      h('button', { class: 'btn secondary', onclick: () => finish(null) }, 'Abbrechen'),
+      h('button', {
+        class: 'btn',
+        onclick: async () => {
+          const msg = await onSave();
+          if (msg) { err.textContent = msg; return; }
+          finish('saved');
+        }
+      }, saveLabel)
+    )
+  );
+  return new Promise((resolve) => {
+    dlg.addEventListener('close', () => resolve(result), { once: true });
+    dlg.showModal();
+  });
+}
+
+/** Heutiges Datum als 'YYYY-MM-DD' in ORTSZEIT (nicht UTC!). */
+export function todayStr(d = new Date()) {
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
+
+/** Text in die Zwischenablage; gibt false zurück, wenn der Browser es verweigert. */
+export async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 /** Datum hübsch auf Deutsch. */

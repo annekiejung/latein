@@ -27,8 +27,8 @@ Dann `http://localhost:8080` öffnen.
 
 | Meilenstein | Inhalt | Stand |
 |---|---|---|
-| 1 | Grundgerüst, Offline, Backup | gebaut, iPhone-Test offen |
-| 2 | Aktuelle Vokabeln + Leitner | geplant |
+| 1 | Grundgerüst, Offline, Backup | fertig |
+| 2 | Aktuelle Vokabeln + Leitner | Import fertig, Abfrage in Arbeit |
 | 3 | Grundwortschatz | geplant |
 | 4 | Grammatik | geplant |
 | 5 | Prüfungsmodus | geplant |

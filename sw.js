@@ -25,6 +25,8 @@ const APP_FILES = [
   './js/db.js',
   './js/ui.js',
   './js/backup.js',
+  './js/vocab.js',
+  './js/vocab-edit.js',
   './js/views/start.js',
   './js/views/vokabeln.js',
   './js/views/wortschatz.js',
