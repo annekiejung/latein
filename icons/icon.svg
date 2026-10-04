@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- App-Symbol: Altrosa, Lorbeer-Bögen, "LAT" in Antiqua -->
-  <rect width="512" height="512" fill="#8c4a5c"/>
-  <g fill="none" stroke="#f3d6dd" stroke-width="10" stroke-linecap="round">
+  <!-- App-Symbol: Zartrosa, altrosa Lorbeer-Bögen, "LAT" in Antiqua -->
+  <rect width="512" height="512" fill="#f6e4e8"/>
+  <g fill="none" stroke="#8c4a5c" stroke-width="10" stroke-linecap="round">
     <path d="M150 360 C 100 300, 100 210, 150 150"/>
     <path d="M362 360 C 412 300, 412 210, 362 150"/>
   </g>
-  <g fill="#f3d6dd">
+  <g fill="#8c4a5c">
     <ellipse cx="118" cy="320" rx="22" ry="9" transform="rotate(-50 118 320)"/>
     <ellipse cx="108" cy="270" rx="22" ry="9" transform="rotate(-75 108 270)"/>
     <ellipse cx="110" cy="220" rx="22" ry="9" transform="rotate(-100 110 220)"/>
@@ -16,5 +16,5 @@
     <ellipse cx="386" cy="176" rx="22" ry="9" transform="rotate(125 386 176)"/>
   </g>
   <text x="256" y="292" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
-        font-size="112" font-weight="700" letter-spacing="4" fill="#fff8f9">LAT</text>
+        font-size="112" font-weight="700" letter-spacing="4" fill="#5e2e3c">LAT</text>
 </svg>

@@ -27,7 +27,7 @@ noch offen). Die vollständige Anforderung steht in
 ## Entscheidungen der Nutzerin
 
 - iPhone (Safari, „Zum Home-Bildschirm“).
-- Design: **Altrosa** (Hauptfarbe #8c4a5c, dunkel #e3a3b3; vorher Olivgrün, am 2026-10-04 geändert); Dunkelmodus **nur per Schalter** (Start hell,
+- Design: **Altrosa**; App-Symbol Zartrosa (#f6e4e8) mit altrosa Lorbeer, Dateien *-v2.png (Namenswechsel, weil iOS alte Symbole cacht) (Hauptfarbe #8c4a5c, dunkel #e3a3b3; vorher Olivgrün, am 2026-10-04 geändert); Dunkelmodus **nur per Schalter** (Start hell,
   kein automatisches `prefers-color-scheme`).
 - Aktuelle Vokabeln: Abfrage **nur Latein → Deutsch** plus Formen-Abfrage
   (Genitiv/Genus, Stammformen). **Kein** Deutsch → Latein.
@@ -57,7 +57,7 @@ js/leitner.js         Leitner-Fächer, Fälligkeit, Intensivmodus (Testtermin), 
 js/check.js           Auswertung getippter Antworten (Bedeutung tolerant, Tippfehler → Nutzerin entscheidet)
 js/quiz.js            Abfrage-Runde (Karteikarte/Eingabe), Wiederholung falscher Karten, Zusammenfassung
 js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
-icons/                icon.svg (Quelle), PNG 180/192/512 (erzeugt mit qlmanage + sips)
+icons/                icon.svg (Quelle), PNG 180/192/512 (-v2; bei Symbol-Änderung neuen Namen wählen) (erzeugt mit qlmanage + sips)
 tools/server.pl       Lokaler Testserver (Perl, Port 8080)
 tools/make_pdf.swift  HTML → A4-PDF (WebKit + PDFKit, keine Zusatzsoftware)
 docs/workflow_*.html  Workflow-Anleitungen (in der App offline + Quelle der PDFs)
