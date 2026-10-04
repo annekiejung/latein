@@ -1,22 +1,25 @@
 /*
  * Aktuelle Vokabeln (Testvorbereitung).
- *   #/vokabeln                 Übersicht: Lektionen
+ *   #/vokabeln                 Übersicht: Heute fällig, Fächer, Lektionen
+ *   #/vokabeln/lernen          Abfrage einstellen und starten (Runde: js/quiz.js)
  *   #/vokabeln/import          Prompt kopieren → Ergebnis einfügen → Vorschau → speichern
- *   #/vokabeln/lektion/<name>  Karten einer Lektion ansehen, bearbeiten, löschen
- * Abfrage + Leitner folgen in Schritt 2b.
+ *   #/vokabeln/lektion/<name>  Karten einer Lektion, Testtermin (Intensivmodus)
  */
-import { getAll, remove, put } from '../db.js';
-import { h, toast, copyText, dialog, confirmDialog } from '../ui.js';
+import { getAll, remove, put, getSetting, setSetting } from '../db.js';
+import { h, toast, copyText, dialog, confirmDialog, todayStr, formatDate } from '../ui.js';
 import {
-  headline, extractJson, checkImport, saveCard, buildPrompt, WORTARTEN
+  headline, extractJson, checkImport, saveCard, buildPrompt, WORTARTEN, formQuestion
 } from '../vocab.js';
 import { editCardDialog } from '../vocab-edit.js';
+import { stateOf, isDue, boxCounts, streakInfo, getTestTermine, daysBetween } from '../leitner.js';
+import { startQuiz } from '../quiz.js';
 
 export const title = 'Aktuelle Vokabeln';
 
 export async function render(main, params) {
   const [sub, arg] = params;
   if (sub === 'import') return renderImport(main);
+  if (sub === 'lernen') return renderLearn(main);
   if (sub === 'lektion' && arg) return renderLesson(main, decodeURIComponent(arg));
   return renderOverview(main);
 }
@@ -37,20 +40,79 @@ function groupByLesson(cards) {
   });
 }
 
+/** Karten, die sich im Modus abfragen lassen (Formen nur, wenn Formen hinterlegt sind). */
+const usable = (cards, mode) => (mode === 'formen' ? cards.filter((c) => formQuestion(c)) : cards);
+
+/** Text "Test in 3 Tagen" / "Test heute" / null. */
+function testLabel(date) {
+  if (!date) return null;
+  const d = daysBetween(todayStr(), date);
+  if (d < 0) return null;
+  return d === 0 ? 'Test heute' : d === 1 ? 'Test morgen' : `Test in ${d} Tagen`;
+}
+
+/** Balken je Fach. */
+function boxBars(counts) {
+  const max = Math.max(1, ...counts);
+  return h('div', { class: 'boxes' }, counts.map((n, i) => h('div', { class: 'box-row' },
+    h('span', { class: 'box-label' }, `Fach ${i + 1}`),
+    h('span', { class: 'box-bar' }, h('span', { style: `width:${Math.round((n / max) * 100)}%` })),
+    h('span', { class: 'box-num' }, n)
+  )));
+}
+
 /* =================== Übersicht =================== */
 
 async function renderOverview(main) {
   const cards = await getAll('vocab');
   const lessons = groupByLesson(cards);
   const unsure = cards.filter((c) => c.unsicher).length;
+  const termine = await getTestTermine();
+  const today = todayStr();
+  const dueB = cards.filter((c) => isDue(c, 'bedeutung', termine, today)).length;
+  const formCards = usable(cards, 'formen');
+  const dueF = formCards.filter((c) => isDue(c, 'formen', termine, today)).length;
+  const s = await streakInfo(today);
+
+  if (cards.length) {
+    main.append(h('div', { class: 'card' },
+      h('h2', {}, 'Heute'),
+      h('div', { class: 'stat-row' },
+        h('div', { class: 'stat' }, h('b', {}, dueB), h('span', {}, 'Bedeutung fällig')),
+        h('div', { class: 'stat' }, h('b', {}, dueF), h('span', {}, 'Formen fällig')),
+        h('div', { class: 'stat' }, h('b', {}, s.streak), h('span', {}, s.streak === 1 ? 'Tag Serie' : 'Tage Serie'))
+      ),
+      h('div', { class: 'goal' },
+        h('span', {}, `Tagesziel: ${Math.min(s.todayDone, s.goal)} / ${s.goal}`),
+        h('div', { class: 'progress' }, h('span', { style: `width:${Math.min(100, Math.round((s.todayDone / s.goal) * 100))}%` }))
+      ),
+      h('a', { class: 'btn block', href: '#/vokabeln/lernen', style: 'margin-top:14px' }, 'Lernen')
+    ));
+
+    main.append(h('div', { class: 'card' },
+      h('h2', {}, 'Fächer'),
+      h('h3', { class: 'muted' }, 'Bedeutung'),
+      boxBars(boxCounts(cards, 'bedeutung')),
+      formCards.length ? h('h3', { class: 'muted', style: 'margin-top:12px' }, 'Formen') : null,
+      formCards.length ? boxBars(boxCounts(formCards, 'formen')) : null,
+      h('p', { class: 'muted small', style: 'margin-top:8px' }, 'Fach 5 heißt: mehrmals hintereinander richtig. Neue Karten starten in Fach 1.')
+    ));
+  }
 
   main.append(h('div', { class: 'card' },
-    h('div', { class: 'stat-row' },
-      h('div', { class: 'stat' }, h('b', {}, cards.length), h('span', {}, 'Karten')),
-      h('div', { class: 'stat' }, h('b', {}, lessons.length), h('span', {}, 'Lektionen')),
-      h('div', { class: 'stat' }, h('b', {}, unsure), h('span', {}, 'zu prüfen'))
-    ),
-    h('a', { class: 'btn block', href: '#/vokabeln/import', style: 'margin-top:14px' }, 'Vokabeln importieren')
+    h('h2', {}, 'Lektionen'),
+    lessons.length ? h('ul', { class: 'list' }, lessons.map(([name, list]) => {
+      const u = list.filter((c) => c.unsicher).length;
+      const t = testLabel(termine[name]);
+      return h('li', {},
+        h('a', { href: lessonHref(name), class: 'row-link' },
+          h('span', {}, name, t ? h('span', { class: 'badge warn', style: 'margin-left:6px' }, t) : null),
+          h('span', { class: 'muted' }, `${list.length}`,
+            u ? h('span', { class: 'badge warn', style: 'margin-left:6px' }, `${u} prüfen`) : null)
+        ));
+    })) : h('p', { class: 'muted' }, 'Noch keine Vokabeln gespeichert.'),
+    unsure ? h('p', { class: 'muted small' }, `${unsure} Karten sind als „bitte prüfen“ markiert – vergleiche sie mit dem Foto.`) : null,
+    h('a', { class: lessons.length ? 'btn secondary block' : 'btn block', href: '#/vokabeln/import', style: 'margin-top:10px' }, 'Vokabeln importieren')
   ));
 
   if (!lessons.length) {
@@ -63,25 +125,114 @@ async function renderOverview(main) {
         h('li', {}, 'Claudes Antwort kopieren und hier einfügen.')
       )
     ));
-  } else {
-    main.append(h('div', { class: 'card' },
-      h('h2', {}, 'Lektionen'),
-      h('ul', { class: 'list' }, lessons.map(([name, list]) => {
-        const u = list.filter((c) => c.unsicher).length;
-        return h('li', {},
-          h('a', { href: lessonHref(name), class: 'row-link' },
-            h('span', {}, name),
-            h('span', { class: 'muted' }, `${list.length} Karten`,
-              u ? h('span', { class: 'badge warn', style: 'margin-left:6px' }, `${u} prüfen`) : null)
-          ));
-      }))
-    ));
+  }
+}
+
+/* =================== Lernen (Einstellungen der Runde) =================== */
+
+/** Mischt eine Liste (Fisher-Yates). */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+async function renderLearn(main) {
+  const cards = await getAll('vocab');
+  if (!cards.length) {
+    main.append(h('div', { class: 'card' }, h('p', {}, 'Noch keine Vokabeln gespeichert.'),
+      h('a', { class: 'btn', href: '#/vokabeln/import' }, 'Vokabeln importieren')));
+    return;
+  }
+  const termine = await getTestTermine();
+  const today = todayStr();
+  const lessons = groupByLesson(cards);
+  const saved = await getSetting('quizPrefs');
+  const prefs = { ...saved };
+  // Gespeicherte Lektionsauswahl nur übernehmen, wenn die Lektionen noch existieren
+  const names = lessons.map(([n]) => n);
+  let selected = new Set((prefs.lessons || names).filter((n) => names.includes(n)));
+  if (!selected.size) selected = new Set(names);
+
+  /** Segment-Auswahl (wie Tabs) für eine Einstellung. */
+  const seg = (key, options) => h('div', { class: 'seg', role: 'radiogroup' },
+    options.map(([value, label]) => h('label', {},
+      h('input', {
+        type: 'radio', name: key, value, checked: prefs[key] === value,
+        onchange: () => { prefs[key] = value; update(); }
+      }),
+      h('span', {}, label))));
+
+  const lessonList = h('ul', { class: 'list' });
+  const info = h('p', { class: 'muted' });
+  const startBtn = h('button', { class: 'btn block', onclick: start });
+
+  /** Welche Karten würden abgefragt? */
+  function pick() {
+    const pool = usable(cards.filter((c) => selected.has(c.lektion)), prefs.mode);
+    if (prefs.scope === 'alle') return shuffle(pool);
+    const due = pool.filter((c) => isDue(c, prefs.mode, termine, today));
+    // niedrige Fächer zuerst, innerhalb eines Fachs gemischt
+    return shuffle(due).sort((a, b) => stateOf(a, prefs.mode).fach - stateOf(b, prefs.mode).fach);
   }
 
-  main.append(h('div', { class: 'card note' },
-    h('h3', {}, 'Abfrage'),
-    h('p', {}, 'Abfrage Latein → Deutsch, Formen-Abfrage und Lernen mit 5 Fächern kommen im nächsten Schritt (2b).')
+  function update() {
+    lessonList.replaceChildren(...lessons.map(([name, list]) => {
+      const pool = usable(list, prefs.mode);
+      const due = pool.filter((c) => isDue(c, prefs.mode, termine, today)).length;
+      const t = testLabel(termine[name]);
+      return h('li', {}, h('label', { class: 'check-row' },
+        h('input', {
+          type: 'checkbox', checked: selected.has(name),
+          onchange: (e) => { e.target.checked ? selected.add(name) : selected.delete(name); update(); }
+        }),
+        h('span', { style: 'flex:1' }, name, t ? h('span', { class: 'badge warn', style: 'margin-left:6px' }, t) : null),
+        h('span', { class: 'muted small' }, prefs.scope === 'alle' ? `${pool.length}` : `${due} fällig`)
+      ));
+    }));
+    const n = pick().length;
+    startBtn.textContent = n ? `${n} Karten abfragen` : 'Nichts abzufragen';
+    startBtn.disabled = n === 0;
+    if (prefs.mode === 'formen' && !usable(cards.filter((c) => selected.has(c.lektion)), 'formen').length) {
+      info.textContent = 'In der Auswahl gibt es keine Karten mit Formen-Angaben (Genitiv/Genus, Stammformen …).';
+    } else if (!n && prefs.scope === 'faellig') {
+      const pool = usable(cards.filter((c) => selected.has(c.lektion)), prefs.mode);
+      const next = pool.map((c) => stateOf(c, prefs.mode).faellig).sort()[0];
+      info.textContent = next ? `Heute ist nichts mehr fällig. Nächste Wiederholung: ${formatDate(next)}. Du kannst trotzdem „Alle Karten“ frei üben.` : '';
+    } else {
+      info.textContent = prefs.scope === 'alle'
+        ? 'Freies Üben: Die Fächer bleiben unverändert – gut zum Wiederholen vor dem Test.'
+        : 'Richtig → ein Fach höher, falsch → zurück in Fach 1.';
+    }
+  }
+
+  async function start() {
+    const list = pick();
+    if (!list.length) return;
+    await setSetting('quizPrefs', { ...prefs, lessons: [...selected] });
+    startQuiz(main, {
+      cards: list, mode: prefs.mode, style: prefs.style, leitner: prefs.scope === 'faellig',
+      onDone: () => { location.hash = '#/vokabeln'; }
+    });
+  }
+
+  main.append(h('div', { class: 'card' },
+    h('a', { href: '#/vokabeln', class: 'back' }, '‹ Übersicht'),
+    h('h2', {}, 'Lernen'),
+    h('div', { class: 'field' }, h('span', {}, 'Was?'),
+      seg('mode', [['bedeutung', 'Bedeutung'], ['formen', 'Formen']])),
+    h('div', { class: 'field' }, h('span', {}, 'Wie?'),
+      seg('style', [['eingabe', 'Eingabe'], ['karte', 'Karteikarte']])),
+    h('div', { class: 'field' }, h('span', {}, 'Welche Karten?'),
+      seg('scope', [['faellig', 'Nur fällige'], ['alle', 'Alle (frei üben)']])),
+    h('div', { class: 'field' }, h('span', {}, 'Lektionen'), lessonList),
+    info,
+    startBtn
   ));
+  update();
 }
 
 /* =================== Import =================== */
@@ -269,6 +420,8 @@ async function renderLesson(main, name) {
     return;
   }
   const rerender = () => { main.replaceChildren(); renderLesson(main, name); };
+  const termine = await getTestTermine();
+  const testDate = termine[name] || '';
 
   main.append(h('div', { class: 'card' },
     h('a', { href: '#/vokabeln', class: 'back' }, '‹ Alle Lektionen'),
@@ -279,6 +432,43 @@ async function renderLesson(main, name) {
       h('button', { class: 'btn secondary btn-small', onclick: renameLesson }, 'Umbenennen'),
       h('button', { class: 'btn danger btn-small', onclick: deleteLesson }, 'Lektion löschen')
     )
+  ));
+
+  /* ----- Testtermin (Intensivmodus) ----- */
+  const dateInput = h('input', { type: 'date', value: testDate, min: todayStr() });
+  const tl = testLabel(testDate);
+  main.append(h('div', { class: 'card' },
+    h('h3', {}, 'Testtermin'),
+    h('p', { class: 'muted small' }, 'Mit Termin kommen die Karten dieser Lektion bis zum Test häufiger dran (Intensivmodus). Am Tag vor dem Test und am Testtag kommen alle Karten noch einmal.'),
+    tl ? h('p', {}, h('span', { class: 'badge warn' }, tl), ' am ', formatDate(testDate)) : null,
+    dateInput,
+    h('div', { class: 'btn-row' },
+      h('button', {
+        class: 'btn btn-small',
+        onclick: async () => {
+          if (!dateInput.value) { toast('Bitte ein Datum wählen.'); return; }
+          await setSetting('testTermine', { ...termine, [name]: dateInput.value });
+          toast('Testtermin gespeichert.');
+          rerender();
+        }
+      }, 'Termin speichern'),
+      testDate ? h('button', {
+        class: 'btn secondary btn-small',
+        onclick: async () => {
+          const t = { ...termine };
+          delete t[name];
+          await setSetting('testTermine', t);
+          toast('Testtermin entfernt.');
+          rerender();
+        }
+      }, 'Termin entfernen') : null
+    )
+  ));
+
+  /* ----- Lernstand der Lektion ----- */
+  main.append(h('div', { class: 'card' },
+    h('h3', {}, 'Fächer (Bedeutung)'),
+    boxBars(boxCounts(cards, 'bedeutung'))
   ));
 
   main.append(h('div', { class: 'card' },
@@ -317,6 +507,10 @@ async function renderLesson(main, name) {
     const neu = input.value.trim();
     if (!ok || !neu || neu === name) return;
     for (const c of cards) await put('vocab', { ...c, lektion: neu });
+    if (termine[name]) {                      // Testtermin mitnehmen
+      const t = { ...termine, [neu]: termine[name] }; delete t[name];
+      await setSetting('testTermine', t);
+    }
     toast('Umbenannt.');
     location.hash = lessonHref(neu);
   }
@@ -327,6 +521,7 @@ async function renderLesson(main, name) {
       'Lektion löschen', true);
     if (!ok) return;
     for (const c of cards) await remove('vocab', c.id);
+    if (termine[name]) { const t = { ...termine }; delete t[name]; await setSetting('testTermine', t); }
     toast('Lektion gelöscht.');
     location.hash = '#/vokabeln';
   }

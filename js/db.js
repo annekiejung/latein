@@ -117,7 +117,9 @@ export const DEFAULT_SETTINGS = {
   textbook: 'Pontes',
   grade: 10,
   languageOrder: 2,                     // Latein als 2. Fremdsprache
-  lastBackupAt: null                    // ISO-Datum des letzten Exports
+  lastBackupAt: null,                   // ISO-Datum des letzten Exports
+  testTermine: {},                      // { 'Lektionsname': 'YYYY-MM-DD' } → Intensivmodus
+  quizPrefs: { mode: 'bedeutung', style: 'eingabe', scope: 'faellig', lessons: null }
 };
 
 export async function getSetting(key) {

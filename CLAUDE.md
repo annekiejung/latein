@@ -53,6 +53,9 @@ js/backup.js          Export (iOS: navigator.share mit Datei) / Import mit Prüf
 js/vocab.js           Vokabel-Importformat: Prüfung (checkEntry/checkImport), Anzeige (headline),
                       Formen-Abfrage (formQuestion), Duplikate (dupKey), Prompt (buildPrompt)
 js/vocab-edit.js      Dialog zum Bearbeiten einer Vokabelkarte (Felder je Wortart)
+js/leitner.js         Leitner-Fächer, Fälligkeit, Intensivmodus (Testtermin), Tagesprotokoll, Serie
+js/check.js           Auswertung getippter Antworten (Bedeutung tolerant, Tippfehler → Nutzerin entscheidet)
+js/quiz.js            Abfrage-Runde (Karteikarte/Eingabe), Wiederholung falscher Karten, Zusammenfassung
 js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
 icons/                icon.svg (Quelle), PNG 180/192/512 (erzeugt mit qlmanage + sips)
 tools/server.pl       Lokaler Testserver (Perl, Port 8080)
@@ -130,6 +133,28 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 - Gespeichert im Store `vocab` mit zusätzlich `id`, `lektion`, `pos` (Reihenfolge
   wie auf dem Foto), `erstellt`, `geaendert`,
   `lernstand: { fach, faellig: 'YYYY-MM-DD', richtig, falsch, zuletzt }`.
+- Zweiter Lernstand `lernstandFormen` (gleiches Format) für die Formen-Abfrage,
+  entsteht beim ersten Abfragen.
+
+### Lernen (js/leitner.js, js/check.js, js/quiz.js)
+
+- Leitner: richtig → Fach+1 (max 5), fällig in `leitnerIntervals[fach-1]` Tagen;
+  falsch → Fach 1. Nur die ERSTE Antwort pro Runde zählt; falsche Karten werden in
+  der Runde bis zu 3× wiederholt (ohne Wirkung aufs Fach).
+- „Alle (frei üben)“ ändert keine Fächer, zählt aber fürs Tagesziel.
+- Intensivmodus: settings `testTermine` = { Lektion: 'YYYY-MM-DD' }. Intervall ≤
+  halbe Resttage (mind. 1); am Vortag und Testtag ist jede Karte fällig, die heute
+  noch nicht dran war.
+- Store `history`: `{ id: 'tag-YYYY-MM-DD', typ: 'tag', datum, antworten, richtig, sekunden }`.
+  Serie = aufeinanderfolgende Tage mit `antworten >= dailyGoal`.
+- Store `journal` (Fehlerjournal, Auswertung in Meilenstein 6):
+  `{ id, typ: 'vokabel', modus, karteId, lektion, frage, erwartet, gegeben, datum, zeit }`.
+- Eine richtige Bedeutung genügt (Wunsch der Nutzerin); die nicht genannten werden
+  danach als „Weitere Bedeutungen“ angezeigt (`missingMeanings` in quiz.js).
+- Eingabe-Prüfung: Artikel, jdn./etw./sich, Klammern, Groß/klein, Längen egal;
+  Tippfehler (Levenshtein ≤1 bzw. ≤2 ab 8 Zeichen; Formen immer ≤1, Genus/Kasus
+  exakt) → „Fast – Tippfehler?“, Nutzerin wertet selbst. Autokorrektur im Feld aus.
+- settings `quizPrefs`: zuletzt gewählte Abfrage-Einstellungen.
 
 ## Workflows
 
@@ -146,7 +171,7 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 1. Grundgerüst, Offline, Backup – **fertig, auf iPhone getestet**
 2. Aktuelle Vokabeln
    - 2a Importformat, Prüfung, Vorschau, Duplikate, Korrektur, Lektionsliste – **fertig (0.2.0)**
-   - 2b Abfrage L→D + Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak, Intensivmodus – offen
+   - 2b Abfrage L→D + Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak, Intensivmodus – **fertig (0.3.0)**
    - 2c `workflow_vokabeln.pdf` – offen
 3. Grundwortschatz (zuerst 2–3 Quellen-Wege vorschlagen, z. B. DCC Latin Core
    Vocabulary – CC BY-SA, englische Bedeutungen → deutsche Bedeutungen als

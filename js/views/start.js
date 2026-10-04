@@ -2,8 +2,10 @@
  * Startseite: Überblick, Backup-Erinnerung, Installationshinweis fürs iPhone.
  * Zahlen werden nur angezeigt, wenn sie echt sind – keine Fantasie-Statistik.
  */
-import { count, getSetting } from '../db.js';
-import { h, daysSince, formatDate } from '../ui.js';
+import { count, getSetting, getAll } from '../db.js';
+import { h, daysSince, formatDate, todayStr } from '../ui.js';
+import { formQuestion } from '../vocab.js';
+import { isDue, streakInfo, getTestTermine, daysBetween } from '../leitner.js';
 
 export const title = 'Latein-Trainer';
 
@@ -37,19 +39,43 @@ export async function render(main) {
     ));
   }
 
-  // Überblick – solange es noch nichts gibt, das auch ehrlich sagen.
+  // Überblick – nur echte Zahlen; solange es nichts gibt, das ehrlich sagen.
+  const cards = await getAll('vocab');
+  const termine = await getTestTermine();
+  const due = cards.filter((c) => isDue(c, 'bedeutung', termine)).length +
+    cards.filter((c) => formQuestion(c) && isDue(c, 'formen', termine)).length;
+  const s = await streakInfo();
   main.append(h('div', { class: 'card' },
     h('h2', {}, 'Heute'),
     h('div', { class: 'stat-row' },
-      h('div', { class: 'stat' }, h('b', {}, '–'), h('span', {}, 'fällig')),
+      h('div', { class: 'stat' }, h('b', {}, vocabCount ? due : '–'), h('span', {}, 'fällig')),
       h('div', { class: 'stat' }, h('b', {}, vocabCount), h('span', {}, 'Vokabeln')),
-      h('div', { class: 'stat' }, h('b', {}, '–'), h('span', {}, 'Tage Serie'))
+      h('div', { class: 'stat' }, h('b', {}, s.streak), h('span', {}, s.streak === 1 ? 'Tag Serie' : 'Tage Serie'))
     ),
-    h('p', { class: 'muted', style: 'margin-top:12px' },
-      vocabCount === 0
-        ? 'Noch keine Vokabeln gespeichert. Import und Abfrage kommen in Meilenstein 2.'
-        : 'Die Abfrage mit Leitner-System kommt in Meilenstein 2.')
+    vocabCount === 0
+      ? h('p', { class: 'muted', style: 'margin-top:12px' }, 'Noch keine Vokabeln gespeichert.')
+      : h('div', {},
+          h('div', { class: 'goal' },
+            h('span', {}, `Tagesziel: ${Math.min(s.todayDone, s.goal)} / ${s.goal}`,
+              s.todayReached ? ' – erreicht' : ''),
+            h('div', { class: 'progress' }, h('span', { style: `width:${Math.min(100, Math.round((s.todayDone / s.goal) * 100))}%` }))),
+          h('a', { class: 'btn block', href: '#/vokabeln/lernen', style: 'margin-top:14px' },
+            due ? 'Jetzt lernen' : 'Frei üben'))
   ));
+
+  // Anstehende Tests (Intensivmodus)
+  const upcoming = Object.entries(termine)
+    .map(([name, date]) => ({ name, date, d: daysBetween(todayStr(), date) }))
+    .filter((t) => t.d >= 0).sort((a, b) => a.d - b.d);
+  if (upcoming.length) {
+    main.append(h('div', { class: 'card' },
+      h('h3', {}, 'Anstehende Tests'),
+      h('ul', { class: 'list' }, upcoming.map((t) => h('li', {},
+        h('a', { href: '#/vokabeln/lektion/' + encodeURIComponent(t.name), class: 'row-link' },
+          h('span', {}, t.name),
+          h('span', { class: 'badge warn' }, t.d === 0 ? 'heute' : t.d === 1 ? 'morgen' : `in ${t.d} Tagen`)))))
+    ));
+  }
 
   // Backup-Erinnerung: wenn Daten vorhanden und letztes Backup > 7 Tage her
   const hasData = vocabCount + coreCount + grammarCount > 0;
