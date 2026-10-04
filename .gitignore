@@ -1,0 +1,8 @@
+# Persönliche Daten – NIEMALS ins öffentliche Repository
+claude-code-prompt-latein-app.md
+*.backup.json
+latein-backup-*.json
+
+# Lokale Einstellungen / Systemdateien
+.claude/
+.DS_Store

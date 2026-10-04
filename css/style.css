@@ -1,0 +1,230 @@
+/*
+ * Gestaltung der App.
+ * Farben stehen als Variablen ganz oben – für den Dunkelmodus werden sie
+ * unter [data-theme="dark"] überschrieben. Dunkelmodus nur per Schalter
+ * (bewusst KEIN automatisches prefers-color-scheme).
+ */
+
+/* ---------- Farben ---------- */
+:root {
+  --bg: #f4f3ea;          /* Hintergrund: warmes Pergament-Weiß */
+  --surface: #ffffff;     /* Karten */
+  --surface-2: #ebeadd;   /* leicht abgesetzte Flächen */
+  --text: #1f2418;
+  --text-muted: #5d6450;
+  --border: #d6d5c4;
+  --accent: #3f4d1f;      /* dunkles Olivgrün (Hauptfarbe) */
+  --accent-hover: #34411a;
+  --accent-text: #ffffff; /* Schrift auf Olivgrün */
+  --accent-soft: #e2e6d0; /* helle Olivfläche */
+  --bar-bg: #3f4d1f;      /* Kopfleiste */
+  --bar-text: #ffffff;
+  --ok: #2f6b2f;
+  --warn: #8a5a00;
+  --warn-soft: #f6ead0;
+  --bad: #a3322a;
+  --bad-soft: #f6dcd8;
+  --shadow: 0 1px 2px rgba(30, 36, 20, .08), 0 2px 8px rgba(30, 36, 20, .06);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #12150e;
+  --surface: #1c2016;
+  --surface-2: #252a1d;
+  --text: #e7e9dc;
+  --text-muted: #a3a993;
+  --border: #353b2b;
+  --accent: #a7b871;      /* helleres Oliv, damit es auf Dunkel lesbar ist */
+  --accent-hover: #b8c886;
+  --accent-text: #161a0f;
+  --accent-soft: #2c3420;
+  --bar-bg: #2a3317;
+  --bar-text: #e7e9dc;
+  --ok: #8fc98f;
+  --warn: #e0b45a;
+  --warn-soft: #3a3020;
+  --bad: #ef8a80;
+  --bad-soft: #3d2320;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+/* ---------- Grundlagen ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Platz für Kopfleiste und Tab-Leiste inkl. iPhone-Rand (Notch, Home-Balken) */
+  padding-top: calc(56px + env(safe-area-inset-top));
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  min-height: 100vh;
+}
+
+/* Lateinischer Text in Serifenschrift – wirkt "klassisch" und ist gut lesbar */
+.latin { font-family: ui-serif, "New York", Georgia, serif; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0 0 .75em; }
+a { color: var(--accent); }
+small, .muted { color: var(--text-muted); }
+
+/* ---------- Kopfleiste ---------- */
+.topbar {
+  position: fixed; inset: 0 0 auto 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  height: calc(56px + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) 16px 0;
+  background: var(--bar-bg);
+  color: var(--bar-text);
+}
+.topbar h1 { font-size: 1.15rem; margin: 0; font-weight: 600; }
+
+.icon-btn {
+  width: 44px; height: 44px; margin-right: -10px;
+  display: grid; place-items: center;
+  background: none; border: 0; color: inherit; cursor: pointer; border-radius: 50%;
+}
+.icon-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+
+/* ---------- Untere Tab-Leiste ---------- */
+.tabbar {
+  position: fixed; inset: auto 0 0 0; z-index: 10;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+.tabbar a {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; min-height: 60px;
+  font-size: .7rem; text-decoration: none; color: var(--text-muted);
+}
+.tabbar svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tabbar a.active { color: var(--accent); font-weight: 600; }
+
+/* ---------- Inhalt ---------- */
+main {
+  max-width: 640px; margin: 0 auto;
+  padding: 16px;
+  outline: none;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.card > :last-child { margin-bottom: 0; }
+
+.card.note { background: var(--accent-soft); border-color: transparent; box-shadow: none; }
+.card.warn { background: var(--warn-soft); border-color: transparent; box-shadow: none; }
+.card.warn h3 { color: var(--warn); }
+
+.stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.stat {
+  background: var(--surface-2); border-radius: 10px; padding: 10px; text-align: center;
+}
+.stat b { display: block; font-size: 1.4rem; font-variant-numeric: tabular-nums; }
+.stat span { font-size: .75rem; color: var(--text-muted); }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { padding: 10px 0; border-bottom: 1px solid var(--border); }
+.list li:last-child { border-bottom: 0; }
+
+.badge {
+  display: inline-block; padding: 1px 8px; border-radius: 99px;
+  font-size: .75rem; font-weight: 600;
+  background: var(--surface-2); color: var(--text-muted);
+}
+.badge.ok { background: var(--accent-soft); color: var(--ok); }
+.badge.warn { background: var(--warn-soft); color: var(--warn); }
+.badge.bad { background: var(--bad-soft); color: var(--bad); }
+
+/* ---------- Knöpfe & Formulare ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  min-height: 48px; padding: 0 18px;
+  font: inherit; font-weight: 600;
+  border: 0; border-radius: 12px; cursor: pointer;
+  background: var(--accent); color: var(--accent-text);
+}
+.btn:active { background: var(--accent-hover); }
+.btn.secondary { background: var(--surface-2); color: var(--text); }
+.btn.danger { background: var(--bad-soft); color: var(--bad); }
+.btn.block { display: flex; width: 100%; margin-bottom: 10px; }
+.btn-small { min-height: 36px; padding: 0 12px; font-size: .9rem; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.field { display: block; margin-bottom: 14px; }
+.field > span { display: block; font-size: .9rem; font-weight: 600; margin-bottom: 4px; }
+.field small { display: block; margin-top: 4px; }
+input[type="text"], input[type="number"], input[type="date"], select, textarea {
+  width: 100%; min-height: 46px; padding: 10px 12px;
+  font: inherit; color: var(--text);
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+}
+textarea { min-height: 120px; resize: vertical; }
+input:focus, select:focus, textarea:focus, .btn:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+/* Kippschalter (z. B. Dunkelmodus) */
+.switch-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 48px;
+}
+.switch { position: relative; width: 52px; height: 32px; flex: none; }
+.switch input { opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; position: absolute; z-index: 1; }
+.switch span {
+  position: absolute; inset: 0; border-radius: 99px; background: var(--border); transition: background .2s;
+}
+.switch span::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 26px; height: 26px;
+  border-radius: 50%; background: #fff; transition: transform .2s;
+}
+.switch input:checked + span { background: var(--accent); }
+.switch input:checked + span::after { transform: translateX(20px); }
+
+/* ---------- Banner, Toast, Dialog ---------- */
+.banner {
+  position: sticky; top: calc(56px + env(safe-area-inset-top)); z-index: 9;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 8px 16px;
+  background: var(--warn-soft); color: var(--text);
+}
+.banner[hidden] { display: none; }
+
+#toast {
+  position: fixed; left: 50%; bottom: calc(84px + env(safe-area-inset-bottom));
+  transform: translateX(-50%) translateY(20px);
+  max-width: calc(100% - 32px);
+  padding: 10px 16px; border-radius: 10px;
+  background: var(--text); color: var(--bg);
+  font-size: .95rem;
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+  z-index: 20;
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+dialog {
+  width: min(520px, calc(100% - 32px));
+  border: 0; border-radius: 16px; padding: 20px;
+  background: var(--surface); color: var(--text);
+}
+dialog::backdrop { background: rgba(0, 0, 0, .45); }
+dialog .actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap; }
+
+/* Schrittliste (z. B. Installationsanleitung) */
+ol.steps { padding-left: 1.3em; margin: 0 0 .75em; }
+ol.steps li { margin-bottom: .4em; }

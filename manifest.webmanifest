@@ -1,0 +1,17 @@
+{
+  "name": "Latein-Trainer",
+  "short_name": "Latein",
+  "description": "Vokabeln, Grammatik und Übersetzung üben – offline.",
+  "lang": "de",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f3ea",
+  "theme_color": "#3f4d1f",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

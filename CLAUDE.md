@@ -1,0 +1,126 @@
+# CLAUDE.md – Arbeitsgrundlage für künftige Sitzungen
+
+## Worum geht es?
+
+Latein-Lern-PWA für eine Schülerin (Klasse 10, Gymnasium BW, Latein als
+2. Fremdsprache, 5. Lernjahr, Lehrbuch **Pontes** abgeschlossen, Lektüre-Autor
+noch offen). Die vollständige Anforderung steht in
+`claude-code-prompt-latein-app.md` – **nur lokal**, per `.gitignore` vom
+öffentlichen Repo ausgeschlossen (enthält persönliche Angaben). Immer zuerst lesen.
+
+## Verbindliche Arbeitsregeln
+
+- Die Nutzerin ist **keine Programmiererin**: alles in einfachem Deutsch erklären.
+- Alles, was installiert, verändert (außerhalb des Projektordners), hochgeladen
+  oder veröffentlicht wird (inkl. `git commit`/`git push`), **vorher ankündigen
+  und auf Bestätigung warten**.
+- Niemals Passwörter/Zugangsdaten eingeben.
+- Bei mehreren sinnvollen Wegen: 2–3 Vorschläge mit je einem Satz Vor-/Nachteil.
+- Kleine, testbare Schritte; nach jedem Schritt Rückmeldung abwarten.
+- Ehrlich über Grenzen; unsichere Daten in der App kennzeichnen.
+  Niveau eher fordernd, keine übertriebenen Lob-Meldungen.
+- Repo ist **öffentlich**: keine Schulbuchinhalte, keine Fotos, keine
+  persönlichen Daten. Lerndaten nur in IndexedDB auf dem Gerät.
+- Kein `python3` aufrufen – auf dem Mac ist nur Perl sicher vorhanden
+  (python3 löste einen Installationsdialog aus).
+
+## Entscheidungen der Nutzerin
+
+- iPhone (Safari, „Zum Home-Bildschirm“).
+- Design: dunkles Olivgrün; Dunkelmodus **nur per Schalter** (Start hell,
+  kein automatisches `prefers-color-scheme`).
+- Aktuelle Vokabeln: Abfrage **nur Latein → Deutsch** plus Formen-Abfrage
+  (Genitiv/Genus, Stammformen). **Kein** Deutsch → Latein.
+- Grundwortschatz in Etappen (erst ~500, dann 1000 …, Fernziel 2500).
+- Git über Apple Command Line Tools; Hosting GitHub Pages.
+- Erinnerungen: iOS kann offline keine verlässlichen Push-Nachrichten →
+  „Heute fällig“ beim Öffnen + Export von Lernterminen als .ics-Kalenderdatei.
+- Workflow-PDFs: als HTML-Seite gestalten, Nutzerin speichert sie in Safari
+  als PDF (kein PDF-Tool installieren); Inhalte zusätzlich in der App.
+
+## Architektur
+
+```
+index.html            App-Shell: Kopfleiste, <main id="view">, Tab-Leiste, <dialog>
+manifest.webmanifest  PWA-Manifest (relative Pfade → läuft in Unterordner von Pages)
+sw.js                 Service Worker, Cache-first, Cache-Name = 'latein-' + APP_VERSION
+css/style.css         Farben als CSS-Variablen; Dunkel unter :root[data-theme="dark"]
+js/version.js         APP_VERSION – bei JEDER Änderung hochzählen!
+js/app.js             Router (Hash: #/name/param), SW-Registrierung, Update-Banner
+js/db.js              IndexedDB-Wrapper, Stores, Einstellungen mit Defaults
+js/ui.js              h() zum Elementbau (immer Text, nie innerHTML), toast, dialog, applyTheme
+js/backup.js          Export (iOS: navigator.share mit Datei) / Import mit Prüfung + Vorschau
+js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
+icons/                icon.svg (Quelle), PNG 180/192/512 (erzeugt mit qlmanage + sips)
+tools/server.pl       Lokaler Testserver (Perl, Port 8080)
+```
+
+### Neue Ansicht hinzufügen
+1. `js/views/name.js` mit `title` und `render()` anlegen.
+2. In `js/app.js` importieren und in `ROUTES` eintragen.
+3. In `sw.js` → `APP_FILES` eintragen.
+4. `APP_VERSION` erhöhen.
+
+### Neue Datei generell
+Immer in `APP_FILES` (sw.js) eintragen, sonst fehlt sie offline.
+
+## Datenformate
+
+### IndexedDB `latein-trainer`, Version 1
+
+| Store | Schlüssel | Inhalt |
+|---|---|---|
+| settings | key | `{ key, value }` – Defaults in `DEFAULT_SETTINGS` (db.js) |
+| vocab | id | aktuelle Vokabeln (Format folgt in Meilenstein 2), Index `lesson` |
+| coreProgress | id | Lernstand Grundwortschatz je Wort-ID |
+| grammar | id | importierte Grammatik-Einheiten |
+| journal | id | Fehlerjournal |
+| exams | id | Klassenarbeits-Termine |
+| history | id | Lernsitzungen, Prüfungsergebnisse |
+| reports | id | gemeldete Fehler in Wortschatz-Daten |
+
+Schema-Änderungen: `DB_VERSION` erhöhen, neuen `if (oldVersion < N)`-Block in
+`upgrade()` – alte Blöcke nie ändern.
+
+Einstellungen (Defaults): `theme` 'light', `dailyGoal` 20,
+`leitnerIntervals` [1,2,4,8,16], `authorFocus` 'mix', `textbook` 'Pontes',
+`grade` 10, `languageOrder` 2, `lastBackupAt` null.
+
+### Backup-Datei (format 1)
+
+```json
+{
+  "app": "latein-trainer",
+  "format": 1,
+  "appVersion": "0.1.0",
+  "exportedAt": "ISO-Datum",
+  "stores": { "settings": [], "vocab": [], "coreProgress": [], "grammar": [],
+              "journal": [], "exams": [], "history": [], "reports": [] }
+}
+```
+Import ersetzt **alle** Stores in einer Transaktion (`replaceAll`).
+Neueres `format` als bekannt → Import abgelehnt.
+
+## Workflows
+
+- **Lokal testen:** `perl tools/server.pl` → http://localhost:8080.
+  Hinweis: Der eingebaute Browser der Claude-App blockiert Service Worker –
+  Offline-Test nur auf dem iPhone bzw. in Safari möglich.
+- **Veröffentlichen:** APP_VERSION erhöhen → Nutzerin fragen → `git add`,
+  `git commit`, `git push`. GitHub Pages aktualisiert sich nach ~1 Minute.
+  Auf dem iPhone erscheint dann „Neue Version verfügbar“.
+- **Git-Identität:** GitHub-noreply-Adresse verwenden, nie die echte E-Mail.
+
+## Meilensteine
+
+1. Grundgerüst, Offline, Backup – **gebaut (0.1.0), iPhone-Test offen**
+2. Aktuelle Vokabeln: Importformat + Prüfung/Vorschau/Duplikate/Korrektur,
+   Abfrage L→D, Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak,
+   Intensivmodus + `workflow_vokabeln.pdf`
+3. Grundwortschatz (zuerst 2–3 Quellen-Wege vorschlagen, z. B. DCC Latin Core
+   Vocabulary – CC BY-SA, englische Bedeutungen → deutsche Bedeutungen als
+   „ergänzt“ kennzeichnen)
+4. Grammatik + `workflow_grammatik.pdf`
+5. Prüfungsmodus + `workflow_pruefung.pdf`
+6. Fehlerjournal, Klassenarbeits-Planer, Statistik
+7. Eigene Vorschläge (Nutzerin wählt)
