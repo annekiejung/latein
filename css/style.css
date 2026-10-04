@@ -7,40 +7,40 @@
 
 /* ---------- Farben ---------- */
 :root {
-  --bg: #f4f3ea;          /* Hintergrund: warmes Pergament-Weiß */
+  --bg: #faf3f4;          /* Hintergrund: Hauch von Rosa */
   --surface: #ffffff;     /* Karten */
-  --surface-2: #ebeadd;   /* leicht abgesetzte Flächen */
-  --text: #1f2418;
-  --text-muted: #5d6450;
-  --border: #d6d5c4;
-  --accent: #3f4d1f;      /* dunkles Olivgrün (Hauptfarbe) */
-  --accent-hover: #34411a;
-  --accent-text: #ffffff; /* Schrift auf Olivgrün */
-  --accent-soft: #e2e6d0; /* helle Olivfläche */
-  --bar-bg: #3f4d1f;      /* Kopfleiste */
+  --surface-2: #f2e6e9;   /* leicht abgesetzte Flächen */
+  --text: #2a1a1e;
+  --text-muted: #6e5a60;
+  --border: #e6d3d8;
+  --accent: #8c4a5c;      /* Altrosa (Hauptfarbe) */
+  --accent-hover: #763d4d;
+  --accent-text: #ffffff; /* Schrift auf Altrosa */
+  --accent-soft: #f3e1e5; /* helle Rosafläche */
+  --bar-bg: #8c4a5c;      /* Kopfleiste */
   --bar-text: #ffffff;
   --ok: #2f6b2f;
   --warn: #8a5a00;
   --warn-soft: #f6ead0;
-  --bad: #a3322a;
-  --bad-soft: #f6dcd8;
-  --shadow: 0 1px 2px rgba(30, 36, 20, .08), 0 2px 8px rgba(30, 36, 20, .06);
+  --bad: #b3261e;
+  --bad-soft: #f9dedb;
+  --shadow: 0 1px 2px rgba(42, 26, 30, .08), 0 2px 8px rgba(42, 26, 30, .06);
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --bg: #12150e;
-  --surface: #1c2016;
-  --surface-2: #252a1d;
-  --text: #e7e9dc;
-  --text-muted: #a3a993;
-  --border: #353b2b;
-  --accent: #a7b871;      /* helleres Oliv, damit es auf Dunkel lesbar ist */
-  --accent-hover: #b8c886;
-  --accent-text: #161a0f;
-  --accent-soft: #2c3420;
-  --bar-bg: #2a3317;
-  --bar-text: #e7e9dc;
+  --bg: #1a1214;
+  --surface: #251a1d;
+  --surface-2: #2f2125;
+  --text: #eedfe3;
+  --text-muted: #b39ea5;
+  --border: #3d2a30;
+  --accent: #e3a3b3;      /* helleres Rosa, damit es auf Dunkel lesbar ist */
+  --accent-hover: #ecb8c5;
+  --accent-text: #2a1a1e;
+  --accent-soft: #33222a;
+  --bar-bg: #3a2228;
+  --bar-text: #eedfe3;
   --ok: #8fc98f;
   --warn: #e0b45a;
   --warn-soft: #3a3020;

@@ -27,7 +27,7 @@ noch offen). Die vollständige Anforderung steht in
 ## Entscheidungen der Nutzerin
 
 - iPhone (Safari, „Zum Home-Bildschirm“).
-- Design: dunkles Olivgrün; Dunkelmodus **nur per Schalter** (Start hell,
+- Design: **Altrosa** (Hauptfarbe #8c4a5c, dunkel #e3a3b3; vorher Olivgrün, am 2026-10-04 geändert); Dunkelmodus **nur per Schalter** (Start hell,
   kein automatisches `prefers-color-scheme`).
 - Aktuelle Vokabeln: Abfrage **nur Latein → Deutsch** plus Formen-Abfrage
   (Genitiv/Genus, Stammformen). **Kein** Deutsch → Latein.

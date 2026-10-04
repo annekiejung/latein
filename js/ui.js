@@ -92,7 +92,7 @@ export function daysSince(iso) {
 export function applyTheme(theme) {
   if (theme === 'dark') document.documentElement.dataset.theme = 'dark';
   else delete document.documentElement.dataset.theme;
-  const color = theme === 'dark' ? '#2a3317' : '#3f4d1f';
+  const color = theme === 'dark' ? '#3a2228' : '#8c4a5c';
   document.querySelector('meta[name="theme-color"]').setAttribute('content', color);
   try { localStorage.setItem('theme', theme); } catch (e) { /* egal */ }
 }
