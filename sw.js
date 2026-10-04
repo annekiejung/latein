@@ -36,6 +36,8 @@ const APP_FILES = [
   './js/views/grammatik.js',
   './js/views/pruefung.js',
   './js/views/einstellungen.js',
+  './docs/workflow_vokabeln.html',
+  './workflow_vokabeln.pdf',
   './icons/icon.svg',
   './icons/icon-180.png',
   './icons/icon-192.png',

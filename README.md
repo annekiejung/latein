@@ -28,7 +28,7 @@ Dann `http://localhost:8080` öffnen.
 | Meilenstein | Inhalt | Stand |
 |---|---|---|
 | 1 | Grundgerüst, Offline, Backup | fertig |
-| 2 | Aktuelle Vokabeln + Leitner | Import + Abfrage fertig, Workflow-PDF offen |
+| 2 | Aktuelle Vokabeln + Leitner | fertig |
 | 3 | Grundwortschatz | geplant |
 | 4 | Grammatik | geplant |
 | 5 | Prüfungsmodus | geplant |

@@ -59,6 +59,9 @@ js/quiz.js            Abfrage-Runde (Karteikarte/Eingabe), Wiederholung falscher
 js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
 icons/                icon.svg (Quelle), PNG 180/192/512 (erzeugt mit qlmanage + sips)
 tools/server.pl       Lokaler Testserver (Perl, Port 8080)
+tools/make_pdf.swift  HTML → A4-PDF (WebKit + PDFKit, keine Zusatzsoftware)
+docs/workflow_*.html  Workflow-Anleitungen (in der App offline + Quelle der PDFs)
+workflow_*.pdf        erzeugte PDFs (im Repo, offline gecacht)
 ```
 
 ### Neue Ansicht hinzufügen
@@ -164,6 +167,13 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 - **Veröffentlichen:** APP_VERSION erhöhen → Nutzerin fragen → `git add`,
   `git commit`, `git push`. GitHub Pages aktualisiert sich nach ~1 Minute.
   Auf dem iPhone erscheint dann „Neue Version verfügbar“.
+- **Workflow-PDF erzeugen:** Anleitung als `docs/workflow_NAME.html` mit Blättern
+  `<section class="page">` (im PDF-Modus `?pdf` je 595×842 px = A4). Prompts NICHT
+  abschreiben, sondern per Modul-Import aus der App einsetzen (eine Quelle).
+  Seite setzt `document.body.dataset.ready = '1'`, wenn fertig. Dann:
+  `swift tools/make_pdf.swift "http://localhost:8080/docs/workflow_NAME.html?pdf" workflow_NAME.pdf`
+  (Server muss laufen). Bricht ab, wenn ein Blatt überläuft → Text kürzen/kleiner.
+  **PDF neu erzeugen, wenn sich der Prompt ändert!** Beide Dateien in `APP_FILES`.
 - **Git-Identität:** GitHub-noreply-Adresse verwenden, nie die echte E-Mail.
 
 ## Meilensteine
@@ -172,7 +182,8 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 2. Aktuelle Vokabeln
    - 2a Importformat, Prüfung, Vorschau, Duplikate, Korrektur, Lektionsliste – **fertig (0.2.0)**
    - 2b Abfrage L→D + Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak, Intensivmodus – **fertig (0.3.0)**
-   - 2c `workflow_vokabeln.pdf` – offen
+   - 2c `workflow_vokabeln.pdf` + Anleitung in der App – **fertig (0.3.1)**
+   → **Meilenstein 2 abgeschlossen** (Stand 2026-10-04; weiter mit 3 am Folgetag)
 3. Grundwortschatz (zuerst 2–3 Quellen-Wege vorschlagen, z. B. DCC Latin Core
    Vocabulary – CC BY-SA, englische Bedeutungen → deutsche Bedeutungen als
    „ergänzt“ kennzeichnen)

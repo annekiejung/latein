@@ -264,7 +264,10 @@ async function renderImport(main) {
       }
     }, 'Prompt kopieren'),
     promptFallback,
-    h('p', { class: 'muted' }, 'Dann in der Claude-App: Foto der Vokabelliste anhängen, Prompt einfügen, senden. Die Antwort mit dem Kopieren-Knopf am Codeblock kopieren.')
+    h('p', { class: 'muted' }, 'Dann in der Claude-App: Foto der Vokabelliste anhängen, Prompt einfügen, senden. Die Antwort mit dem Kopieren-Knopf am Codeblock kopieren.'),
+    h('p', {}, 'Genaue Anleitung mit Fehlerquellen: ',
+      h('a', { href: 'docs/workflow_vokabeln.html' }, 'Workflow ansehen'), ' · ',
+      h('a', { href: 'workflow_vokabeln.pdf', target: '_blank' }, 'als PDF'))
   ));
 
   /* ----- Schritt 2: Einfügen ----- */

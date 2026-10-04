@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow: Vokabeln aus Foto</title>
+  <!--
+    Anleitung "Vokabeln aus Foto".
+    - In der App offline abrufbar (Link auf der Import-Seite).
+    - Daraus wird workflow_vokabeln.pdf erzeugt:  swift tools/make_pdf.swift …
+    - Der Prompt wird NICHT abgeschrieben, sondern aus js/vocab.js (buildPrompt)
+      eingesetzt – so bleiben App und Anleitung immer gleich.
+  -->
+  <style>
+    :root {
+      --accent: #8c4a5c; --accent-soft: #f3e1e5; --text: #2a1a1e; --muted: #6e5a60;
+      --border: #e6d3d8; --warn: #8a5a00; --warn-soft: #f6ead0; --bg: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 20px 16px 40px; background: var(--bg); color: var(--text);
+      font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 1.5em; margin: 0 0 4px; color: var(--accent); }
+    h2 { font-size: 1.1em; margin: 22px 0 8px; color: var(--accent); }
+    p { margin: 0 0 8px; }
+    .lead { color: var(--muted); margin-bottom: 14px; }
+    .back { display: inline-block; margin-bottom: 12px; color: var(--accent); text-decoration: none; font-weight: 600; }
+
+    /* Die vier Schritte */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .step { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; break-inside: avoid; }
+    .step b.n {
+      display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+      background: var(--accent); color: #fff; font-size: .85em; margin-right: 6px;
+    }
+    .step h3 { display: flex; align-items: center; font-size: .98em; margin: 0 0 6px; }
+    .step ul { margin: 0; padding-left: 1.1em; font-size: .9em; }
+    .step li { margin-bottom: 3px; }
+
+    table { width: 100%; border-collapse: collapse; font-size: .88em; }
+    th, td { text-align: left; vertical-align: top; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+    th { background: var(--accent-soft); }
+    tr { break-inside: avoid; }
+    .box { background: var(--accent-soft); border-radius: 12px; padding: 10px 12px; margin: 10px 0; break-inside: avoid; }
+    .box.warn { background: var(--warn-soft); }
+    .box.warn b { color: var(--warn); }
+
+    pre {
+      white-space: pre-wrap; word-break: break-word;
+      font: 11px/1.4 ui-monospace, Menlo, monospace;
+      background: #faf3f4; border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; margin: 6px 0 0;
+    }
+    .page-break { break-before: page; }
+    footer { margin-top: 18px; font-size: .8em; color: var(--muted); }
+
+    /* ---------- PDF-Modus (?pdf): genau zwei A4-Blätter à 595×842 px = A4 in Punkten ---------- */
+    html.pdf body { padding: 0; background: #e9e4e5; font-size: 9.4px; line-height: 1.36; }
+    html.pdf main { max-width: none; }
+    html.pdf .page {
+      width: 595px; height: 842px; padding: 26px 32px; overflow: hidden;
+      background: #fff; margin: 0 0 10px;
+    }
+    html.pdf .no-print { display: none !important; }
+    html.pdf .page-break { display: none; }
+    html.pdf h1 { font-size: 1.9em; }
+    html.pdf h2 { font-size: 1.3em; margin: 12px 0 5px; }
+    html.pdf .lead { margin-bottom: 8px; }
+    html.pdf .steps { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    html.pdf .step { padding: 7px 8px; border-radius: 9px; }
+    html.pdf .step h3 { font-size: 1.1em; }
+    html.pdf .step b.n { width: 18px; height: 18px; font-size: .9em; }
+    html.pdf .step ul { font-size: 1em; }
+    html.pdf .box { padding: 7px 10px; margin: 6px 0; border-radius: 9px; }
+    html.pdf table { font-size: 1em; }
+    html.pdf th, html.pdf td { padding: 4px 6px; }
+    html.pdf pre { font-size: 7.4px; line-height: 1.38; padding: 7px 9px; }
+    html.pdf footer { margin-top: 10px; font-size: .9em; }
+  </style>
+</head>
+<body>
+<main>
+  <section class="page">
+  <a class="back no-print" href="../index.html#/vokabeln/import">‹ Zurück zur App</a>
+
+  <h1>Workflow: Vokabeln aus Foto</h1>
+  <p class="lead">So kommt eine Vokabelliste aus dem Buch, vom Arbeitsblatt oder aus der Textausgabe in die Latein-App.
+    Die App selbst läuft offline – nur Schritt 3 (Claude) braucht Internet.</p>
+
+  <div class="steps">
+    <div class="step">
+      <h3><b class="n">1</b>Foto machen</h3>
+      <ul>
+        <li>Gerade von oben, ganze Liste im Bild</li>
+        <li>Helles Licht, kein Schatten, kein Blitz-Spiegeln</li>
+        <li>Lange Listen: lieber 2 Fotos (je ca. 30–40 Wörter)</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">2</b>Prompt holen</h3>
+      <ul>
+        <li>App: <i>Vokabeln → Vokabeln importieren</i></li>
+        <li>Namen der Lektion eingeben</li>
+        <li><i>Prompt kopieren</i> tippen</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">3</b>Claude fragen</h3>
+      <ul>
+        <li>Claude-App: <b>neuer</b> Chat</li>
+        <li>Foto anhängen, Prompt einfügen, senden</li>
+        <li>Antwort mit dem Kopier-Symbol am Codeblock kopieren</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">4</b>Prüfen &amp; importieren</h3>
+      <ul>
+        <li>In der App einfügen → <i>Prüfen</i></li>
+        <li>Vorschau mit dem Foto vergleichen</li>
+        <li>Fehler mit <i>Ändern</i> korrigieren → speichern</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Schritt 4 genau: Was du in der Vorschau prüfst</h2>
+  <div class="box">
+    <p><b>Zählen:</b> Stimmt die Zahl „… Vokabeln gelesen“ mit der Zahl der Wörter auf dem Foto überein? Fehlt eine, füge sie in der Lektion mit <i>Karte hinzufügen</i> hinzu.</p>
+    <p><b>Rot</b> = Fehler (z. B. keine Bedeutung) – wird erst nach dem Korrigieren gespeichert.
+       <b>Gelb</b> = Hinweis (z. B. „Kasus fehlt“, „schon vorhanden“, „von Claude als unsicher markiert“).</p>
+    <p style="margin:0"><b>„bitte prüfen“</b>-Karten: Claude konnte etwas nicht sicher lesen. Mit dem Foto vergleichen, korrigieren und das Häkchen „Noch unsicher“ entfernen.</p>
+  </div>
+
+  <h2>Typische Fehlerquellen</h2>
+  <table>
+    <thead><tr><th style="width:24%">Problem</th><th>Woran du es merkst</th><th style="width:34%">Was du tust</th></tr></thead>
+    <tbody>
+      <tr><td><b>Foto-Qualität</b></td><td>Wörter fehlen, Buchstaben verwechselt (rn ↔ m, l ↔ i, u ↔ n), Zeilen vertauscht</td><td>Neues Foto (näher, heller, gerade) – oder Karte mit <i>Ändern</i> korrigieren</td></tr>
+      <tr><td><b>Längenzeichen</b> (ā, ē, ī, ō, ū)</td><td>Striche fehlen oder stehen an der falschen Stelle; Claude setzt manchmal welche, die im Buch nicht stehen</td><td>Mit dem Buch vergleichen. Beim Abfragen musst du sie nicht tippen – aber lernen solltest du sie richtig</td></tr>
+      <tr><td><b>Stammformen</b></td><td>Abkürzungen wie „-ī, -ītum“ falsch ausgeschrieben; unregelmäßige Verben (ferre, ire …) und Deponentien besonders fehleranfällig</td><td>Jede Verb-Karte einmal mit dem Foto vergleichen – Stammformen sind Klassenarbeits-Stoff</td></tr>
+      <tr><td><b>Genitiv / Genus</b></td><td>Genitiv nur als Endung, Genus fehlt oder falsch (m/f/n)</td><td>Gelber Hinweis in der Vorschau → ergänzen</td></tr>
+      <tr><td><b>Bedeutungen</b></td><td>Bedeutung ergänzt, die nicht im Buch steht, oder eine weggelassen; Reihenfolge anders</td><td>Nur die Bedeutungen aus dem Buch behalten – die erste ist die wichtigste</td></tr>
+      <tr><td><b>Zusätze</b></td><td>„m. Dat.“, „+ AcI“ stehen in der Bedeutung statt im Hinweis</td><td>In das Feld „Hinweis“ verschieben – sonst wird es bei der Abfrage mit verlangt</td></tr>
+      <tr><td><b>Doppelte Wörter</b></td><td>Gelb: „schon vorhanden in …“</td><td>Häkchen setzen = Karte zieht in die neue Lektion um (Lernstand bleibt)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box warn">
+    <p style="margin:0"><b>Wichtig:</b> Claude kann sich verlesen oder Dinge ergänzen. <b>Du bist die letzte Kontrolle</b> –
+      falsch gelernte Vokabeln kosten in der Klassenarbeit Punkte. Fotografiere nur die Vokabelliste:
+      keine Namen, Notizen oder andere persönlichen Daten aufs Foto.</p>
+  </div>
+
+  </section>
+
+  <section class="page">
+  <h2>Der Prompt (zum Nachschlagen)</h2>
+  <p>Am einfachsten: In der App auf <i>Prompt kopieren</i> tippen – dann ist der Name der Lektion schon eingesetzt.
+     Wenn du den Prompt von hier nimmst, ersetze <b>NAME DER LEKTION</b> durch den Namen.</p>
+  <pre id="prompt">(Prompt wird geladen …)</pre>
+
+  <h2>Wenn etwas schiefgeht</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:40%"><b>„Kein JSON-Block gefunden“</b></td><td>Claude hat keinen Codeblock geschickt. Im selben Chat schreiben: „Bitte nur den JSON-Codeblock ausgeben.“</td></tr>
+      <tr><td><b>„Das JSON ist fehlerhaft“</b></td><td>Antwort war abgeschnitten (lange Liste?). Liste in zwei Fotos aufteilen.</td></tr>
+      <tr><td><b>Claude antwortet mit Text statt JSON</b></td><td>Prompt nicht vollständig eingefügt? Neuen Chat starten und den ganzen Prompt einfügen.</td></tr>
+      <tr><td><b>Kopieren-Knopf in der App klappt nicht</b></td><td>Die App zeigt den Prompt dann als Text – lange drauf tippen, „Alles auswählen“, „Kopieren“.</td></tr>
+    </tbody>
+  </table>
+
+  <footer>Latein-Trainer · Workflow „Vokabeln aus Foto“ · Version <span id="ver"></span></footer>
+  </section>
+</main>
+
+<script src="../js/version.js"></script>
+<script type="module">
+  if (location.search.includes('pdf')) document.documentElement.classList.add('pdf');
+  // Prompt direkt aus der App übernehmen (eine Quelle für App und Anleitung)
+  import { buildPrompt } from '../js/vocab.js';
+  document.getElementById('prompt').textContent = buildPrompt('');
+  document.getElementById('ver').textContent = self.APP_VERSION;
+  document.body.dataset.ready = '1';   // Signal für das PDF-Skript
+</script>
+</body>
+</html>
