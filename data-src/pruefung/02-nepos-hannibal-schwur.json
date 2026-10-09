@@ -1,0 +1,27 @@
+{
+  "id": "nep-hannibal-schwur",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Hannibals Schwur",
+  "einleitung": "Der karthagische Feldherr Hannibal lebt nach dem Krieg gegen Rom am Hof des syrischen Königs Antiochus. Römische Gesandte versuchen, ihn beim König verdächtig zu machen. Da erzählt Hannibal dem König ein Erlebnis aus seiner Kindheit.",
+  "text": "„Pater meus“ inquit „Hamilcar puerulo me, utpote non amplius VIIII annos nato, in Hispaniam imperator proficiscens Carthagine, Iovi optimo maximo hostias immolavit. Quae divina res dum conficiebatur, quaesivit a me, vellemne secum in castra proficisci. Id cum libenter accepissem atque ab eo petere coepissem, ne dubitaret ducere, tum ille ‚Faciam‘, inquit ‚si mihi fidem, quam postulo, dederis.‘ Simul me ad aram adduxit, apud quam sacrificare instituerat, eamque ceteris remotis tenentem iurare iussit numquam me in amicitia cum Romanis fore. Id ego ius iurandum patri datum usque ad hanc aetatem ita conservavi, ut nemini dubium esse debeat, quin reliquo tempore eadem mente sim futurus.“",
+  "quelle": { "autor": "Nepos", "werk": "Hannibal", "stelle": "2,3–5", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nep.hann.shtml" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["Abl. abs.", "PC", "indirekte Frage (-ne)", "AcI", "quīn-Satz", "Konditionalsatz (Futur II)","dum mit Präsens/Imperfekt"],
+  "vokabelhilfen": [
+    { "latein": "Hamilcar, -aris m.", "deutsch": "Hamilkar (Hannibals Vater)" },
+    { "latein": "puerulus, -ī m.", "deutsch": "kleiner Junge" },
+    { "latein": "utpote (Adv.)", "deutsch": "nämlich, da ja" },
+    { "latein": "VIIII", "deutsch": "9" },
+    { "latein": "Hispānia, -ae f.", "deutsch": "Spanien" },
+    { "latein": "Carthāgine", "deutsch": "von Karthago aus" },
+    { "latein": "Iuppiter, Iovis m.", "deutsch": "Jupiter" },
+    { "latein": "hostia, -ae f.", "deutsch": "Opfertier" },
+    { "latein": "immolāre", "deutsch": "opfern" },
+    { "latein": "āra, -ae f.", "deutsch": "Altar" },
+    { "latein": "sacrificāre", "deutsch": "opfern" },
+    { "latein": "iūs iūrandum, iūris iūrandī n.", "deutsch": "Eid, Schwur" }
+  ],
+  "musteruebersetzung": "„Mein Vater Hamilkar“, sagte er, „brachte, als ich ein kleiner Junge war, nämlich nicht älter als neun Jahre, und er selbst als Feldherr von Karthago aus nach Spanien aufbrach, Jupiter, dem Besten und Größten, Opfertiere dar. Während diese heilige Handlung vollzogen wurde, fragte er mich, ob ich mit ihm ins Feldlager aufbrechen wolle. Als ich das gern angenommen und angefangen hatte, ihn zu bitten, er solle nicht zögern, mich mitzunehmen, sagte er: ‚Ich werde es tun, wenn du mir das Treueversprechen gibst, das ich verlange.‘ Zugleich führte er mich zu dem Altar, an dem er das Opfer begonnen hatte, ließ alle anderen wegtreten und mich, während ich den Altar festhielt, schwören, niemals in Freundschaft mit den Römern zu sein. Diesen Eid, den ich meinem Vater geleistet habe, habe ich bis zu meinem jetzigen Alter so gehalten, dass niemand daran zweifeln darf, dass ich auch in Zukunft dieselbe Gesinnung haben werde.“"
+}

@@ -79,6 +79,9 @@ js/morph.js           Formenlehre-Daten: Musterverben (ā, ē, ī, kons., gemisc
                       Verben (esse, posse, prōdesse, īre, ferre, velle, nōlle, mālle, fierī), Deklinationen,
                       Adjektive, Pronomen; allForms()/describe() für das Formen-Training
 js/views/grammatik-formen.js  Tabellen-Ansichten + Formen-Training (Multiple Choice / selbst bestimmen)
+js/exam.js            Prüfungsmodus: Texte laden, Versuche (start/saveDraft/finish/discard), Uhr
+js/views/pruefung.js  Textauswahl, Steckbrief (Zeitlimit, tippen/Papier), laufende Prüfung, Versuch
+data/pruefung.json    eingebaute Prüfungstexte – GEBAUT aus data-src/pruefung/*.json mit tools/build_pruefung.pl
 data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
 tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
 tools/find_stellen.pl   sucht Sätze mit Stellenangabe (Buch,Kapitel,Paragraph) in Latin-Library-Texten
@@ -203,6 +206,31 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
   bzw. `…gws_claude.txt` (dauert, Rate-Limit Wikimedia) → `perl tools/build_gws.pl` → Version
   erhöhen. IDs nicht ändern (Lernstände hängen daran)!
 
+### Prüfungsmodus (js/exam.js, js/views/pruefung.js)
+
+- Format "latein-pruefungstext" v1: `{ titel, einleitung, text (OHNE Längen, Auslassungen als …),
+  quelle{autor,werk,stelle "1,2,1–4",status,link}, bearbeitung original|gekürzt|angepasst,
+  niveau leicht|mittel|fordernd, schwerpunkte[], vokabelhilfen[{latein,deutsch}], musteruebersetzung }`.
+  Eingebaut: data-src/pruefung/NN-name.json → `perl tools/build_pruefung.pl` (zählt `woerter`) →
+  `perl tools/verify_quellen.pl .cache/texte` (prüft auch diese Texte; Stelle = Anfang vor „–“).
+- Versuch = Store `history` `{ typ: pruefung, textId, titel, quelle, woerter, limitMin (0 = ohne),
+  modus tippen|papier, start, abgegeben, sekunden, uebersetzung, bewertung }`; laufend:
+  settings `pruefungLaeuft` (id). Zeit läuft weiter, auch wenn die App zu ist; Entwurf wird
+  laufend gespeichert. settings `pruefungPrefs` { limit, modus }.
+- Text erst sichtbar, wenn die Uhr läuft; Musterübersetzung erst nach dem Abgeben (eingeklappt).
+- Bewertung: `buildExamPrompt()` (Text, Hilfen, Musterübersetzung, Übersetzung bzw. „Foto“, Raster,
+  Versuchs-id) → Claude-App → Antwort mit JSON-Block "latein-pruefung-bewertung" v1:
+  `{ versuch, fehler[{kategorie vokabel|form|konstruktion|syntax|sinn|stil, gewicht 0.5|1|2, latein,
+  deine, richtig, erklaerung, phaenomen}], note_geschaetzt, gesamturteil, staerken[], tipps[], unleserlich[] }`.
+  `checkReview()` rundet Gewichte, Stil max. 0,5, unbekannte Kategorien weg. Punkte, Fehlerquotient
+  (pro 100 Wörter) und Note rechnet die APP selbst (`score`, settings `notenschluessel` [2,4,7,10,13]
+  = max. FQ für Note 1–5, in Einstellungen änderbar; Claudes Note nur als Vergleich).
+  Gespeichert in `versuch.bewertung`; jeder Fehler → `journal` `{ typ: pruefung, versuch, textId,
+  kategorie, gewicht, phaenomen, frage (latein), erwartet, gegeben, erklaerung }`. Neu einfügen
+  ersetzt die alten Journal-Einträge des Versuchs.
+- `extractJson` (vocab.js) liest zuerst UNVERÄNDERT (deutsche „…“ in Texten erlaubt), erst bei
+  Fehler werden typografische Anführungszeichen ersetzt.
+
 ### Grammatik (js/grammar.js, js/views/grammatik.js)
 
 - Format "latein-grammatik" v1: `{ thema, bereich, regel: { kurz, punkte[], beispiel{latein,deutsch} },
@@ -263,6 +291,12 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    `perl tools/verify_quellen.pl .cache/texte` (muss „Alles geprüft“ melden). Texte vorher mit
    curl nach .cache/texte laden (gallN, catN, nephan1, nepatt1, nepthem1).
    ACHTUNG beim Schreiben: Objekt "regel" sauber schließen (häufiger Fehler!).
-5. Prüfungsmodus + `workflow_pruefung.pdf`
+5. Prüfungsmodus + `workflow_pruefung.pdf` (Entscheidung 2026-10-09: eingebaute Texte + Import;
+   Bewertung per Einfügen eines Datenblocks; Autoren gemischt: Sallust, Caesar, Nepos, Cicero,
+   Livius, Seneca)
+   - 5a Textauswahl, Uhr, tippen/Papier, Entwurf, Abgeben, Musterübersetzung, 2 Texte – **fertig (0.7.0)**
+   - 5b Prüf-Prompt + 5c Bewertung einfügen → Journal/Verlauf, Notenschlüssel-Einstellung – **fertig (0.7.0)**
+     Notenschlüssel der Lehrkraft: Nutzerin fragt nach (Stand 2026-10-09 Vorschlag 2/4/7/10/13).
+   - 5d 16 weitere Texte (3 je Autor = 18) + Text-Import   - 5e `workflow_pruefung.pdf` + Anleitung
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik
 7. Eigene Vorschläge (Nutzerin wählt)

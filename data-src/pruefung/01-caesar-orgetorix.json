@@ -1,0 +1,30 @@
+{
+  "id": "caes-orgetorix",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Orgetorix plant den Auszug der Helvetier",
+  "einleitung": "Zu Beginn seines Berichts über den Gallischen Krieg stellt Caesar die Helvetier vor, einen gallischen Stamm im Gebiet der heutigen Schweiz, und ihren mächtigsten Mann Orgetorix.",
+  "text": "Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix. Is M. Messala M. Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent: perfacile esse, cum virtute omnibus praestarent, totius Galliae imperio potiri. Id hoc facilius iis persuasit, quod undique loci natura Helvetii continentur: una ex parte flumine Rheno latissimo atque altissimo, qui agrum Helvetium a Germanis dividit; altera ex parte monte Iura altissimo, qui est inter Sequanos et Helvetios; tertia lacu Lemanno et flumine Rhodano, qui provinciam nostram ab Helvetiis dividit. His rebus fiebat ut et minus late vagarentur et minus facile finitimis bellum inferre possent.",
+  "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,2,1–4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "mittel",
+  "schwerpunkte": ["Abl. abs. (nominal)", "PC", "indirekte Rede (Infinitiv)", "ut-Sätze (Begehr-/Folgesatz)", "cum causale", "Relativsätze", "Superlative"],
+  "vokabelhilfen": [
+    { "latein": "Helvētiī, -ōrum m.", "deutsch": "die Helvetier (gallischer Stamm)" },
+    { "latein": "Orgetorīx, -īgis m.", "deutsch": "Orgetorix (Eigenname)" },
+    { "latein": "dītissimus, -a, -um", "deutsch": "Superlativ zu dīves: reich" },
+    { "latein": "M. Messālā M. Pīsōne cōnsulibus", "deutsch": "unter dem Konsulat des M. Messala und des M. Piso (61 v. Chr.)" },
+    { "latein": "coniūrātiō, -ōnis f.", "deutsch": "Verschwörung" },
+    { "latein": "perfacilis, -e", "deutsch": "sehr leicht" },
+    { "latein": "potīrī (m. Abl.)", "deutsch": "sich bemächtigen" },
+    { "latein": "undique (Adv.)", "deutsch": "von allen Seiten" },
+    { "latein": "Rhēnus, -ī m.", "deutsch": "der Rhein" },
+    { "latein": "Iura (m.)", "deutsch": "der Jura (Gebirge)" },
+    { "latein": "Sēquanī, -ōrum m.", "deutsch": "die Sequaner (gallischer Stamm)" },
+    { "latein": "lacus Lemannus m.", "deutsch": "der Genfer See" },
+    { "latein": "Rhodanus, -ī m.", "deutsch": "die Rhone" },
+    { "latein": "vagārī", "deutsch": "umherziehen" },
+    { "latein": "fīnitimī, -ōrum m.", "deutsch": "die Nachbarn" }
+  ],
+  "musteruebersetzung": "Bei den Helvetiern war Orgetorix bei weitem der vornehmste und reichste Mann. Dieser stiftete im Konsulatsjahr des M. Messala und des M. Piso, von der Gier nach der Königsherrschaft verleitet, eine Verschwörung des Adels an und überredete die Bürgerschaft, mit allen Truppen aus ihrem Gebiet auszuziehen: Es sei sehr leicht, da sie alle an Tapferkeit überträfen, sich der Herrschaft über ganz Gallien zu bemächtigen. Davon überzeugte er sie umso leichter, weil die Helvetier auf allen Seiten durch die natürliche Beschaffenheit des Geländes eingeschlossen werden: auf der einen Seite durch den Rhein, einen sehr breiten und sehr tiefen Fluss, der das Gebiet der Helvetier von den Germanen trennt, auf der anderen Seite durch das sehr hohe Juragebirge, das zwischen den Sequanern und den Helvetiern liegt, auf der dritten durch den Genfer See und die Rhone, die unsere Provinz von den Helvetiern trennt. Dadurch geschah es, dass sie weniger weit umherziehen und weniger leicht ihre Nachbarn mit Krieg überziehen konnten."
+}

@@ -119,7 +119,10 @@ export const DEFAULT_SETTINGS = {
   languageOrder: 2,                     // Latein als 2. Fremdsprache
   lastBackupAt: null,                   // ISO-Datum des letzten Exports
   testTermine: {},                      // { 'Lektionsname': 'YYYY-MM-DD' } → Intensivmodus
-  quizPrefs: { mode: 'bedeutung', style: 'eingabe', scope: 'faellig', lessons: null }
+  quizPrefs: { mode: 'bedeutung', style: 'eingabe', scope: 'faellig', lessons: null },
+  pruefungPrefs: { limit: 45, modus: 'tippen' },   // zuletzt gewähltes Zeitlimit + Schreibart
+  pruefungLaeuft: null,                 // id des laufenden Prüfungsversuchs (history)
+  notenschluessel: [2, 4, 7, 10, 13]    // max. Fehler pro 100 Wörter für Note 1–5 (darüber 6)
 };
 
 export async function getSetting(key) {

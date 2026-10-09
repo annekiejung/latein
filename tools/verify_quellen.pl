@@ -1,5 +1,6 @@
 #!/usr/bin/perl
-# Prüft die Übersetzungssätze in data/grammatik.json gegen die Originaltexte von
+# Prüft die Übersetzungssätze in data/grammatik.json und die Prüfungstexte in
+# data/pruefung.json gegen die Originaltexte von
 # The Latin Library:
 #   1. Wortlaut: „original“ muss als Ganzes vorkommen, „gekürzt“/„angepasst“
 #      Teilstück für Teilstück (Längen, j/v, Satzzeichen, Herausgeber-Klammern egal).
@@ -43,34 +44,50 @@ sub segments {
   };
 }
 
-open my $j, '<:raw', 'data/grammatik.json' or die; my $d = do { local $/; decode_json(<$j>) };
-my $bad = 0;
+# Zu prüfende Stellen sammeln: [Kennung, quelle, bearbeitung, [Teilstücke]]
+sub readJson { my $f = shift; open my $j, '<:raw', $f or return; return decode_json(do { local $/; <$j> }) }
+my @items;
+my $d = readJson('data/grammatik.json');
 for my $u (@{ $d->{einheiten} }) {
   for my $a (grep { $_->{typ} eq 'uebersetzung' && $_->{bearbeitung} ne 'konstruiert' } @{ $u->{aufgaben} }) {
-    my $q = $a->{quelle};
-    my $mk = $files{"$q->{autor}|$q->{werk}"} or do { print "$u->{id} $q->{autor} $q->{stelle}: keine Textdatei hinterlegt\n"; $bad++; next };
-    my $noBook = $q->{autor} eq 'Nepos';              # Nepos: nur Kapitel,Paragraph
-    my ($book, @rest) = $noBook ? (1, split /,/, $q->{stelle}) : split /,/, $q->{stelle};
-    my $segs = segments($mk->($book));
-    my $all = join '', map { $_->[2] } @$segs;
-    my $allLoose = $all; $allLoose =~ s/\s+/ /g;
-    my $whole = index($allLoose, norm(join ' ', map { $_->{latein} } @{ $a->{teile} })) >= 0;
-    my @miss = grep { index($allLoose, norm($_->{latein})) < 0 } @{ $a->{teile} };
-    # Stelle des ersten Teilstücks (Satz kann über Paragraphengrenzen gehen → Anfang zählt)
-    my $first = norm($a->{teile}[0]{latein});
-    my ($where) = grep { index($_->[2], $first) >= 0 } @$segs;
-    unless ($where) {   # Teilstück über Paragraphengrenze: Anfang (erste 3 Wörter) suchen
-      my @w = grep { length } split / /, $first;
-      my $start = ' ' . join(' ', @w[0 .. ($#w < 2 ? $#w : 2)]) . ' ';
-      ($where) = grep { index($_->[2], $start) >= 0 } @$segs;
-    }
-    my $found = !$where ? '?' : $noBook ? "$where->[0],$where->[1]" : @rest == 1 ? "$book,$where->[0]" : "$book,$where->[0],$where->[1]";
-    my $stelleOk = $found eq $q->{stelle};
-    my $problem = @miss || ($a->{bearbeitung} eq 'original' && !$whole) || !$stelleOk;
-    $bad++ if $problem;
-    printf "%-6s %-9s %-9s %s%s\n", $u->{id}, $q->{stelle}, $a->{bearbeitung},
-      $whole ? 'Satz wörtlich gefunden' : @miss ? 'FEHLT: ' . join(' | ', map { $_->{latein} } @miss) : 'Teilstücke wörtlich gefunden',
-      $stelleOk ? '' : "  ✗ STELLE: tatsächlich $found";
+    push @items, [$u->{id}, $a->{quelle}, $a->{bearbeitung}, [map { $_->{latein} } @{ $a->{teile} }]];
   }
+}
+# Prüfungstexte: Auslassungen sind mit „…“ markiert → Teilstücke einzeln suchen;
+# Stelle "1,2,1–4" → geprüft wird der Anfang (1,2,1)
+if (my $p = readJson('data/pruefung.json')) {
+  for my $t (@{ $p->{texte} }) {
+    my $q = { %{ $t->{quelle} } };
+    $q->{stelle} =~ s/\x{2013}.*//;
+    push @items, [$t->{id}, $q, $t->{bearbeitung}, [grep { /\p{L}/ } split /\x{2026}/, $t->{text}]];
+  }
+}
+
+my $bad = 0;
+for my $it (@items) {
+  my ($id, $q, $bearb, $teile) = @$it;
+  my $mk = $files{"$q->{autor}|$q->{werk}"} or do { print "$id $q->{autor} $q->{stelle}: keine Textdatei hinterlegt\n"; $bad++; next };
+  my $noBook = $q->{autor} eq 'Nepos';              # Nepos: nur Kapitel,Paragraph
+  my ($book, @rest) = $noBook ? (1, split /,/, $q->{stelle}) : split /,/, $q->{stelle};
+  my $segs = segments($mk->($book));
+  my $all = join '', map { $_->[2] } @$segs;
+  my $allLoose = $all; $allLoose =~ s/\s+/ /g;
+  my $whole = index($allLoose, norm(join ' ', @$teile)) >= 0;
+  my @miss = grep { index($allLoose, norm($_)) < 0 } @$teile;
+  # Stelle des ersten Teilstücks (Satz kann über Paragraphengrenzen gehen → Anfang zählt)
+  my $first = norm($teile->[0]);
+  my ($where) = grep { index($_->[2], $first) >= 0 } @$segs;
+  unless ($where) {   # Teilstück über Paragraphengrenze: Anfang (erste 3 Wörter) suchen
+    my @w = grep { length } split / /, $first;
+    my $start = ' ' . join(' ', @w[0 .. ($#w < 2 ? $#w : 2)]) . ' ';
+    ($where) = grep { index($_->[2], $start) >= 0 } @$segs;
+  }
+  my $found = !$where ? '?' : $noBook ? "$where->[0],$where->[1]" : @rest == 1 ? "$book,$where->[0]" : "$book,$where->[0],$where->[1]";
+  my $stelleOk = $found eq $q->{stelle};
+  my $problem = @miss || ($bearb eq 'original' && !$whole) || !$stelleOk;
+  $bad++ if $problem;
+  printf "%-20s %-9s %-9s %s%s\n", $id, $q->{stelle}, $bearb,
+    $whole ? 'Text wörtlich gefunden' : @miss ? 'FEHLT: ' . join(' | ', @miss) : 'Teilstücke wörtlich gefunden',
+    $stelleOk ? '' : "  ✗ STELLE: tatsächlich $found";
 }
 print $bad ? "$bad Probleme\n" : "Alles geprüft – Wortlaut und Stellenangaben stimmen.\n";

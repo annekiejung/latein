@@ -117,6 +117,8 @@ export function extractJson(text) {
   const end = t.lastIndexOf('}');
   if (start === -1 || end <= start) throw new Error('Im Text wurde kein JSON-Block gefunden (er beginnt mit „{“).');
   t = t.slice(start, end + 1);
+  // Erst unverändert lesen – deutsche Anführungszeichen INNERHALB von Texten sind erlaubt.
+  try { return JSON.parse(t); } catch (e) { /* weiter unten reparieren */ }
   // Typografische Anführungszeichen (falls beim Kopieren entstanden) reparieren
   t = t.replace(/[“”„]/g, '"');
   try {

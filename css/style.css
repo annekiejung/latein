@@ -369,3 +369,17 @@ table.forms tbody tr:nth-child(even) td { background: var(--surface-2); }
 .chip input:checked + span { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
 .chip input:focus-visible + span { outline: 2px solid var(--accent); }
 .table-title { margin: 14px 0 0; font-size: .95rem; color: var(--accent); }
+
+/* ---------- Prüfungsmodus ---------- */
+.exam-top {
+  position: sticky; top: 0; z-index: 5;
+  background: var(--bg); padding: 8px 0; margin-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.timer { font-weight: 700; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.timer-warn { color: var(--warn); }
+.timer-over { color: var(--bad); }
+.exam-text { font-size: 1.1rem; line-height: 1.7; margin: 10px 0; }
+.exam-input { min-height: 260px; font-size: 1rem; line-height: 1.5; }
+.vocab-help { margin: 0; padding-left: 1.2em; font-size: .9rem; line-height: 1.6; }
+.pre { white-space: pre-wrap; }

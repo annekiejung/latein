@@ -74,6 +74,29 @@ export async function render(main) {
     }, 'Speichern')
   ));
 
+  /* ----- Prüfungsmodus: Notenschlüssel ----- */
+  const keyInputs = s.notenschluessel.map((n) =>
+    h('input', { type: 'number', min: 0, max: 50, step: 0.5, value: n, inputmode: 'decimal', style: 'text-align:center' }));
+  main.append(h('div', { class: 'card' },
+    h('h2', {}, 'Notenschlüssel (Prüfungsmodus)'),
+    h('div', { class: 'field' },
+      h('span', {}, 'Höchstens … Fehler pro 100 Wörter für Note 1 bis 5'),
+      h('div', { style: 'display:grid;grid-template-columns:repeat(5,1fr);gap:6px' }, keyInputs),
+      h('small', { class: 'muted' }, 'Darüber: Note 6. Vorschlag: 2, 4, 7, 10, 13. Frag deine Lehrkraft, wie sie es macht, und trag es hier ein.')),
+    h('button', {
+      class: 'btn block',
+      onclick: async () => {
+        const vals = keyInputs.map((i) => parseFloat(String(i.value).replace(',', '.')));
+        if (vals.some((v) => !(v >= 0 && v <= 50))) return toast('Werte bitte zwischen 0 und 50.');
+        for (let i = 1; i < vals.length; i++) {
+          if (vals[i] <= vals[i - 1]) return toast('Die Werte müssen von Note 1 bis 5 steigen.');
+        }
+        await setSetting('notenschluessel', vals);
+        toast('Gespeichert. Gilt für neue Bewertungen.');
+      }
+    }, 'Speichern')
+  ));
+
   /* ----- Backup ----- */
   const fileInput = h('input', {
     type: 'file', accept: '.json,application/json', hidden: true,
