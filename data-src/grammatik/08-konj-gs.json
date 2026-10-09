@@ -1,0 +1,188 @@
+{
+  "id": "konj-gs",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Konjunktiv im Gliedsatz und Zeitenfolge",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Viele Gliedsätze stehen im Konjunktiv: Begehr- und Finalsätze (ut, nē), Konsekutivsätze (ut, ut nōn), cum-Sätze (cum narrativum, causale, concessivum) und indirekte Fragen. Welches Tempus steht, regelt die Zeitenfolge (cōnsecūtiō temporum). Übersetzt wird der Konjunktiv meist mit dem Indikativ.",
+  "punkte": [
+    "ut / nē + Konj.: Begehrsatz (dass, dass nicht) oder Finalsatz (damit, um zu; damit nicht). Konsekutiv: ut / ut nōn = sodass (nicht) – oft angekündigt durch ita, tam, tantus, adeō.",
+    "cum + Konj.: narrativum (als – erzählend), causale (da, weil), concessivum (obwohl; oft mit tamen im Hauptsatz).",
+    "Indirekte Frage: Fragewort (quis, quid, ubi, cūr, num …) + Konjunktiv: Quaerō, quid faciās. – Ich frage, was du tust.",
+    "Zeitenfolge nach Haupttempus (Präs., Fut.): gleichzeitig Konj. Präs., vorzeitig Konj. Perf.",
+    "Zeitenfolge nach Nebentempus (Impf., Perf., Plqpf.): gleichzeitig Konj. Impf., vorzeitig Konj. Plqpf.",
+    "Nachzeitig: -ūrus sim / -ūrus essem (Partizip Futur + Konj. von esse)."
+  ],
+  "beispiel": {
+    "latein": "Cum Caesar in Galliam vēnisset, Helvētiī quaerēbant, quid factūrus esset.",
+    "deutsch": "Als Caesar nach Gallien gekommen war, fragten sich die Helvetier, was er tun werde."
+  }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme den Gliedsatz: … ita, ut oculīs iūdicārī nōn possit.",
+      "antwort": "Konsekutivsatz (ita … ut nōn + Konj. Präs.): „so, dass man nicht … beurteilen kann“",
+      "erklaerung": "ita kündigt die Folge an; verneint wird mit ut nōn."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: quid fierī vellet (in: … quid fierī vellet ostendit)",
+      "antwort": "indirekte Frage, Konj. Impf. (gleichzeitig nach Nebentempus ostendit)",
+      "erklaerung": "„… zeigte er, was er wollte, dass geschehe.“"
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Cum Rōmānī fortiter pūgnārent, tamen victī sunt. – Welches cum?",
+      "antwort": "cum concessivum („obwohl“) – erkennbar an tamen im Hauptsatz",
+      "erklaerung": "„Obwohl die Römer tapfer kämpften, wurden sie dennoch besiegt.“"
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Caesar mīlitēs hortātus est, nē dēspērārent. – Art des nē-Satzes?",
+      "antwort": "Begehrsatz nach hortārī: „Caesar ermahnte die Soldaten, nicht zu verzweifeln.“",
+      "erklaerung": "Konj. Impf. – gleichzeitig nach Nebentempus."
+    },
+    {
+      "typ": "luecke",
+      "text": "Rogō tē, quid herī ___.",
+      "loesung": ["fēceris"],
+      "hinweis": "(facere, 2. Sg. – vorzeitig nach Haupttempus)",
+      "erklaerung": "Ich frage dich, was du gestern getan hast. Vorzeitig nach Haupttempus = Konj. Perf. (manche Bücher schreiben fēcerīs)."
+    },
+    {
+      "typ": "luecke",
+      "text": "Mīlitēs vigilābant, nē hostēs castra ___.",
+      "loesung": ["oppūgnārent"],
+      "hinweis": "(oppūgnāre, gleichzeitig nach Nebentempus)",
+      "erklaerung": "Die Soldaten hielten Wache, damit die Feinde das Lager nicht angriffen."
+    },
+    {
+      "typ": "luecke",
+      "text": "Cum urbem ___, Caesar rediit.",
+      "loesung": ["expūgnāvisset"],
+      "hinweis": "(expūgnāre, 3. Sg. – vorzeitig: als er … erobert hatte)",
+      "erklaerung": "cum narrativum, vorzeitig nach Nebentempus = Konj. Plqpf."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Nesciō, ubi Mārcus ___. (Gleichzeitigkeit)",
+      "optionen": ["esset", "sit", "fuerit"],
+      "richtig": 1,
+      "erklaerung": "Haupttempus (nesciō) + gleichzeitig = Konj. Präsens."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Tantus timor erat, ut nēmō pūgnāre audēret. – Was für ein ut-Satz ist das?",
+      "optionen": ["Finalsatz", "Konsekutivsatz", "Begehrsatz"],
+      "richtig": 1,
+      "erklaerung": "tantus … ut = so groß, dass → Folge (konsekutiv)."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Woran erkennt man ein cum narrativum?",
+      "optionen": [
+        "cum + Konj. Impf./Plqpf. in einer Erzählung, übersetzt mit „als“",
+        "cum + Indikativ Präsens",
+        "cum + Ablativ"
+      ],
+      "richtig": 0,
+      "erklaerung": "cum + Ablativ ist die Präposition „mit“; cum narrativum steht mit Konj. Impf. oder Plqpf."
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Cum cīvitās ob eam rem incitāta armīs iūs suum exsequī cōnārētur", "deutsch": "Als die Bürgerschaft, deswegen aufgebracht, ihr Recht mit Waffen durchzusetzen versuchte" },
+        { "latein": "multitūdinemque hominum ex agrīs magistrātūs cōgerent,", "deutsch": "und die Beamten eine Menge Menschen von den Feldern zusammenholten," },
+        { "latein": "Orgetorīx mortuus est;", "deutsch": "starb Orgetorix." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,4,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "cum narrativum (Konj. Impf., gleichzeitig nach Nebentempus); PC (incitāta); Deponentien (exsequī, cōnārētur, mortuus est)",
+      "vokabelhilfen": [
+        { "latein": "iūs exsequī", "deutsch": "sein Recht durchsetzen" },
+        { "latein": "magistrātus, -ūs m", "deutsch": "Beamter, Behörde" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Cum ab iīs quaereret", "deutsch": "Als er sie fragte," },
+        { "latein": "quae cīvitātēs quantaeque in armīs essent", "deutsch": "welche Stämme und wie große unter Waffen stünden" },
+        { "latein": "et quid in bellō possent,", "deutsch": "und was sie im Krieg leisten könnten," },
+        { "latein": "sīc reperiēbat:", "deutsch": "erfuhr er Folgendes:" }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,4,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "cum narrativum (Konj. Impf.); indirekte Fragen (quae, quantae, quid + Konj. Impf.)",
+      "vokabelhilfen": [
+        { "latein": "quantus, -a, -um", "deutsch": "wie groß" },
+        { "latein": "reperīre", "deutsch": "hier: erfahren, herausfinden" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Flūmen est Arar,", "deutsch": "Es gibt einen Fluss, den Arar," },
+        { "latein": "quod per fīnēs Haeduōrum et Sēquanōrum in Rhodanum īnfluit,", "deutsch": "der durch das Gebiet der Häduer und Sequaner in die Rhône fließt," },
+        { "latein": "incrēdibilī lēnitāte,", "deutsch": "und zwar mit unglaublich sanfter Strömung," },
+        { "latein": "ita ut oculīs in utram partem fluat iūdicārī nōn possit.", "deutsch": "so dass man mit den Augen nicht beurteilen kann, in welche Richtung er fließt." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,12,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Relativsatz; Ablativ der Art und Weise (incrēdibilī lēnitāte); Konsekutivsatz (ita ut nōn); indirekte Frage (in utram partem fluat)",
+      "vokabelhilfen": [
+        { "latein": "Arar, -aris m", "deutsch": "die Saône (Fluss in Frankreich)" },
+        { "latein": "lēnitās, -ātis f", "deutsch": "Sanftheit, langsame Strömung" },
+        { "latein": "uter, utra, utrum", "deutsch": "welcher von beiden" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Ac iam conversīs in eam partem nāvibus quō ventus ferēbat,", "deutsch": "Und als die Schiffe schon in die Richtung gedreht waren, in die der Wind trieb," },
+        { "latein": "tanta subitō malacia ac tranquillitās exstitit", "deutsch": "trat plötzlich eine so große Flaute und Windstille ein," },
+        { "latein": "ut sē ex locō movēre nōn possent.", "deutsch": "dass sie sich nicht von der Stelle bewegen konnten." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "3,15,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall3.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Abl. abs. (vorzeitig) mit Relativsatz; Konsekutivsatz (tanta … ut nōn + Konj. Impf.)",
+      "vokabelhilfen": [
+        { "latein": "malacia, -ae f", "deutsch": "Flaute (Windstille auf See)" },
+        { "latein": "exsistere", "deutsch": "entstehen, eintreten" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Crassus equitum praefectōs cohortātus,", "deutsch": "Crassus ermahnte die Befehlshaber der Reiterei," },
+        { "latein": "ut māgnīs praemiīs pollicitātiōnibusque suōs excitārent,", "deutsch": "ihre Leute durch große Belohnungen und Versprechungen anzuspornen," },
+        { "latein": "quid fierī vellet ostendit.", "deutsch": "und zeigte (ihnen), was nach seinem Willen geschehen sollte." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "3,26,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall3.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "PC mit Deponens-Partizip (cohortātus) + Begehrsatz (ut + Konj. Impf.); indirekte Frage (quid fierī vellet)",
+      "vokabelhilfen": [
+        { "latein": "praefectus equitum", "deutsch": "Befehlshaber der Reiterei" },
+        { "latein": "pollicitātiō, -ōnis f", "deutsch": "Versprechung" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Cum paulō longius ā castrīs prōcessisset,", "deutsch": "Als er ein wenig weiter vom Lager vorgerückt war," },
+        { "latein": "suōs ab hostibus premī atque aegrē sustinēre", "deutsch": "bemerkte er, dass seine Leute von den Feinden bedrängt wurden und sich nur mit Mühe hielten" },
+        { "latein": "et confertā legiōne ex omnibus partibus tēla coicī animadvertit.", "deutsch": "und dass auf die dicht gedrängte Legion von allen Seiten Geschosse geschleudert wurden." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,32,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "cum narrativum (Konj. Plqpf., vorzeitig); drei AcI nach animadvertit (Inf. Präs. Pass. und Akt.); Abl. abs. (confertā legiōne)",
+      "vokabelhilfen": [
+        { "latein": "aegrē sustinēre", "deutsch": "sich mit Mühe halten" },
+        { "latein": "cōnfertus, -a, -um", "deutsch": "dicht gedrängt" },
+        { "latein": "coicere", "deutsch": "= conicere, schleudern" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "nd-formen",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Gerundium und Gerundiv (nd-Formen)",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "nd-Formen werden vom Präsensstamm mit -nd- gebildet. Das Gerundium ist ein Verbalsubstantiv („das Loben“), das Gerundiv ein Verbaladjektiv („einer, der gelobt werden muss“). Mit esse drückt das Gerundiv eine Notwendigkeit aus; die handelnde Person steht dann im Dativ (dativus auctoris).",
+    "punkte": [
+      "Gerundium: nur Gen., Dat., Akk. (nach ad), Abl. – laudandī, laudandō, ad laudandum, laudandō. Übersetzung: Infinitiv mit „zu“ oder Substantiv: ars scrībendī – die Kunst des Schreibens.",
+      "Gerundiv attributiv statt Gerundium + Objekt: ad urbem capiendam (statt ad capiendum urbem) – „um die Stadt einzunehmen“ / „zur Einnahme der Stadt“.",
+      "causā / grātiā + Genitiv (nachgestellt): bellandī causā – um Krieg zu führen.",
+      "Gerundiv + esse = Notwendigkeit: Carthāgō dēlenda est – Karthago muss zerstört werden. Verneint: „darf nicht“.",
+      "Dativus auctoris: Caesarī omnia agenda erant – Caesar musste alles tun (wörtl.: von Caesar musste alles getan werden).",
+      "Unpersönlich (Neutrum): nōn exspectandum sibi statuit – er beschloss, dass er nicht warten dürfe."
+    ],
+    "beispiel": {
+      "latein": "Mīlitēs ad urbem dēfendendam parātī sunt; nōbīs fortiter pūgnandum est.",
+      "deutsch": "Die Soldaten sind bereit, die Stadt zu verteidigen; wir müssen tapfer kämpfen."
+    }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: cohortandī (in: cohortandī causā)",
+      "antwort": "Gerundium, Gen. von cohortārī – mit causā: „um zu ermutigen“",
+      "erklaerung": "causā steht nach dem Genitiv: „zum Zweck des Ermutigens“."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: ad trānsportandum exercitum",
+      "antwort": "Gerundiv (attributiv, Akk. Sg. m.) zu exercitum, nach ad: „um das Heer überzusetzen“",
+      "erklaerung": "Bezugswort exercitum → Gerundiv, nicht Gerundium."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Caesarī omnia erant agenda. – Konstruktion?",
+      "antwort": "Gerundiv + esse (Notwendigkeit), Caesarī = dativus auctoris: „Caesar musste alles tun.“",
+      "erklaerung": "agenda: Nom. Pl. n., passend zu omnia."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Gerundium oder Gerundiv? ars dīcendī",
+      "antwort": "Gerundium (Gen., kein Bezugswort): „die Kunst des Redens“",
+      "erklaerung": "Gerundive brauchen ein Bezugswort, mit dem sie in KNG übereinstimmen."
+    },
+    {
+      "typ": "luecke",
+      "text": "Lēgātī pācis ___ causā vēnērunt.",
+      "loesung": ["petendae"],
+      "hinweis": "(petere, Gerundiv passend zu pācis)",
+      "erklaerung": "Die Gesandten kamen, um um Frieden zu bitten. pācis petendae = Gen. Sg. f."
+    },
+    {
+      "typ": "luecke",
+      "text": "Nōbīs patria ___ est.",
+      "loesung": ["dēfendenda"],
+      "hinweis": "(dēfendere, Gerundiv, Notwendigkeit)",
+      "erklaerung": "Wir müssen das Vaterland verteidigen. nōbīs = dativus auctoris."
+    },
+    {
+      "typ": "luecke",
+      "text": "Discipulī ad ___ in scholam veniunt.",
+      "loesung": ["discendum"],
+      "hinweis": "(discere, Gerundium nach ad)",
+      "erklaerung": "Die Schüler kommen in die Schule, um zu lernen."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Carthāgō dēlenda est. – Was bedeutet das?",
+      "optionen": ["Karthago ist zerstört worden.", "Karthago muss zerstört werden.", "Karthago wird zerstört werden."],
+      "richtig": 1,
+      "erklaerung": "Gerundiv + esse = Notwendigkeit („muss … werden“)."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "In welchem Kasus steht die handelnde Person beim Gerundiv mit esse?",
+      "optionen": ["Ablativ mit ā/ab", "Dativ", "Genitiv"],
+      "richtig": 1,
+      "erklaerung": "dativus auctoris: mihi legendum est – ich muss lesen."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Nōn est saepius perīclitanda salūs. – Wie übersetzt man die Verneinung?",
+      "optionen": ["Das Wohl muss nicht öfter gefährdet werden.", "Das Wohl darf nicht öfter gefährdet werden.", "Das Wohl wird nicht öfter gefährdet."],
+      "richtig": 1,
+      "erklaerung": "Verneintes Gerundiv mit esse = „darf nicht“ (Verbot), nicht nur „muss nicht“."
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Caesarī omnia ūnō tempore erant agenda:", "deutsch": "Caesar musste alles zur gleichen Zeit tun:" }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,20,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Gerundiv + esse (Notwendigkeit) mit dativus auctoris (Caesarī)",
+      "vokabelhilfen": [
+        { "latein": "ūnō tempore", "deutsch": "zur gleichen Zeit" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Nāvium māgnam cōpiam", "deutsch": "Eine große Menge Schiffe" },
+        { "latein": "ad trānsportandum exercitum pollicēbantur.", "deutsch": "versprachen sie, um das Heer überzusetzen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,16,8", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "attributives Gerundiv mit ad (Zweck): ad trānsportandum exercitum",
+      "vokabelhilfen": [
+        { "latein": "trānsportāre", "deutsch": "übersetzen, hinüberbringen" },
+        { "latein": "pollicērī", "deutsch": "versprechen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Atque in alteram item cohortandī causā profectus", "deutsch": "Und nachdem er ebenso zum anderen Flügel aufgebrochen war, um (die Soldaten) zu ermutigen," },
+        { "latein": "pūgnantibus occurrit.", "deutsch": "traf er auf Kämpfende." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,21,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Gerundium im Genitiv mit causā; PC mit Deponens-Partizip (profectus); substantiviertes PPA (pūgnantibus)",
+      "vokabelhilfen": [
+        { "latein": "in alteram (partem)", "deutsch": "auf die andere Seite (des Schlachtfelds)" },
+        { "latein": "occurrere + Dat.", "deutsch": "begegnen, treffen auf" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quibus rēbus adductus Caesar", "deutsch": "Durch diese Umstände bewogen," },
+        { "latein": "nōn expectandum sibi statuit,", "deutsch": "beschloss Caesar, dass er nicht warten dürfe," },
+        { "latein": "dum, omnibus fortūnīs sociōrum cōnsūmptīs,", "deutsch": "bis die Helvetier nach Vernichtung des gesamten Besitzes der Bundesgenossen" },
+        { "latein": "in Santonōs Helvētiī pervenīrent.", "deutsch": "zu den Santonern gelangten." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,11,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss + PC (adductus); unpersönliches Gerundiv im AcI (expectandum [esse]) mit dativus auctoris (sibi); dum + Konj. („bis“); Abl. abs.",
+      "vokabelhilfen": [
+        { "latein": "expectāre", "deutsch": "warten (Nebenform zu exspectāre)" },
+        { "latein": "fortūnae, -ārum f", "deutsch": "Hab und Gut, Besitz" },
+        { "latein": "Santonī, -ōrum", "deutsch": "die Santoner (gallischer Stamm)" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Nōn est saepius in ūnō homine", "deutsch": "Wegen eines einzigen Menschen darf nicht öfter" },
+        { "latein": "summa salūs perīclitanda reī pūblicae.", "deutsch": "das Wohl des ganzen Staates aufs Spiel gesetzt werden." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,11", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "verneintes Gerundiv + esse (= „darf nicht“); Sperrung salūs … reī pūblicae (Hyperbaton)",
+      "vokabelhilfen": [
+        { "latein": "perīclitārī", "deutsch": "aufs Spiel setzen, gefährden" },
+        { "latein": "summa salūs", "deutsch": "das Wohl im Ganzen, die Existenz" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Hunc ad ēgrediendum nēquāquam idōneum locum arbitrātus,", "deutsch": "Weil er diesen Ort für das Aussteigen keineswegs für geeignet hielt," },
+        { "latein": "dum reliquae nāvēs eō convenīrent,", "deutsch": "wartete er, bis die übrigen Schiffe dort zusammenkämen," },
+        { "latein": "ad hōram nōnam in ancorīs expectāvit.", "deutsch": "bis zur neunten Stunde vor Anker." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,23,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Gerundium mit ad (ad ēgrediendum); PC mit Deponens-Partizip (arbitrātus, kausal) und doppeltem Akkusativ; dum + Konj. („bis“)",
+      "vokabelhilfen": [
+        { "latein": "ēgredī", "deutsch": "hier: an Land gehen" },
+        { "latein": "in ancorīs", "deutsch": "vor Anker" },
+        { "latein": "hōra nōna", "deutsch": "die neunte Stunde (etwa 15 Uhr)" }
+      ]
+    }
+  ]
+}

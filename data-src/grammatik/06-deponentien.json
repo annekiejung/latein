@@ -1,0 +1,178 @@
+{
+  "id": "deponentien",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Deponentien und Semideponentien",
+  "bereich": "Formenlehre",
+  "regel": {
+    "kurz": "Deponentien haben (fast) nur passive Formen, aber aktive Bedeutung: hortor = ich ermahne, hortātus sum = ich habe ermahnt. Semideponentien (audēre, gaudēre, solēre, cōnfīdere) sind im Präsensstamm aktiv und im Perfektstamm passiv.",
+    "punkte": [
+      "Lernform: hortārī, hortor, hortātus sum – Infinitiv, 1. Person, Perfekt.",
+      "Übersetzung immer AKTIV: cōnātī sunt = sie haben versucht; ēgredī = hinausgehen.",
+      "Aktive Formen gibt es trotzdem: PPA (hortāns), Partizip Futur (hortātūrus), Infinitiv Futur (hortātūrum esse), Gerundium (hortandī).",
+      "Das PPP hat aktive Bedeutung und ist meist vorzeitig: profectus = nachdem er aufgebrochen war. Nur das Gerundiv ist passiv: hortandus = einer, der ermahnt werden muss.",
+      "Semideponentien: audeō, audēre, ausus sum (wagen); gaudeō, gāvīsus sum (sich freuen); soleō, solitus sum (gewohnt sein); cōnfīdō, cōnfīsus sum (vertrauen).",
+      "Mit Ablativ: ūtī (gebrauchen), fruī (genießen), fungī (verwalten), potīrī (sich bemächtigen), vēscī (sich nähren)."
+    ],
+    "beispiel": {
+      "latein": "Mīlitēs ex castrīs ēgressī hostēs sequī cōnātī sunt.",
+      "deutsch": "Nachdem die Soldaten aus dem Lager ausgerückt waren, versuchten sie, die Feinde zu verfolgen."
+    }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: cōnātī sunt",
+      "antwort": "3. Pl. Ind. Perf. von cōnārī (Deponens): „sie haben versucht“",
+      "erklaerung": "Passive Form, aktive Bedeutung."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: hortāre",
+      "antwort": "zweideutig: Imperativ Sg. („ermahne!“) oder 2. Sg. Ind. Präs. (Nebenform zu hortāris) von hortārī",
+      "erklaerung": "Beim Deponens lautet der Imperativ Sg. wie ein passiver Infinitiv aktiver Verben – Vorsicht!"
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: gāvīsus (in: Caesar … gāvīsus …)",
+      "antwort": "PPP von gaudēre (Semideponens), Nom. Sg. m., aktiv: „erfreut“, „weil er sich freute“",
+      "erklaerung": "gaudeō, gaudēre, gāvīsus sum."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: ūsus est (in: Patre ūsus est dīligente)",
+      "antwort": "3. Sg. Ind. Perf. von ūtī mit Ablativ (patre … dīligente): „er hatte einen sorgfältigen Vater“",
+      "erklaerung": "ūtī + Abl. = gebrauchen, aber auch „haben, erleben“ (bei Personen)."
+    },
+    {
+      "typ": "luecke",
+      "text": "Caesar mīlitēs ___ (er ermahnte).",
+      "loesung": ["hortātus est"],
+      "hinweis": "(hortārī, 3. Sg. Perf.)",
+      "erklaerung": "Perfekt eines Deponens = PPP + esse."
+    },
+    {
+      "typ": "luecke",
+      "text": "Nēmō ex castrīs ___ ausus est.",
+      "loesung": ["ēgredī"],
+      "hinweis": "(ēgredī, Infinitiv Präsens)",
+      "erklaerung": "Niemand wagte, aus dem Lager hinauszugehen."
+    },
+    {
+      "typ": "luecke",
+      "text": "Rōmānī victōriā ___.",
+      "loesung": ["fruuntur"],
+      "hinweis": "(fruī, 3. Pl. Präs.)",
+      "erklaerung": "Die Römer genießen den Sieg. fruī steht mit Ablativ."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Welche Form eines Deponens hat PASSIVE Bedeutung?",
+      "optionen": ["das PPP (hortātus)", "das Gerundiv (hortandus)", "das PPA (hortāns)"],
+      "richtig": 1,
+      "erklaerung": "Nur das Gerundiv ist passiv: hortandus = einer, der ermahnt werden muss."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Welches Verb ist ein Semideponens?",
+      "optionen": ["sequī", "audēre", "loquī"],
+      "richtig": 1,
+      "erklaerung": "audeō, audēre, ausus sum – Präsens aktiv, Perfekt passiv."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Wie lautet der Infinitiv Futur von hortārī?",
+      "optionen": ["hortātum īrī", "hortātūrum esse", "hortārī futūrum"],
+      "richtig": 1,
+      "erklaerung": "Der Inf. Fut. ist auch beim Deponens aktiv gebildet: Partizip Futur + esse."
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Ibi vadīs repertīs", "deutsch": "Nachdem sie dort Furten gefunden hatten," },
+        { "latein": "partem suārum cōpiārum trādūcere cōnātī sunt", "deutsch": "versuchten sie, einen Teil ihrer Truppen hinüberzuführen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,9,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "Abl. abs. (vorzeitig); Perfekt eines Deponens (cōnātī sunt) mit Infinitiv",
+      "vokabelhilfen": [
+        { "latein": "vadum, -ī n", "deutsch": "Furt, seichte Stelle" },
+        { "latein": "trādūcere", "deutsch": "hinüberführen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Armīs obsidibusque acceptīs,", "deutsch": "Nachdem er Waffen und Geiseln in Empfang genommen hatte," },
+        { "latein": "Crassus in fīnēs Vocātium et Tarusātium profectus est.", "deutsch": "brach Crassus in das Gebiet der Vocaten und Tarusaten auf." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "3,23,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall3.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Abl. abs. (vorzeitig); Perfekt des Deponens proficīscī",
+      "vokabelhilfen": [
+        { "latein": "obses, -idis m", "deutsch": "Geisel" },
+        { "latein": "Vocātēs, Tarusātēs", "deutsch": "aquitanische Stämme" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quōs sibi Caesar oblātōs gāvīsus", "deutsch": "Caesar freute sich, dass sie ihm in die Hände gefallen waren," },
+        { "latein": "illōs retinērī iussit;", "deutsch": "und ließ sie festhalten." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,13,6", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss (Quōs); PC mit Semideponens (gāvīsus, aktiv); AcI mit Partizip (oblātōs [esse]) nach gāvīsus; iubēre + AcI mit Inf. Präs. Pass.",
+      "vokabelhilfen": [
+        { "latein": "offerre", "deutsch": "darbieten; Passiv: in die Hände fallen" },
+        { "latein": "gaudēre, gāvīsus sum", "deutsch": "sich freuen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quō repentīnō obiectō vīsū", "deutsch": "Durch diesen plötzlichen Anblick, der sich ihnen bot," },
+        { "latein": "tantum terrōrem iniēcit exercituī Rōmānōrum,", "deutsch": "jagte er dem Heer der Römer einen so großen Schrecken ein," },
+        { "latein": "ut ēgredī extrā vallum nēmō sit ausus.", "deutsch": "dass niemand mehr wagte, über den Wall hinauszugehen." }
+      ],
+      "quelle": { "autor": "Nepos", "werk": "Hannibal", "stelle": "5,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nepos.han.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss + Abl. abs. (Quō … obiectō vīsū); Konsekutivsatz (ut + Konj.); Semideponens audēre (sit ausus) mit Deponens-Infinitiv ēgredī",
+      "vokabelhilfen": [
+        { "latein": "obicere", "deutsch": "entgegenwerfen; Passiv: sich zeigen" },
+        { "latein": "terrōrem inicere + Dat.", "deutsch": "jemandem Schrecken einjagen" },
+        { "latein": "vallum, -ī n", "deutsch": "Wall (des Lagers)" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Patre ūsus est dīligente", "deutsch": "Er hatte einen sorgfältigen Vater" },
+        { "latein": "et, ut tum erant tempora,", "deutsch": "und, wie es damals die Zeiten erlaubten," },
+        { "latein": "dītī in prīmīsque studiōsō litterārum.", "deutsch": "einen reichen und vor allem an Literatur sehr interessierten." }
+      ],
+      "quelle": { "autor": "Nepos", "werk": "Atticus", "stelle": "1,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nepos.att.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "ūtī + Abl. (bei Personen: „haben“), Attribute im Abl. (dīligente, dītī, studiōsō)",
+      "vokabelhilfen": [
+        { "latein": "dīs, dītis", "deutsch": "reich (= dīves)" },
+        { "latein": "in prīmīs", "deutsch": "vor allem, besonders" },
+        { "latein": "studiōsus + Gen.", "deutsch": "interessiert an, eifrig in" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Atque hōc Sōsylō Hannibal", "deutsch": "Und diesen Sosylos hatte Hannibal" },
+        { "latein": "litterārum Graecārum ūsus est doctōre.", "deutsch": "als Lehrer für die griechische Literatur." }
+      ],
+      "quelle": { "autor": "Nepos", "werk": "Hannibal", "stelle": "13,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nepos.han.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "ūtī + doppelter Ablativ (hōc Sōsylō … doctōre: „diesen Sosylos als Lehrer“)",
+      "vokabelhilfen": [
+        { "latein": "Sōsylus", "deutsch": "Sosylos, griechischer Geschichtsschreiber" },
+        { "latein": "litterae Graecae", "deutsch": "griechische Sprache und Literatur" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "id": "aci",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "AcI (Accusativus cum infinitivo)",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Der AcI besteht aus einem Akkusativ (Subjektsakkusativ) und einem Infinitiv (Prädikatsinfinitiv). Er steht nach Verben des Sagens, Denkens, Wahrnehmens, Wissens und Fühlens sowie nach unpersönlichen Ausdrücken (cōnstat, necesse est …). Übersetzt wird er meist mit einem „dass“-Satz.",
+  "punkte": [
+    "Erkennen: einleitendes Verb (dīcere, putāre, vidēre, scīre, audīre, sentīre …) + Akkusativ + Infinitiv.",
+    "Übersetzen: Akkusativ wird Subjekt, Infinitiv wird Prädikat des dass-Satzes – oder ohne „dass“ mit Konjunktiv (er sagt, er sei krank).",
+    "Zeitverhältnis: Inf. Präsens = gleichzeitig, Inf. Perfekt = vorzeitig, Inf. Futur = nachzeitig.",
+    "Infinitive: laudāre / laudārī (gleichz.), laudāvisse / laudātum esse (vorz.), laudātūrum esse (nachz.). Bei Infinitiven auf -um esse wird esse oft weggelassen.",
+    "Reflexivpronomen: sē / suus im AcI beziehen sich auf das Subjekt des übergeordneten Satzes („er sagt, dass ER …“).",
+    "Zwei Akkusative? Der eine ist Subjekt, der andere Objekt – Sinn und Satzstellung entscheiden."
+  ],
+  "beispiel": {
+    "latein": "Mārcus dīcit sē amīcum vīdisse.",
+    "deutsch": "Marcus sagt, dass er (selbst) den Freund gesehen habe."
+    }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Patēre tua cōnsilia nōn sentīs? – Subjektsakkusativ und Infinitiv?",
+      "antwort": "Subjektsakkusativ: tua cōnsilia (Akk. Pl. n.), Infinitiv: patēre (Präs. Akt., gleichzeitig) – nach sentīs",
+      "erklaerung": "„Merkst du nicht, dass deine Pläne offen liegen?“"
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: missūrum (in: sēsē … missūrum … exīstimābat)",
+      "antwort": "Partizip Futur Aktiv von mittere, Akk. Sg. m.; hier Teil des Infinitiv Futur (missūrum esse, esse weggelassen) → nachzeitig",
+      "erklaerung": "Inf. Futur = Partizip Futur auf -ūrum + esse."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: redāctōs esse",
+      "antwort": "Infinitiv Perfekt Passiv von redigere, Akk. Pl. m. → vorzeitig",
+      "erklaerung": "Das Partizip im Inf. Perf. Pass. richtet sich nach dem Subjektsakkusativ (sēsē → redāctōs)."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Caesar dīxit sē ventūrum esse. – Worauf bezieht sich sē?",
+      "antwort": "auf Caesar, das Subjekt des übergeordneten Satzes: „Caesar sagte, er (selbst) werde kommen.“",
+      "erklaerung": "Wäre ein anderer gemeint, stünde eum: „… dass er (ein anderer) kommen werde.“"
+    },
+    {
+      "typ": "luecke",
+      "text": "Scīmus Rōmam ā Rōmulō ___ esse.",
+      "loesung": ["conditam"],
+      "hinweis": "(condere, Inf. Perf. Passiv – Partizip passend zu Rōmam)",
+      "erklaerung": "Wir wissen, dass Rom von Romulus gegründet worden ist."
+    },
+    {
+      "typ": "luecke",
+      "text": "Putō hostēs mox ___.",
+      "loesung": ["ventūrōs"],
+      "hinweis": "(venīre, Inf. Futur ohne esse – passend zu hostēs)",
+      "erklaerung": "Ich glaube, dass die Feinde bald kommen werden."
+    },
+    {
+      "typ": "luecke",
+      "text": "Mīlitēs dīcunt ___ fortiter pūgnāvisse.",
+      "loesung": ["sē"],
+      "hinweis": "(Pronomen: die Soldaten sprechen über sich selbst)",
+      "erklaerung": "Die Soldaten sagen, dass sie (selbst) tapfer gekämpft hätten."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Welcher Infinitiv drückt Vorzeitigkeit aus?",
+      "optionen": ["laudārī", "laudātum esse", "laudātūrum esse"],
+      "richtig": 1,
+      "erklaerung": "Inf. Perfekt (hier Passiv) = vorzeitig."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Nūntius nūntiat hostēs urbem oppūgnāre. – Wer greift an?",
+      "optionen": ["der Bote", "die Feinde", "die Stadt"],
+      "richtig": 1,
+      "erklaerung": "hostēs ist Subjektsakkusativ, urbem Objekt: „… dass die Feinde die Stadt angreifen.“"
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Nach welchem Ausdruck steht KEIN AcI?",
+      "optionen": ["cōnstat", "spērāre", "imperāre (+ Dat.)"],
+      "richtig": 2,
+      "erklaerung": "imperāre steht mit ut/nē + Konjunktiv (Begehrsatz), nicht mit AcI. Ausnahme bei Passiv-Infinitiven nach iubēre."
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Patēre tua cōnsilia nōn sentīs,", "deutsch": "Merkst du nicht, dass deine Pläne offen daliegen," },
+        { "latein": "cōnstrictam iam hōrum omnium scientiā tenērī coniūrātiōnem tuam nōn vidēs?", "deutsch": "siehst du nicht, dass deine Verschwörung durch das Wissen all dieser Leute schon gefesselt festgehalten wird?" }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "zwei AcI (Inf. Präs. Aktiv / Passiv, gleichzeitig); cōnstrictam ist PC zu coniūrātiōnem; rhetorische Fragen",
+      "vokabelhilfen": [
+        { "latein": "patēre", "deutsch": "offen daliegen, bekannt sein" },
+        { "latein": "cōnstringere", "deutsch": "fesseln, zusammenschnüren" },
+        { "latein": "coniūrātiō, -ōnis f", "deutsch": "Verschwörung" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Hōc autem ūnō interfectō", "deutsch": "Wenn aber nur dieser eine getötet ist," },
+        { "latein": "intellegō hanc reī pūblicae pestem paulisper reprimī,", "deutsch": "sehe ich ein, dass diese Seuche des Staates für kurze Zeit eingedämmt," },
+        { "latein": "nōn in perpetuum comprimī posse.", "deutsch": "aber nicht für immer unterdrückt werden kann." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,30", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Abl. abs. (konditional: „wenn …“); AcI mit posse + Inf. Präs. Passiv; Asyndeton (nōn = „aber nicht“)",
+      "vokabelhilfen": [
+        { "latein": "pestis, -is f", "deutsch": "Seuche, Verderben" },
+        { "latein": "paulisper", "deutsch": "für kurze Zeit" },
+        { "latein": "reprimere / comprimere", "deutsch": "eindämmen / unterdrücken" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Lēgātum ex suīs sēsē magnō cum perīculō ad eum missūrum", "deutsch": "Er meinte, dass er einen Gesandten aus seinen eigenen Leuten nur unter großer Gefahr zu ihm schicken" },
+        { "latein": "et hominibus ferīs obiectūrum exīstimābat.", "deutsch": "und ihn wilden Menschen ausliefern würde." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,47,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "AcI mit Inf. Futur (missūrum, obiectūrum – esse ausgelassen, nachzeitig); sēsē = Caesar (Subjekt von exīstimābat); eum = Ariovist",
+      "vokabelhilfen": [
+        { "latein": "obicere", "deutsch": "preisgeben, ausliefern" },
+        { "latein": "ferus, -a, -um", "deutsch": "wild" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Caesar, quod memoriā tenēbat", "deutsch": "Weil Caesar sich daran erinnerte," },
+        { "latein": "L. Cassium cōnsulem occīsum", "deutsch": "dass der Konsul Lucius Cassius getötet" },
+        { "latein": "exercitumque eius ab Helvētiīs pulsum et sub iugum missum,", "deutsch": "und sein Heer von den Helvetiern geschlagen und unter das Joch geschickt worden war," },
+        { "latein": "concēdendum nōn putābat;", "deutsch": "glaubte er, dass man (ihnen) nicht nachgeben dürfe." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,7,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "AcI mit Inf. Perf. Passiv (occīsum, pulsum, missum – esse ausgelassen, vorzeitig) nach memoriā tenēre; unpersönliches Gerundiv im AcI (concēdendum [esse]) nach putābat",
+      "vokabelhilfen": [
+        { "latein": "memoriā tenēre", "deutsch": "sich erinnern" },
+        { "latein": "sub iugum mittere", "deutsch": "unter das Joch schicken (Zeichen der völligen Niederlage)" },
+        { "latein": "concēdere", "deutsch": "nachgeben, zugestehen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "lēgātīs respondit", "deutsch": "Er antwortete den Gesandten," },
+        { "latein": "diem sē ad dēlīberandum sūmptūrum.", "deutsch": "dass er sich Zeit zum Überlegen nehmen werde." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,7,5", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "AcI mit Inf. Futur (sūmptūrum [esse], nachzeitig); sē = Caesar; Gerundium (ad dēlīberandum)",
+      "vokabelhilfen": [
+        { "latein": "diem sūmere", "deutsch": "sich eine Frist (Bedenkzeit) nehmen" },
+        { "latein": "dēlīberāre", "deutsch": "überlegen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "ex hominum mīlibus LX vix ad D,", "deutsch": "von 60 000 Mann auf kaum 500," },
+        { "latein": "quī arma ferre possent,", "deutsch": "die (noch) Waffen tragen könnten," },
+        { "latein": "sēsē redāctōs esse dīxērunt.", "deutsch": "seien sie zusammengeschmolzen, sagten sie." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,28,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "AcI mit Inf. Perf. Passiv (redāctōs esse, vorzeitig); sēsē = die Sprecher (Nervier); Relativsatz im Konjunktiv (innerhalb indirekter Rede)",
+      "vokabelhilfen": [
+        { "latein": "redigere ad", "deutsch": "zusammenschmelzen lassen auf, bringen auf" },
+        { "latein": "LX mīlia / D", "deutsch": "60 000 / 500 (römische Zahlzeichen)" }
+      ]
+    }
+  ]
+}

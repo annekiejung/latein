@@ -11,11 +11,14 @@ for my $f (@files) {
   for (my $i = 1; $i < @ch; $i += 2) {
     my ($c, $txt) = ($ch[$i], $ch[$i + 1]);
     # Paragraphen: Zahl vor Großbuchstaben
-    my @par = split /\s(\d{1,2})\s(?=[A-Z])/, " 0 $txt";
+    my @par = split /\s(\d{1,2})\s(?=[A-Za-z])/, " 0 $txt";
+    @par = ('', 0, $txt) if @par < 3;     # Texte ohne Paragraphennummern (z. B. Cicero: nur §)
     for (my $j = 1; $j < @par; $j += 2) {
       my ($p, $pt) = ($par[$j], $par[$j + 1]);
-      while ($pt =~ /([A-Z][^.;:?!]*?$re[^.;:?!]*[.;:?!])/g) {
-        my $s = $1; next if length($s) > $max;
+      # in Sätze zerlegen (nach . ; : ? !), dann jeden Satz prüfen
+      for my $s (split /(?<=[.;:?!])\s+/, $pt) {
+        $s =~ s/^\s+|\s+$//g;
+        next unless $s =~ /$re/ && length($s) <= $max;
         print "$pre $book,$c,$p: $s\n";
       }
     }

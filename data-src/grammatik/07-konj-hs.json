@@ -1,0 +1,178 @@
+{
+  "id": "konj-hs",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Konjunktiv im Hauptsatz",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Im Hauptsatz drückt der Konjunktiv eine Haltung des Sprechers aus: einen Wunsch, eine Aufforderung, ein Verbot, einen Zweifel, eine Möglichkeit oder etwas Unwirkliches. Die Verneinung ist bei Wunsch, Aufforderung und Verbot nē, sonst nōn.",
+  "punkte": [
+    "Wunsch (Optativ), oft mit utinam: Konj. Präs./Perf. = erfüllbar („Hoffentlich …!“, „Möge …!“); Konj. Impf. = unerfüllbar Gegenwart, Konj. Plqpf. = unerfüllbar Vergangenheit („Wenn doch …!“).",
+    "Aufforderung (Hortativ 1. Pl.: Eāmus! – Lasst uns gehen!; Iussiv 3. Pers.: Exeat! – Er soll hinausgehen!).",
+    "Verbot (Prohibitiv): nē + Konj. Perfekt (2. Pers.): Nē dēspērāveris! – Verzweifle nicht!",
+    "Zweifelnde Frage (Deliberativ): Quid faciam? – Was soll ich tun?",
+    "Möglichkeit (Potentialis): Konj. Präs./Perf.: Dīcat (dīxerit) aliquis – Es könnte jemand sagen.",
+    "Irrealis: Konj. Impf. = Gegenwart („würde …“), Konj. Plqpf. = Vergangenheit („hätte …“), besonders in Bedingungssätzen mit sī / nisi."
+  ],
+  "beispiel": {
+    "latein": "Utinam pāx esset! Gaudeāmus igitur!",
+    "deutsch": "Wenn doch Frieden wäre! Lasst uns also fröhlich sein!"
+  }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: Eāmus!",
+      "antwort": "Konj. Präs. 1. Pl. – Hortativ (Aufforderung an sich selbst und andere): „Lasst uns gehen!“",
+      "erklaerung": "Hortativ = Aufforderung in der 1. Person Plural."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: Nē timueris!",
+      "antwort": "nē + Konj. Perf. 2. Sg. – Prohibitiv (Verbot): „Fürchte dich nicht!“",
+      "erklaerung": "Das Perfekt wird hier nicht als Vergangenheit übersetzt."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: Utinam ille omnēs cōpiās ēdūxisset!",
+      "antwort": "Konj. Plqpf. mit utinam – unerfüllbarer Wunsch der Vergangenheit: „Hätte er doch alle Truppen mitgenommen!“",
+      "erklaerung": "Konj. Impf. = unerfüllbar in der Gegenwart, Konj. Plqpf. = in der Vergangenheit."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: Quid faciam?",
+      "antwort": "Konj. Präs. 1. Sg. – Deliberativ (zweifelnde Frage): „Was soll ich tun?“",
+      "erklaerung": "Zweifelnde Fragen stehen im Konjunktiv."
+    },
+    {
+      "typ": "luecke",
+      "text": "Utinam pater ___ (adesse, Gegenwart, unerfüllbar)!",
+      "loesung": ["adesset"],
+      "hinweis": "(Konj. Imperfekt)",
+      "erklaerung": "Wenn doch der Vater (jetzt) da wäre!"
+    },
+    {
+      "typ": "luecke",
+      "text": "Nē ___ (dēspērāre, Verbot an dich)!",
+      "loesung": ["dēspērāveris"],
+      "hinweis": "(nē + Konj. Perfekt 2. Sg.)",
+      "erklaerung": "Verzweifle nicht!"
+    },
+    {
+      "typ": "luecke",
+      "text": "Sī hoc ___, nōn errārēs.",
+      "loesung": ["scīrēs"],
+      "hinweis": "(scīre, 2. Sg. – Irrealis der Gegenwart)",
+      "erklaerung": "Wenn du das wüsstest, würdest du dich nicht irren."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Sī tacuissēs, philosophus mānsissēs. – Welcher Fall liegt vor?",
+      "optionen": ["Irrealis der Gegenwart", "Irrealis der Vergangenheit", "Potentialis"],
+      "richtig": 1,
+      "erklaerung": "Konj. Plqpf. = Irrealis der Vergangenheit: „Wenn du geschwiegen hättest, wärst du ein Philosoph geblieben.“"
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Welche Verneinung steht beim Wunsch und beim Verbot?",
+      "optionen": ["nōn", "nē", "haud"],
+      "richtig": 1,
+      "erklaerung": "Wunsch, Aufforderung und Verbot werden mit nē verneint."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Exeant! – Wie übersetzt man das am besten?",
+      "optionen": ["Sie gingen hinaus!", "Sie sollen hinausgehen!", "Sie würden hinausgehen."],
+      "richtig": 1,
+      "erklaerung": "Iussiv (Konj. Präs. 3. Pers.): „Sie sollen …!“"
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Utinam tibi istam mentem dī inmortālēs duint!", "deutsch": "Mögen dir doch die unsterblichen Götter diese Gesinnung geben!" }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,22", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "erfüllbarer Wunsch (utinam + Konj. Präs.); duint = alte Form für dent (Konj. Präs. von dare)",
+      "vokabelhilfen": [
+        { "latein": "duint", "deutsch": "= dent (sie mögen geben)" },
+        { "latein": "inmortālis", "deutsch": "= immortālis, unsterblich" },
+        { "latein": "mēns, mentis f", "deutsch": "hier: Gesinnung, Vorsatz (gemeint: ins Exil zu gehen)" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Utinam ille omnīs sēcum suās cōpiās ēdūxisset!", "deutsch": "Hätte er doch alle seine Truppen mit sich hinausgeführt!" }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "2,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "unerfüllbarer Wunsch der Vergangenheit (utinam + Konj. Plqpf.)",
+      "vokabelhilfen": [
+        { "latein": "omnīs", "deutsch": "= omnēs (Akk. Pl., ältere Form)" },
+        { "latein": "ēdūcere", "deutsch": "hinausführen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "exeant, proficīscantur,", "deutsch": "Sie sollen hinausgehen, sie sollen aufbrechen," },
+        { "latein": "nē patiantur dēsīderiō suī Catilīnam miserum tābēscere.", "deutsch": "sie sollen nicht zulassen, dass der arme Catilina vor Sehnsucht nach ihnen vergeht." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "2,6", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat2.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "Iussiv (Konj. Präs. 3. Pl.), verneint mit nē; AcI nach patī; Ironie",
+      "vokabelhilfen": [
+        { "latein": "dēsīderium suī", "deutsch": "Sehnsucht nach ihnen" },
+        { "latein": "tābēscere", "deutsch": "dahinschwinden, vergehen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quī hominēs quam prīmum,", "deutsch": "Diese Menschen sollen möglichst bald," },
+        { "latein": "sī stāre nōn possunt,", "deutsch": "wenn sie sich nicht halten können," },
+        { "latein": "corruant sed ita,", "deutsch": "zusammenbrechen, aber so," },
+        { "latein": "ut nōn modo cīvitās, sed nē vīcīnī quidem proximī sentiant.", "deutsch": "dass nicht nur der Staat, sondern nicht einmal die nächsten Nachbarn es merken." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "2,21", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss (Quī hominēs); Iussiv (corruant); Konsekutivsatz (ita, ut + Konj.); nōn modo … sed nē … quidem",
+      "vokabelhilfen": [
+        { "latein": "corruere", "deutsch": "zusammenbrechen" },
+        { "latein": "nē … quidem", "deutsch": "nicht einmal" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Sī tē parentēs timērent atque ōdissent tuī", "deutsch": "Wenn deine Eltern dich fürchteten und hassten" },
+        { "latein": "neque eōs ūllā ratiōne plācāre possēs,", "deutsch": "und du sie auf keine Weise besänftigen könntest," },
+        { "latein": "ut opīnor, ab eōrum oculīs aliquō concēderēs.", "deutsch": "würdest du dich, glaube ich, irgendwohin aus ihren Augen entfernen." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,17", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Irrealis der Gegenwart (sī + Konj. Impf. – Konj. Impf.); ōdissent: Konj. Plqpf. von ōdisse mit präsentischer Bedeutung",
+      "vokabelhilfen": [
+        { "latein": "ōdisse", "deutsch": "hassen (nur Perfektformen, Bedeutung präsentisch)" },
+        { "latein": "plācāre", "deutsch": "besänftigen" },
+        { "latein": "concēdere", "deutsch": "hier: sich entfernen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Sed cum sint hominēs,", "deutsch": "Aber da es Menschen gibt," },
+        { "latein": "quī illum, cum profectus sit, ēiectum esse dīcant,", "deutsch": "die behaupten, er sei vertrieben worden, obwohl er (freiwillig) aufgebrochen ist," },
+        { "latein": "īdem, sī interfectus esset, quid dīcerent?", "deutsch": "was würden dieselben Leute sagen, wenn er getötet worden wäre?" }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "2,15", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Irrealis in der Frage (sī + Konj. Plqpf. – Konj. Impf.: „was würden sie sagen, wenn er … wäre“); cum causale und concessivum; AcI nach dīcant",
+      "vokabelhilfen": [
+        { "latein": "ēicere", "deutsch": "hinauswerfen, vertreiben" },
+        { "latein": "īdem", "deutsch": "dieselben (Leute)" }
+      ]
+    }
+  ]
+}

@@ -37,7 +37,7 @@ async function renderList(main) {
   const results = await lastResults();
 
   main.append(h('div', { class: 'card' },
-    h('h2', {}, 'Formenlehre'),
+    h('h2', {}, 'Formen-Training und Tabellen'),
     h('a', { class: 'btn block', href: '#/grammatik/formen' }, 'Formen bestimmen (unregelmäßige Verben)'),
     h('a', { class: 'btn secondary block', href: '#/grammatik/tabellen' }, 'Konjugations- und Deklinationstabellen')
   ));
@@ -335,8 +335,9 @@ async function renderImport(main) {
       }
     }, 'Prompt kopieren'),
     fallback,
-    h('p', { class: 'muted' }, 'In der Claude-App: Foto der Grammatikseite anhängen, Prompt einfügen, senden, Antwort kopieren.')
-    // TODO Meilenstein 4: Link zu docs/workflow_grammatik.html + workflow_grammatik.pdf ergänzen
+    h('p', { class: 'muted' }, 'In der Claude-App: Foto der Grammatikseite anhängen, Prompt einfügen, senden, Antwort kopieren.'),
+    h('p', {}, 'Genaue Anleitung: ', h('a', { href: 'docs/workflow_grammatik.html' }, 'Workflow ansehen'), ' · ',
+      h('a', { href: 'workflow_grammatik.pdf', target: '_blank' }, 'als PDF'))
   ));
 
   const input = h('textarea', { rows: 6, placeholder: 'Antwort von Claude hier einfügen …', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false' });

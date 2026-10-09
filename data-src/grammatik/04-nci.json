@@ -1,0 +1,169 @@
+{
+  "id": "nci",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "NcI (Nominativus cum infinitivo)",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Der NcI ist das passivische Gegenstück zum AcI: Nach passiven Verben des Sagens, Meinens und Befehlens (dīcitur, putātur, iubētur …) und nach vidērī („scheinen“) steht ein Nominativ mit einem Infinitiv. Der Nominativ ist zugleich Subjekt des Prädikats.",
+  "punkte": [
+    "Erkennen: Prädikat im Passiv (dīcitur, dīcuntur, trāditur, putātur, iubētur, vetātur) oder vidētur + Nominativ + Infinitiv.",
+    "Übersetzen mit „man“: Hī dīcuntur … habēre → „Man sagt, dass diese … haben.“",
+    "Oder persönlich: „Sie sollen … haben“ (dīcuntur), „Er scheint … zu …“ (vidētur).",
+    "Zeitverhältnis wie beim AcI: Inf. Präs. gleichzeitig, Inf. Perf. vorzeitig, Inf. Fut. nachzeitig.",
+    "Das Prädikat richtet sich nach dem Nominativ: Hic dīcitur – Hī dīcuntur.",
+    "Achtung: vidētur ohne Infinitiv kann auch „es scheint gut, man beschließt“ bedeuten."
+  ],
+  "beispiel": {
+    "latein": "Homērus caecus fuisse dīcitur.",
+    "deutsch": "Man sagt, Homer sei blind gewesen. / Homer soll blind gewesen sein."
+    }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Hī centum pāgōs habēre dīcuntur. – Nominativ, Infinitiv, Prädikat?",
+      "antwort": "Nominativ hī, Infinitiv habēre (Präs., gleichzeitig), Prädikat dīcuntur (3. Pl. Präs. Pass.) → NcI",
+      "erklaerung": "„Man sagt, dass diese hundert Gaue haben.“ / „Sie sollen hundert Gaue haben.“"
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: vidētur (in: rēs pūblica levāta vidētur)",
+      "antwort": "3. Sg. Ind. Präs. Pass. von vidēre – hier „scheinen“ (NcI mit Inf. Perf. Pass., esse ausgelassen)",
+      "erklaerung": "Der Staat scheint erleichtert worden zu sein."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Mīlitēs pūgnāre iubentur. – Übersetze und bestimme die Konstruktion.",
+      "antwort": "NcI nach iubērī: „Die Soldaten erhalten den Befehl zu kämpfen.“ / „Man befiehlt den Soldaten zu kämpfen.“",
+      "erklaerung": "iubēre steht im Aktiv mit AcI, im Passiv mit NcI."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "AcI oder NcI? Dīcunt Gallōs fortēs esse.",
+      "antwort": "AcI: Prädikat dīcunt ist aktiv, Gallōs ist Akkusativ.",
+      "erklaerung": "Als NcI hieße es: Gallī fortēs esse dīcuntur."
+    },
+    {
+      "typ": "luecke",
+      "text": "Rōmulus Rōmam ___ dīcitur.",
+      "loesung": ["condidisse"],
+      "hinweis": "(condere, Inf. Perfekt Aktiv)",
+      "erklaerung": "Romulus soll Rom gegründet haben. Inf. Perf. = vorzeitig."
+    },
+    {
+      "typ": "luecke",
+      "text": "Hostēs mox ___ esse putantur.",
+      "loesung": ["ventūrī"],
+      "hinweis": "(venīre, Partizip Futur passend zum Nominativ hostēs)",
+      "erklaerung": "Man glaubt, die Feinde würden bald kommen. Im NcI steht das Partizip im Nominativ!"
+    },
+    {
+      "typ": "luecke",
+      "text": "Puella laeta esse ___.",
+      "loesung": ["vidētur"],
+      "hinweis": "(vidēre, 3. Sg. Präs. Passiv – „scheinen“)",
+      "erklaerung": "Das Mädchen scheint froh zu sein."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Wie übersetzt man „Caesar dīcitur vēnisse“ am besten?",
+      "optionen": [
+        "Caesar sagt, er sei gekommen.",
+        "Caesar soll gekommen sein.",
+        "Caesar wird gesagt zu kommen."
+      ],
+      "richtig": 1,
+      "erklaerung": "dīcitur + Inf. → „soll …“ bzw. „man sagt, dass …“. Inf. Perf. → vorzeitig."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Warum steht im NcI das Partizip (z. B. bei Inf. Fut. oder Perf. Pass.) im Nominativ?",
+      "optionen": [
+        "Weil es sich nach dem Subjekt des Satzes richtet, das im Nominativ steht.",
+        "Weil Infinitive immer im Nominativ stehen.",
+        "Weil vidērī immer den Nominativ verlangt."
+      ],
+      "richtig": 0,
+      "erklaerung": "Das Partizip richtet sich in KNG nach seinem Bezugswort – im NcI ist das der Nominativ."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Welches Prädikat leitet einen NcI ein?",
+      "optionen": ["dīcunt", "trāduntur", "nūntiāvit"],
+      "richtig": 1,
+      "erklaerung": "trāduntur ist passiv: „sie werden überliefert … / man überliefert, dass sie …“"
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Hī centum pāgōs habēre dīcuntur,", "deutsch": "Diese (die Sueben) sollen hundert Gaue haben," },
+        { "latein": "ex quibus quotannīs singula mīlia armātōrum bellandī causā ex fīnibus ēdūcunt.", "deutsch": "aus denen sie jedes Jahr je tausend Bewaffnete zum Kriegführen aus ihrem Gebiet hinausführen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,1,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "NcI (dīcuntur + Inf. Präs.); Relativsatz; Gerundium im Genitiv mit causā",
+      "vokabelhilfen": [
+        { "latein": "pāgus, -ī m", "deutsch": "Gau, Bezirk" },
+        { "latein": "singulī, -ae, -a", "deutsch": "je einer" },
+        { "latein": "bellandī causā", "deutsch": "um Krieg zu führen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Itaque ūnā ex parte ā Suēbīs", "deutsch": "Deshalb soll auf der einen Seite von den Sueben aus" },
+        { "latein": "circiter mīlia passuum C agrī vacāre dīcuntur.", "deutsch": "das Land ungefähr hundert Meilen weit leer stehen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,3,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "NcI (dīcuntur + vacāre); Subjekt ist mīlia (agrī = Genitivus partitivus)",
+      "vokabelhilfen": [
+        { "latein": "mīlia passuum", "deutsch": "Meilen (1 römische Meile ≈ 1,5 km)" },
+        { "latein": "vacāre", "deutsch": "leer stehen, unbewohnt sein" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Magnum ibi numerum versuum ēdiscere dīcuntur.", "deutsch": "Dort sollen sie (die Schüler der Druiden) eine große Zahl von Versen auswendig lernen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "6,14,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall6.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "NcI (dīcuntur + Inf. Präs.); Subjekt aus dem Zusammenhang: die jungen Gallier in der Ausbildung bei den Druiden",
+      "vokabelhilfen": [
+        { "latein": "versus, -ūs m", "deutsch": "Vers" },
+        { "latein": "ēdiscere", "deutsch": "auswendig lernen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Ūnō mehercule Catilīnā exhaustō", "deutsch": "Weiß Gott, allein dadurch, dass Catilina hinausgeschafft ist," },
+        { "latein": "levāta mihi et recreāta rēs pūblica vidētur.", "deutsch": "scheint mir der Staat erleichtert und wiederbelebt." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "2,7", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Abl. abs. (kausal); NcI mit vidērī + Inf. Perf. Pass. (levāta et recreāta [esse])",
+      "vokabelhilfen": [
+        { "latein": "mehercule", "deutsch": "beim Herkules!, weiß Gott" },
+        { "latein": "exhaurīre", "deutsch": "hinausschaffen, entfernen" },
+        { "latein": "levāre / recreāre", "deutsch": "erleichtern / wiederbeleben" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quod nisi domī cīvium suōrum invidiā dēbilitātus esset,", "deutsch": "Wenn er nicht zu Hause durch den Neid seiner Mitbürger geschwächt worden wäre," },
+        { "latein": "Rōmānōs vidētur superāre potuisse.", "deutsch": "hätte er, wie es scheint, die Römer besiegen können." }
+      ],
+      "quelle": { "autor": "Nepos", "werk": "Hannibal", "stelle": "1,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nepos.han.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "irrealer Bedingungssatz der Vergangenheit (nisi + Konj. Plqpf.); NcI mit vidētur + Inf. Perf. (potuisse); Quod am Satzanfang = „Und“ (anknüpfend)",
+      "vokabelhilfen": [
+        { "latein": "dēbilitāre", "deutsch": "schwächen" },
+        { "latein": "invidia, -ae f", "deutsch": "Neid, Missgunst" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "id": "relativsaetze",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Relativsätze und relativischer Satzanschluss",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Das Relativpronomen (quī, quae, quod) richtet sich in Genus und Numerus nach seinem Bezugswort, der Kasus hängt von seiner Rolle im Relativsatz ab. Am Satzanfang nach einem Punkt verbindet es oft als relativischer Satzanschluss (= et is / is autem). Im Konjunktiv drückt der Relativsatz eine Absicht, Folge oder einen Grund aus.",
+  "punkte": [
+    "Bezugswort suchen: gleiches Genus und gleicher Numerus wie das Relativpronomen; der Kasus kann verschieden sein.",
+    "Das Bezugswort kann fehlen oder nachgestellt sein: Quī tacet, cōnsentīre vidētur. – Wer schweigt, scheint zuzustimmen.",
+    "Relativischer Satzanschluss: Quae cum ita sint … = Et cum ea ita sint … („Da dies so ist …“). Übersetzung mit Demonstrativpronomen.",
+    "Konjunktiv im Relativsatz: final (Lēgātōs mīsit, quī pācem peterent – um Frieden zu erbitten), konsekutiv (nēmō est, quī … – niemand, der …), kausal (quī = weil er).",
+    "Relativsätze in indirekter Rede stehen ebenfalls im Konjunktiv.",
+    "Bezug auf einen ganzen Satz: Das Relativpronomen im Neutrum (quod) kann sich auf einen ganzen Gedanken beziehen: Hostēs fūgērunt, quod nēmō exspectāverat. – Die Feinde flohen, was niemand erwartet hatte."
+  ],
+  "beispiel": {
+    "latein": "Caesar lēgātōs mīsit, quī pācem peterent. Quī cum vēnissent, …",
+    "deutsch": "Caesar schickte Gesandte, die um Frieden bitten sollten. Als diese gekommen waren, …"
+  }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Gallia est … dīvīsa in partēs trēs, quārum ūnam incolunt Belgae. – Bezugswort und Kasus von quārum?",
+      "antwort": "Bezugswort partēs (f. Pl.); quārum = Gen. Pl. f. (Genitivus partitivus zu ūnam): „von denen“",
+      "erklaerung": "Genus und Numerus vom Bezugswort, Kasus aus dem Relativsatz."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Quī cupidius āgmen īnsecūtī … committunt. – Was ist Quī am Satzanfang?",
+      "antwort": "relativischer Satzanschluss: Quī = Et eī (Nom. Pl. m.) – „Diese …“",
+      "erklaerung": "Nach einem Punkt verbindet das Relativpronomen mit dem vorigen Satz."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Lēgātōs mittit, quī postulārent. – Warum Konjunktiv?",
+      "antwort": "finaler Relativsatz (Absicht): „Gesandte, die fordern sollten“ / „um zu fordern“",
+      "erklaerung": "quī + Konj. = ut eī."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: cuius",
+      "antwort": "Gen. Sg. von quī, quae, quod (alle Genera): „dessen / deren“",
+      "erklaerung": "Dativ: cui, Genitiv: cuius – gleich für m., f., n."
+    },
+    {
+      "typ": "luecke",
+      "text": "Puella, ___ librum dedī, gaudet.",
+      "loesung": ["cui"],
+      "hinweis": "(Relativpronomen: dem Mädchen gab ich …)",
+      "erklaerung": "Das Mädchen, dem ich das Buch gab, freut sich. Dativ Sg. f. = cui."
+    },
+    {
+      "typ": "luecke",
+      "text": "Oppida, ___ Caesar cēpit, māgna erant.",
+      "loesung": ["quae"],
+      "hinweis": "(Relativpronomen, Akk. Pl. n.)",
+      "erklaerung": "Die Städte, die Caesar einnahm, waren groß."
+    },
+    {
+      "typ": "luecke",
+      "text": "Nēmō est, ___ hoc nesciat.",
+      "loesung": ["quī"],
+      "hinweis": "(Relativpronomen, Nom. Sg. m.)",
+      "erklaerung": "Es gibt niemanden, der das nicht weiß. Konsekutiver Relativsatz im Konjunktiv."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Quae cum ita sint, … – Wie übersetzt man das?",
+      "optionen": ["Welche, wenn sie so sind, …", "Da dies so ist, …", "Wer so ist, …"],
+      "richtig": 1,
+      "erklaerung": "Relativischer Satzanschluss (Quae = Et ea) + cum causale."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Wonach richtet sich der KASUS des Relativpronomens?",
+      "optionen": ["nach dem Bezugswort", "nach seiner Rolle im Relativsatz", "immer Nominativ"],
+      "richtig": 1,
+      "erklaerung": "Genus und Numerus: vom Bezugswort – Kasus: aus dem Relativsatz."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Mīlitēs mīsit, quī urbem dēfenderent. – Sinn des Relativsatzes?",
+      "optionen": ["Folge", "Absicht (Zweck)", "Einräumung"],
+      "richtig": 1,
+      "erklaerung": "Finaler Relativsatz: „um die Stadt zu verteidigen“."
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Gallia est omnis dīvīsa in partēs trēs,", "deutsch": "Gallien in seiner Gesamtheit ist in drei Teile geteilt," },
+        { "latein": "quārum ūnam incolunt Belgae, aliam Aquītānī,", "deutsch": "von denen den einen die Belger bewohnen, den anderen die Aquitanier," },
+        { "latein": "tertiam quī ipsōrum linguā Celtae, nostrā Gallī appellantur.", "deutsch": "den dritten diejenigen, die in ihrer eigenen Sprache Kelten, in unserer Gallier genannt werden." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,1,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Relativsatz mit Genitivus partitivus (quārum); Relativsatz ohne Bezugswort (quī … appellantur = eī, quī …); Ellipse (aliam [incolunt])",
+      "vokabelhilfen": [
+        { "latein": "incolere", "deutsch": "bewohnen" },
+        { "latein": "ipsōrum linguā", "deutsch": "in ihrer eigenen Sprache" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quī cupidius novissimum āgmen īnsecūtī", "deutsch": "Diese verfolgten die Nachhut zu hitzig" },
+        { "latein": "aliēnō locō cum equitātū Helvētiōrum proelium committunt;", "deutsch": "und lieferten sich an ungünstiger Stelle ein Gefecht mit der Reiterei der Helvetier." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,15,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss (Quī = Et eī); PC mit Deponens-Partizip (īnsecūtī), beiordnend übersetzt; Komparativ ohne Vergleich (cupidius = zu hitzig)",
+      "vokabelhilfen": [
+        { "latein": "novissimum āgmen", "deutsch": "die Nachhut" },
+        { "latein": "aliēnus locus", "deutsch": "ungünstiges Gelände" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quam ob rem placuit eī", "deutsch": "Deshalb beschloss er," },
+        { "latein": "ut ad Ariovistum lēgātōs mitteret,", "deutsch": "Gesandte zu Ariovist zu schicken," },
+        { "latein": "quī ab eō postulārent", "deutsch": "die von ihm fordern sollten," },
+        { "latein": "utī aliquem locum medium utrīsque conloquiō dēligeret:", "deutsch": "einen für beide Seiten in der Mitte liegenden Ort für eine Unterredung auszuwählen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,34,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss (Quam ob rem); placet + ut-Satz; finaler Relativsatz (quī postulārent); Begehrsatz (utī + Konj.); Dativ des Zwecks (conloquiō)",
+      "vokabelhilfen": [
+        { "latein": "placet + Dat.", "deutsch": "jemand beschließt" },
+        { "latein": "utī", "deutsch": "= ut" },
+        { "latein": "conloquium, -ī n", "deutsch": "Unterredung" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Repertī sunt duo equitēs Rōmānī,", "deutsch": "Es fanden sich zwei römische Ritter," },
+        { "latein": "quī tē istā cūrā līberārent", "deutsch": "die dich von dieser Sorge befreien wollten" },
+        { "latein": "et sēsē illā ipsā nocte paulō ante lūcem mē in meō lectulō interfectūrōs pollicērentur.", "deutsch": "und versprachen, mich noch in derselben Nacht kurz vor Tagesanbruch in meinem Bett zu ermorden." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,9", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "konsekutiv-finaler Relativsatz im Konjunktiv (Leute, die bereit waren …); AcI mit Inf. Fut. (interfectūrōs [esse]) nach pollicērī",
+      "vokabelhilfen": [
+        { "latein": "eques, equitis m", "deutsch": "hier: Ritter (römischer Stand)" },
+        { "latein": "lectulus, -ī m", "deutsch": "(kleines) Bett" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "nēmō est extrā istam coniūrātiōnem perditōrum hominum,", "deutsch": "es gibt niemanden außerhalb dieser Verschwörung verkommener Menschen," },
+        { "latein": "quī tē nōn metuat,", "deutsch": "der dich nicht fürchtet," },
+        { "latein": "nēmō, quī nōn ōderit.", "deutsch": "niemanden, der (dich) nicht hasst." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,13", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "konsekutiver Relativsatz nach verneintem Ausdruck (nēmō est, quī + Konj.); Anapher (nēmō … nēmō); ōderit: Konj. Perf. von ōdisse mit präsentischer Bedeutung",
+      "vokabelhilfen": [
+        { "latein": "perditus, -a, -um", "deutsch": "verkommen, verdorben" },
+        { "latein": "ōdisse", "deutsch": "hassen (nur Perfektformen)" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quamquam nōn nūllī sunt in hōc ōrdine,", "deutsch": "Allerdings gibt es in diesem Stand einige," },
+        { "latein": "quī aut ea, quae inminent, nōn videant", "deutsch": "die entweder das, was droht, nicht sehen" },
+        { "latein": "aut ea, quae vident, dissimulent;", "deutsch": "oder das, was sie sehen, verheimlichen." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,30", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "konsekutiver Relativsatz (sunt, quī + Konj.: „solche, die …“); darin Relativsätze im Indikativ (quae inminent, quae vident); Quamquam am Satzanfang = „allerdings“",
+      "vokabelhilfen": [
+        { "latein": "ōrdō, -inis m", "deutsch": "hier: Stand (gemeint: der Senat)" },
+        { "latein": "inminēre", "deutsch": "= imminēre, drohen, bevorstehen" },
+        { "latein": "dissimulāre", "deutsch": "verheimlichen, so tun als ob nicht" }
+      ]
+    }
+  ]
+}

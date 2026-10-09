@@ -29,8 +29,8 @@ Dann `http://localhost:8080` öffnen.
 |---|---|---|
 | 1 | Grundgerüst, Offline, Backup | fertig |
 | 2 | Aktuelle Vokabeln + Leitner | fertig |
-| 3 | Grundwortschatz (2507 Wörter) | gebaut |
-| 4 | Grammatik | geplant |
+| 3 | Grundwortschatz (2507 Wörter, 96 % abgeglichen) | fertig |
+| 4 | Grammatik (10 Einheiten, Formen-Training, Tabellen) | fertig |
 | 5 | Prüfungsmodus | geplant |
 | 6 | Fehlerjournal, Planer, Statistik | geplant |
 

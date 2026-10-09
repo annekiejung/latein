@@ -461,7 +461,7 @@
 453|sapiēns|adjektiv|sapiēns, sapientis|weise; klug|subst.: der Weise
 454|sūmere|verb|sūmō, sūmpsī, sūmptum|nehmen|
 455|nōbilis|adjektiv|nōbilis, nōbile|berühmt; adlig; vornehm|
-456|quīn|subjunktion||dass; dass nicht|nach verneintem Zweifel: dass; Adv.: ja sogar; quīn etiam: ja sogar
+456|quīn|subjunktion||dass; dass nicht|nach verneintem Zweifel: dass; in Fragen: warum nicht?; quīn etiam: ja sogar
 457|flēre|verb|fleō, flēvī, flētum|weinen; beweinen|
 458|nōlle|verb|nōlō, nōluī|nicht wollen|
 459|plēnus|adjektiv|plēnus, plēna, plēnum|voll|m. Gen.

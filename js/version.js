@@ -5,4 +5,4 @@
  * iPhone die neue Version nicht, weil der Service Worker die alten Dateien
  * aus dem Cache liefert.
  */
-self.APP_VERSION = '0.5.0';
+self.APP_VERSION = '0.6.0';

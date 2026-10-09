@@ -1,0 +1,181 @@
+{
+  "id": "kasusfunktionen",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Kasusfunktionen (Genitiv, Dativ, Ablativ)",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Viele Kasus haben im Lateinischen mehrere Aufgaben. Wer die wichtigsten Funktionen kennt, findet schneller die passende deutsche Übersetzung – oft mit einer Präposition, die im Lateinischen fehlt.",
+  "punkte": [
+    "Genitiv: partitivus (Teil eines Ganzen: hōrum omnium fortissimī – die Tapfersten von allen), obiectivus (amor patriae – Liebe ZUR Heimat), subiectivus (amor mātris – Liebe DER Mutter), qualitatis (vir māgnī ingeniī – ein Mann von großer Begabung).",
+    "Dativ: commodi (für jemanden), possessivus (Mihi est liber. – Ich habe ein Buch.), auctoris (beim Gerundiv), finalis (Zweck: subsidiō – zur Hilfe; ūsuī esse – nützlich sein; oft als doppelter Dativ).",
+    "Ablativ – Mittel und Grund: instrumentalis (womit? gladiō – mit dem Schwert), causae (warum? metū – aus Furcht).",
+    "Ablativ – Art, Zeit, Ort: modi (wie? summā celeritāte), temporis (wann? eō diē, prīmā lūce), loci (wo? ohne Präposition bei Städten und in Wendungen).",
+    "Ablativ – Trennung und Vergleich: separativus (wovon? fīnibus prohibēre), comparationis (als: lūce clārior – heller als das Licht), limitationis (in welcher Hinsicht? virtūte praecēdere).",
+    "Akkusativ der Ausdehnung: mīlia passuum tria (drei Meilen weit), multōs annōs (viele Jahre lang)."
+  ],
+  "beispiel": {
+    "latein": "Caesar eō diē summā celeritāte legiōnem subsidiō nostrīs mīsit.",
+    "deutsch": "Caesar schickte an diesem Tag in größter Eile eine Legion den Unseren zu Hilfe."
+  }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: lūce (in: lūce clāriōra)",
+      "antwort": "Ablativus comparationis: „heller als das Licht“",
+      "erklaerung": "Nach einem Komparativ ohne quam steht der Ablativ."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: subsidiō (in: legiōnem subsidiō mīsit)",
+      "antwort": "Dativus finalis (Zweck): „zur Hilfe“",
+      "erklaerung": "Oft zusammen mit einem Dativ der Person: nostrīs subsidiō = den Unseren zur Hilfe (doppelter Dativ)."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: hōrum omnium (in: Hōrum omnium fortissimī sunt Belgae)",
+      "antwort": "Genitivus partitivus: „von all diesen“",
+      "erklaerung": "Der Genitiv bezeichnet das Ganze, aus dem ein Teil herausgenommen wird."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme die Funktion: virtūte (in: Gallōs virtūte praecēdunt)",
+      "antwort": "Ablativus limitationis (Beziehung): „an Tapferkeit“",
+      "erklaerung": "„Sie übertreffen die Gallier an Tapferkeit.“"
+    },
+    {
+      "typ": "luecke",
+      "text": "Mihi ___ multī librī.",
+      "loesung": ["sunt"],
+      "hinweis": "(esse, passend zu librī – Dativus possessivus)",
+      "erklaerung": "Ich habe viele Bücher. (Wörtlich: Mir sind viele Bücher.)"
+    },
+    {
+      "typ": "luecke",
+      "text": "Hostēs ___ (Abl.: Furcht) fūgērunt.",
+      "loesung": ["metū"],
+      "hinweis": "(metus, -ūs m – Ablativus causae)",
+      "erklaerung": "Die Feinde flohen aus Furcht."
+    },
+    {
+      "typ": "luecke",
+      "text": "Caesar ___ (prīma lūx) profectus est.",
+      "loesung": ["prīmā lūce"],
+      "hinweis": "(Ablativus temporis – zwei Wörter)",
+      "erklaerung": "Caesar brach bei Tagesanbruch auf."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "amor patriae – welche Genitiv-Funktion liegt meist vor?",
+      "optionen": ["Genitivus subiectivus (die Heimat liebt)", "Genitivus obiectivus (Liebe zur Heimat)", "Genitivus partitivus"],
+      "richtig": 1,
+      "erklaerung": "Die Heimat ist das Ziel (Objekt) der Liebe → obiectivus."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Haec rēs nōbīs māgnō ūsuī fuit. – Übersetzung?",
+      "optionen": [
+        "Diese Sache war uns von großem Nutzen.",
+        "Diese Sache benutzte uns sehr.",
+        "Wegen dieser Sache waren wir nützlich."
+      ],
+      "richtig": 0,
+      "erklaerung": "Doppelter Dativ: nōbīs (Person) + ūsuī (Zweck) esse = nützlich sein."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "mīlia passuum tria ab castrīs castra pōnit – welche Funktion hat mīlia?",
+      "optionen": ["Akkusativ der Ausdehnung (Entfernung)", "Objekt zu pōnit", "Subjekt"],
+      "richtig": 0,
+      "erklaerung": "„drei Meilen vom Lager entfernt“ – Akkusativ der räumlichen Ausdehnung."
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Hōrum omnium fortissimī sunt Belgae,", "deutsch": "Von allen diesen sind die Belger die tapfersten," },
+        { "latein": "proptereā quod ā cultū atque hūmānitāte prōvinciae longissimē absunt,", "deutsch": "weil sie von der Lebensart und Bildung der Provinz am weitesten entfernt sind." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,1,3", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "Genitivus partitivus (hōrum omnium); Superlativ; Ablativus separativus (ā cultū … abesse)",
+      "vokabelhilfen": [
+        { "latein": "cultus, -ūs m", "deutsch": "Lebensweise, Kultur" },
+        { "latein": "hūmānitās, -ātis f", "deutsch": "Bildung, feine Lebensart" },
+        { "latein": "prōvincia", "deutsch": "hier: die römische Provinz in Südgallien" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quā dē causā Helvētiī quoque reliquōs Gallōs virtūte praecēdunt,", "deutsch": "Aus diesem Grund übertreffen auch die Helvetier die übrigen Gallier an Tapferkeit," },
+        { "latein": "quod ferē cotīdiānīs proeliīs cum Germānīs contendunt,", "deutsch": "weil sie fast in täglichen Gefechten mit den Germanen kämpfen," },
+        { "latein": "cum aut suīs fīnibus eōs prohibent aut ipsī in eōrum fīnibus bellum gerunt.", "deutsch": "wenn sie sie entweder von ihrem eigenen Gebiet fernhalten oder selbst in deren Gebiet Krieg führen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,1,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss (Quā dē causā); Ablativus limitationis (virtūte); Ablativus instrumentalis (proeliīs); Ablativus separativus (fīnibus prohibēre); cum + Indikativ (cum iterativum/explicativum)",
+      "vokabelhilfen": [
+        { "latein": "praecēdere + Akk.", "deutsch": "übertreffen" },
+        { "latein": "cotīdiānus, -a, -um", "deutsch": "täglich" },
+        { "latein": "prohibēre + Abl.", "deutsch": "fernhalten von" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Crassus adulēscēns, quī equitātuī praeerat,", "deutsch": "Der junge Crassus, der die Reiterei befehligte," },
+        { "latein": "quod expedītior erat quam iī quī inter aciem versābantur,", "deutsch": "schickte, weil er beweglicher war als die, die sich in der Schlachtreihe befanden," },
+        { "latein": "tertiam aciem labōrantibus nostrīs subsidiō mīsit.", "deutsch": "das dritte Treffen den bedrängten Unseren zu Hilfe." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,52,7", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Dativ bei praeesse (equitātuī); doppelter Dativ (labōrantibus nostrīs subsidiō: Dat. commodi + Dat. finalis); Komparativ mit quam",
+      "vokabelhilfen": [
+        { "latein": "praeesse + Dat.", "deutsch": "befehligen, an der Spitze stehen" },
+        { "latein": "expedītus, -a, -um", "deutsch": "beweglich, frei" },
+        { "latein": "aciēs tertia", "deutsch": "das dritte Treffen (dritte Linie der Schlachtordnung)" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "quae rēs māgnō ūsuī nostrīs fuit.", "deutsch": "Dieser Umstand war für die Unseren von großem Nutzen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,25,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "relativischer Satzanschluss (quae rēs = et ea rēs); doppelter Dativ (ūsuī nostrīs esse)",
+      "vokabelhilfen": [
+        { "latein": "ūsuī esse + Dat.", "deutsch": "jemandem nützlich sein" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "lūce sunt clāriōra nōbīs tua cōnsilia omnia;", "deutsch": "Klarer als das Tageslicht sind uns alle deine Pläne." }
+      ],
+      "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,6", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "Ablativus comparationis (lūce); Dativus iudicantis (nōbīs: „für uns, in unseren Augen“)",
+      "vokabelhilfen": [
+        { "latein": "lūx, lūcis f", "deutsch": "Licht, Tageslicht" },
+        { "latein": "clārus, -a, -um", "deutsch": "hell, klar" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Eō diē quō cōnsuērat intervāllō hostēs sequitur", "deutsch": "An diesem Tag folgt er den Feinden im gewohnten Abstand" },
+        { "latein": "et mīlia passuum tria ab eōrum castrīs castra pōnit.", "deutsch": "und schlägt drei Meilen von ihrem Lager entfernt sein Lager auf." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,22,4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Ablativus temporis (eō diē); Ablativus modi mit eingeschobenem Relativsatz (quō cōnsuērat intervāllō = eō intervāllō, quō cōnsuērat); Akkusativ der Ausdehnung (mīlia passuum tria)",
+      "vokabelhilfen": [
+        { "latein": "cōnsuēscere, cōnsuēvī", "deutsch": "sich gewöhnen; Perf.: gewohnt sein (cōnsuērat = cōnsuēverat)" },
+        { "latein": "intervāllum, -ī n", "deutsch": "Abstand" },
+        { "latein": "castra pōnere", "deutsch": "ein Lager aufschlagen" }
+      ]
+    }
+  ]
+}

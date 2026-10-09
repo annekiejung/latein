@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow: Grammatik aus Foto</title>
+  <!--
+    Anleitung "Grammatik aus Foto" – in der App offline + Quelle von workflow_grammatik.pdf:
+      swift tools/make_pdf.swift "http://localhost:8080/docs/workflow_grammatik.html?pdf" workflow_grammatik.pdf
+    Der Prompt kommt aus js/grammar.js (buildGrammarPrompt) – nicht abschreiben.
+  -->
+  <link rel="stylesheet" href="workflow.css">
+</head>
+<body>
+<main>
+  <section class="page">
+  <a class="back no-print" href="../index.html#/grammatik/import">‹ Zurück zur App</a>
+
+  <h1>Workflow: Grammatik aus Foto</h1>
+  <p class="lead">Für Grammatikthemen aus dem Unterricht, die (noch) nicht in der App eingebaut sind: Aus der Erklärung im Buch
+    macht die Claude-App eine Übungseinheit mit Regel, Aufgaben und Übersetzungssätzen. Die App selbst läuft offline – nur Schritt 3 braucht Internet.</p>
+
+  <div class="steps">
+    <div class="step">
+      <h3><b class="n">1</b>Foto machen</h3>
+      <ul>
+        <li>Die Grammatik-Erklärung (Regel, Tabelle, Beispiele)</li>
+        <li>Gerade von oben, hell, scharf</li>
+        <li>Keine Notizen oder Namen mit aufs Bild</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">2</b>Prompt holen</h3>
+      <ul>
+        <li>App: <i>Grammatik → Einheit importieren</i></li>
+        <li><i>Prompt kopieren</i> tippen</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">3</b>Claude fragen</h3>
+      <ul>
+        <li>Claude-App: <b>neuer</b> Chat</li>
+        <li>Foto anhängen, Prompt einfügen, senden</li>
+        <li>Antwort am Codeblock kopieren</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">4</b>Prüfen &amp; üben</h3>
+      <ul>
+        <li>In der App einfügen → <i>Prüfen</i></li>
+        <li>Hinweise lesen → <i>Einheit speichern</i></li>
+        <li>Üben, Quellen ggf. nachprüfen</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Was in einer Einheit steckt</h2>
+  <div class="box">
+    <p><b>Regel in eigenen Worten</b> (kein abgeschriebener Buchtext), 3–6 Merksätze und ein Beispiel.</p>
+    <p><b>Aufgaben:</b> Bestimmen (Lösung zeigen, ehrlich selbst bewerten) · Lückentext (wird geprüft, Längenzeichen egal) ·
+      Auswahl · Übersetzungssätze (selbst übersetzen, dann Teilsatz für Teilsatz mit der Musterübersetzung vergleichen: ✓ ~ ✗).</p>
+    <p style="margin:0">Fehler landen automatisch im <b>Fehlerjournal</b>.</p>
+  </div>
+
+  <h2>Die Quellenangaben – darauf musst du achten</h2>
+  <table>
+    <thead><tr><th style="width:28%">Kennzeichnung</th><th>Bedeutung</th><th style="width:34%">Was du tust</th></tr></thead>
+    <tbody>
+      <tr><td><b>Quelle geprüft</b></td><td>Claude hat den Wortlaut gerade nachgesehen (Link zum Originaltext).</td><td>Darauf kannst du dich weitgehend verlassen – Stichprobe über den Link schadet nie.</td></tr>
+      <tr><td><b>Quelle bitte prüfen</b></td><td>Satz und Stelle stammen aus Claudes Gedächtnis. KI kann Stellenangaben verwechseln oder erfinden.</td><td>Für die Übung ist der Satz brauchbar – aber nicht als Zitat verwenden, ohne nachzusehen (z. B. thelatinlibrary.com).</td></tr>
+      <tr><td><b>gekürzt / leicht angepasst</b></td><td>Originalsatz, aber Teile weggelassen oder vereinfacht.</td><td>Nicht als wörtliches Zitat ausgeben.</td></tr>
+      <tr><td><b>eigens konstruiert</b></td><td>Kein Originalsatz – von Claude gebildet, weil kein passender gefunden wurde.</td><td>Gut zum Üben, aber kein Latein „aus der Antike“.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box warn">
+    <p style="margin:0"><b>Ehrlich bleiben:</b> Die eingebauten Einheiten (AcI, Abl. abs. …) wurden mit einem Prüfprogramm Wort für Wort
+      am Originaltext kontrolliert. Importierte Einheiten aus der Claude-App sind <b>nicht</b> so geprüft – darum die Kennzeichnung.
+      Auch die Musterübersetzungen sind von einer KI: Wenn deine Lehrkraft etwas anders übersetzt, gilt im Zweifel ihre Version.</p>
+  </div>
+  </section>
+
+  <section class="page">
+  <h2>Der Prompt (zum Nachschlagen)</h2>
+  <p>Am einfachsten: in der App auf <i>Prompt kopieren</i> tippen. „THEMA“ musst du nicht ersetzen.</p>
+  <pre id="prompt">(Prompt wird geladen …)</pre>
+
+  <h2>Wenn etwas schiefgeht</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:40%"><b>„Kein JSON-Block gefunden“</b></td><td>Im selben Chat schreiben: „Bitte nur den JSON-Codeblock ausgeben.“</td></tr>
+      <tr><td><b>„Lücken und Lösungen passen nicht zusammen“</b></td><td>Diese Aufgabe wird weggelassen, der Rest bleibt. Bei vielen solchen Meldungen: neu erzeugen lassen.</td></tr>
+      <tr><td><b>Antwort bricht mitten ab</b></td><td>„Bitte weiter“ schreiben und dann beide Teile zusammen einfügen – oder um weniger Aufgaben bitten.</td></tr>
+    </tbody>
+  </table>
+  <footer>Latein-Trainer · Workflow „Grammatik aus Foto“ · Version <span id="ver"></span></footer>
+  </section>
+</main>
+
+<script src="../js/version.js"></script>
+<script type="module">
+  if (location.search.includes('pdf')) document.documentElement.classList.add('pdf');
+  import { buildGrammarPrompt } from '../js/grammar.js';
+  document.getElementById('prompt').textContent = buildGrammarPrompt();
+  document.getElementById('ver').textContent = self.APP_VERSION;
+  document.body.dataset.ready = '1';
+</script>
+</body>
+</html>

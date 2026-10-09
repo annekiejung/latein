@@ -1,0 +1,335 @@
+{
+   "aufgaben" : [
+      {
+         "antwort" : "Abl. abs. mit PPP (vorzeitig): rēbus (Abl. Pl. f.) + cognitīs (PPP von cōgnōscere)",
+         "erklaerung" : "Übersetzung: „Nachdem dies bekannt geworden war …“ / „Nach Kenntnis dieser Dinge …“",
+         "frage" : "Bestimme die Konstruktion: Hīs rēbus cognitīs …",
+         "typ" : "bestimmen"
+      },
+      {
+         "antwort" : "nominaler Abl. abs. (Nomen + Adjektiv): „gegen den Willen der Sequaner“",
+         "erklaerung" : "invītus ist ein Adjektiv – trotzdem bildet es mit dem Nomen einen Abl. abs. (Caesar, Gall. 1,9,1).",
+         "frage" : "Bestimme die Konstruktion: Sēquanīs invītīs …",
+         "typ" : "bestimmen"
+      },
+      {
+         "antwort" : "PPA von pūgnāre, Dat. oder Abl. Pl. (alle Genera)",
+         "erklaerung" : "Ob Dativ oder Ablativ, entscheidet erst der Satzzusammenhang.",
+         "frage" : "Bestimme die Form: pūgnantibus",
+         "typ" : "bestimmen"
+      },
+      {
+         "antwort" : "nominaler Abl. abs. (Namen + cōnsulibus): Datierung „unter dem Konsulat von Messala und Piso“ (61 v. Chr.)",
+         "erklaerung" : "Die Römer zählten Jahre nach den beiden Konsuln.",
+         "frage" : "Bestimme die Konstruktion: M. Messālā M. Pīsōne cōnsulibus",
+         "typ" : "bestimmen"
+      },
+      {
+         "erklaerung" : "Nachdem die Feinde besiegt worden waren, kehrte Caesar ins Lager zurück.",
+         "hinweis" : "(vincere, PPP, passend zu hostibus)",
+         "loesung" : [
+            "victīs"
+         ],
+         "text" : "Hostibus ___ Caesar in castra rediit.",
+         "typ" : "luecke"
+      },
+      {
+         "erklaerung" : "Während der Vater schlief, verließ der Sohn das Haus. Abl. Sg. des PPA im Abl. abs. endet auf -e.",
+         "hinweis" : "(dormīre, PPA, passend zu patre)",
+         "loesung" : [
+            "dormiente"
+         ],
+         "text" : "Patre ___ fīlius domum relīquit.",
+         "typ" : "luecke"
+      },
+      {
+         "erklaerung" : "Nachdem die Stadt zerstört worden war, teilten die Römer die Beute.",
+         "hinweis" : "(dēlēre, PPP, passend zu urbe)",
+         "loesung" : [
+            "dēlētā"
+         ],
+         "text" : "Urbe ___ Rōmānī praedam dīvīsērunt.",
+         "typ" : "luecke"
+      },
+      {
+         "erklaerung" : "PPP = vorzeitig („nachdem … worden war“), PPA = gleichzeitig.",
+         "frage" : "Welches Zeitverhältnis drückt ein Abl. abs. mit PPP aus?",
+         "optionen" : [
+            "Gleichzeitigkeit",
+            "Vorzeitigkeit",
+            "Nachzeitigkeit"
+         ],
+         "richtig" : 1,
+         "typ" : "auswahl"
+      },
+      {
+         "erklaerung" : "pūgnantibus ist PPA → gleichzeitig.",
+         "frage" : "Mīlitibus pūgnantibus dux fūgit. – Welche Übersetzung trifft das Zeitverhältnis?",
+         "optionen" : [
+            "Nachdem die Soldaten gekämpft hatten, floh der Anführer.",
+            "Während die Soldaten kämpften, floh der Anführer.",
+            "Weil die Soldaten kämpfen würden, floh der Anführer."
+         ],
+         "richtig" : 1,
+         "typ" : "auswahl"
+      },
+      {
+         "erklaerung" : "captōs gehört zum Objekt hostēs (Akkusativ) – das ist ein PC: „Caesar tötete die gefangenen Feinde.“",
+         "frage" : "In welchem Satz steht KEIN Abl. abs., sondern ein Participium coniunctum?",
+         "optionen" : [
+            "Rē cognitā Caesar legiōnēs mīsit.",
+            "Caesar hostēs captōs interfēcit.",
+            "Mē invītō abiit."
+         ],
+         "richtig" : 1,
+         "typ" : "auswahl"
+      },
+      {
+         "bearbeitung" : "original",
+         "konstruktion" : "Abl. abs. mit PPP (vorzeitig); AcI mit Infinitiv Futur nach pollicērī; Dativ des Zwecks (cūrae esse)",
+         "quelle" : {
+            "autor" : "Caesar",
+            "link" : "https://www.thelatinlibrary.com/caesar/gall1.shtml",
+            "status" : "geprüft",
+            "stelle" : "1,33,1",
+            "werk" : "De bello Gallico"
+         },
+         "teile" : [
+            {
+               "deutsch" : "Nachdem er dies erfahren hatte,",
+               "latein" : "Hīs rēbus cognitīs"
+            },
+            {
+               "deutsch" : "ermutigte Caesar die Gallier mit Worten",
+               "latein" : "Caesar Gallōrum animōs verbīs cōnfirmāvit"
+            },
+            {
+               "deutsch" : "und versprach, dass ihm diese Sache am Herzen liegen werde.",
+               "latein" : "pollicitusque est sibi eam rem cūrae futūram."
+            }
+         ],
+         "typ" : "uebersetzung",
+         "vokabelhilfen" : [
+            {
+               "deutsch" : "ermutigen",
+               "latein" : "animum cōnfirmāre"
+            },
+            {
+               "deutsch" : "am Herzen liegen",
+               "latein" : "cūrae esse"
+            }
+         ]
+      },
+      {
+         "bearbeitung" : "original",
+         "konstruktion" : "Abl. abs. mit PPP (vorzeitig); historisches Präsens (im Deutschen auch Präteritum möglich)",
+         "quelle" : {
+            "autor" : "Caesar",
+            "link" : "https://www.thelatinlibrary.com/caesar/gall5.shtml",
+            "status" : "geprüft",
+            "stelle" : "5,49,1",
+            "werk" : "De bello Gallico"
+         },
+         "teile" : [
+            {
+               "deutsch" : "Als die Gallier die Sache durch Kundschafter erfahren hatten,",
+               "latein" : "Gallī rē cognitā per explōrātōrēs"
+            },
+            {
+               "deutsch" : "brechen sie die Belagerung ab",
+               "latein" : "obsidiōnem relinquunt,"
+            },
+            {
+               "deutsch" : "und ziehen mit allen Truppen eilig gegen Caesar.",
+               "latein" : "ad Caesarem omnibus cōpiīs contendunt."
+            }
+         ],
+         "typ" : "uebersetzung",
+         "vokabelhilfen" : [
+            {
+               "deutsch" : "Belagerung",
+               "latein" : "obsidiō, -ōnis f"
+            },
+            {
+               "deutsch" : "eilig ziehen zu / gegen",
+               "latein" : "contendere ad"
+            }
+         ]
+      },
+      {
+         "bearbeitung" : "original",
+         "konstruktion" : "Abl. abs. mit PPA (gleichzeitig)",
+         "quelle" : {
+            "autor" : "Caesar",
+            "link" : "https://www.thelatinlibrary.com/caesar/gall6.shtml",
+            "status" : "geprüft",
+            "stelle" : "6,30,4",
+            "werk" : "De bello Gallico"
+         },
+         "teile" : [
+            {
+               "deutsch" : "Während diese kämpften,",
+               "latein" : "Hīs pūgnantibus"
+            },
+            {
+               "deutsch" : "hob ihn einer seiner Leute aufs Pferd.",
+               "latein" : "illum in equum quīdam ex suīs intulit."
+            }
+         ],
+         "typ" : "uebersetzung",
+         "vokabelhilfen" : [
+            {
+               "deutsch" : "ihn (gemeint ist Ambiorix, ein gallischer Fürst)",
+               "latein" : "illum"
+            },
+            {
+               "deutsch" : "aufs Pferd heben",
+               "latein" : "īnferre in equum"
+            }
+         ]
+      },
+      {
+         "bearbeitung" : "gekürzt",
+         "konstruktion" : "Abl. abs. mit PPA (gleichzeitig, kausal übersetzt); davon abhängiger ut-Satz (Begehrsatz); Bōiōs ist das vorangestellte Objekt des ut-Satzes",
+         "quelle" : {
+            "autor" : "Caesar",
+            "link" : "https://www.thelatinlibrary.com/caesar/gall1.shtml",
+            "status" : "geprüft",
+            "stelle" : "1,28,4",
+            "werk" : "De bello Gallico"
+         },
+         "teile" : [
+            {
+               "deutsch" : "Weil die Häduer darum baten,",
+               "latein" : "Bōiōs petentibus Haeduīs,"
+            },
+            {
+               "deutsch" : "die Boier in ihrem Gebiet ansiedeln zu dürfen,",
+               "latein" : "ut in fīnibus suīs conlocārent,"
+            },
+            {
+               "deutsch" : "erlaubte er es.",
+               "latein" : "concessit."
+            }
+         ],
+         "typ" : "uebersetzung",
+         "vokabelhilfen" : [
+            {
+               "deutsch" : "die Boier (keltischer Stamm)",
+               "latein" : "Bōiī, -ōrum"
+            },
+            {
+               "deutsch" : "die Häduer (gallischer Stamm, mit Rom verbündet)",
+               "latein" : "Haeduī, -ōrum"
+            },
+            {
+               "deutsch" : "ansiedeln",
+               "latein" : "conlocāre"
+            },
+            {
+               "deutsch" : "erlauben, zugestehen",
+               "latein" : "concēdere"
+            }
+         ]
+      },
+      {
+         "bearbeitung" : "original",
+         "konstruktion" : "zwei Abl. abs.: PPP (vorzeitig) und PPA (gleichzeitig, hier „ohne dass“); quam + Superlativ (+ posse): möglichst",
+         "quelle" : {
+            "autor" : "Caesar",
+            "link" : "https://www.thelatinlibrary.com/caesar/gall7.shtml",
+            "status" : "geprüft",
+            "stelle" : "7,9,3",
+            "werk" : "De bello Gallico"
+         },
+         "teile" : [
+            {
+               "deutsch" : "Nachdem er dies geregelt hatte,",
+               "latein" : "Hīs cōnstitūtīs rēbus"
+            },
+            {
+               "deutsch" : "ohne dass seine eigenen Leute damit rechneten,",
+               "latein" : "suīs inopīnantibus"
+            },
+            {
+               "deutsch" : "gelangte er in möglichst großen Tagesmärschen nach Vienna.",
+               "latein" : "quam maximīs potest itineribus Viennam pervēnit."
+            }
+         ],
+         "typ" : "uebersetzung",
+         "vokabelhilfen" : [
+            {
+               "deutsch" : "nichts ahnend",
+               "latein" : "inopīnāns, -antis"
+            },
+            {
+               "deutsch" : "hier: Tagesmarsch",
+               "latein" : "iter, itineris n"
+            },
+            {
+               "deutsch" : "Stadt an der Rhône (heute Vienne)",
+               "latein" : "Vienna"
+            }
+         ]
+      },
+      {
+         "bearbeitung" : "gekürzt",
+         "konstruktion" : "nominaler Abl. abs. (Datierung nach den Konsuln, 61 v. Chr.); Participium coniunctum (inductus)",
+         "quelle" : {
+            "autor" : "Caesar",
+            "link" : "https://www.thelatinlibrary.com/caesar/gall1.shtml",
+            "status" : "geprüft",
+            "stelle" : "1,2,1",
+            "werk" : "De bello Gallico"
+         },
+         "teile" : [
+            {
+               "deutsch" : "Dieser zettelte unter dem Konsulat von Marcus Messala und Marcus Piso,",
+               "latein" : "Is M. Messālā M. Pīsōne cōnsulibus"
+            },
+            {
+               "deutsch" : "verleitet von der Gier nach der Königsherrschaft,",
+               "latein" : "rēgnī cupiditāte inductus"
+            },
+            {
+               "deutsch" : "eine Verschwörung des Adels an.",
+               "latein" : "coniūrātiōnem nōbilitātis fēcit."
+            }
+         ],
+         "typ" : "uebersetzung",
+         "vokabelhilfen" : [
+            {
+               "deutsch" : "dieser – gemeint ist Orgetorix, ein Adliger der Helvetier",
+               "latein" : "is"
+            },
+            {
+               "deutsch" : "verleiten",
+               "latein" : "indūcere"
+            },
+            {
+               "deutsch" : "Adel",
+               "latein" : "nōbilitās, -ātis f"
+            }
+         ]
+      }
+   ],
+   "bereich" : "Satzlehre",
+   "format" : "latein-grammatik",
+   "id" : "abl-abs",
+   "regel" : {
+      "beispiel" : {
+         "deutsch" : "Nachdem die Stadt erobert worden war, kehrten die Soldaten nach Hause zurück.",
+         "latein" : "Urbe captā mīlitēs domum rediērunt."
+      },
+      "kurz" : "Der Ablativus absolutus („losgelöster Ablativ“) besteht aus einem Nomen oder Pronomen und einem Partizip, beide im Ablativ. Er ist grammatisch nicht mit dem übrigen Satz verbunden und steht für einen Nebensatz – meist temporal, oft auch kausal oder konzessiv.",
+      "punkte" : [
+         "Erkennen: Nomen + Partizip im Ablativ, oft am Satzanfang oder durch Kommas abgetrennt. Das Nomen ist weder Subjekt noch Objekt des Hauptsatzes.",
+         "PPP = vorzeitig: „nachdem … worden war“. PPA = gleichzeitig: „während …“, „als …“.",
+         "Nominaler Abl. abs.: statt des Partizips ein Nomen oder Adjektiv, z. B. Cicerōne cōnsule (als Cicero Konsul war), mē invītō (gegen meinen Willen).",
+         "Übersetzen: zuerst als Nebensatz (als, nachdem, während, weil, obwohl), dann prüfen, ob ein Präpositionalausdruck besser klingt („nach der Eroberung der Stadt“).",
+         "Ist das Nomen auch im Hauptsatz beteiligt, steht meist ein Participium coniunctum (PC) statt eines Abl. abs."
+      ]
+   },
+   "thema" : "Ablativus absolutus",
+   "version" : 1
+}

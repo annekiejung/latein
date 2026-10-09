@@ -1,0 +1,194 @@
+{
+  "id": "pc",
+  "format": "latein-grammatik",
+  "version": 1,
+  "thema": "Participium coniunctum (PC)",
+  "bereich": "Satzlehre",
+  "regel": {
+    "kurz": "Beim Participium coniunctum („verbundenes Partizip“) ist ein Partizip mit einem Nomen des Satzes verbunden (KNG-Kongruenz: gleicher Kasus, Numerus, Genus). Das Nomen spielt eine Rolle im Satz (Subjekt, Objekt …). Die Partizipialgruppe steht oft eingeklammert zwischen Nomen und Partizip und wird meist als Nebensatz übersetzt.",
+  "punkte": [
+    "Bezugswort suchen: Welches Nomen passt in Kasus, Numerus und Genus zum Partizip?",
+    "Klammerstellung: Nomen … (Ergänzungen) … Partizip, z. B. Helvētiī (omnium rērum inopiā) adductī.",
+    "PPA = gleichzeitig (während, als, indem), PPP = vorzeitig und passiv (nachdem … worden war).",
+    "Deponentien: Das PPP hat AKTIVE Bedeutung – cohortātus = „nachdem er ermutigt hatte“, veritī = „weil sie fürchteten“.",
+    "Übersetzungen: Relativsatz (der …), adverbialer Nebensatz (als, weil, obwohl), Präpositionalausdruck (aus Mangel an …) oder Beiordnung (und).",
+    "Unterschied zum Abl. abs.: Beim PC gehört das Nomen zum Satz, beim Abl. abs. steht die Gruppe im Ablativ „losgelöst“."
+  ],
+  "beispiel": {
+    "latein": "Mīlitēs ab hostibus territī fūgērunt.",
+    "deutsch": "Die Soldaten flohen, nachdem sie von den Feinden erschreckt worden waren. / Von den Feinden erschreckt, flohen die Soldaten."
+    }
+  },
+  "aufgaben": [
+    {
+      "typ": "bestimmen",
+      "frage": "Helvētiī omnium rērum inopiā adductī … – Bezugswort und Partizip?",
+      "antwort": "adductī (PPP von addūcere, Nom. Pl. m.) bezieht sich auf Helvētiī (Subjekt) → PC",
+      "erklaerung": "Klammerstellung: Helvētiī (omnium rērum inopiā) adductī."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: cohortātus (in: Caesar Rēmōs cohortātus … iussit)",
+      "antwort": "PPP des Deponens cohortārī, Nom. Sg. m., aktiv: „nachdem er ermutigt hatte“; Bezugswort Caesar",
+      "erklaerung": "Deponentien haben ein PPP mit aktiver Bedeutung."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Bestimme: flentēs",
+      "antwort": "PPA von flēre, Nom. oder Akk. Pl. m./f.",
+      "erklaerung": "PPA = gleichzeitig: „weinend“, „unter Tränen“."
+    },
+    {
+      "typ": "bestimmen",
+      "frage": "Hostēs captī interficiuntur. – PC oder Abl. abs.?",
+      "antwort": "PC: captī (Nom. Pl. m.) gehört zum Subjekt hostēs",
+      "erklaerung": "„Die gefangenen Feinde werden getötet.“ / „Nachdem die Feinde gefangen worden sind, werden sie getötet.“"
+    },
+    {
+      "typ": "luecke",
+      "text": "Puellam ___ māter cōnsōlātur.",
+      "loesung": ["flentem"],
+      "hinweis": "(flēre, PPA, passend zu puellam)",
+      "erklaerung": "Die Mutter tröstet das weinende Mädchen. Akk. Sg. des PPA: -entem."
+    },
+    {
+      "typ": "luecke",
+      "text": "Urbs ab hostibus ___ ārsit.",
+      "loesung": ["incēnsa"],
+      "hinweis": "(incendere, PPP, passend zu urbs)",
+      "erklaerung": "Die Stadt brannte, nachdem sie von den Feinden angezündet worden war."
+    },
+    {
+      "typ": "luecke",
+      "text": "Mīlitēs ducem ___ fūgērunt.",
+      "loesung": ["veritī"],
+      "hinweis": "(verērī, PPP des Deponens, passend zu mīlitēs)",
+      "erklaerung": "Die Soldaten flohen, weil sie den Anführer fürchteten. Deponens → aktive Bedeutung."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Welche Aussage über das PPP eines Deponens stimmt?",
+      "optionen": [
+        "Es hat passive Bedeutung, wie bei allen Verben.",
+        "Es hat aktive Bedeutung (cohortātus = „der ermutigt hat“).",
+        "Deponentien haben kein PPP."
+      ],
+      "richtig": 1,
+      "erklaerung": "Deponentien: passive Form, aktive Bedeutung – auch beim Partizip."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "Caesar mīlitēs pūgnantēs vīdit. – Welche Übersetzung passt?",
+      "optionen": [
+        "Caesar sah, nachdem die Soldaten gekämpft hatten.",
+        "Caesar sah die Soldaten, die kämpften.",
+        "Caesar sah die Soldaten, die besiegt worden waren."
+      ],
+      "richtig": 1,
+      "erklaerung": "pūgnantēs (PPA, Akk. Pl.) gehört zu mīlitēs → gleichzeitig, oft als Relativsatz."
+    },
+    {
+      "typ": "auswahl",
+      "frage": "In welchem Satz steht ein PC (und kein Abl. abs.)?",
+      "optionen": [
+        "Hostibus victīs Caesar rediit.",
+        "Caesar hostēs victōs dīmīsit.",
+        "Caesare duce Rōmānī vīcērunt."
+      ],
+      "richtig": 1,
+      "erklaerung": "victōs gehört zum Objekt hostēs (Akk.) → PC: „Caesar entließ die besiegten Feinde.“"
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Helvētiī omnium rērum inopiā adductī", "deutsch": "Weil die Helvetier durch den Mangel an allem dazu gebracht worden waren," },
+        { "latein": "lēgātōs dē dēditiōne ad eum mīsērunt.", "deutsch": "schickten sie Gesandte wegen der Kapitulation zu ihm." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,27,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "PC (PPP, kausal); auch möglich: „Aus Mangel an allem schickten die Helvetier …“",
+      "vokabelhilfen": [
+        { "latein": "inopia, -ae f", "deutsch": "Mangel" },
+        { "latein": "dēditiō, -ōnis f", "deutsch": "Kapitulation, Übergabe" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Caesar Rēmōs cohortātus līberāliterque ōrātiōne prōsecūtus", "deutsch": "Nachdem Caesar die Remer ermutigt und mit freundlichen Worten bedacht hatte," },
+        { "latein": "omnem senātum ad sē convenīre", "deutsch": "befahl er, dass sich ihr ganzer Senat bei ihm versammle" },
+        { "latein": "prīncipumque līberōs obsidēs ad sē addūcī iussit.", "deutsch": "und dass die Kinder der Fürsten als Geiseln zu ihm gebracht würden." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,5,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "zwei PC mit Deponens-Partizipien (cohortātus, prōsecūtus: aktive Bedeutung, vorzeitig); iubēre + AcI (Inf. Präs. Aktiv und Passiv)",
+      "vokabelhilfen": [
+        { "latein": "Rēmī, -ōrum", "deutsch": "die Remer (belgischer Stamm)" },
+        { "latein": "cohortārī", "deutsch": "ermutigen" },
+        { "latein": "līberāliter ōrātiōne prōsequī", "deutsch": "mit freundlichen Worten bedenken" },
+        { "latein": "obses, -idis m", "deutsch": "Geisel" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Hīs nūntiīs litterīsque commōtus", "deutsch": "Durch diese Nachrichten und Briefe beunruhigt," },
+        { "latein": "Caesar duās legiōnēs in citeriōre Galliā novās cōnscrīpsit.", "deutsch": "hob Caesar im diesseitigen Gallien zwei neue Legionen aus." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "2,2,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall2.shtml" },
+      "bearbeitung": "gekürzt",
+      "konstruktion": "PC (PPP, kausal: „weil er … beunruhigt war“)",
+      "vokabelhilfen": [
+        { "latein": "commovēre", "deutsch": "beunruhigen, veranlassen" },
+        { "latein": "Gallia citerior", "deutsch": "das diesseitige Gallien (Oberitalien)" },
+        { "latein": "cōnscrībere", "deutsch": "(Truppen) ausheben" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Illī supplicia cruciātūsque Gallōrum veritī,", "deutsch": "Weil jene die Hinrichtungen und Folterqualen durch die Gallier fürchteten," },
+        { "latein": "quōrum agrōs vexāverant,", "deutsch": "deren Felder sie verwüstet hatten," },
+        { "latein": "remanēre sē apud eum velle dīxērunt.", "deutsch": "sagten sie, dass sie bei ihm bleiben wollten." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "4,15,5", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall4.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "PC mit Deponens-Partizip (veritī, kausal); Relativsatz; AcI (sē … velle) nach dīxērunt",
+      "vokabelhilfen": [
+        { "latein": "supplicium, -ī n", "deutsch": "Hinrichtung, Strafe" },
+        { "latein": "cruciātus, -ūs m", "deutsch": "Folter, Qual" },
+        { "latein": "vexāre", "deutsch": "verwüsten, heimsuchen" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Quōrum ille precibus permōtus", "deutsch": "Durch deren Bitten bewogen," },
+        { "latein": "castra ex Biturīgibus movet in Arvernōs versus.", "deutsch": "bricht er das Lager im Gebiet der Biturigen ab und zieht in Richtung der Arverner." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "7,8,5", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall7.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "relativischer Satzanschluss (Quōrum = Et eōrum); PC (PPP, kausal); historisches Präsens",
+      "vokabelhilfen": [
+        { "latein": "ille", "deutsch": "jener – gemeint ist Vercingetorix" },
+        { "latein": "castra movēre", "deutsch": "das Lager abbrechen, aufbrechen" },
+        { "latein": "Biturīgēs / Arvernī", "deutsch": "gallische Stämme" },
+        { "latein": "in … versus", "deutsch": "in Richtung …" }
+      ]
+    },
+    {
+      "typ": "uebersetzung",
+      "teile": [
+        { "latein": "Eā rē impetrātā", "deutsch": "Nachdem sie dies erreicht hatten," },
+        { "latein": "sēsē omnēs flentēs Caesarī ad pedēs prōiēcērunt.", "deutsch": "warfen sich alle unter Tränen Caesar zu Füßen." }
+      ],
+      "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,31,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+      "bearbeitung": "original",
+      "konstruktion": "Abl. abs. (PPP, vorzeitig) UND PC (flentēs, PPA, gleichzeitig) im selben Satz",
+      "vokabelhilfen": [
+        { "latein": "impetrāre", "deutsch": "(durch Bitten) erreichen" },
+        { "latein": "sē prōicere", "deutsch": "sich niederwerfen" }
+      ]
+    }
+  ]
+}

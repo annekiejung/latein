@@ -255,10 +255,14 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    Melden/Korrigieren, keine Dopplungen mit Unterrichtsvokabeln. Offen: Rückmeldung der
    Nutzerin, ggf. Vorlage-Fälle klären.
 4. Grammatik – Weg b (Entscheidung 2026-10-09): eingebaute Einheiten + Foto-Import.
-   Fertig (0.5.0): Grammatik-Bereich, Import, Einheit „Ablativus absolutus“, Formen-Training
-   unregelmäßige Verben (Wunsch der Nutzerin), Konjugations-/Deklinationstabellen.
-   Offen: weitere Einheiten (PC, AcI, NcI, nd-Formen, Deponentien, Konj. im HS/GS, Relativsätze,
-   Kasusfunktionen), `workflow_grammatik.pdf` + docs/workflow_grammatik.html
+   **Fertig (0.6.0):** Grammatik-Bereich, Import, 10 eingebaute Einheiten (Abl. abs., PC, AcI,
+   NcI, nd-Formen, Deponentien, Konj. HS, Konj. GS, Relativsätze, Kasusfunktionen; 159 Aufgaben,
+   60 Originalsätze Caesar/Cicero/Nepos – Wortlaut UND Stelle geprüft), Formen-Training
+   unregelmäßige Verben, Tabellen, `workflow_grammatik.pdf`.
+   Neue Einheit: data-src/grammatik/NN-name.json → `perl tools/build_grammatik.pl` →
+   `perl tools/verify_quellen.pl .cache/texte` (muss „Alles geprüft“ melden). Texte vorher mit
+   curl nach .cache/texte laden (gallN, catN, nephan1, nepatt1, nepthem1).
+   ACHTUNG beim Schreiben: Objekt "regel" sauber schließen (häufiger Fehler!).
 5. Prüfungsmodus + `workflow_pruefung.pdf`
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik
 7. Eigene Vorschläge (Nutzerin wählt)
