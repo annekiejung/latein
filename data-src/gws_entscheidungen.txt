@@ -1,0 +1,6 @@
+# Von Hand geprüfte Fälle, bei denen der automatische Abgleich "abweichend" meldet.
+# Format: nr|status|Begründung   (Etappe 3: gws_claude:nr|status|Begründung)
+#   status gleich   = Bedeutung stimmt sinngemäß mit Wiktionary/Georges überein
+#   status vorlage  = echter Unterschied → der Nutzerin zum Vergleich vorgelegt
+35|gleich|Wiktionary: „Kurzform für atque“, Georges: „s. atque“ → und, und auch
+76|gleich|Wiktionary: „irgendeiner, einer; etwas“ = irgendjemand, irgendetwas

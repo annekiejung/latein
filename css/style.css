@@ -310,3 +310,62 @@ dialog .actions .btn { flex: 1 1 0; padding: 0 10px; min-width: 0; }
 .part-ok { color: var(--ok); }
 .part-typo { color: var(--warn); }
 .part-falsch { color: var(--bad); }
+
+/* ---------- Grundwortschatz ---------- */
+.msg.info { background: var(--accent-soft); color: var(--text); }
+.packet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; margin-top: 12px; }
+.packet {
+  display: flex; flex-direction: column; gap: 2px; padding: 8px 10px;
+  border: 1px solid var(--border); border-radius: 10px;
+  text-decoration: none; color: var(--text); font-size: .8rem; background: var(--surface);
+}
+.packet b { font-size: .9rem; color: var(--accent); }
+.packet.locked { background: var(--surface-2); opacity: .7; }
+.packet.locked b { color: var(--text-muted); }
+
+/* ---------- Grammatik ---------- */
+.rule-list { padding-left: 1.2em; margin: 0 0 10px; }
+.rule-list li { margin-bottom: 4px; }
+.gap-text { font-size: 1.15rem; line-height: 2.2; }
+input.gap {
+  display: inline-block; width: 7.5em; min-height: 36px; padding: 4px 8px; margin: 0 4px;
+  font-size: 1rem; vertical-align: baseline;
+}
+input.gap-ok { border-color: var(--ok); background: var(--accent-soft); }
+input.gap-typo { border-color: var(--warn); background: var(--warn-soft); }
+input.gap-bad { border-color: var(--bad); background: var(--bad-soft); }
+.btn.option { justify-content: flex-start; text-align: left; font-weight: 500; }
+.btn.option-ok { background: var(--accent-soft); color: var(--ok); box-shadow: inset 0 0 0 2px var(--ok); }
+.btn.option-bad { background: var(--bad-soft); color: var(--bad); box-shadow: inset 0 0 0 2px var(--bad); }
+.btn:disabled.option-ok, .btn:disabled.option-bad { opacity: 1; }
+details.help { margin: 6px 0; font-size: .9rem; }
+details.help summary { cursor: pointer; color: var(--accent); font-weight: 600; min-height: 32px; }
+details.help ul { margin: 4px 0; padding-left: 1.2em; }
+.part { border-top: 1px solid var(--border); padding: 10px 0; }
+.part .latin { font-size: 1.05rem; }
+.part-rate { display: flex; gap: 8px; margin-top: 6px; }
+.rate {
+  flex: 1; min-height: 40px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface); color: var(--text); font: inherit; font-size: 1.1rem; cursor: pointer;
+}
+.rate.sel { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+
+/* ---------- Formenlehre: Tabellen, Training ---------- */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 10px -4px 0; }
+table.forms { border-collapse: collapse; width: 100%; font-size: .95rem; }
+table.forms th, table.forms td { padding: 7px 8px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+table.forms thead th { font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+table.forms tbody th { font-size: .8rem; color: var(--text-muted); font-weight: 600; width: 1%; }
+table.forms tbody tr:nth-child(even) td { background: var(--surface-2); }
+.seg-wrap { flex-wrap: wrap; }
+.seg-wrap label { flex: 1 0 auto; min-width: 30%; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { position: relative; }
+.chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.chip span {
+  display: inline-flex; align-items: center; min-height: 38px; padding: 0 14px;
+  border: 1px solid var(--border); border-radius: 99px; background: var(--surface); font-size: 1rem;
+}
+.chip input:checked + span { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.chip input:focus-visible + span { outline: 2px solid var(--accent); }
+.table-title { margin: 14px 0 0; font-size: .95rem; color: var(--accent); }

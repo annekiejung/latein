@@ -29,7 +29,21 @@ Dann `http://localhost:8080` öffnen.
 |---|---|---|
 | 1 | Grundgerüst, Offline, Backup | fertig |
 | 2 | Aktuelle Vokabeln + Leitner | fertig |
-| 3 | Grundwortschatz | geplant |
+| 3 | Grundwortschatz (2507 Wörter) | gebaut |
 | 4 | Grammatik | geplant |
 | 5 | Prüfungsmodus | geplant |
 | 6 | Fehlerjournal, Planer, Statistik | geplant |
+
+## Quellen und Lizenzen
+
+- **Grundwortschatz, Wörter 1–996:** Auswahl, Reihenfolge (Häufigkeit) und Wortart nach
+  dem *Latin Core Vocabulary* der [Dickinson College Commentaries](https://dcc.dickinson.edu/latin-core-list1)
+  (Christopher Francese; Daten: LASLA), lizenziert unter
+  [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0/).
+- **Deutsche Bedeutungen und Wörter ab 997:** von Claude (KI) erstellt, automatisch
+  abgeglichen mit dem [deutschen Wiktionary](https://de.wiktionary.org/) (CC BY-SA) und
+  K. E. Georges, *Ausführliches lateinisch-deutsches Handwörterbuch* (1913, gemeinfrei,
+  über [zeno.org](http://www.zeno.org/Georges-1913)). Nicht bestätigte Einträge sind in der
+  App als „ungeprüft“ markiert.
+- Die Wortliste (`data/grundwortschatz.json`, `data-src/`) steht deshalb ebenfalls unter
+  **CC BY-SA 4.0**.

@@ -32,6 +32,14 @@ noch offen). Die vollständige Anforderung steht in
 - Aktuelle Vokabeln: Abfrage **nur Latein → Deutsch** plus Formen-Abfrage
   (Genitiv/Genus, Stammformen). **Kein** Deutsch → Latein.
 - Grundwortschatz in Etappen (erst ~500, dann 1000 …, Fernziel 2500).
+  Quelle (Entscheidung 2026-10-09, Weg a+c): Etappe 1+2 = Dickinson Latin Core Vocabulary
+  (CC BY-SA, Häufigkeit LASLA), Etappe 3 = von Claude zusammengestellt. Alle deutschen
+  Bedeutungen von Claude, ALLE mit Wiktionary abgeglichen, Zweifelsfälle mit Georges (1913,
+  gemeinfrei); echte Widersprüche der Nutzerin vorlegen (status „vorlage“).
+  KEINE Dopplungen: weder in der Liste noch mit Unterrichtsvokabeln (Wort wird dann nur in
+  der Lektion gelernt, Grundwortschatz-Lernstand wird beim Import übernommen).
+  Dopplung = gleiche Grundform ohne Längen + Wortart + gleiche zweite Form (sameWord in
+  vocab.js) → ōs/os, pārēre/parere, iacēre/iacere bleiben getrennt.
 - Git über Apple Command Line Tools; Hosting GitHub Pages.
 - Erinnerungen: iOS kann offline keine verlässlichen Push-Nachrichten →
   „Heute fällig“ beim Öffnen + Export von Lernterminen als .ics-Kalenderdatei.
@@ -57,6 +65,23 @@ js/vocab-edit.js      Dialog zum Bearbeiten einer Vokabelkarte (Felder je Wortar
 js/leitner.js         Leitner-Fächer, Fälligkeit, Intensivmodus (Testtermin), Tagesprotokoll, Serie
 js/check.js           Auswertung getippter Antworten (Bedeutung tolerant, Tippfehler → Nutzerin entscheidet)
 js/quiz.js            Abfrage-Runde (Karteikarte/Eingabe), Wiederholung falscher Karten, Zusammenfassung
+js/gws.js             Grundwortschatz: Daten laden, Lernstand (coreProgress), Pakete, Abgleich mit
+                      Unterrichtsvokabeln (keine Dopplungen), Meldungen/Korrekturen (reports)
+data/grundwortschatz.json  GEBAUTE Wortliste (nicht von Hand ändern!) – aus data-src/ mit tools/build_gws.pl
+data-src/gws_dcc.txt  Etappe 1+2: Dickinson Core (996 Wörter), deutsche Einträge von Claude
+data-src/gws_claude.txt Etappe 3: von Claude zusammengestellt (~1500 Wörter)
+data-src/gws_entscheidungen.txt  von Hand geprüfte Abweichungen (nr|gleich/vorlage|Begründung)
+data-src/abgleich-*.tsv  Ergebnis des Abgleichs (tools/gws_check.pl)
+tools/gws_check.pl    Abgleich der Bedeutungen mit Wiktionary (API) + Georges (zeno.org), Cache in .cache/
+tools/build_gws.pl    baut data/grundwortschatz.json, prüft Dopplungen, vergibt Etappen/Pakete
+js/grammar.js         Grammatik-Einheiten: Format "latein-grammatik", Prüfung, Prompt, Ergebnisse
+js/morph.js           Formenlehre-Daten: Musterverben (ā, ē, ī, kons., gemischt; Akt.+Pass.), unregelmäßige
+                      Verben (esse, posse, prōdesse, īre, ferre, velle, nōlle, mālle, fierī), Deklinationen,
+                      Adjektive, Pronomen; allForms()/describe() für das Formen-Training
+js/views/grammatik-formen.js  Tabellen-Ansichten + Formen-Training (Multiple Choice / selbst bestimmen)
+data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
+tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
+tools/find_stellen.pl   sucht Sätze mit Stellenangabe (Buch,Kapitel,Paragraph) in Latin-Library-Texten
 js/views/*.js         Je Ansicht: export const title; export async function render(main, params)
 icons/                icon.svg (Quelle), PNG 180/192/512 (-v2 = aktuell; die alten Namen ohne -v2 enthalten DASSELBE Bild und dürfen nie gelöscht werden, weil alte Offline-Kopien der Seite darauf zeigen – sonst baut iOS ein Ersatz-Symbol mit „L“) (erzeugt mit qlmanage + sips)
 tools/server.pl       Lokaler Testserver (Perl, Port 8080)
@@ -160,6 +185,42 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
   exakt) → „Fast – Tippfehler?“, Nutzerin wertet selbst. Autokorrektur im Feld aus.
 - settings `quizPrefs`: zuletzt gewählte Abfrage-Einstellungen.
 
+### Grundwortschatz (js/gws.js, js/views/wortschatz.js)
+
+- `data/grundwortschatz.json`: `{ format: 'latein-grundwortschatz', version: 1, stand, quellen,
+  lizenz, eintraege: [...] }`. Eintrag = Vokabelfelder (latein, wortart, genitiv, genus,
+  stammformen, formen, kasus, bedeutungen, hinweis) + `id` (stabil, aus Grundform MIT
+  Längen, z. B. `g-o_s-nom`), `nr`, `etappe` (1: 1–500, 2: 501–996, 3: ab 997), `paket`
+  (100er, beginnt an jeder Etappengrenze neu), `quelle` (dcc/claude), `rang` (DCC),
+  `pruefung` (wiktionary/georges/geprueft/vorlage/ungeprueft).
+- Store `coreProgress`: `{ id, lernstand, lernstandFormen }` – nur der Lernstand.
+- Store `reports`: `{ id, eintragId, nr, latein, art, text, korrektur: {bedeutungen}|null,
+  vorher, datum, zeit }` – eigene Korrektur gilt sofort (loadCards).
+- settings `gwsPakete`: Anzahl freigeschalteter Pakete (Start 1). Empfehlung zum
+  Freischalten: ≥ 80 % des letzten Pakets in Fach ≥ 2 (nur Hinweis, Nutzerin entscheidet).
+- „sicher“ = Fach ≥ 3. Abfrage nutzt quiz.js mit `save: saveProgress, typ: 'grundwortschatz'`.
+- **Wortliste ändern:** data-src/*.txt bearbeiten → `perl tools/gws_check.pl data-src/gws_dcc.txt`
+  bzw. `…gws_claude.txt` (dauert, Rate-Limit Wikimedia) → `perl tools/build_gws.pl` → Version
+  erhöhen. IDs nicht ändern (Lernstände hängen daran)!
+
+### Grammatik (js/grammar.js, js/views/grammatik.js)
+
+- Format "latein-grammatik" v1: `{ thema, bereich, regel: { kurz, punkte[], beispiel{latein,deutsch} },
+  aufgaben: [...] }`; Aufgabentypen: bestimmen (Lösung zeigen + Selbstbewertung richtig/
+  teilweise/falsch = 1/½/0), luecke (`___` im Text, `loesung[]` je Lücke, automatische Prüfung
+  wie Formen), auswahl (`optionen[]`, `richtig` Index), uebersetzung (`teile[{latein,deutsch}]`,
+  `quelle{autor,werk,stelle,status: geprüft|bitte prüfen,link}`, `bearbeitung: original|gekürzt|
+  angepasst|konstruiert`, `konstruktion`, `vokabelhilfen[]`; Selbstbewertung pro Teilsatz).
+- Eingebaute Einheiten: `data/grammatik.json` → `{ einheiten: [ { id, …Format… } ] }`. Status
+  „geprüft“ NUR nach `perl tools/verify_quellen.pl .cache/texte` (Wortlaut im Original gefunden).
+  Längenzeichen ergänzt Claude. Importierte Einheiten: Store `grammar`.
+- Ergebnisse: Store `history` `{ typ: 'grammatik', einheit, thema, richtig, gesamt, sekunden, zeit }`;
+  Fehler: Store `journal` `{ typ: 'grammatik', thema, einheit, phaenomen, frage, erwartet, gegeben,
+  bewertung }`.
+- Formen-Training: `{ typ: 'formen' }` in history/journal. Mehrdeutige Formen (fuerit = Fut. II
+  oder Konj. Perf.) zählen bei jeder passenden Bestimmung (Index über ALLE Verben).
+  Konj. Perf. wird mit kurzem i geschrieben (fuerim, fueris) – dadurch gleich wie Fut. II.
+
 ## Workflows
 
 - **Lokal testen:** `perl tools/server.pl` → http://localhost:8080.
@@ -190,10 +251,14 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    - 2b Abfrage L→D + Formen, Karteikarte/Eingabe, Leitner, Tagesziel, Streak, Intensivmodus – **fertig (0.3.0)**
    - 2c `workflow_vokabeln.pdf` + Anleitung in der App – **fertig (0.3.1)**
    → **Meilenstein 2 abgeschlossen** (Stand 2026-10-04; weiter mit 3 am Folgetag)
-3. Grundwortschatz (zuerst 2–3 Quellen-Wege vorschlagen, z. B. DCC Latin Core
-   Vocabulary – CC BY-SA, englische Bedeutungen → deutsche Bedeutungen als
-   „ergänzt“ kennzeichnen)
-4. Grammatik + `workflow_grammatik.pdf`
+3. Grundwortschatz – **gebaut (0.4.0)**: 2507 Wörter, 3 Etappen, 26 Pakete, Abgleich,
+   Melden/Korrigieren, keine Dopplungen mit Unterrichtsvokabeln. Offen: Rückmeldung der
+   Nutzerin, ggf. Vorlage-Fälle klären.
+4. Grammatik – Weg b (Entscheidung 2026-10-09): eingebaute Einheiten + Foto-Import.
+   Fertig (0.5.0): Grammatik-Bereich, Import, Einheit „Ablativus absolutus“, Formen-Training
+   unregelmäßige Verben (Wunsch der Nutzerin), Konjugations-/Deklinationstabellen.
+   Offen: weitere Einheiten (PC, AcI, NcI, nd-Formen, Deponentien, Konj. im HS/GS, Relativsätze,
+   Kasusfunktionen), `workflow_grammatik.pdf` + docs/workflow_grammatik.html
 5. Prüfungsmodus + `workflow_pruefung.pdf`
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik
 7. Eigene Vorschläge (Nutzerin wählt)

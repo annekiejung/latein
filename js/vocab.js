@@ -45,9 +45,28 @@ export function stripMacrons(s) {
   return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').normalize('NFC');
 }
 
-/** Schlüssel für Duplikat-Erkennung: ohne Längen, klein, ohne Leerzeichen-Varianten. */
+/** Grob-Schlüssel: Grundform ohne Längen, klein, ohne Bindestrich + Wortart. */
 export function dupKey(v) {
-  return stripMacrons(v.latein).toLowerCase().replace(/\s+/g, ' ').trim() + '|' + v.wortart;
+  return stripMacrons(v.latein).toLowerCase().replace(/^-/, '').replace(/\s+/g, ' ').trim() + '|' + v.wortart;
+}
+
+/** Zweite Form (Genitiv, 1. Person, 2. Adjektivform) ohne Längen – unterscheidet z. B. ōs, ōris / os, ossis. */
+export function secondForm(v) {
+  let s = '';
+  if (v.wortart === 'nomen') s = v.genitiv || '';
+  else if (v.wortart === 'verb') s = (v.stammformen || [])[0] || '';
+  else if (v.formen) s = v.formen.split(',')[1] || '';
+  return stripMacrons(s).toLowerCase().trim();
+}
+
+/**
+ * Dasselbe Wort? Gleiche Grundform + Wortart; wenn bei beiden eine zweite Form
+ * angegeben ist, muss auch die übereinstimmen (pārēre ≠ parere, ōs ≠ os).
+ */
+export function sameWord(a, b) {
+  if (dupKey(a) !== dupKey(b)) return false;
+  const sa = secondForm(a), sb = secondForm(b);
+  return !sa || !sb || sa === sb;
 }
 
 /** Die Lernzeile, wie sie im Buch steht, z. B. "mōs, mōris m." */
@@ -203,7 +222,13 @@ export async function checkImport(obj, lektionOverride) {
   if (errors.length) return { errors, items: [], lektion };
 
   const existing = await getAll('vocab');
-  const byKey = new Map(existing.map((v) => [dupKey(v), v]));
+  // Grob-Schlüssel → Liste von Karten; genau prüfen mit sameWord()
+  const byKey = new Map();
+  for (const v of existing) {
+    const k = dupKey(v);
+    if (!byKey.has(k)) byKey.set(k, []);
+    byKey.get(k).push(v);
+  }
   const seen = new Set();
 
   const items = obj.vokabeln.map((raw) => {
@@ -212,7 +237,10 @@ export async function checkImport(obj, lektionOverride) {
     if (res.card && res.card.latein) {
       const key = dupKey(res.card);
       if (seen.has(key)) res.dup = 'import';
-      else if (byKey.has(key)) { res.dup = 'db'; res.existing = byKey.get(key); }
+      else {
+        const hit = (byKey.get(key) || []).find((v) => sameWord(v, res.card));
+        if (hit) { res.dup = 'db'; res.existing = hit; }
+      }
       seen.add(key);
     }
     return res;

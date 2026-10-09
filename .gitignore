@@ -6,3 +6,6 @@ latein-backup-*.json
 # Lokale Einstellungen / Systemdateien
 .claude/
 .DS_Store
+
+# Zwischenspeicher der Werkzeuge
+.cache/

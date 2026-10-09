@@ -22,7 +22,12 @@ const MAX_SECONDS_PER_CARD = 90;   // längere Pausen zählen nicht als Lernzeit
 /** Wie replaceChildren, lässt aber leere Teile (null/false) weg. */
 const fill = (el, ...parts) => el.replaceChildren(...parts.filter(Boolean));
 
-export async function startQuiz(main, { cards, mode, style, leitner, onDone }) {
+export async function startQuiz(main, opts) {
+  const { cards, mode, style, leitner, onDone } = opts;
+  // Wohin wird der Lernstand gespeichert? Standard: aktuelle Vokabeln.
+  // Der Grundwortschatz übergibt eigene save()- und typ-Werte (js/views/wortschatz.js).
+  const save = opts.save || ((c) => put('vocab', c));
+  const journalTyp = opts.typ || 'vokabel';
   window.quizActive = true;            // App nicht mitten in der Runde neu laden (app.js)
   const intervals = await getSetting('leitnerIntervals');
   const testTermine = await getTestTermine();
@@ -57,9 +62,11 @@ export async function startQuiz(main, { cards, mode, style, leitner, onDone }) {
       h('span', { style: `width:${Math.round((done / firstTotal) * 100)}%` }));
 
     const meta = h('div', { class: 'quiz-meta' },
-      h('span', { class: 'badge' }, c.lektion),
+      h('span', { class: 'badge' }, c.nr ? `Grundwortschatz Nr. ${c.nr}` : c.lektion),
       leitner ? h('span', { class: 'badge' }, `Fach ${state.fach}`) : h('span', { class: 'badge' }, 'freies Üben'),
-      c.unsicher ? h('span', { class: 'badge warn' }, 'Karte noch ungeprüft') : null
+      c.unsicher ? h('span', { class: 'badge warn' }, 'Karte noch ungeprüft') : null,
+      ['ungeprueft', 'vorlage'].includes(c.pruefung) ? h('span', { class: 'badge warn' }, 'Bedeutung ungeprüft') : null,
+      c.korrigiert ? h('span', { class: 'badge' }, 'eigene Korrektur') : null
     );
 
     const question = h('div', { class: 'quiz-card' },
@@ -196,13 +203,13 @@ export async function startQuiz(main, { cards, mode, style, leitner, onDone }) {
       if (leitner) {
         after = review(before, correct, intervals, daysToTest(c, testTermine, today), today);
         c[key] = after;
-        await put('vocab', c);
+        await save(c);
       }
       await logAnswer(correct, today);
       results.push({ card: c, correct, given, vorher: before.fach, nachher: after.fach });
       if (!correct) {
         await put('journal', {
-          id: newId('j'), typ: 'vokabel', modus: mode, karteId: c.id, lektion: c.lektion,
+          id: newId('j'), typ: journalTyp, modus: mode, karteId: c.id, lektion: c.lektion,
           frage: mode === 'formen' ? `${c.latein}: ${fq.frage}` : headline(c),
           erwartet: mode === 'formen' ? fq.antwort : c.bedeutungen.join(', '),
           gegeben: given, datum: today, zeit: new Date().toISOString()
@@ -259,7 +266,7 @@ export async function startQuiz(main, { cards, mode, style, leitner, onDone }) {
     main.replaceChildren(summary, wrongList || '',
       wrong.length ? h('button', {
         class: 'btn secondary block',
-        onclick: () => startQuiz(main, { cards: wrong.map((r) => r.card), mode, style, leitner: false, onDone })
+        onclick: () => startQuiz(main, { ...opts, cards: wrong.map((r) => r.card), leitner: false })
       }, 'Die falschen nochmal üben (freies Üben)') : '',
       h('button', { class: 'btn block', onclick: onDone }, 'Fertig'));
     window.scrollTo(0, 0);

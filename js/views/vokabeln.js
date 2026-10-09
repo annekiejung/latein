@@ -5,14 +5,15 @@
  *   #/vokabeln/import          Prompt kopieren → Ergebnis einfügen → Vorschau → speichern
  *   #/vokabeln/lektion/<name>  Karten einer Lektion, Testtermin (Intensivmodus)
  */
-import { getAll, remove, put, getSetting, setSetting } from '../db.js';
+import { get, getAll, remove, put, getSetting, setSetting } from '../db.js';
 import { h, toast, copyText, dialog, confirmDialog, todayStr, formatDate } from '../ui.js';
 import {
-  headline, extractJson, checkImport, saveCard, buildPrompt, WORTARTEN, formQuestion
+  headline, extractJson, checkImport, saveCard, buildPrompt, WORTARTEN, formQuestion, sameWord, dupKey
 } from '../vocab.js';
 import { editCardDialog } from '../vocab-edit.js';
 import { stateOf, isDue, boxCounts, streakInfo, getTestTermine, daysBetween } from '../leitner.js';
 import { startQuiz } from '../quiz.js';
+import { loadData } from '../gws.js';
 
 export const title = 'Aktuelle Vokabeln';
 
@@ -311,8 +312,29 @@ async function renderImport(main) {
         h('ul', {}, res.errors.map((e) => h('li', {}, e)))));
       return;
     }
+    await markCoreWords(res);
     renderPreview(preview, res);
     preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+/**
+ * Keine Dopplungen mit dem Grundwortschatz: Wörter, die dort auch stehen, werden
+ * markiert. Gelernt wird das Wort dann nur noch hier in der Lektion; ein schon
+ * vorhandener Grundwortschatz-Lernstand wird beim Speichern übernommen.
+ */
+async function markCoreWords(res) {
+  let entries = [];
+  try { entries = (await loadData()).eintraege; } catch (e) { return; }
+  const byKey = new Map();
+  for (const e of entries) {
+    const k = dupKey(e);
+    if (!byKey.has(k)) byKey.set(k, []);
+    byKey.get(k).push(e);
+  }
+  for (const it of res.items) {
+    if (!it.card) continue;
+    it.core = (byKey.get(dupKey(it.card)) || []).find((e) => sameWord(e, it.card)) || null;
   }
 }
 
@@ -380,6 +402,8 @@ function renderPreview(container, res) {
       it.dup === 'db' ? h('div', { class: 'msg warn' },
         `Schon vorhanden in „${it.existing.lektion}“. Mit Häkchen wird sie in diese Lektion verschoben und aktualisiert (Lernstand bleibt).`) : null,
       it.dup === 'import' ? h('div', { class: 'msg warn' }, 'Steht doppelt in dieser Liste – nur einmal übernommen.') : null,
+      it.core && !it.dup ? h('div', { class: 'msg info' },
+        `Steht auch im Grundwortschatz (Nr. ${it.core.nr}). Du lernst es nur einmal – ab jetzt hier in der Lektion.`) : null,
       it.warnings.map((w) => h('div', { class: 'msg warn' }, w))
     );
   };
@@ -394,7 +418,15 @@ function renderPreview(container, res) {
       const card = { ...it.card };
       if (card.lektion === res.lektion) card.lektion = name;   // Umbenennung übernehmen
       if (it.dup === 'db') { await saveCard(card, it.existing, base + idx); updated++; }
-      else { await saveCard(card, null, base + idx); added++; }
+      else {
+        const rec = await saveCard(card, null, base + idx);
+        added++;
+        // Lernstand aus dem Grundwortschatz übernehmen (nicht von vorn anfangen)
+        if (it.core) {
+          const prog = await get('coreProgress', it.core.id);
+          if (prog && prog.lernstand) await put('vocab', { ...rec, lernstand: prog.lernstand, ...(prog.lernstandFormen ? { lernstandFormen: prog.lernstandFormen } : {}) });
+        }
+      }
     }
     toast(`${added} neu gespeichert` + (updated ? `, ${updated} aktualisiert` : '') + '.');
     location.hash = lessonHref(name);

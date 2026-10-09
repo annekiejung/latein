@@ -6,6 +6,7 @@ import { count, getSetting, getAll } from '../db.js';
 import { h, daysSince, formatDate, todayStr } from '../ui.js';
 import { formQuestion } from '../vocab.js';
 import { isDue, streakInfo, getTestTermine, daysBetween } from '../leitner.js';
+import { loadCards, unlockedPackets } from '../gws.js';
 
 export const title = 'Latein-Trainer';
 
@@ -45,15 +46,23 @@ export async function render(main) {
   const due = cards.filter((c) => isDue(c, 'bedeutung', termine)).length +
     cards.filter((c) => formQuestion(c) && isDue(c, 'formen', termine)).length;
   const s = await streakInfo();
+  // Grundwortschatz: fällige Wörter der freigeschalteten Pakete (ohne Unterrichtswörter)
+  let coreDue = 0;
+  try {
+    const up = await unlockedPackets();
+    coreDue = (await loadCards()).filter((c) => c.paket <= up && !c.imUnterricht && isDue(c, 'bedeutung', {})).length;
+  } catch (e) { /* Wortliste nicht geladen – dann eben ohne */ }
   main.append(h('div', { class: 'card' },
     h('h2', {}, 'Heute'),
     h('div', { class: 'stat-row' },
-      h('div', { class: 'stat' }, h('b', {}, vocabCount ? due : '–'), h('span', {}, 'fällig')),
-      h('div', { class: 'stat' }, h('b', {}, vocabCount), h('span', {}, 'Vokabeln')),
+      h('div', { class: 'stat' }, h('b', {}, vocabCount ? due : '–'), h('span', {}, 'Vokabeln fällig')),
+      h('div', { class: 'stat' }, h('b', {}, coreDue), h('span', {}, 'Grundwortschatz fällig')),
       h('div', { class: 'stat' }, h('b', {}, s.streak), h('span', {}, s.streak === 1 ? 'Tag Serie' : 'Tage Serie'))
     ),
     vocabCount === 0
-      ? h('p', { class: 'muted', style: 'margin-top:12px' }, 'Noch keine Vokabeln gespeichert.')
+      ? h('div', {},
+          h('p', { class: 'muted', style: 'margin-top:12px' }, 'Noch keine Unterrichtsvokabeln gespeichert.'),
+          h('a', { class: 'btn block', href: '#/wortschatz/lernen' }, 'Grundwortschatz lernen'))
       : h('div', {},
           h('div', { class: 'goal' },
             h('span', {}, `Tagesziel: ${Math.min(s.todayDone, s.goal)} / ${s.goal}`,

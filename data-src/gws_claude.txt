@@ -1,0 +1,1517 @@
+# Grundwortschatz Etappe 3 – von Claude zusammengestellt (Auswahl nach Schullektüre
+# und Bildungsplan BW, keine überprüfbare Häufigkeitsquelle), mit Wiktionary/Georges abgeglichen.
+# Diese Datei steht unter CC BY-SA 4.0 (gemeinsam mit gws_dcc.txt veröffentlicht).
+#
+# Format wie gws_dcc.txt: nr|latein|wortart|formen|bedeutungen|hinweis
+# nr = laufende Nummer innerhalb von Etappe 3 (wird beim Bauen hinter Etappe 2 gehängt)
+1|quod|subjunktion||weil; dass; was das betrifft, dass|faktisches „dass“; m. Konj.: weil (angeblich)
+2|melior|adjektiv|melior, melius|besser|Komparativ zu bonus
+3|optimus|adjektiv|optimus, optima, optimum|der beste; sehr gut|Superlativ zu bonus
+4|peior|adjektiv|peior, peius|schlechter|Komparativ zu malus
+5|pessimus|adjektiv|pessimus, pessima, pessimum|der schlechteste; sehr schlecht|Superlativ zu malus
+6|māior|adjektiv|māior, māius|größer; älter|Komparativ zu māgnus
+7|maximus|adjektiv|maximus, maxima, maximum|der größte; sehr groß|Superlativ zu māgnus
+8|minor|adjektiv|minor, minus|kleiner; geringer; jünger|Komparativ zu parvus
+9|minimus|adjektiv|minimus, minima, minimum|der kleinste; sehr klein|Superlativ zu parvus
+10|plūs|adjektiv|plūs, plūris|mehr|Komparativ zu multum; Pl. plūrēs, plūra: mehrere, mehr
+11|plūrimī|adjektiv|plūrimī, plūrimae, plūrima|die meisten; sehr viele|Superlativ zu multī
+12|proximus|adjektiv|proximus, proxima, proximum|der nächste|m. Dat.; Superlativ zu prope
+13|superior|adjektiv|superior, superius|höher gelegen; überlegen; früher|
+14|summus|adjektiv|summus, summa, summum|der höchste; oberster|summus mōns: der Gipfel des Berges
+15|īnferior|adjektiv|īnferior, īnferius|tiefer gelegen; unterlegen|
+16|īnfimus|adjektiv|īnfimus, īnfima, īnfimum|der unterste; niedrigste|auch īmus
+17|uter|pronomen|uter, utra, utrum|wer von beiden?; welcher von beiden?|Gen. utrīus
+18|neuter|pronomen|neuter, neutra, neutrum|keiner von beiden|Gen. neutrīus
+19|aliquot|pronomen|aliquot|einige; etliche|undeklinierbar
+20|quīvīs|pronomen|quīvīs, quaevīs, quodvīs|jeder beliebige|subst. quidvīs: alles Beliebige
+21|quīlibet|pronomen|quīlibet, quaelibet, quodlibet|jeder beliebige|
+22|quisnam|pronomen|quisnam, quidnam|wer denn?; was denn?|
+23|nōnnūllus|adjektiv|nōnnūllus, nōnnūlla, nōnnūllum|mancher; Pl.: einige|
+24|ambō|numerale|ambō, ambae, ambō|beide|
+25|quīnque|numerale|quīnque|fünf|undeklinierbar
+26|sex|numerale|sex|sechs|undeklinierbar
+27|septem|numerale|septem|sieben|undeklinierbar
+28|octō|numerale|octō|acht|undeklinierbar
+29|novem|numerale|novem|neun|undeklinierbar
+30|vīgintī|numerale|vīgintī|zwanzig|undeklinierbar
+31|ducentī|numerale|ducentī, ducentae, ducenta|zweihundert|
+32|trecentī|numerale|trecentī, trecentae, trecenta|dreihundert|
+33|quārtus|numerale|quārtus, quārta, quārtum|der vierte|
+34|quīntus|numerale|quīntus, quīnta, quīntum|der fünfte|
+35|sextus|numerale|sextus, sexta, sextum|der sechste|
+36|decimus|numerale|decimus, decima, decimum|der zehnte|
+37|bis|adverb||zweimal|
+38|ter|adverb||dreimal|
+39|duodecim|numerale|duodecim|zwölf|undeklinierbar
+40|etsī|subjunktion||auch wenn; obwohl|
+41|etiamsī|subjunktion||auch wenn; selbst wenn|
+42|tametsī|subjunktion||obwohl; wenn auch|
+43|simulac|subjunktion||sobald|auch simul atque
+44|sīn|subjunktion||wenn aber|
+45|quōminus|subjunktion||dass|nach Verben des Hinderns
+46|vērum|konjunktion||aber; sondern|
+47|etenim|konjunktion||denn; nämlich|
+48|namque|konjunktion||denn; nämlich|
+49|attamen|konjunktion||aber doch; dennoch|
+50|proinde|adverb||daher; also|
+51|quamobrem|adverb||weshalb; deshalb|auch quam ob rem
+52|quāpropter|adverb||weshalb; deshalb|
+53|immō|adverb||im Gegenteil; ja vielmehr|
+54|utinam|adverb||wenn doch; hoffentlich|m. Konj. (Wunsch)
+55|nēve|konjunktion||und nicht; und dass nicht|auch neu
+56|nōnnumquam|adverb||manchmal|
+57|nūper|adverb||neulich; vor kurzem|
+58|omnīnō|adverb||überhaupt; ganz und gar; insgesamt|
+59|potius|adverb||eher; lieber; vielmehr|
+60|praesertim|adverb||besonders; zumal|
+61|profectō|adverb||sicherlich; tatsächlich|
+62|saltem|adverb||wenigstens|
+63|sānē|adverb||gewiss; allerdings; durchaus|
+64|valdē|adverb||sehr|
+65|vehementer|adverb||heftig; sehr|
+66|magnopere|adverb||sehr; dringend|
+67|maximē|adverb||am meisten; sehr; besonders|
+68|minimē|adverb||am wenigsten; keineswegs|
+69|plūrimum|adverb||am meisten; sehr viel|
+70|multum|adverb||viel; sehr|
+71|paulātim|adverb||allmählich|
+72|repente|adverb||plötzlich|
+73|palam|adverb||öffentlich; offen|
+74|partim|adverb||teils|partim … partim: teils … teils
+75|pariter|adverb||gleichermaßen; zugleich|
+76|penitus|adverb||tief; völlig; gänzlich|
+77|plānē|adverb||deutlich; völlig|
+78|cotīdiē|adverb||täglich|auch cottīdiē
+79|crās|adverb||morgen|
+80|herī|adverb||gestern|
+81|postrīdiē|adverb||am folgenden Tag|
+82|prīdiē|adverb||am Tag vorher|
+83|intereā|adverb||inzwischen; unterdessen|
+84|hinc|adverb||von hier; daher|
+85|ubīque|adverb||überall|
+86|ūnā|adverb||zusammen; gemeinsam|
+87|ultrō|adverb||freiwillig; von sich aus; obendrein|
+88|obviam|adverb||entgegen|obviam īre: entgegengehen
+89|identidem|adverb||immer wieder|
+90|nēquāquam|adverb||keineswegs|
+91|nimīrum|adverb||freilich; natürlich|
+92|vidēlicet|adverb||natürlich; offenbar; nämlich|
+93|funditus|adverb||von Grund auf; völlig|
+94|facile|adverb||leicht; mühelos|
+95|fortiter|adverb||tapfer; kräftig|
+96|rēctē|adverb||richtig; zu Recht|
+97|rārō|adverb||selten|
+98|sērō|adverb||spät; zu spät|
+99|quotannīs|adverb||jährlich; jedes Jahr|
+100|ēheu|adverb||ach!; o weh!|Ausruf
+101|trāns|praeposition|Akk.|über … hinüber; jenseits|
+102|extrā|praeposition|Akk.|außerhalb|
+103|īnfrā|praeposition|Akk.|unterhalb|Adv.: unten
+104|iūxtā|praeposition|Akk.|neben; nahe bei|Adv.: daneben, ebenso
+105|cōram|praeposition|Abl.|in Gegenwart von; vor|Adv.: persönlich, öffentlich
+106|ergā|praeposition|Akk.|gegenüber; gegen|freundlich gesinnt: amor ergā patriam
+107|secundum|praeposition|Akk.|entlang; gemäß; nach|
+108|cis|praeposition|Akk.|diesseits|auch citrā
+109|tenus|praeposition|Abl.|bis|nachgestellt: Taurō tenus
+110|penes|praeposition|Akk.|bei; im Besitz von|
+111|accūsāre|verb|accūsō, accūsāvī, accūsātum|anklagen; beschuldigen|
+112|admīrārī|verb|admīror, admīrātus sum|bewundern; sich wundern|Deponens
+113|admittere|verb|admittō, admīsī, admissum|zulassen; begehen|
+114|aestimāre|verb|aestimō, aestimāvī, aestimātum|einschätzen; schätzen; bewerten|
+115|agnōscere|verb|agnōscō, agnōvī, agnitum|erkennen; wiedererkennen; anerkennen|
+116|ambulāre|verb|ambulō, ambulāvī, ambulātum|spazieren gehen; gehen|
+117|animadvertere|verb|animadvertō, animadvertī, animadversum|bemerken; wahrnehmen|in m. Akk.: bestrafen
+118|appropinquāre|verb|appropinquō, appropinquāvī, appropinquātum|sich nähern|m. Dat. oder ad
+119|arcessere|verb|arcessō, arcessīvī, arcessītum|herbeirufen; holen|
+120|circumdare|verb|circumdō, circumdedī, circumdatum|umgeben; umzingeln|
+121|circumvenīre|verb|circumveniō, circumvēnī, circumventum|umzingeln; umringen; täuschen|
+122|clāmāre|verb|clāmō, clāmāvī, clāmātum|rufen; schreien|
+123|concurrere|verb|concurrō, concurrī, concursum|zusammenlaufen; zusammenstoßen|
+124|cōnfīdere|verb|cōnfīdō, cōnfīsus sum|vertrauen|m. Dat.; Semideponens
+125|cōnicere|verb|coniciō, coniēcī, coniectum|werfen; schleudern; vermuten|
+126|coniūrāre|verb|coniūrō, coniūrāvī, coniūrātum|sich verschwören|
+127|cōnspicere|verb|cōnspiciō, cōnspexī, cōnspectum|erblicken|
+128|cōnservāre|verb|cōnservō, cōnservāvī, cōnservātum|bewahren; retten; erhalten|
+129|cōnsōlārī|verb|cōnsōlor, cōnsōlātus sum|trösten|Deponens
+130|contendere|verb|contendō, contendī, contentum|eilen; kämpfen; sich anstrengen; behaupten|
+131|convocāre|verb|convocō, convocāvī, convocātum|zusammenrufen; versammeln|
+132|dēcipere|verb|dēcipiō, dēcēpī, dēceptum|täuschen; betrügen|
+133|dēlectāre|verb|dēlectō, dēlectāvī, dēlectātum|erfreuen; unterhalten|
+134|dēlēre|verb|dēleō, dēlēvī, dēlētum|zerstören; vernichten|
+135|dēmōnstrāre|verb|dēmōnstrō, dēmōnstrāvī, dēmōnstrātum|zeigen; beweisen; darlegen|
+136|dēpōnere|verb|dēpōnō, dēposuī, dēpositum|niederlegen; ablegen; aufgeben|
+137|dēspērāre|verb|dēspērō, dēspērāvī, dēspērātum|verzweifeln; die Hoffnung aufgeben|
+138|effugere|verb|effugiō, effūgī|entfliehen; entkommen|
+139|excitāre|verb|excitō, excitāvī, excitātum|wecken; erregen; antreiben|
+140|expellere|verb|expellō, expulī, expulsum|vertreiben; verbannen|
+141|explicāre|verb|explicō, explicāvī, explicātum|erklären; entfalten|
+142|exstinguere|verb|exstinguō, exstīnxī, exstīnctum|auslöschen; vernichten|
+143|expūgnāre|verb|expūgnō, expūgnāvī, expūgnātum|erobern|
+144|festīnāre|verb|festīnō, festīnāvī, festīnātum|eilen; sich beeilen|
+145|flectere|verb|flectō, flexī, flexum|biegen; beugen; umstimmen|
+146|habitāre|verb|habitō, habitāvī, habitātum|wohnen; bewohnen|
+147|ignōrāre|verb|ignōrō, ignōrāvī, ignōrātum|nicht kennen; nicht wissen|
+148|ignōscere|verb|ignōscō, ignōvī, ignōtum|verzeihen|m. Dat.
+149|impedīre|verb|impediō, impedīvī, impedītum|hindern; behindern|
+150|incendere|verb|incendō, incendī, incēnsum|anzünden; entflammen|
+151|incitāre|verb|incitō, incitāvī, incitātum|antreiben; anstacheln; aufhetzen|
+152|incolere|verb|incolō, incoluī|bewohnen; wohnen|
+153|indūcere|verb|indūcō, indūxī, inductum|hineinführen; veranlassen|
+154|inīre|verb|ineō, iniī, initum|hineingehen; beginnen|cōnsilium inīre: einen Plan fassen
+155|īnstruere|verb|īnstruō, īnstrūxī, īnstrūctum|aufstellen; ausrüsten; unterrichten|aciem īnstruere: die Schlachtreihe aufstellen
+156|interīre|verb|intereō, interiī, interitum|untergehen; zugrunde gehen|
+157|invādere|verb|invādō, invāsī, invāsum|eindringen; angreifen; befallen|
+158|invidēre|verb|invideō, invīdī, invīsum|beneiden; missgönnen|m. Dat.
+159|lābī|verb|lābor, lāpsus sum|gleiten; fallen; sinken|Deponens
+160|lacessere|verb|lacessō, lacessīvī, lacessītum|reizen; herausfordern; angreifen|
+161|lavāre|verb|lavō, lāvī, lautum|waschen; baden|
+162|līberāre|verb|līberō, līberāvī, līberātum|befreien|m. Abl.: von etw.
+163|lūdere|verb|lūdō, lūsī, lūsum|spielen; verspotten|
+164|mandāre|verb|mandō, mandāvī, mandātum|anvertrauen; auftragen|
+165|mentīrī|verb|mentior, mentītus sum|lügen|Deponens
+166|minārī|verb|minor, minātus sum|drohen|m. Dat.; Deponens
+167|mūnīre|verb|mūniō, mūnīvī, mūnītum|befestigen; schützen|viam mūnīre: einen Weg bauen
+168|nancīscī|verb|nancīscor, nactus sum|erlangen; bekommen; antreffen|Deponens
+169|nāvigāre|verb|nāvigō, nāvigāvī, nāvigātum|segeln; zur See fahren|
+170|nūntiāre|verb|nūntiō, nūntiāvī, nūntiātum|melden; berichten|
+171|oblīvīscī|verb|oblīvīscor, oblītus sum|vergessen|m. Gen.; Deponens
+172|obsidēre|verb|obsideō, obsēdī, obsessum|belagern; besetzt halten|
+173|obtinēre|verb|obtineō, obtinuī, obtentum|innehaben; behaupten; erlangen|
+174|offendere|verb|offendō, offendī, offēnsum|anstoßen; beleidigen; antreffen|
+175|omittere|verb|omittō, omīsī, omissum|aufgeben; unterlassen; übergehen|
+176|opprimere|verb|opprimō, oppressī, oppressum|unterdrücken; überwältigen; überfallen|
+177|oppūgnāre|verb|oppūgnō, oppūgnāvī, oppūgnātum|angreifen; bestürmen; belagern|
+178|ōrnāre|verb|ōrnō, ōrnāvī, ōrnātum|schmücken; ausstatten; ehren|
+179|perficere|verb|perficiō, perfēcī, perfectum|vollenden; durchsetzen|
+180|permovēre|verb|permoveō, permōvī, permōtum|veranlassen; beunruhigen; bewegen|
+181|persuādēre|verb|persuādeō, persuāsī, persuāsum|überreden; überzeugen|m. Dat.; m. ut: überreden; m. AcI: überzeugen
+182|perturbāre|verb|perturbō, perturbāvī, perturbātum|verwirren; beunruhigen|
+183|plācāre|verb|plācō, plācāvī, plācātum|besänftigen; versöhnen|
+184|pollicērī|verb|polliceor, pollicitus sum|versprechen|Deponens
+185|possidēre|verb|possideō, possēdī, possessum|besitzen|
+186|postulāre|verb|postulō, postulāvī, postulātum|fordern; verlangen|
+187|praeesse|verb|praesum, praefuī|leiten; an der Spitze stehen|m. Dat.
+188|praeficere|verb|praeficiō, praefēcī, praefectum|an die Spitze stellen; mit der Leitung beauftragen|m. Akk. u. Dat.
+189|prōvidēre|verb|prōvideō, prōvīdī, prōvīsum|vorhersehen; sorgen für|m. Dat.: sorgen für
+190|pūnīre|verb|pūniō, pūnīvī, pūnītum|bestrafen|
+191|recūsāre|verb|recūsō, recūsāvī, recūsātum|zurückweisen; ablehnen; sich weigern|
+192|redimere|verb|redimō, redēmī, redēmptum|loskaufen; erkaufen|
+193|redūcere|verb|redūcō, redūxī, reductum|zurückführen|
+194|remanēre|verb|remaneō, remānsī|zurückbleiben|
+195|removēre|verb|removeō, remōvī, remōtum|entfernen; beseitigen|
+196|reprehendere|verb|reprehendō, reprehendī, reprehēnsum|tadeln; kritisieren|
+197|requīrere|verb|requīrō, requīsīvī, requīsītum|aufsuchen; fragen nach; vermissen|
+198|resistere|verb|resistō, restitī|Widerstand leisten; stehen bleiben|m. Dat.
+199|restituere|verb|restituō, restituī, restitūtum|wiederherstellen; zurückgeben|
+200|salūtāre|verb|salūtō, salūtāvī, salūtātum|grüßen; begrüßen|
+201|sepelīre|verb|sepeliō, sepelīvī, sepultum|begraben; bestatten|
+202|simulāre|verb|simulō, simulāvī, simulātum|vortäuschen; nachahmen|
+203|spoliāre|verb|spoliō, spoliāvī, spoliātum|berauben; plündern|m. Abl.: einer Sache berauben
+204|suādēre|verb|suādeō, suāsī, suāsum|raten; empfehlen|m. Dat.
+205|subicere|verb|subiciō, subiēcī, subiectum|unterwerfen; darunterlegen|
+206|succēdere|verb|succēdō, successī, successum|nachfolgen; heranrücken; gelingen|
+207|sufficere|verb|sufficiō, suffēcī, suffectum|genügen; ausreichen|
+208|suspicārī|verb|suspicor, suspicātus sum|vermuten; argwöhnen|Deponens
+209|tolerāre|verb|tolerō, tolerāvī, tolerātum|ertragen; aushalten|
+210|trānsferre|verb|trānsferō, trānstulī, trānslātum|hinüberbringen; übertragen|
+211|tribuere|verb|tribuō, tribuī, tribūtum|zuteilen; erweisen; zuschreiben|
+212|vāstāre|verb|vāstō, vāstāvī, vāstātum|verwüsten|
+213|vēndere|verb|vēndō, vēndidī, vēnditum|verkaufen|
+214|venerārī|verb|veneror, venerātus sum|verehren; anbeten|Deponens
+215|vigilāre|verb|vigilō, vigilāvī, vigilātum|wachen; wach sein|
+216|vindicāre|verb|vindicō, vindicāvī, vindicātum|beanspruchen; bestrafen; befreien|
+217|violāre|verb|violō, violāvī, violātum|verletzen; entweihen|
+218|volāre|verb|volō, volāvī, volātum|fliegen; eilen|
+219|vulnerāre|verb|vulnerō, vulnerāvī, vulnerātum|verwunden; verletzen|
+220|exīstere|verb|exsistō, exstitī|hervortreten; entstehen; sich zeigen|auch exsistere
+221|adipīscī|verb|adipīscor, adeptus sum|erreichen; erlangen|Deponens
+222|aggredī|verb|aggredior, aggressus sum|angreifen; herangehen; unternehmen|Deponens
+223|prōgredī|verb|prōgredior, prōgressus sum|vorrücken; fortschreiten|Deponens
+224|regredī|verb|regredior, regressus sum|zurückgehen; zurückkehren|Deponens
+225|ulcīscī|verb|ulcīscor, ultus sum|rächen; sich rächen an|Deponens
+226|imitārī|verb|imitor, imitātus sum|nachahmen|Deponens
+227|tuērī|verb|tueor, tuitus sum|schützen; betrachten|Deponens
+228|largīrī|verb|largior, largītus sum|schenken; spenden|Deponens
+229|potīrī|verb|potior, potītus sum|sich bemächtigen; erlangen|m. Abl.; Deponens
+230|ēnītī|verb|ēnītor, ēnīxus sum|sich anstrengen|Deponens
+231|vēnārī|verb|vēnor, vēnātus sum|jagen|Deponens
+232|lūctārī|verb|luctor, luctātus sum|ringen; kämpfen|Deponens
+233|opīnārī|verb|opīnor, opīnātus sum|meinen; vermuten|Deponens
+234|interpretārī|verb|interpretor, interpretātus sum|erklären; deuten; übersetzen|Deponens
+235|recordārī|verb|recordor, recordātus sum|sich erinnern|Deponens
+236|contemplārī|verb|contemplor, contemplātus sum|betrachten|Deponens
+237|dēlīberāre|verb|dēlīberō, dēlīberāvī, dēlīberātum|überlegen; erwägen|
+238|dēclārāre|verb|dēclārō, dēclārāvī, dēclārātum|erklären; verkünden; zeigen|
+239|dēdere|verb|dēdō, dēdidī, dēditum|übergeben; ausliefern|sē dēdere: sich ergeben
+240|dētrahere|verb|dētrahō, dētrāxī, dētractum|wegziehen; herabziehen; entziehen|
+241|dīrigere|verb|dīrigō, dīrēxī, dīrēctum|ausrichten; lenken|
+242|distribuere|verb|distribuō, distribuī, distribūtum|verteilen; einteilen|
+243|ēmittere|verb|ēmittō, ēmīsī, ēmissum|herausschicken; freilassen|
+244|ērigere|verb|ērigō, ērēxī, ērēctum|aufrichten; ermutigen|
+245|excūsāre|verb|excūsō, excūsāvī, excūsātum|entschuldigen|
+246|exprimere|verb|exprimō, expressī, expressum|ausdrücken; auspressen; darstellen|
+247|exstruere|verb|exstruō, exstrūxī, exstrūctum|errichten; aufbauen|
+248|extrahere|verb|extrahō, extrāxī, extractum|herausziehen|
+249|fīdere|verb|fīdō, fīsus sum|vertrauen|m. Dat. oder Abl.; Semideponens
+250|gubernāre|verb|gubernō, gubernāvī, gubernātum|steuern; lenken|
+251|haerēre|verb|haereō, haesī, haesum|hängen; stecken bleiben; festsitzen|
+252|implōrāre|verb|implōrō, implōrāvī, implōrātum|anflehen; erflehen|
+253|irrīdēre|verb|irrīdeō, irrīsī, irrīsum|verspotten; auslachen|
+254|mētīrī|verb|mētior, mēnsus sum|messen; abmessen|Deponens
+255|mitigāre|verb|mītigō, mītigāvī, mītigātum|mildern; besänftigen|
+256|oppōnere|verb|oppōnō, opposuī, oppositum|entgegenstellen; entgegenhalten|
+257|pācāre|verb|pācō, pācāvī, pācātum|befrieden; unterwerfen|
+258|plaudere|verb|plaudō, plausī, plausum|klatschen; Beifall spenden|
+259|praeparāre|verb|praeparō, praeparāvī, praeparātum|vorbereiten|
+260|prehendere|verb|prehendō, prehendī, prehēnsum|ergreifen; fassen|
+261|prōficere|verb|prōficiō, prōfēcī, prōfectum|Fortschritte machen; nützen; ausrichten|
+262|prōspicere|verb|prōspiciō, prōspexī, prōspectum|in die Ferne sehen; vorhersehen; sorgen für|
+263|renovāre|verb|renovō, renovāvī, renovātum|erneuern|
+264|sānāre|verb|sānō, sānāvī, sānātum|heilen|
+265|struere|verb|struō, strūxī, strūctum|aufschichten; bauen; anordnen|
+266|trādūcere|verb|trādūcō, trādūxī, trāductum|hinüberführen|
+267|trānsportāre|verb|trānsportō, trānsportāvī, trānsportātum|hinüberbringen; befördern|
+268|trucīdāre|verb|trucīdō, trucīdāvī, trucīdātum|abschlachten; niedermetzeln|
+269|verberāre|verb|verberō, verberāvī, verberātum|schlagen; prügeln|
+270|vīsere|verb|vīsō, vīsī|besuchen; besichtigen|
+271|vovēre|verb|voveō, vōvī, vōtum|geloben; weihen|
+272|clāmitāre|verb|clāmitō, clāmitāvī, clāmitātum|laut rufen; schreien|
+273|cōnsīdere|verb|cōnsīdō, cōnsēdī, cōnsessum|sich setzen; sich niederlassen|
+274|cōnsentīre|verb|cōnsentiō, cōnsēnsī, cōnsēnsum|übereinstimmen; zustimmen|
+275|cōnstruere|verb|cōnstruō, cōnstrūxī, cōnstrūctum|errichten; erbauen|
+276|corripere|verb|corripiō, corripuī, correptum|packen; an sich reißen; tadeln|
+277|dēcēdere|verb|dēcēdō, dēcessī, dēcessum|weggehen; sterben|
+278|dēdicāre|verb|dēdicō, dēdicāvī, dēdicātum|weihen; widmen|
+279|disserere|verb|disserō, disseruī, dissertum|erörtern; sprechen über|
+281|exclāmāre|verb|exclāmō, exclāmāvī, exclāmātum|ausrufen; aufschreien|
+282|exhibēre|verb|exhibeō, exhibuī, exhibitum|vorzeigen; darbieten|
+283|īnstāre|verb|īnstō, īnstitī|bevorstehen; bedrängen|m. Dat.
+284|lūgēre|verb|lūgeō, lūxī, lūctum|trauern; betrauern|
+300|adulēscēns|nomen|adulēscentis m|junger Mann|Adj.: jung
+301|adventus|nomen|adventūs m|Ankunft|
+302|aedificium|nomen|aedificiī n|Gebäude|
+303|aestās|nomen|aestātis f|Sommer|
+304|agricola|nomen|agricolae m|Bauer; Landwirt|
+305|altitūdō|nomen|altitūdinis f|Höhe; Tiefe|
+306|ancilla|nomen|ancillae f|Sklavin; Magd|
+307|angustiae|nomen|angustiārum f|Enge; Engpass; Notlage|Pl.
+308|argūmentum|nomen|argūmentī n|Beweis; Inhalt; Stoff|
+309|audācia|nomen|audāciae f|Kühnheit; Frechheit|
+310|avāritia|nomen|avāritiae f|Habgier; Geiz|
+311|avus|nomen|avī m|Großvater|
+312|bēstia|nomen|bēstiae f|Tier; wildes Tier|
+313|casa|nomen|casae f|Hütte|
+314|cēna|nomen|cēnae f|Mahlzeit; Abendessen|
+315|certāmen|nomen|certāminis n|Wettkampf; Kampf; Streit|
+316|circus|nomen|circī m|Zirkus; Rennbahn; Kreis|
+317|clādēs|nomen|clādis f|Niederlage; Unglück|
+318|clēmentia|nomen|clēmentiae f|Milde; Nachsicht|
+319|cōgitātiō|nomen|cōgitātiōnis f|Gedanke; Überlegung|
+320|collēga|nomen|collēgae m|Kollege; Amtsgenosse|
+321|colōnia|nomen|colōniae f|Kolonie; Ansiedlung|
+322|commeātus|nomen|commeātūs m|Nachschub; Proviant; Urlaub|
+323|concilium|nomen|conciliī n|Versammlung|
+324|concordia|nomen|concordiae f|Eintracht|
+325|cōnscientia|nomen|cōnscientiae f|Bewusstsein; Gewissen|
+326|cōnspectus|nomen|cōnspectūs m|Anblick; Blickfeld|in cōnspectū: vor den Augen
+327|contiō|nomen|contiōnis f|Versammlung; Rede (vor dem Volk)|
+328|corōna|nomen|corōnae f|Kranz; Krone; Zuschauerkreis|
+329|crūdēlitās|nomen|crūdēlitātis f|Grausamkeit|
+330|crux|nomen|crucis f|Kreuz; Marter|
+331|cultus|nomen|cultūs m|Pflege; Verehrung; Lebensweise; Bildung|
+332|cupiditās|nomen|cupiditātis f|Begierde; Leidenschaft; Habsucht|
+333|cūria|nomen|cūriae f|Rathaus; Kurie (Senatsgebäude)|
+334|dēdecus|nomen|dēdecoris n|Schande; Schmach|
+335|dīligentia|nomen|dīligentiae f|Sorgfalt; Gewissenhaftigkeit|
+336|discipulus|nomen|discipulī m|Schüler|
+337|discordia|nomen|discordiae f|Zwietracht; Streit|
+338|doctrīna|nomen|doctrīnae f|Lehre; Wissenschaft; Bildung|
+339|ēloquentia|nomen|ēloquentiae f|Beredsamkeit|
+340|exitium|nomen|exitiī n|Untergang; Verderben|
+341|exitus|nomen|exitūs m|Ausgang; Ende; Ergebnis|
+342|explōrātor|nomen|explōrātōris m|Kundschafter; Späher|
+343|fēlīcitās|nomen|fēlīcitātis f|Glück; Erfolg|
+344|fortitūdō|nomen|fortitūdinis f|Tapferkeit; Stärke|
+345|fossa|nomen|fossae f|Graben|
+346|fraus|nomen|fraudis f|Betrug; Täuschung|
+347|frīgus|nomen|frīgoris n|Kälte|
+348|fūr|nomen|fūris m|Dieb|
+349|grex|nomen|gregis m|Herde; Schar|
+350|hasta|nomen|hastae f|Lanze; Speer|
+351|hērēs|nomen|hērēdis m/f|Erbe; Erbin|
+352|hīberna|nomen|hībernōrum n|Winterlager|Pl.
+353|historia|nomen|historiae f|Geschichte; Geschichtsschreibung|
+354|hortus|nomen|hortī m|Garten|
+355|impedīmentum|nomen|impedīmentī n|Hindernis|Pl. impedīmenta: Gepäck, Tross
+356|incola|nomen|incolae m/f|Einwohner|
+357|incendium|nomen|incendiī n|Brand; Feuer|
+358|indicium|nomen|indiciī n|Anzeichen; Beweis; Anzeige|
+359|industria|nomen|industriae f|Fleiß; Eifer|
+360|īnfāns|nomen|īnfantis m/f|kleines Kind|
+361|īnsidiae|nomen|īnsidiārum f|Hinterhalt; Anschlag; List|Pl.
+362|iocus|nomen|iocī m|Scherz; Spaß|
+363|iuventūs|nomen|iuventūtis f|Jugend; junge Mannschaft|
+364|lacus|nomen|lacūs m|See|
+365|laetitia|nomen|laetitiae f|Freude; Fröhlichkeit|
+366|latrō|nomen|latrōnis m|Räuber|
+367|lectus|nomen|lectī m|Bett; Liege|
+368|lēgātiō|nomen|lēgātiōnis f|Gesandtschaft|
+369|leō|nomen|leōnis m|Löwe|
+370|līberālitās|nomen|līberālitātis f|Freigebigkeit; Großzügigkeit|
+371|lūdus|nomen|lūdī m|Spiel; Schule|lūdī: (öffentliche) Spiele
+372|lupus|nomen|lupī m|Wolf|
+373|lūxuria|nomen|lūxuriae f|Verschwendung; Luxus; Genusssucht|
+374|mandātum|nomen|mandātī n|Auftrag; Befehl|
+375|mātrōna|nomen|mātrōnae f|(verheiratete) Frau; Dame|
+376|medicus|nomen|medicī m|Arzt|
+377|mendācium|nomen|mendāciī n|Lüge|
+378|mercātor|nomen|mercātōris m|Kaufmann; Händler|
+379|merīdiēs|nomen|merīdiēī m|Mittag; Süden|
+380|meritum|nomen|meritī n|Verdienst|
+381|minister|nomen|ministrī m|Diener; Gehilfe|
+382|mīrāculum|nomen|mīrāculī n|Wunder|
+383|misericordia|nomen|misericordiae f|Mitleid; Barmherzigkeit|
+384|modestia|nomen|modestiae f|Bescheidenheit; Mäßigung|
+385|molestia|nomen|molestiae f|Beschwerde; Ärger; Last|
+386|monumentum|nomen|monumentī n|Denkmal; Erinnerungszeichen|
+387|mōtus|nomen|mōtūs m|Bewegung; Unruhe; Aufstand|
+388|mūnītiō|nomen|mūnītiōnis f|Befestigung; Schanze|
+389|nauta|nomen|nautae m|Seemann; Matrose|
+390|nepōs|nomen|nepōtis m|Enkel; Neffe|
+391|nōbilitās|nomen|nōbilitātis f|Adel; Berühmtheit|
+392|nūptiae|nomen|nūptiārum f|Hochzeit|Pl.
+393|obses|nomen|obsidis m/f|Geisel|
+394|occāsiō|nomen|occāsiōnis f|Gelegenheit|
+395|ōceanus|nomen|ōceanī m|Ozean; Weltmeer|
+396|opīniō|nomen|opīniōnis f|Meinung; Vermutung; Ruf|
+397|ōrāculum|nomen|ōrāculī n|Orakel; Götterspruch|
+398|ōrātor|nomen|ōrātōris m|Redner|
+399|orīgō|nomen|orīginis f|Ursprung; Herkunft|
+400|ōrnāmentum|nomen|ōrnāmentī n|Schmuck; Zierde|
+401|ovis|nomen|ovis f|Schaf|
+402|palūs|nomen|palūdis f|Sumpf|
+403|pānis|nomen|pānis m|Brot|
+404|pāstor|nomen|pāstōris m|Hirte|
+405|patrōnus|nomen|patrōnī m|Schutzherr; Anwalt|
+406|paupertās|nomen|paupertātis f|Armut|
+407|peccātum|nomen|peccātī n|Fehler; Vergehen; Sünde|
+408|perfidia|nomen|perfidiae f|Treulosigkeit; Verrat|
+409|persōna|nomen|persōnae f|Maske; Rolle; Person|
+410|philosophia|nomen|philosophiae f|Philosophie|
+411|philosophus|nomen|philosophī m|Philosoph|
+412|piscis|nomen|piscis m|Fisch|
+413|pōns|nomen|pontis m|Brücke|
+414|portus|nomen|portūs m|Hafen|
+415|possessiō|nomen|possessiōnis f|Besitz|
+416|potentia|nomen|potentiae f|Macht; Einfluss|
+417|praefectus|nomen|praefectī m|Befehlshaber; Vorsteher|
+418|prīncipātus|nomen|prīncipātūs m|Vorrang; Führerschaft; Kaiserherrschaft|
+419|prōditor|nomen|prōditōris m|Verräter|
+420|prōlēs|nomen|prōlis f|Nachkommenschaft; Sprössling|
+421|prūdentia|nomen|prūdentiae f|Klugheit; Umsicht|
+422|quaestiō|nomen|quaestiōnis f|Frage; Untersuchung|
+423|quaestor|nomen|quaestōris m|Quästor|
+424|quiēs|nomen|quiētis f|Ruhe; Erholung|
+425|rēgīna|nomen|rēgīnae f|Königin|
+426|religiō|nomen|religiōnis f|Glaube; Religion; Gewissenhaftigkeit; Aberglaube|
+427|remedium|nomen|remediī n|Heilmittel; Gegenmittel|
+428|rūmor|nomen|rūmōris m|Gerücht; Gerede|
+429|sacrificium|nomen|sacrificiī n|Opfer|
+430|sagitta|nomen|sagittae f|Pfeil|
+431|scūtum|nomen|scūtī n|Schild|
+432|sēditiō|nomen|sēditiōnis f|Aufruhr; Aufstand|
+433|senātor|nomen|senātōris m|Senator|
+434|senectūs|nomen|senectūtis f|Alter; Greisenalter|
+435|servitūs|nomen|servitūtis f|Sklaverei; Knechtschaft|
+436|sevēritās|nomen|sevēritātis f|Strenge; Ernst|
+437|silentium|nomen|silentiī n|Schweigen; Stille|
+438|simulācrum|nomen|simulācrī n|Bild; Abbild; Götterbild|
+439|sitis|nomen|sitis f|Durst|Akk. sitim, Abl. sitī
+440|sōlitūdō|nomen|sōlitūdinis f|Einsamkeit; Einöde|
+441|sollicitūdō|nomen|sollicitūdinis f|Sorge; Unruhe|
+442|somnium|nomen|somniī n|Traum|
+443|sonus|nomen|sonī m|Ton; Klang; Laut|
+444|spectāculum|nomen|spectāculī n|Schauspiel; Anblick|
+445|spolium|nomen|spoliī n|Beute|meist Pl. spolia: Rüstung des Gegners, Beute
+446|statua|nomen|statuae f|Statue; Standbild|
+447|stultitia|nomen|stultitiae f|Dummheit; Torheit|
+448|suspīciō|nomen|suspīciōnis f|Verdacht; Vermutung|
+449|taberna|nomen|tabernae f|Laden; Wirtshaus; Hütte|
+450|tabula|nomen|tabulae f|Tafel; Brett; Gemälde; Urkunde|
+451|taurus|nomen|taurī m|Stier|
+452|temeritās|nomen|temeritātis f|Unbesonnenheit; Leichtsinn|
+453|terror|nomen|terrōris m|Schrecken|
+454|testāmentum|nomen|testāmentī n|Testament|
+455|thēsaurus|nomen|thēsaurī m|Schatz|
+456|titulus|nomen|titulī m|Aufschrift; Titel; Ehrentitel|
+457|toga|nomen|togae f|Toga|
+458|tormentum|nomen|tormentī n|Folter; Geschütz|
+459|tranquillitās|nomen|tranquillitātis f|Ruhe; Windstille|
+460|triumphus|nomen|triumphī m|Triumph; Triumphzug|
+461|tumultus|nomen|tumultūs m|Unruhe; Aufruhr; Lärm|
+462|tumulus|nomen|tumulī m|Hügel; Grabhügel|
+463|turris|nomen|turris f|Turm|
+464|tyrannus|nomen|tyrannī m|Tyrann; Gewaltherrscher|
+465|ūtilitās|nomen|ūtilitātis f|Nutzen; Vorteil|
+466|vallis|nomen|vallis f|Tal|
+467|vallum|nomen|vallī n|Wall; Schanze|
+468|venēnum|nomen|venēnī n|Gift|
+469|venia|nomen|veniae f|Nachsicht; Verzeihung; Erlaubnis|
+470|vēr|nomen|vēris n|Frühling|
+471|versus|nomen|versūs m|Vers; Zeile|
+472|vesper|nomen|vesperī m|Abend|vesperī: am Abend
+473|vestīmentum|nomen|vestīmentī n|Kleidungsstück|
+474|vigilia|nomen|vigiliae f|Nachtwache; Wache|
+475|vīlla|nomen|vīllae f|Landhaus; Landgut|
+476|vīcus|nomen|vīcī m|Dorf; Stadtviertel|
+477|pāgus|nomen|pāgī m|Gau; Bezirk|
+478|centuriō|nomen|centuriōnis m|Zenturio; Hauptmann|
+479|cōnsulātus|nomen|cōnsulātūs m|Konsulat|
+480|dictātor|nomen|dictātōris m|Diktator|
+481|magistrātus|nomen|magistrātūs m|Amt; Beamter; Behörde|
+482|comitia|nomen|comitiōrum n|Volksversammlung; Wahlen|Pl.
+483|foedus|nomen|foederis n|Bündnis; Vertrag|
+484|dēditiō|nomen|dēditiōnis f|Kapitulation; Übergabe|
+485|indūtiae|nomen|indūtiārum f|Waffenstillstand|Pl.
+486|collis|nomen|collis m|Hügel|
+487|vadum|nomen|vadī n|Furt; seichte Stelle|
+488|aestus|nomen|aestūs m|Hitze; Brandung; Flut|
+489|ancora|nomen|ancorae f|Anker|
+490|vēlum|nomen|vēlī n|Segel; Tuch|
+491|rēmus|nomen|rēmī m|Ruder|
+492|nāvigium|nomen|nāvigiī n|Schiff; Fahrzeug|
+493|gubernātor|nomen|gubernātōris m|Steuermann|
+494|mercātūra|nomen|mercātūrae f|Handel|
+495|statiō|nomen|statiōnis f|Posten; Wache; Standort|
+496|signifer|nomen|signiferī m|Fahnenträger|
+497|praetōrium|nomen|praetōriī n|Feldherrnzelt; Amtssitz|
+498|oppūgnātiō|nomen|oppūgnātiōnis f|Belagerung; Bestürmung|
+499|tribūtum|nomen|tribūtī n|Abgabe; Steuer|
+500|vectīgal|nomen|vectīgālis n|Abgabe; Zoll; Steuer|
+501|acerbus|adjektiv|acerbus, acerba, acerbum|bitter; herb; hart|
+502|admīrābilis|adjektiv|admīrābilis, admīrābile|bewundernswert; erstaunlich|
+503|aequālis|adjektiv|aequālis, aequāle|gleich; gleichaltrig|subst.: Altersgenosse
+504|agrestis|adjektiv|agrestis, agreste|ländlich; bäurisch|
+505|alacer|adjektiv|alacer, alacris, alacre|eifrig; munter; begeistert|
+506|amoenus|adjektiv|amoenus, amoena, amoenum|lieblich; reizend|
+507|angustus|adjektiv|angustus, angusta, angustum|eng; schmal|
+508|anxius|adjektiv|anxius, anxia, anxium|ängstlich; besorgt|
+509|apertus|adjektiv|apertus, aperta, apertum|offen; offenkundig|
+510|arduus|adjektiv|arduus, ardua, arduum|steil; schwierig|
+511|armātus|adjektiv|armātus, armāta, armātum|bewaffnet|
+512|assiduus|adjektiv|assiduus, assidua, assiduum|beharrlich; unablässig|
+513|āter|adjektiv|āter, ātra, ātrum|schwarz; düster; unheilvoll|
+514|avārus|adjektiv|avārus, avāra, avārum|habgierig; geizig|
+515|bellicōsus|adjektiv|bellicōsus, bellicōsa, bellicōsum|kriegerisch|
+516|benīgnus|adjektiv|benīgnus, benīgna, benīgnum|gütig; freundlich; freigebig|
+517|blandus|adjektiv|blandus, blanda, blandum|schmeichelnd; einschmeichelnd|
+518|callidus|adjektiv|callidus, callida, callidum|schlau; geschickt|
+519|celeber|adjektiv|celeber, celebris, celebre|berühmt; belebt|
+520|cīvīlis|adjektiv|cīvīlis, cīvīle|bürgerlich; Bürger-|bellum cīvīle: Bürgerkrieg
+521|clēmēns|adjektiv|clēmēns, clēmentis|mild; gnädig|
+522|cōnstāns|adjektiv|cōnstāns, cōnstantis|standhaft; beständig|
+523|contentus|adjektiv|contentus, contenta, contentum|zufrieden|m. Abl.
+524|crūdēlis|adjektiv|crūdēlis, crūdēle|grausam|
+525|cupidus|adjektiv|cupidus, cupida, cupidum|begierig|m. Gen.
+526|dēnsus|adjektiv|dēnsus, dēnsa, dēnsum|dicht|
+527|dīligēns|adjektiv|dīligēns, dīligentis|sorgfältig; gewissenhaft|
+528|dīrus|adjektiv|dīrus, dīra, dīrum|schrecklich; grässlich|
+529|doctus|adjektiv|doctus, docta, doctum|gelehrt; gebildet|
+530|domesticus|adjektiv|domesticus, domestica, domesticum|häuslich; einheimisch; privat|
+531|ēlegāns|adjektiv|ēlegāns, ēlegantis|geschmackvoll; fein|
+532|ēloquēns|adjektiv|ēloquēns, ēloquentis|beredt; redegewandt|
+533|exiguus|adjektiv|exiguus, exigua, exiguum|klein; gering; knapp|
+534|expedītus|adjektiv|expedītus, expedīta, expedītum|ungehindert; ohne Gepäck; kampfbereit|
+535|externus|adjektiv|externus, externa, externum|äußerer; auswärtig; fremd|
+536|familiāris|adjektiv|familiāris, familiāre|vertraut; freundschaftlich; zur Familie gehörig|rēs familiāris: Vermögen; subst.: Freund
+537|ferōx|adjektiv|ferōx, ferōcis|wild; trotzig; kampflustig|
+538|fīdus|adjektiv|fīdus, fīda, fīdum|treu; zuverlässig|
+539|fīrmus|adjektiv|fīrmus, fīrma, fīrmum|fest; stark; zuverlässig|
+540|flāvus|adjektiv|flāvus, flāva, flāvum|gelb; blond|
+541|fōrmōsus|adjektiv|fōrmōsus, fōrmōsa, fōrmōsum|schön; wohlgestaltet|
+542|fortūnātus|adjektiv|fortūnātus, fortūnāta, fortūnātum|glücklich; vom Glück begünstigt|
+543|frīgidus|adjektiv|frīgidus, frīgida, frīgidum|kalt|
+544|fūnestus|adjektiv|fūnestus, fūnesta, fūnestum|verderblich; unheilvoll|
+545|futūrus|adjektiv|futūrus, futūra, futūrum|zukünftig|rēs futūrae: die Zukunft
+546|gelidus|adjektiv|gelidus, gelida, gelidum|eiskalt; kalt|
+547|generōsus|adjektiv|generōsus, generōsa, generōsum|edel; adlig; großmütig|
+548|grandis|adjektiv|grandis, grande|groß; bedeutend; erhaben|
+549|horribilis|adjektiv|horribilis, horribile|schrecklich; entsetzlich|
+550|hostīlis|adjektiv|hostīlis, hostīle|feindlich|
+551|ignārus|adjektiv|ignārus, ignāra, ignārum|unwissend; unkundig|m. Gen.
+552|ignāvus|adjektiv|ignāvus, ignāva, ignāvum|träge; feige|
+553|ignōtus|adjektiv|ignōtus, ignōta, ignōtum|unbekannt|
+554|illūstris|adjektiv|illūstris, illūstre|hell; berühmt; angesehen|
+555|immānis|adjektiv|immānis, immāne|ungeheuer; unmenschlich; wild|
+556|immēnsus|adjektiv|immēnsus, immēnsa, immēnsum|unermesslich; gewaltig|
+557|immortālis|adjektiv|immortālis, immortāle|unsterblich|
+558|impius|adjektiv|impius, impia, impium|gottlos; pflichtvergessen; frevelhaft|
+559|improbus|adjektiv|improbus, improba, improbum|schlecht; unredlich; unverschämt|
+560|incertus|adjektiv|incertus, incerta, incertum|unsicher; ungewiss|
+561|incrēdibilis|adjektiv|incrēdibilis, incrēdibile|unglaublich|
+562|indīgnus|adjektiv|indīgnus, indīgna, indīgnum|unwürdig; empörend|
+563|inermis|adjektiv|inermis, inerme|unbewaffnet; wehrlos|
+564|īnfēlīx|adjektiv|īnfēlīx, īnfēlīcis|unglücklich; unheilvoll|
+565|īnfestus|adjektiv|īnfestus, īnfesta, īnfestum|feindlich; bedroht; gefährlich|
+566|īnfīnītus|adjektiv|īnfīnītus, īnfīnīta, īnfīnītum|unbegrenzt; unendlich|
+567|inīquus|adjektiv|inīquus, inīqua, inīquum|ungleich; ungerecht; ungünstig|
+568|innocēns|adjektiv|innocēns, innocentis|unschuldig; harmlos|
+569|inops|adjektiv|inops, inopis|arm; hilflos|
+570|īnsīgnis|adjektiv|īnsīgnis, īnsīgne|auffallend; ausgezeichnet|
+571|invītus|adjektiv|invītus, invīta, invītum|unwillig; gegen den Willen|mē invītō: gegen meinen Willen
+572|iūcundus|adjektiv|iūcundus, iūcunda, iūcundum|angenehm; erfreulich|
+573|lentus|adjektiv|lentus, lenta, lentum|zäh; langsam; biegsam|
+574|līberālis|adjektiv|līberālis, līberāle|freigebig; eines freien Mannes würdig; edel|artēs līberālēs: die freien Künste
+575|maritimus|adjektiv|maritimus, maritima, maritimum|Meer-; See-; am Meer gelegen|
+576|mātūrus|adjektiv|mātūrus, mātūra, mātūrum|reif; frühzeitig|
+577|mediocris|adjektiv|mediocris, mediocre|mittelmäßig; gewöhnlich|
+578|memor|adjektiv|memor, memoris|eingedenk; sich erinnernd|m. Gen.
+579|mīrus|adjektiv|mīrus, mīra, mīrum|wunderbar; erstaunlich|
+580|modestus|adjektiv|modestus, modesta, modestum|bescheiden; maßvoll|
+581|molestus|adjektiv|molestus, molesta, molestum|lästig; beschwerlich|
+582|mūtus|adjektiv|mūtus, mūta, mūtum|stumm|
+583|nātūrālis|adjektiv|nātūrālis, nātūrāle|natürlich|
+584|nāvālis|adjektiv|nāvālis, nāvāle|See-; Schiffs-|
+585|necessārius|adjektiv|necessārius, necessāria, necessārium|notwendig; eng verbunden|subst.: Verwandter, Freund
+586|nefārius|adjektiv|nefārius, nefāria, nefārium|frevelhaft; ruchlos|
+587|neglegēns|adjektiv|neglegēns, neglegentis|nachlässig; gleichgültig|
+588|nocturnus|adjektiv|nocturnus, nocturna, nocturnum|nächtlich|
+589|obscūrus|adjektiv|obscūrus, obscūra, obscūrum|dunkel; unbekannt; unverständlich|
+590|occultus|adjektiv|occultus, occulta, occultum|verborgen; heimlich|
+591|ōtiōsus|adjektiv|ōtiōsus, ōtiōsa, ōtiōsum|untätig; müßig; ruhig|
+592|paternus|adjektiv|paternus, paterna, paternum|väterlich|
+593|patiēns|adjektiv|patiēns, patientis|geduldig; ausdauernd|m. Gen.: ertragend
+594|perītus|adjektiv|perītus, perīta, perītum|erfahren; kundig|m. Gen.
+595|perniciōsus|adjektiv|perniciōsus, perniciōsa, perniciōsum|verderblich; schädlich|
+596|placidus|adjektiv|placidus, placida, placidum|ruhig; sanft; friedlich|
+597|praeclārus|adjektiv|praeclārus, praeclāra, praeclārum|herrlich; ausgezeichnet; berühmt|
+598|praecipuus|adjektiv|praecipuus, praecipua, praecipuum|besonders; vorzüglich|
+599|prāvus|adjektiv|prāvus, prāva, prāvum|verkehrt; schlecht|
+600|pretiōsus|adjektiv|pretiōsus, pretiōsa, pretiōsum|wertvoll; kostbar|
+601|prīstinus|adjektiv|prīstinus, prīstina, prīstinum|früher; ehemalig|
+602|probus|adjektiv|probus, proba, probum|rechtschaffen; tüchtig; gut|
+603|prōmptus|adjektiv|prōmptus, prōmpta, prōmptum|bereit; entschlossen; sichtbar|
+604|prosperus|adjektiv|prosperus, prospera, prosperum|günstig; glücklich|
+605|prūdēns|adjektiv|prūdēns, prūdentis|klug; umsichtig|
+606|pūrus|adjektiv|pūrus, pūra, pūrum|rein; sauber|
+607|quiētus|adjektiv|quiētus, quiēta, quiētum|ruhig|
+608|rapidus|adjektiv|rapidus, rapida, rapidum|reißend; schnell|
+609|rōbustus|adjektiv|rōbustus, rōbusta, rōbustum|kräftig; stark|
+610|rudis|adjektiv|rudis, rude|roh; unerfahren; ungebildet|
+611|rūsticus|adjektiv|rūsticus, rūstica, rūsticum|ländlich; bäurisch|subst.: Bauer
+612|salvus|adjektiv|salvus, salva, salvum|unversehrt; wohlbehalten; gerettet|
+613|scelerātus|adjektiv|scelerātus, scelerāta, scelerātum|verbrecherisch; frevelhaft|
+614|sērius|adjektiv|sērius, sēria, sērium|ernst; ernsthaft|
+615|sevērus|adjektiv|sevērus, sevēra, sevērum|streng; ernst|
+616|siccus|adjektiv|siccus, sicca, siccum|trocken|
+617|singulāris|adjektiv|singulāris, singulāre|einzigartig; einzeln|
+618|sōbrius|adjektiv|sōbrius, sōbria, sōbrium|nüchtern; besonnen|
+619|sollicitus|adjektiv|sollicitus, sollicita, sollicitum|besorgt; beunruhigt|
+620|sordidus|adjektiv|sordidus, sordida, sordidum|schmutzig; gemein; niedrig|
+621|splendidus|adjektiv|splendidus, splendida, splendidum|glänzend; prächtig|
+622|stultus|adjektiv|stultus, stulta, stultum|dumm; töricht|
+623|suāvis|adjektiv|suāvis, suāve|süß; angenehm; lieblich|
+624|subitus|adjektiv|subitus, subita, subitum|plötzlich; unerwartet|
+625|supplex|adjektiv|supplex, supplicis|demütig bittend; flehend|subst.: Bittsteller
+626|tacitus|adjektiv|tacitus, tacita, tacitum|schweigend; still; verschwiegen|
+627|temerārius|adjektiv|temerārius, temerāria, temerārium|unbesonnen; leichtsinnig|
+628|tenuis|adjektiv|tenuis, tenue|dünn; fein; gering; schwach|
+629|terribilis|adjektiv|terribilis, terribile|schrecklich|
+630|timidus|adjektiv|timidus, timida, timidum|ängstlich; furchtsam|
+631|tranquillus|adjektiv|tranquillus, tranquilla, tranquillum|ruhig; still|
+632|ūmidus|adjektiv|ūmidus, ūmida, ūmidum|feucht; nass|
+633|ūniversus|adjektiv|ūniversus, ūniversa, ūniversum|gesamt; ganz; Pl.: alle zusammen|
+634|urbānus|adjektiv|urbānus, urbāna, urbānum|städtisch; fein; witzig|
+635|vehemēns|adjektiv|vehemēns, vehementis|heftig; leidenschaftlich|
+636|vēlōx|adjektiv|vēlōx, vēlōcis|schnell|
+637|vīlis|adjektiv|vīlis, vīle|billig; wertlos|
+638|vīvus|adjektiv|vīvus, vīva, vīvum|lebend; lebendig|
+639|vulgāris|adjektiv|vulgāris, vulgāre|gewöhnlich; alltäglich|
+640|ulterior|adjektiv|ulterior, ulterius|jenseitig; weiter entfernt|Gallia ulterior: das jenseitige Gallien
+641|citerior|adjektiv|citerior, citerius|diesseitig; näher|
+642|fīnitimus|adjektiv|fīnitimus, fīnitima, fīnitimum|benachbart; angrenzend|subst.: Nachbar
+643|hībernus|adjektiv|hībernus, hīberna, hībernum|winterlich; Winter-|
+644|aestīvus|adjektiv|aestīvus, aestīva, aestīvum|sommerlich; Sommer-|
+645|frūmentārius|adjektiv|frūmentārius, frūmentāria, frūmentārium|Getreide-|rēs frūmentāria: Getreideversorgung
+646|mīlitāris|adjektiv|mīlitāris, mīlitāre|militärisch; Kriegs-|rēs mīlitāris: Kriegswesen
+647|iniūstus|adjektiv|iniūstus, iniūsta, iniūstum|ungerecht|
+649|dissimilis|adjektiv|dissimilis, dissimile|unähnlich|
+650|incolumis|adjektiv|incolumis, incolume|unversehrt; wohlbehalten|
+651|inānis|adjektiv|inānis, ināne|leer; nichtig; eitel|
+652|lūcidus|adjektiv|lūcidus, lūcida, lūcidum|hell; leuchtend; klar|
+653|ēbrius|adjektiv|ēbrius, ēbria, ēbrium|betrunken|
+654|cautus|adjektiv|cautus, cauta, cautum|vorsichtig|
+655|creber|adjektiv|creber, crēbra, crēbrum|häufig; zahlreich; dicht|
+656|dēbilis|adjektiv|dēbilis, dēbile|schwach; gebrechlich|
+657|ēgēns|adjektiv|ēgēns, ēgentis|bedürftig; arm|
+658|exīmius|adjektiv|exīmius, exīmia, exīmium|außerordentlich; hervorragend|
+659|fallāx|adjektiv|fallāx, fallācis|trügerisch; betrügerisch|
+660|gravidus|adjektiv|gravidus, gravida, gravidum|schwanger; schwer beladen|
+661|hilaris|adjektiv|hilaris, hilare|heiter; fröhlich|
+662|honōrātus|adjektiv|honōrātus, honōrāta, honōrātum|geehrt; angesehen|
+663|immōbilis|adjektiv|immōbilis, immōbile|unbeweglich|
+664|īnsānus|adjektiv|īnsānus, īnsāna, īnsānum|wahnsinnig; verrückt|
+665|īrātus|adjektiv|īrātus, īrāta, īrātum|zornig; erzürnt|m. Dat.
+666|lēnis|adjektiv|lēnis, lēne|sanft; mild|
+668|marmoreus|adjektiv|marmoreus, marmorea, marmoreum|aus Marmor; marmorn|
+669|mītis|adjektiv|mītis, mīte|mild; sanft; reif|
+670|opulentus|adjektiv|opulentus, opulenta, opulentum|reich; mächtig|
+671|pallidus|adjektiv|pallidus, pallida, pallidum|blass; bleich|
+672|pestifer|adjektiv|pestifer, pestifera, pestiferum|verderblich; unheilbringend|
+674|ruber|adjektiv|ruber, rubra, rubrum|rot|
+675|sublīmis|adjektiv|sublīmis, sublīme|erhaben; hoch|
+676|superstes|adjektiv|superstes, superstitis|überlebend|
+677|turbidus|adjektiv|turbidus, turbida, turbidum|stürmisch; trüb; verwirrt|
+678|umbrōsus|adjektiv|umbrōsus, umbrōsa, umbrōsum|schattig|
+679|vērāx|adjektiv|vērāx, vērācis|wahrhaftig|
+680|viridis|adjektiv|viridis, viride|grün; frisch|
+681|abdere|verb|abdō, abdidī, abditum|verbergen; verstecken|
+682|abicere|verb|abiciō, abiēcī, abiectum|wegwerfen; aufgeben|
+683|abstinēre|verb|abstineō, abstinuī, abstentum|fernhalten; sich enthalten|m. Abl.
+684|abūtī|verb|abūtor, abūsus sum|missbrauchen; verbrauchen|m. Abl.; Deponens
+685|accendere|verb|accendō, accendī, accēnsum|anzünden; entflammen|
+686|accurrere|verb|accurrō, accurrī, accursum|herbeilaufen|
+687|acquīrere|verb|acquīrō, acquīsīvī, acquīsītum|erwerben; hinzugewinnen|
+688|adiungere|verb|adiungō, adiūnxī, adiūnctum|anschließen; hinzufügen|
+689|adiuvāre|verb|adiuvō, adiūvī, adiūtum|unterstützen; helfen|m. Akk.
+690|administrāre|verb|administrō, administrāvī, administrātum|verwalten; leiten; ausführen|
+691|adoptāre|verb|adoptō, adoptāvī, adoptātum|adoptieren; annehmen|
+692|adōrāre|verb|adōrō, adōrāvī, adōrātum|anbeten; verehren|
+693|aedificāre|verb|aedificō, aedificāvī, aedificātum|bauen; errichten|
+694|aequāre|verb|aequō, aequāvī, aequātum|gleichmachen; gleichkommen|
+695|affirmāre|verb|affirmō, affirmāvī, affirmātum|versichern; behaupten; bekräftigen|
+696|alloquī|verb|alloquor, allocūtus sum|ansprechen; anreden|Deponens
+697|ārdēscere|verb|ārdēscō, ārsī|entbrennen; sich entzünden|
+698|arripere|verb|arripiō, arripuī, arreptum|an sich reißen; ergreifen|
+699|attingere|verb|attingō, attigī, attāctum|berühren; erreichen|
+700|cantāre|verb|cantō, cantāvī, cantātum|singen; besingen|
+701|cēnāre|verb|cēnō, cēnāvī, cēnātum|essen; speisen|
+702|circumspicere|verb|circumspiciō, circumspexī, circumspectum|sich umsehen; umherblicken|
+703|cohortārī|verb|cohortor, cohortātus sum|ermuntern; anfeuern|Deponens
+704|comitārī|verb|comitor, comitātus sum|begleiten|Deponens
+705|commemorāre|verb|commemorō, commemorāvī, commemorātum|erwähnen; erinnern an|
+706|commovēre|verb|commoveō, commōvī, commōtum|bewegen; erregen; veranlassen|
+707|comprehendere|verb|comprehendō, comprehendī, comprehēnsum|ergreifen; festnehmen; begreifen|
+708|cōnfirmāre|verb|cōnfirmō, cōnfirmāvī, cōnfirmātum|stärken; bekräftigen; versichern|
+709|cōnfugere|verb|cōnfugiō, cōnfūgī|sich flüchten; Zuflucht nehmen|
+710|coniungere|verb|coniungō, coniūnxī, coniūnctum|verbinden; vereinigen|
+711|cōnscendere|verb|cōnscendō, cōnscendī, cōnscēnsum|besteigen|nāvem cōnscendere: an Bord gehen
+712|cōnsecrāre|verb|cōnsecrō, cōnsecrāvī, cōnsecrātum|weihen; heiligen|
+713|cōnspīrāre|verb|cōnspīrō, cōnspīrāvī, cōnspīrātum|sich verschwören; übereinstimmen|
+714|contrahere|verb|contrahō, contrāxī, contractum|zusammenziehen; sammeln|
+716|cruciāre|verb|cruciō, cruciāvī, cruciātum|quälen; foltern|
+717|cubāre|verb|cubō, cubuī, cubitum|liegen; schlafen|
+719|dēicere|verb|dēiciō, dēiēcī, dēiectum|hinabwerfen; vertreiben; stürzen|
+720|dēligere|verb|dēligō, dēlēgī, dēlēctum|auswählen|
+721|dēspicere|verb|dēspiciō, dēspexī, dēspectum|herabblicken; verachten|
+722|dēvincere|verb|dēvincō, dēvīcī, dēvictum|völlig besiegen|
+724|dīmicāre|verb|dīmicō, dīmicāvī, dīmicātum|kämpfen|
+725|discernere|verb|discernō, discrēvī, discrētum|unterscheiden; trennen|
+726|dissolvere|verb|dissolvō, dissolvī, dissolūtum|auflösen; bezahlen|
+727|ēducāre|verb|ēducō, ēducāvī, ēducātum|erziehen; aufziehen|
+729|ēmigrāre|verb|ēmigrō, ēmigrāvī, ēmigrātum|auswandern; ausziehen|
+731|ērudīre|verb|ērudiō, ērudīvī, ērudītum|unterrichten; bilden|
+732|ēvādere|verb|ēvādō, ēvāsī, ēvāsum|entkommen; herausgehen; werden zu|
+733|ēvertere|verb|ēvertō, ēvertī, ēversum|umstürzen; zerstören|
+734|excēdere|verb|excēdō, excessī, excessum|hinausgehen; überschreiten|
+735|excīdere|verb|excīdō, excīdī, excīsum|herausschlagen; zerstören|
+736|exclūdere|verb|exclūdō, exclūsī, exclūsum|ausschließen|
+737|exhaurīre|verb|exhauriō, exhausī, exhaustum|ausschöpfen; erschöpfen|
+739|expōnere|verb|expōnō, exposuī, expositum|aussetzen; darlegen; ausladen|
+740|exsequī|verb|exsequor, exsecūtus sum|ausführen; verfolgen|Deponens
+741|exsurgere|verb|exsurgō, exsurrēxī|sich erheben; aufstehen|
+742|fabricāre|verb|fabricō, fabricāvī, fabricātum|anfertigen; bauen|
+743|ferīre|verb|feriō|schlagen; treffen; töten|nur Präsensstamm
+744|fīgere|verb|fīgō, fīxī, fīxum|anheften; befestigen; durchbohren|
+745|fōrmāre|verb|fōrmō, fōrmāvī, fōrmātum|formen; gestalten|
+746|fovēre|verb|foveō, fōvī, fōtum|wärmen; hegen; begünstigen|
+747|gemere|verb|gemō, gemuī, gemitum|seufzen; stöhnen; beklagen|
+749|grātulārī|verb|grātulor, grātulātus sum|beglückwünschen; gratulieren|m. Dat.; Deponens
+750|hiemāre|verb|hiemō, hiemāvī, hiemātum|überwintern|
+751|horrēre|verb|horreō, horruī|schaudern; sich entsetzen vor|
+752|illūstrāre|verb|illūstrō, illūstrāvī, illūstrātum|erleuchten; erklären; verherrlichen|
+753|immolāre|verb|immolō, immolāvī, immolātum|opfern|
+754|impellere|verb|impellō, impulī, impulsum|antreiben; veranlassen|
+755|imprimere|verb|imprimō, impressī, impressum|eindrücken; einprägen|
+756|incumbere|verb|incumbō, incubuī, incubitum|sich legen auf; sich widmen|m. Dat. / in m. Akk.
+757|indulgēre|verb|indulgeō, indulsī, indultum|nachsichtig sein; sich hingeben|m. Dat.
+758|īnflammāre|verb|īnflammō, īnflammāvī, īnflammātum|entflammen; begeistern|
+759|īnfluere|verb|īnfluō, īnflūxī, īnflūxum|hineinfließen; einströmen|
+760|inquīrere|verb|inquīrō, inquīsīvī, inquīsītum|untersuchen; nachforschen|
+761|īnsequī|verb|īnsequor, īnsecūtus sum|verfolgen; nachfolgen|Deponens
+762|īnspicere|verb|īnspiciō, īnspexī, īnspectum|hineinsehen; besichtigen; prüfen|
+763|īnstigāre|verb|īnstīgō, īnstīgāvī, īnstīgātum|antreiben; aufstacheln|
+764|interclūdere|verb|interclūdō, interclūsī, interclūsum|abschneiden; absperren|
+765|interdīcere|verb|interdīcō, interdīxī, interdictum|untersagen; verbieten|
+766|intermittere|verb|intermittō, intermīsī, intermissum|unterbrechen; aussetzen|
+767|invītāre|verb|invītō, invītāvī, invītātum|einladen; auffordern|
+768|irrumpere|verb|irrumpō, irrūpī, irruptum|eindringen; einbrechen|
+769|iterāre|verb|iterō, iterāvī, iterātum|wiederholen|
+770|lacerāre|verb|lacerō, lacerāvī, lacerātum|zerfleischen; zerreißen|
+771|lāmentārī|verb|lāmentor, lāmentātus sum|wehklagen; beklagen|Deponens
+772|languēre|verb|langueō, languī|matt sein; schlaff sein|
+773|levāre|verb|levō, levāvī, levātum|erleichtern; heben; lindern|
+774|mānāre|verb|mānō, mānāvī, mānātum|fließen; sich verbreiten|
+776|meditārī|verb|meditor, meditātus sum|nachdenken; sinnen; einüben|Deponens
+777|mergere|verb|mergō, mersī, mersum|eintauchen; versenken|
+778|migrāre|verb|migrō, migrāvī, migrātum|wandern; umziehen|
+779|minuere|verb|minuō, minuī, minūtum|verringern; vermindern|
+780|miserērī|verb|misereor, miseritus sum|sich erbarmen; Mitleid haben|m. Gen.; Deponens
+781|mollīre|verb|molliō, mollīvī, mollītum|erweichen; besänftigen|
+782|mōlīrī|verb|mōlior, mōlītus sum|in Bewegung setzen; planen; unternehmen|Deponens
+784|nectere|verb|nectō, nexuī, nexum|knüpfen; verbinden|
+785|nūbere|verb|nūbō, nūpsī, nūptum|heiraten (von der Frau)|m. Dat.
+786|obicere|verb|obiciō, obiēcī, obiectum|entgegenwerfen; vorwerfen; aussetzen|
+787|obīre|verb|obeō, obiī, obitum|entgegengehen; übernehmen; sterben|mortem obīre: sterben
+788|oboedīre|verb|oboediō, oboedīvī, oboedītum|gehorchen|m. Dat.
+789|obruere|verb|obruō, obruī, obrutum|überschütten; verschütten; überwältigen|
+790|obstāre|verb|obstō, obstitī|im Weg stehen; hindern|m. Dat.
+791|ostentāre|verb|ostentō, ostentāvī, ostentātum|zeigen; prahlen mit|
+792|pandere|verb|pandō, pandī, passum|ausbreiten; öffnen|
+793|patefacere|verb|patefaciō, patefēcī, patefactum|öffnen; aufdecken|
+794|percipere|verb|percipiō, percēpī, perceptum|wahrnehmen; empfangen; begreifen|
+795|percutere|verb|percutiō, percussī, percussum|durchbohren; schlagen; erschüttern|
+796|perdūcere|verb|perdūcō, perdūxī, perductum|hinführen; durchführen|
+797|perferre|verb|perferō, pertulī, perlātum|ertragen; überbringen|
+798|persequī|verb|persequor, persecūtus sum|verfolgen|Deponens
+799|perspicere|verb|perspiciō, perspexī, perspectum|durchschauen; erkennen|
+801|praecēdere|verb|praecēdō, praecessī, praecessum|vorangehen; übertreffen|
+802|praedīcere|verb|praedīcō, praedīxī, praedictum|vorhersagen; vorher sagen|
+803|praemittere|verb|praemittō, praemīsī, praemissum|vorausschicken|
+804|praesidēre|verb|praesideō, praesēdī|den Vorsitz führen; schützen|m. Dat.
+805|praeterīre|verb|praetereō, praeteriī, praeteritum|vorbeigehen; übergehen; vergehen|
+806|prōclāmāre|verb|prōclāmō, prōclāmāvī, prōclāmātum|ausrufen; laut verkünden|
+807|prōdūcere|verb|prōdūcō, prōdūxī, prōductum|vorführen; hervorbringen; verlängern|
+808|prōferre|verb|prōferō, prōtulī, prōlātum|hervorbringen; vorbringen; erweitern|
+809|prōfundere|verb|prōfundō, prōfūdī, prōfūsum|vergießen; verschwenden|
+810|prōicere|verb|prōiciō, prōiēcī, prōiectum|hinwerfen; wegwerfen; preisgeben|
+811|prōpellere|verb|prōpellō, prōpulī, prōpulsum|vorwärtstreiben; vertreiben|
+813|prōvocāre|verb|prōvocō, prōvocāvī, prōvocātum|herausfordern; Berufung einlegen|
+814|pūrgāre|verb|pūrgō, pūrgāvī, pūrgātum|reinigen; rechtfertigen|
+815|quatere|verb|quatiō, –, quassum|schütteln; erschüttern|
+817|recognōscere|verb|recognōscō, recognōvī, recognitum|wiedererkennen; überprüfen|
+818|recreāre|verb|recreō, recreāvī, recreātum|erfrischen; wiederherstellen|
+819|reficere|verb|reficiō, refēcī, refectum|wiederherstellen; erneuern; erholen lassen|
+820|refugere|verb|refugiō, refūgī|zurückfliehen; meiden|
+821|rēgnāre|verb|rēgnō, rēgnāvī, rēgnātum|herrschen; König sein|
+822|reicere|verb|reiciō, reiēcī, reiectum|zurückwerfen; zurückweisen|
+823|relevāre|verb|relevō, relevāvī, relevātum|erleichtern; lindern|
+824|remittere|verb|remittō, remīsī, remissum|zurückschicken; nachlassen; erlassen|
+825|repellere|verb|repellō, reppulī, repulsum|zurückstoßen; abwehren|
+826|reportāre|verb|reportō, reportāvī, reportātum|zurückbringen; davontragen|victōriam reportāre: den Sieg davontragen
+827|repūgnāre|verb|repūgnō, repūgnāvī, repūgnātum|Widerstand leisten; widersprechen|
+828|resonāre|verb|resonō, resonāvī|widerhallen|
+829|retrahere|verb|retrahō, retrāxī, retractum|zurückziehen|
+830|revīsere|verb|revīsō, revīsī|wieder besuchen|
+831|rogitāre|verb|rogitō, rogitāvī, rogitātum|wiederholt fragen|
+832|ruere|verb|ruō, ruī, rutum|stürzen; eilen; einstürzen|
+833|sacrificāre|verb|sacrificō, sacrificāvī, sacrificātum|opfern|
+834|saevīre|verb|saeviō, saeviī, saevītum|wüten; toben|
+835|sancīre|verb|sanciō, sānxī, sānctum|heiligen; festsetzen; verbieten|
+836|satiāre|verb|satiō, satiāvī, satiātum|sättigen; befriedigen|
+837|scindere|verb|scindō, scidī, scissum|zerreißen; spalten|
+838|sēcernere|verb|sēcernō, sēcrēvī, sēcrētum|absondern; trennen|
+839|sēparāre|verb|sēparō, sēparāvī, sēparātum|trennen; absondern|
+840|serere|verb|serō, sēvī, satum|säen; pflanzen|
+841|sīgnificāre|verb|sīgnificō, sīgnificāvī, sīgnificātum|anzeigen; bedeuten; zu verstehen geben|
+843|sollicitāre|verb|sollicitō, sollicitāvī, sollicitātum|beunruhigen; aufwiegeln; verlocken|
+844|spernere|verb|spernō, sprēvī, sprētum|verschmähen; verachten|
+845|spīrāre|verb|spīrō, spīrāvī, spīrātum|atmen; wehen|
+846|stringere|verb|stringō, strīnxī, strictum|zusammenziehen; streifen; ziehen (Schwert)|
+848|subdūcere|verb|subdūcō, subdūxī, subductum|hinaufziehen; entziehen|
+849|subsistere|verb|subsistō, substitī|stehen bleiben; standhalten|
+850|subvenīre|verb|subveniō, subvēnī, subventum|zu Hilfe kommen|m. Dat.
+851|supplicāre|verb|supplicō, supplicāvī, supplicātum|anflehen; demütig bitten|m. Dat.
+852|suscitāre|verb|suscitō, suscitāvī, suscitātum|aufwecken; erregen|
+853|suspendere|verb|suspendō, suspendī, suspēnsum|aufhängen; in der Schwebe lassen|
+854|tremere|verb|tremō, tremuī|zittern; beben|
+855|tumēre|verb|tumeō, tumuī|geschwollen sein; aufgeregt sein|
+857|urgēre|verb|urgeō, ursī|drängen; bedrängen|
+858|ūrere|verb|ūrō, ussī, ustum|brennen; verbrennen|
+859|vagārī|verb|vagor, vagātus sum|umherschweifen|Deponens
+862|vellere|verb|vellō, vellī, vulsum|ausreißen; rupfen|
+864|vēscī|verb|vēscor|sich nähren von; essen|m. Abl.; Deponens
+865|vexāre|verb|vexō, vexāvī, vexātum|quälen; plagen; heimsuchen|
+866|vibrāre|verb|vibrō, vibrāvī, vibrātum|schwingen; zittern|
+868|volvere|verb|volvō, volvī, volūtum|wälzen; rollen; überlegen|
+869|dēsilīre|verb|dēsiliō, dēsiluī, dēsultum|herabspringen|
+870|exsultāre|verb|exsultō, exsultāvī, exsultātum|jubeln; frohlocken; springen|
+871|ēvocāre|verb|ēvocō, ēvocāvī, ēvocātum|herausrufen; herbeirufen|
+872|cōnfundere|verb|cōnfundō, cōnfūdī, cōnfūsum|vermischen; verwirren|
+873|cōnserere|verb|cōnserō, cōnseruī, cōnsertum|verknüpfen|manum cōnserere: handgemein werden
+874|cōnstringere|verb|cōnstringō, cōnstrīnxī, cōnstrictum|zusammenschnüren; fesseln|
+876|dēcurrere|verb|dēcurrō, dēcurrī, dēcursum|herablaufen; durcheilen|
+877|dēmittere|verb|dēmittō, dēmīsī, dēmissum|hinablassen; senken|
+878|dēsistere|verb|dēsistō, dēstitī|ablassen; aufhören|m. Abl. / Inf.
+879|dēvovēre|verb|dēvoveō, dēvōvī, dēvōtum|weihen; verfluchen|
+881|dirimere|verb|dirimō, dirēmī, dirēmptum|trennen; beenden|
+882|discurrere|verb|discurrō, discurrī, discursum|auseinanderlaufen; hin und her laufen|
+883|dissimulāre|verb|dissimulō, dissimulāvī, dissimulātum|verheimlichen; verbergen|
+884|ēlicere|verb|ēliciō, ēlicuī, ēlicitum|herauslocken; entlocken|
+885|ēnumerāre|verb|ēnumerō, ēnumerāvī, ēnumerātum|aufzählen|
+886|exanimāre|verb|exanimō, exanimāvī, exanimātum|töten; erschrecken|exanimātus: atemlos, tot
+887|exārdēscere|verb|exārdēscō, exārsī|entbrennen; ausbrechen|
+888|excruciāre|verb|excruciō, excruciāvī, excruciātum|quälen; foltern|
+889|expedīre|verb|expediō, expedīvī, expedītum|losmachen; erledigen; bereitmachen|expedit: es ist nützlich
+890|explōrāre|verb|explōrō, explōrāvī, explōrātum|erkunden; untersuchen|
+891|exspīrāre|verb|exspīrō, exspīrāvī, exspīrātum|aushauchen; sterben|
+892|exuere|verb|exuō, exuī, exūtum|ausziehen; ablegen; berauben|
+893|fatīgāre|verb|fatīgō, fatīgāvī, fatīgātum|ermüden; quälen|
+894|flagrāre|verb|flagrō, flagrāvī, flagrātum|brennen; lodern|
+895|fluitāre|verb|fluitō, fluitāvī|treiben; wogen|
+896|fodere|verb|fodiō, fōdī, fossum|graben; durchbohren|
+897|frēnāre|verb|frēnō, frēnāvī, frēnātum|zügeln; bändigen|
+898|fulgēre|verb|fulgeō, fulsī|blitzen; glänzen|
+899|fungī|verb|fungor, fūnctus sum|verwalten; ausüben|m. Abl.; Deponens
+900|furere|verb|furō|rasen; wüten|
+901|gestāre|verb|gestō, gestāvī, gestātum|tragen; bei sich tragen|
+902|glōriārī|verb|glōrior, glōriātus sum|sich rühmen; prahlen|Deponens
+904|haurīre|verb|hauriō, hausī, haustum|schöpfen; leeren; verschlingen|
+906|illūdere|verb|illūdō, illūsī, illūsum|verspotten|m. Dat.
+907|immittere|verb|immittō, immīsī, immissum|hineinschicken; loslassen|
+908|imminēre|verb|immineō|drohen; bevorstehen; herüberragen|m. Dat.
+909|inclūdere|verb|inclūdō, inclūsī, inclūsum|einschließen|
+910|increpāre|verb|increpō, increpuī, increpitum|schelten; anfahren; ertönen|
+911|indīcere|verb|indīcō, indīxī, indictum|ankündigen; ansagen|bellum indīcere: den Krieg erklären
+912|īnfundere|verb|īnfundō, īnfūdī, īnfūsum|hineingießen|
+913|ingemīscere|verb|ingemīscō, ingemuī|aufseufzen; beklagen|
+914|inicere|verb|iniciō, iniēcī, iniectum|hineinwerfen; einflößen|
+915|innītī|verb|innītor, innīxus sum|sich stützen auf|m. Abl.; Deponens
+916|īnsistere|verb|īnsistō, īnstitī|sich hinstellen; bestehen auf|
+917|īnstaurāre|verb|īnstaurō, īnstaurāvī, īnstaurātum|erneuern; wiederholen|
+918|intuērī|verb|intueor, intuitus sum|anschauen; betrachten|Deponens
+919|invehere|verb|invehō, invēxī, invectum|hineinfahren|Passiv: angreifen (Worte): in m. Akk.
+920|iactāre|verb|iactō, iactāvī, iactātum|werfen; schleudern; prahlen|sē iactāre: prahlen
+921|accūsātor|nomen|accūsātōris m|Ankläger|
+923|aedīlis|nomen|aedīlis m|Ädil|
+924|ambitiō|nomen|ambitiōnis f|Ehrgeiz; Amtsbewerbung|
+925|amīca|nomen|amīcae f|Freundin|
+926|anus|nomen|anūs f|alte Frau|
+927|apparātus|nomen|apparātūs m|Ausrüstung; Vorbereitung; Pracht|
+928|aquila|nomen|aquilae f|Adler; Legionsadler|
+929|arātrum|nomen|arātrī n|Pflug|
+930|arbitrium|nomen|arbitriī n|Entscheidung; Ermessen; Willkür|
+931|ardor|nomen|ardōris m|Glut; Eifer; Leidenschaft|
+932|arēna|nomen|arēnae f|Sand; Kampfplatz; Arena|auch harēna
+933|armentum|nomen|armentī n|Großvieh; Herde|
+934|ātrium|nomen|ātriī n|Atrium; Halle|
+936|augur|nomen|auguris m|Augur; Vogelschauer|
+937|auspicium|nomen|auspiciī n|Vogelschau; Vorzeichen|
+938|bāsium|nomen|bāsiī n|Kuss|
+939|benevolentia|nomen|benevolentiae f|Wohlwollen|
+940|bracchium|nomen|bracchiī n|Arm|
+941|calamitās|nomen|calamitātis f|Unglück; Schaden|
+942|cantus|nomen|cantūs m|Gesang|
+943|capillus|nomen|capillī m|Haar|
+944|captīvus|nomen|captīvī m|Gefangener|
+945|carcer|nomen|carceris m|Gefängnis; Kerker|
+946|cauda|nomen|caudae f|Schwanz|
+947|caverna|nomen|cavernae f|Höhle|
+948|cella|nomen|cellae f|Kammer; Vorratsraum|
+949|cervīx|nomen|cervīcis f|Nacken; Hals|
+951|cicātrīx|nomen|cicātrīcis f|Narbe|
+952|clāvis|nomen|clāvis f|Schlüssel|
+953|cliēns|nomen|clientis m|Klient; Schützling|
+955|commodum|nomen|commodī n|Vorteil; Nutzen|
+957|cōnsēnsus|nomen|cōnsēnsūs m|Übereinstimmung|
+958|coniūrātiō|nomen|coniūrātiōnis f|Verschwörung|
+959|cōnstantia|nomen|cōnstantiae f|Standhaftigkeit; Beständigkeit|
+960|contumēlia|nomen|contumēliae f|Beleidigung; Schmach|
+962|crīnis|nomen|crīnis m|Haar|
+963|cruor|nomen|cruōris m|Blut (vergossenes)|
+964|cubīle|nomen|cubīlis n|Lager; Bett|
+965|cūnae|nomen|cūnārum f|Wiege|Pl.
+966|cuspis|nomen|cuspidis f|Spitze; Lanze|
+968|dēcrētum|nomen|dēcrētī n|Beschluss; Verordnung|
+969|dēlectus|nomen|dēlectūs m|Auswahl; Aushebung (von Soldaten)|
+970|dēsīderium|nomen|dēsīderiī n|Sehnsucht; Verlangen|
+972|diciō|nomen|diciōnis f|Herrschaft; Gewalt|
+974|domicilium|nomen|domiciliī n|Wohnsitz|
+975|dōs|nomen|dōtis f|Mitgift; Begabung|
+976|ēlegantia|nomen|ēlegantiae f|Feinheit; guter Geschmack|
+977|epulae|nomen|epulārum f|Speisen; Festmahl|Pl.
+978|exsul|nomen|exsulis m|Verbannter|
+979|faber|nomen|fabrī m|Handwerker; Schmied|
+980|facultās|nomen|facultātis f|Möglichkeit; Fähigkeit|Pl.: Mittel, Vermögen
+981|fāstī|nomen|fāstōrum m|Kalender; Verzeichnis|Pl.
+982|fera|nomen|ferae f|wildes Tier|
+983|fēriae|nomen|fēriārum f|Feiertage; Ferien|Pl.
+984|ferōcia|nomen|ferōciae f|Wildheit; Trotz|
+986|flāgitium|nomen|flāgitiī n|Schandtat; Schande|
+987|folium|nomen|foliī n|Blatt|
+989|frēnum|nomen|frēnī n|Zügel|
+991|fulmen|nomen|fulminis n|Blitz|
+992|fūmus|nomen|fūmī m|Rauch|
+993|fūrtum|nomen|fūrtī n|Diebstahl|
+994|gemitus|nomen|gemitūs m|Seufzen; Stöhnen|
+995|gemma|nomen|gemmae f|Edelstein; Knospe|
+996|gener|nomen|generī m|Schwiegersohn|
+997|glaciēs|nomen|glaciēī f|Eis|
+998|habitus|nomen|habitūs m|Haltung; Aussehen; Kleidung|
+999|harundō|nomen|harundinis f|Schilf; Rohr; Pfeil|
+1000|herba|nomen|herbae f|Gras; Kraut|
+1001|hērōs|nomen|hērōis m|Held; Halbgott|
+1002|honestās|nomen|honestātis f|Ehrenhaftigkeit; Ansehen|
+1003|hostia|nomen|hostiae f|Opfertier; Opfer|
+1004|hūmānitās|nomen|hūmānitātis f|Menschlichkeit; Bildung|
+1005|īgnōminia|nomen|īgnōminiae f|Schande; Schmach|
+1006|imbēcillitās|nomen|imbēcillitātis f|Schwäche|
+1007|imber|nomen|imbris m|Regen; Regenguss|
+1008|immortālitās|nomen|immortālitātis f|Unsterblichkeit|
+1009|inopia|nomen|inopiae f|Mangel; Not; Armut|
+1010|īnstitūtum|nomen|īnstitūtī n|Einrichtung; Brauch; Vorhaben|
+1011|integritās|nomen|integritātis f|Unversehrtheit; Rechtschaffenheit|
+1013|īnstrūmentum|nomen|īnstrūmentī n|Werkzeug; Ausrüstung|
+1015|iūrisdictiō|nomen|iūrisdictiōnis f|Rechtsprechung; Gerichtsbarkeit|
+1016|iūstitia|nomen|iūstitiae f|Gerechtigkeit|
+1018|lāna|nomen|lānae f|Wolle|
+1019|latrōcinium|nomen|latrōciniī n|Räuberei; Raubzug|
+1020|laurus|nomen|laurī f|Lorbeer; Lorbeerbaum|
+1021|lectīca|nomen|lectīcae f|Sänfte|
+1022|lēnitās|nomen|lēnitātis f|Milde; Sanftmut|
+1023|lībertus|nomen|lībertī m|Freigelassener|
+1024|lignum|nomen|lignī n|Holz|
+1025|lucrum|nomen|lucrī n|Gewinn; Vorteil|
+1026|lūctus|nomen|lūctūs m|Trauer|
+1027|lūcus|nomen|lūcī m|heiliger Hain|
+1028|lūdibrium|nomen|lūdibriī n|Spott; Gespött|
+1029|lyra|nomen|lyrae f|Leier|
+1030|maledictum|nomen|maledictī n|Schimpfwort; Beleidigung|
+1031|malum|nomen|malī n|Übel; Unglück|
+1032|mānsuētūdō|nomen|mānsuētūdinis f|Sanftmut; Milde|
+1033|mēnsis|nomen|mēnsis m|Monat|
+1034|mercēs|nomen|mercēdis f|Lohn; Preis|
+1035|metallum|nomen|metallī n|Metall; Bergwerk|
+1036|minae|nomen|minārum f|Drohungen|Pl.
+1037|moderātiō|nomen|moderātiōnis f|Mäßigung; Lenkung|
+1038|mōlēs|nomen|mōlis f|Masse; Last; Damm; Mühe|
+1040|murmur|nomen|murmuris n|Murmeln; Rauschen|
+1041|mūsa|nomen|mūsae f|Muse|
+1042|nāris|nomen|nāris f|Nasenloch|Pl. nārēs: Nase
+1043|naufragium|nomen|naufragiī n|Schiffbruch|
+1044|nex|nomen|necis f|Tod; Mord|
+1045|nīdus|nomen|nīdī m|Nest|
+1046|nix|nomen|nivis f|Schnee|
+1047|nota|nomen|notae f|Zeichen; Merkmal; Schandmal|
+1048|nōtitia|nomen|nōtitiae f|Kenntnis; Bekanntheit|
+1049|nūbēs|nomen|nūbis f|Wolke|
+1050|nympha|nomen|nymphae f|Nymphe|
+1051|oblīviō|nomen|oblīviōnis f|Vergessen; Vergessenheit|
+1052|obsidiō|nomen|obsidiōnis f|Belagerung|
+1053|odor|nomen|odōris m|Geruch; Duft|
+1054|ōmen|nomen|ōminis n|Vorzeichen|
+1055|opifex|nomen|opificis m|Handwerker; Schöpfer|
+1056|ōra|nomen|ōrae f|Küste; Rand; Gegend|
+1059|palma|nomen|palmae f|Handfläche; Palme; Siegespreis|
+1060|parricīdium|nomen|parricīdiī n|Verwandtenmord; Hochverrat|
+1062|paucitās|nomen|paucitātis f|geringe Zahl|
+1063|pavor|nomen|pavōris m|Angst; Schrecken|
+1064|penātēs|nomen|penātium m|Penaten; Hausgötter; Heim|Pl.
+1066|perniciēs|nomen|perniciēī f|Verderben; Untergang|
+1067|pestis|nomen|pestis f|Seuche; Verderben|
+1068|petītiō|nomen|petītiōnis f|Bewerbung; Bitte; Angriff|
+1069|pīrāta|nomen|pīrātae m|Seeräuber|
+1071|plāga|nomen|plāgae f|Schlag; Wunde; Gegend|
+1072|plausus|nomen|plausūs m|Beifall; Klatschen|
+1073|pōculum|nomen|pōculī n|Becher|
+1074|pōmum|nomen|pōmī n|Obst; Frucht|
+1075|pompa|nomen|pompae f|Festzug; Prunk|
+1076|populāris|nomen|populāris m|Landsmann; Popular (Parteigänger des Volkes)|Adj.: volkstümlich
+1077|porticus|nomen|porticūs f|Säulenhalle|
+1079|praeceps|adjektiv|praeceps, praecipitis|kopfüber; steil; überstürzt|
+1080|praecō|nomen|praecōnis m|Herold; Ausrufer|
+1081|praedium|nomen|praediī n|Landgut|
+1082|praesentia|nomen|praesentiae f|Gegenwart; Anwesenheit|
+1083|precātiō|nomen|precātiōnis f|Gebet; Bitte|
+1085|prōcella|nomen|prōcellae f|Sturm; Unwetter|
+1086|profectiō|nomen|profectiōnis f|Abreise; Aufbruch|
+1087|prōgeniēs|nomen|prōgeniēī f|Nachkommenschaft; Abstammung|
+1088|prōmissum|nomen|prōmissī n|Versprechen|
+1089|prōvidentia|nomen|prōvidentiae f|Voraussicht; Vorsehung|
+1090|pudīcitia|nomen|pudīcitiae f|Keuschheit; Sittsamkeit|
+1091|pulvis|nomen|pulveris m|Staub|
+1093|quercus|nomen|quercūs f|Eiche|
+1094|querēla|nomen|querēlae f|Klage; Beschwerde|
+1095|rāmus|nomen|rāmī m|Ast; Zweig|
+1096|rapīna|nomen|rapīnae f|Raub; Plünderung|
+1097|recessus|nomen|recessūs m|Rückzug; Schlupfwinkel|
+1098|reditus|nomen|reditūs m|Rückkehr|
+1099|reliquiae|nomen|reliquiārum f|Überreste|Pl.
+1101|rīsus|nomen|rīsūs m|Lachen; Gelächter|
+1102|rīvus|nomen|rīvī m|Bach|
+1103|rōbur|nomen|rōboris n|Kraft; Stärke; Eichenholz|
+1104|rogus|nomen|rogī m|Scheiterhaufen|
+1105|rosa|nomen|rosae f|Rose|
+1106|rota|nomen|rotae f|Rad|
+1107|rūpēs|nomen|rūpis f|Fels; Klippe|
+1108|sacra|nomen|sacrōrum n|Opfer; Gottesdienst; Heiligtümer|Pl.
+1109|sāl|nomen|salis m|Salz; Witz|
+1110|saltus|nomen|saltūs m|Sprung; Waldgebirge; Schlucht|
+1111|satelles|nomen|satellitis m|Leibwächter; Helfershelfer|
+1112|scaena|nomen|scaenae f|Bühne; Schauplatz|
+1114|sceptrum|nomen|sceptrī n|Zepter; Herrschaft|
+1115|scrīptor|nomen|scrīptōris m|Schriftsteller; Verfasser|
+1116|secūris|nomen|secūris f|Beil|
+1117|sēmen|nomen|sēminis n|Same; Ursprung|
+1118|sēmita|nomen|sēmitae f|Pfad; Fußweg|
+1120|sepultūra|nomen|sepultūrae f|Bestattung; Begräbnis|
+1121|serpēns|nomen|serpentis f|Schlange|
+1123|silex|nomen|silicis m|Kieselstein; Fels|
+1124|socer|nomen|socerī m|Schwiegervater|
+1125|societās|nomen|societātis f|Gemeinschaft; Bündnis|
+1126|sōlācium|nomen|sōlāciī n|Trost|
+1127|sordēs|nomen|sordis f|Schmutz; Niedrigkeit|meist Pl.
+1128|spēlunca|nomen|spēluncae f|Höhle|
+1129|spīna|nomen|spīnae f|Dorn; Rückgrat|
+1130|squālor|nomen|squālōris m|Schmutz; Trauerkleidung|
+1131|stīpendium|nomen|stīpendiī n|Sold; Kriegsdienst; Abgabe|
+1132|strepitus|nomen|strepitūs m|Lärm; Getöse|
+1134|stuprum|nomen|stuprī n|Schande; Ehebruch|
+1135|suffrāgium|nomen|suffrāgiī n|Stimme; Abstimmung|
+1136|summa|nomen|summae f|Summe; Gesamtheit; Höhepunkt|
+1137|superbia|nomen|superbiae f|Hochmut; Stolz|
+1138|supplicātiō|nomen|supplicātiōnis f|Dankfest; Bittgottesdienst|
+1139|tēla|nomen|tēlae f|Gewebe|
+1141|temperantia|nomen|temperantiae f|Mäßigung; Selbstbeherrschung|
+1143|tenor|nomen|tenōris m|ununterbrochener Lauf; Verlauf|
+1145|testimōnium|nomen|testimōniī n|Zeugnis; Beweis|
+1146|theātrum|nomen|theātrī n|Theater|
+1147|tībia|nomen|tībiae f|Flöte; Schienbein|
+1148|tīrō|nomen|tīrōnis m|Rekrut; Anfänger|
+1149|torus|nomen|torī m|Polster; Lager; Ehebett|
+1150|trabs|nomen|trabis f|Balken|
+1151|tribūnal|nomen|tribūnālis n|Tribüne; Richterstuhl|
+1152|truncus|nomen|truncī m|Stamm; Rumpf|
+1153|tuba|nomen|tubae f|Trompete; Tuba|
+1154|turma|nomen|turmae f|Schwadron; Schar|
+1155|ultor|nomen|ultōris m|Rächer|
+1156|unguis|nomen|unguis m|Nagel; Kralle|
+1157|urna|nomen|urnae f|Urne; Krug|
+1158|ūsūra|nomen|ūsūrae f|Zinsen; Nutzung|
+1159|uterus|nomen|uterī m|Bauch; Mutterleib|
+1160|ūva|nomen|ūvae f|Traube|
+1161|vacca|nomen|vaccae f|Kuh|
+1162|vāgīna|nomen|vāgīnae f|Schwertscheide|
+1163|vās|nomen|vāsis n|Gefäß|Pl. vāsa, vāsōrum
+1165|venter|nomen|ventris m|Bauch; Magen|
+1166|verēcundia|nomen|verēcundiae f|Scheu; Zurückhaltung; Scham|
+1167|vēritās|nomen|vēritātis f|Wahrheit|
+1168|vertex|nomen|verticis m|Scheitel; Gipfel; Wirbel|
+1169|vestibulum|nomen|vestibulī n|Vorhof; Eingang|
+1170|vexillum|nomen|vexillī n|Fahne; Feldzeichen|
+1171|viātor|nomen|viātōris m|Wanderer; Reisender|
+1172|victima|nomen|victimae f|Opfertier; Opfer|
+1173|vigor|nomen|vigōris m|Lebenskraft; Frische|
+1174|vīlicus|nomen|vīlicī m|Gutsverwalter|
+1175|vīnea|nomen|vīneae f|Weinberg; Schutzdach (bei Belagerungen)|
+1176|violentia|nomen|violentiae f|Gewalttätigkeit; Heftigkeit|
+1177|vīpera|nomen|vīperae f|Schlange; Viper|
+1178|vitis|nomen|vītis f|Weinstock; Rebe|
+1179|vitta|nomen|vittae f|Binde; Kopfbinde|
+1180|vulpēs|nomen|vulpis f|Fuchs|
+1181|efferre|verb|efferō, extulī, ēlātum|hinaustragen; emporheben; bestatten|ēlātus: übermütig
+1182|praeferre|verb|praeferō, praetulī, praelātum|vorantragen; vorziehen|
+1183|prōdīre|verb|prōdeō, prōdiī, prōditum|hervorkommen; vorrücken|
+1184|circumīre|verb|circumeō, circumiī, circumitum|herumgehen; umgehen; umzingeln|
+1185|anteīre|verb|anteeō, anteiī|vorangehen; übertreffen|
+1189|conquīrere|verb|conquīrō, conquīsīvī, conquīsītum|zusammensuchen; aufspüren|
+1191|conturbāre|verb|conturbō, conturbāvī, conturbātum|verwirren; in Unordnung bringen|
+1193|dēlinquere|verb|dēlinquō, dēlīquī, dēlictum|sich vergehen; fehlen|
+1194|dēmigrāre|verb|dēmigrō, dēmigrāvī, dēmigrātum|auswandern; wegziehen|
+1195|dēpellere|verb|dēpellō, dēpulī, dēpulsum|vertreiben; abwehren|
+1196|dēpopulārī|verb|dēpopulor, dēpopulātus sum|verwüsten; plündern|Deponens
+1197|dēprehendere|verb|dēprehendō, dēprehendī, dēprehēnsum|ergreifen; ertappen; entdecken|
+1198|dēscrībere|verb|dēscrībō, dēscrīpsī, dēscrīptum|beschreiben; abschreiben; einteilen|
+1200|dēspondēre|verb|dēspondeō, dēspondī, dēspōnsum|versprechen; verloben|animum dēspondēre: den Mut verlieren
+1201|dētegere|verb|dētegō, dētēxī, dētēctum|aufdecken; enthüllen|
+1202|dēterrēre|verb|dēterreō, dēterruī, dēterritum|abschrecken; abhalten|
+1203|dēvorāre|verb|dēvorō, dēvorāvī, dēvorātum|verschlingen|
+1204|dictāre|verb|dictō, dictāvī, dictātum|diktieren; vorsagen|
+1205|dīlābī|verb|dīlābor, dīlāpsus sum|zerfallen; auseinanderlaufen|Deponens
+1206|dīluere|verb|dīluō, dīluī, dīlūtum|auflösen; entkräften|
+1208|distinguere|verb|distinguō, distīnxī, distīnctum|unterscheiden; schmücken|
+1209|dīvellere|verb|dīvellō, dīvellī, dīvulsum|auseinanderreißen|
+1211|ēmergere|verb|ēmergō, ēmersī, ēmersum|auftauchen; emporkommen|
+1212|emere|verb|emō, ēmī, ēmptum|kaufen|
+1213|ēnāre|verb|ēnō, ēnāvī|herausschwimmen|
+1216|ērumpere|verb|ērumpō, ērūpī, ēruptum|hervorbrechen; einen Ausfall machen|
+1217|excolere|verb|excolō, excoluī, excultum|ausbilden; veredeln|
+1218|excubāre|verb|excubō, excubuī, excubitum|Wache halten|
+1219|exōrāre|verb|exōrō, exōrāvī, exōrātum|erbitten; umstimmen|
+1220|exstāre|verb|exstō, exstitī|hervorragen; vorhanden sein|
+1223|fīnīre|verb|fīniō, fīnīvī, fīnītum|begrenzen; beenden|
+1224|flōrēre|verb|flōreō, flōruī|blühen; in Blüte stehen|
+1225|frequentāre|verb|frequentō, frequentāvī, frequentātum|häufig besuchen; beleben|
+1226|fulcīre|verb|fulciō, fulsī, fultum|stützen|
+1228|gustāre|verb|gustō, gustāvī, gustātum|kosten; schmecken|
+1231|illūcēscere|verb|illūcēscō, illūxī|hell werden; tagen|
+1232|imbuere|verb|imbuō, imbuī, imbūtum|benetzen; erfüllen; unterweisen|
+1233|impendēre|verb|impendeō|drohen; bevorstehen|m. Dat.
+1236|incēdere|verb|incēdō, incessī, incessum|einherschreiten; befallen|
+1237|inclīnāre|verb|inclīnō, inclīnāvī, inclīnātum|neigen; sich neigen|
+1241|ingerere|verb|ingerō, ingessī, ingestum|hineintragen; aufdrängen|
+1242|inhaerēre|verb|inhaereō, inhaesī, inhaesum|hängen an; festhängen|
+1245|īnserere|verb|īnserō, īnseruī, īnsertum|einfügen; einreihen|
+1246|īnsilīre|verb|īnsiliō, īnsiluī|hineinspringen; aufspringen|
+1249|interpellāre|verb|interpellō, interpellāvī, interpellātum|unterbrechen; stören|
+1251|lambere|verb|lambō, lambī|lecken|
+1252|latitāre|verb|latitō, latitāvī|sich versteckt halten|
+1253|laxāre|verb|laxō, laxāvī, laxātum|lockern; erleichtern|
+1255|lēnīre|verb|lēniō, lēnīvī, lēnītum|lindern; besänftigen|
+1256|licērī|verb|liceor, licitus sum|bieten (bei Versteigerungen)|Deponens
+1257|lūcēre|verb|lūceō, lūxī|leuchten; hell sein|
+1258|lūstrāre|verb|lūstrō, lūstrāvī, lūstrātum|reinigen; mustern; durchstreifen|
+1259|mactāre|verb|mactō, mactāvī, mactātum|schlachten; opfern|
+1260|maledīcere|verb|maledīcō, maledīxī, maledictum|schmähen; lästern|m. Dat.
+1262|mātūrāre|verb|mātūrō, mātūrāvī, mātūrātum|beschleunigen; sich beeilen|
+1263|memorāre|verb|memorō, memorāvī, memorātum|erwähnen; erzählen|
+1264|mercārī|verb|mercor, mercātus sum|kaufen; Handel treiben|Deponens
+1265|micāre|verb|micō, micuī|zucken; blitzen; funkeln|
+1266|moderārī|verb|moderor, moderātus sum|mäßigen; lenken|Deponens
+1267|mordēre|verb|mordeō, momordī, morsum|beißen; kränken|
+1268|mulcēre|verb|mulceō, mulsī, mulsum|streicheln; besänftigen|
+1270|natāre|verb|natō, natāvī, natātum|schwimmen|
+1271|necāre|verb|necō, necāvī, necātum|töten|
+1272|neglegere|verb|neglegō, neglēxī, neglēctum|vernachlässigen; missachten|
+1273|nītī|verb|nītor, nīsus sum|sich stützen; sich anstrengen|m. Abl.; Deponens
+1274|nōmināre|verb|nōminō, nōmināvī, nōminātum|nennen; benennen|
+1275|nūtrīre|verb|nūtriō, nūtrīvī, nūtrītum|ernähren; großziehen|
+1276|obscūrāre|verb|obscūrō, obscūrāvī, obscūrātum|verdunkeln; verbergen|
+1277|obsecrāre|verb|obsecrō, obsecrāvī, obsecrātum|beschwören; anflehen|
+1278|obsequī|verb|obsequor, obsecūtus sum|gehorchen; willfahren|m. Dat.; Deponens
+1279|observāre|verb|observō, observāvī, observātum|beobachten; beachten|
+1280|obtemperāre|verb|obtemperō, obtemperāvī, obtemperātum|gehorchen|m. Dat.
+1281|occultāre|verb|occultō, occultāvī, occultātum|verbergen; verheimlichen|
+1283|onerāre|verb|onerō, onerāvī, onerātum|beladen; belasten|
+1285|ōrdināre|verb|ōrdinō, ōrdināvī, ōrdinātum|ordnen; einrichten|
+1286|pallēre|verb|palleō, palluī|blass sein; erbleichen|
+1288|pāscere|verb|pāscō, pāvī, pāstum|weiden lassen; füttern; nähren|
+1289|pavēre|verb|paveō, pāvī|zittern; sich ängstigen|
+1290|pendēre|verb|pendeō, pependī|hängen; schweben; abhängen|
+1291|penetrāre|verb|penetrō, penetrāvī, penetrātum|eindringen; durchdringen|
+1292|perrumpere|verb|perrumpō, perrūpī, perruptum|durchbrechen|
+1294|perterrēre|verb|perterreō, perterruī, perterritum|heftig erschrecken|
+1295|pervādere|verb|pervādō, pervāsī, pervāsum|durchdringen; sich verbreiten|
+1296|pingere|verb|pingō, pīnxī, pictum|malen; bemalen|
+1297|plōrāre|verb|plōrō, plōrāvī, plōrātum|weinen; beklagen|
+1298|populārī|verb|populor, populātus sum|verwüsten; plündern|Deponens
+1300|praedicāre|verb|praedicō, praedicāvī, praedicātum|rühmen; verkünden; öffentlich erklären|
+1301|abundantia|nomen|abundantiae f|Überfluss; Fülle|
+1302|accessus|nomen|accessūs m|Zugang; Annäherung|
+1303|aditus|nomen|aditūs m|Zugang; Eingang|
+1304|adulātiō|nomen|adulātiōnis f|Schmeichelei|
+1305|adversārius|nomen|adversāriī m|Gegner|
+1306|aegritūdō|nomen|aegritūdinis f|Kummer; Krankheit|
+1307|aemulus|nomen|aemulī m|Rivale; Nacheiferer|
+1308|aequitās|nomen|aequitātis f|Gerechtigkeit; Gleichmut|
+1309|aerārium|nomen|aerāriī n|Staatskasse|
+1310|affectus|nomen|affectūs m|Gemütsverfassung; Gefühl|
+1311|āla|nomen|ālae f|Flügel; Reiterabteilung|
+1312|alimentum|nomen|alimentī n|Nahrung|
+1313|altāria|nomen|altārium n|Altar; Brandaltar|Pl.
+1315|angulus|nomen|angulī m|Winkel; Ecke|
+1316|angor|nomen|angōris m|Angst; Beklemmung|
+1318|annālēs|nomen|annālium m|Jahrbücher; Chronik|Pl.
+1319|antrum|nomen|antrī n|Höhle; Grotte|
+1320|appetītus|nomen|appetītūs m|Verlangen; Begierde|
+1321|aqueductus|nomen|aquaeductūs m|Wasserleitung|auch aquae ductus
+1323|architectus|nomen|architectī m|Baumeister; Architekt|
+1324|argentārius|nomen|argentāriī m|Geldwechsler; Bankier|
+1325|arrogantia|nomen|arrogantiae f|Anmaßung; Überheblichkeit|
+1326|artifex|nomen|artificis m|Künstler; Meister|
+1327|ascēnsus|nomen|ascēnsūs m|Aufstieg|
+1328|aspectus|nomen|aspectūs m|Anblick; Blick|
+1329|assēnsus|nomen|assēnsūs m|Zustimmung|
+1330|atrōcitās|nomen|atrōcitātis f|Grausamkeit; Abscheulichkeit|
+1332|auctiō|nomen|auctiōnis f|Versteigerung|
+1333|audītor|nomen|audītōris m|Zuhörer|
+1334|aurōra|nomen|aurōrae f|Morgenröte|
+1335|avunculus|nomen|avunculī m|Onkel (mütterlicherseits)|
+1336|barba|nomen|barbae f|Bart|
+1337|bellātor|nomen|bellātōris m|Krieger|
+1338|bibliothēca|nomen|bibliothēcae f|Bibliothek|
+1339|blanditiae|nomen|blanditiārum f|Schmeicheleien|Pl.
+1340|calor|nomen|calōris m|Wärme; Hitze|
+1341|candor|nomen|candōris m|Glanz; Weiße; Aufrichtigkeit|
+1343|cāritās|nomen|cāritātis f|Liebe; Wertschätzung; Teuerung|
+1344|catēna|nomen|catēnae f|Kette; Fessel|
+1345|cautiō|nomen|cautiōnis f|Vorsicht; Sicherheit|
+1346|celeritās|nomen|celeritātis f|Schnelligkeit|
+1347|cēnsor|nomen|cēnsōris m|Zensor|
+1348|cēnsus|nomen|cēnsūs m|Schätzung; Vermögen|
+1349|chorus|nomen|chorī m|Chor; Reigen|
+1351|circuitus|nomen|circuitūs m|Umweg; Umkreis|
+1353|classicum|nomen|classicī n|Trompetensignal|
+1354|clipeus|nomen|clipeī m|Rundschild|
+1355|cōgnitiō|nomen|cōgnitiōnis f|Erkenntnis; Untersuchung|
+1356|cōgnōmen|nomen|cōgnōminis n|Beiname|
+1357|collum|nomen|collī n|Hals|
+1358|columba|nomen|columbae f|Taube|
+1359|columna|nomen|columnae f|Säule|
+1360|comitium|nomen|comitiī n|Versammlungsplatz|Pl. comitia: Wahlversammlung
+1361|commendātiō|nomen|commendātiōnis f|Empfehlung|
+1362|commercium|nomen|commerciī n|Handel; Verkehr|
+1363|commūtātiō|nomen|commūtātiōnis f|Veränderung; Wechsel|
+1364|comparātiō|nomen|comparātiōnis f|Vergleich; Vorbereitung|
+1365|complexus|nomen|complexūs m|Umarmung|
+1366|concursus|nomen|concursūs m|Zusammenlauf; Auflauf; Zusammenstoß|
+1367|condiscipulus|nomen|condiscipulī m|Mitschüler|
+1368|cōnfessiō|nomen|cōnfessiōnis f|Geständnis; Bekenntnis|
+1370|coniectūra|nomen|coniectūrae f|Vermutung|
+1372|cōnstitūtiō|nomen|cōnstitūtiōnis f|Einrichtung; Verfassung; Zustand|
+1373|contemptus|nomen|contemptūs m|Verachtung|
+1374|contentiō|nomen|contentiōnis f|Anstrengung; Streit; Vergleich|
+1375|continentia|nomen|continentiae f|Selbstbeherrschung|
+1376|convīcium|nomen|convīciī n|Geschrei; Schimpfwort|
+1379|crepusculum|nomen|crepusculī n|Dämmerung|
+1380|cruciātus|nomen|cruciātūs m|Qual; Folter|
+1381|cultor|nomen|cultōris m|Bebauer; Verehrer|
+1382|cumulus|nomen|cumulī m|Haufen; Gipfel|
+1383|cūriōsitās|nomen|cūriōsitātis f|Neugier; Wissbegierde|
+1384|cursor|nomen|cursōris m|Läufer; Bote|
+1385|damnātiō|nomen|damnātiōnis f|Verurteilung|
+1387|dēfectiō|nomen|dēfectiōnis f|Abfall; Schwäche; Finsternis|
+1388|dēfēnsiō|nomen|dēfēnsiōnis f|Verteidigung|
+1389|dēfēnsor|nomen|dēfēnsōris m|Verteidiger|
+1390|dēlectātiō|nomen|dēlectātiōnis f|Vergnügen; Genuss|
+1391|dēlīberātiō|nomen|dēlīberātiōnis f|Überlegung; Beratung|
+1392|dēliciae|nomen|dēliciārum f|Wonne; Liebling; Vergnügen|Pl.
+1393|dēscrīptiō|nomen|dēscrīptiōnis f|Beschreibung; Einteilung|
+1394|dēspērātiō|nomen|dēspērātiōnis f|Verzweiflung|
+1395|dētrīmentum|nomen|dētrīmentī n|Schaden; Verlust; Niederlage|
+1396|dictum|nomen|dictī n|Wort; Ausspruch|
+1397|differentia|nomen|differentiae f|Unterschied|
+1400|disputātiō|nomen|disputātiōnis f|Erörterung; Streitgespräch|
+1401|dissēnsiō|nomen|dissēnsiōnis f|Meinungsverschiedenheit; Streit|
+1403|diūturnitās|nomen|diūturnitātis f|lange Dauer|
+1404|dominātiō|nomen|dominātiōnis f|Herrschaft; Gewaltherrschaft|
+1405|dubitātiō|nomen|dubitātiōnis f|Zweifel; Zögern|
+1406|ēdictum|nomen|ēdictī n|Erlass; Verordnung|
+1407|effigiēs|nomen|effigiēī f|Abbild; Bildnis|
+1408|ēgestās|nomen|ēgestātis f|Armut; Not|
+1409|ēlectiō|nomen|ēlectiōnis f|Auswahl|
+1411|equitātus|nomen|equitātūs m|Reiterei|
+1412|ērudītiō|nomen|ērudītiōnis f|Bildung; Unterricht|
+1413|ēventus|nomen|ēventūs m|Ausgang; Ereignis; Erfolg|
+1414|exercitātiō|nomen|exercitātiōnis f|Übung|
+1415|exōrdium|nomen|exōrdiī n|Anfang; Einleitung|
+1416|expedītiō|nomen|expedītiōnis f|Feldzug; Unternehmung|
+1417|experientia|nomen|experientiae f|Erfahrung; Versuch|
+1418|fāstīdium|nomen|fāstīdiī n|Ekel; Überdruss; Hochmut|
+1419|favor|nomen|favōris m|Gunst; Beifall|
+1420|fīdūcia|nomen|fīdūciae f|Vertrauen; Zuversicht|
+1421|figūra|nomen|figūrae f|Gestalt; Figur|
+1422|fīrmitās|nomen|fīrmitātis f|Festigkeit; Stärke|
+1423|flagellum|nomen|flagellī n|Peitsche; Geißel|
+1424|flētus|nomen|flētūs m|Weinen; Tränen|
+1426|fretum|nomen|fretī n|Meerenge; Meer|
+1429|fundāmentum|nomen|fundāmentī n|Fundament; Grundlage|
+1430|fundus|nomen|fundī m|Grund; Boden; Landgut|
+1431|fūnis|nomen|fūnis m|Seil; Tau|
+1433|gelū|nomen|gelūs n|Frost; Kälte|
+1434|genius|nomen|geniī m|Schutzgeist|
+1435|gestus|nomen|gestūs m|Gebärde; Haltung|
+1437|grāmen|nomen|grāminis n|Gras; Kraut|
+1438|grātulātiō|nomen|grātulātiōnis f|Glückwunsch; Dankfest|
+1439|gravitās|nomen|gravitātis f|Gewicht; Würde; Ernst|
+1440|gremium|nomen|gremiī n|Schoß|
+1441|gurges|nomen|gurgitis m|Strudel; Abgrund; Flut|
+1442|habēna|nomen|habēnae f|Zügel|meist Pl.
+1443|hiātus|nomen|hiātūs m|Öffnung; Kluft|
+1445|horror|nomen|horrōris m|Schauder; Entsetzen|
+1446|hospitium|nomen|hospitiī n|Gastfreundschaft; Herberge|
+1449|ignōrantia|nomen|ignōrantiae f|Unkenntnis; Unwissenheit|
+1450|immānitās|nomen|immānitātis f|Ungeheuerlichkeit; Wildheit|
+1451|impēnsa|nomen|impēnsae f|Aufwand; Kosten|
+1452|imprūdentia|nomen|imprūdentiae f|Unvorsichtigkeit; Unwissenheit|
+1453|impudentia|nomen|impudentiae f|Unverschämtheit|
+1454|impūnitās|nomen|impūnitātis f|Straflosigkeit|
+1455|incommodum|nomen|incommodī n|Nachteil; Unannehmlichkeit; Niederlage|
+1456|incrēmentum|nomen|incrēmentī n|Wachstum; Zuwachs|
+1457|indignātiō|nomen|indignātiōnis f|Entrüstung; Unwille|
+1458|indolēs|nomen|indolis f|Anlage; Begabung; Charakter|
+1459|inertia|nomen|inertiae f|Untätigkeit; Trägheit|
+1460|īnfāmia|nomen|īnfāmiae f|schlechter Ruf; Schande|
+1461|īnfortūnium|nomen|īnfortūniī n|Unglück|
+1463|inimīcitia|nomen|inimīcitiae f|Feindschaft|
+1465|inīquitās|nomen|inīquitātis f|Ungleichheit; Ungerechtigkeit|
+1466|innocentia|nomen|innocentiae f|Unschuld; Uneigennützigkeit|
+1467|īnsānia|nomen|īnsāniae f|Wahnsinn|
+1468|īnsīgne|nomen|īnsīgnis n|Abzeichen; Kennzeichen|
+1469|intervallum|nomen|intervallī n|Zwischenraum; Abstand|
+1471|iūmentum|nomen|iūmentī n|Lasttier; Zugtier|
+1472|iussus|nomen|iussūs m|Befehl|nur Abl. iussū: auf Befehl
+1474|lāmentātiō|nomen|lāmentātiōnis f|Wehklage|
+1475|languor|nomen|languōris m|Mattigkeit; Schlaffheit|
+1476|lēctor|nomen|lēctōris m|Leser; Vorleser|
+1478|lepus|nomen|leporis m|Hase|
+1479|levitās|nomen|levitātis f|Leichtigkeit; Leichtsinn|
+1481|licentia|nomen|licentiae f|Freiheit; Zügellosigkeit|
+1482|līnea|nomen|līneae f|Linie; Leine|
+1484|loquācitās|nomen|loquācitātis f|Geschwätzigkeit|
+1486|lūxus|nomen|lūxūs m|Luxus; Verschwendung|
+1487|macula|nomen|maculae f|Fleck; Makel|
+1488|magistra|nomen|magistrae f|Lehrerin; Leiterin|
+1489|māiestās|nomen|māiestātis f|Größe; Hoheit; Würde|
+1491|manipulus|nomen|manipulī m|Manipel; Kompanie|
+1492|mātrimōnium|nomen|mātrimōniī n|Ehe|in mātrimōnium dūcere: heiraten
+1493|medicīna|nomen|medicīnae f|Heilkunst; Heilmittel|
+1494|mediocritās|nomen|mediocritātis f|Mittelmaß; Mäßigung|
+1495|mendīcus|nomen|mendīcī m|Bettler|
+1497|mercātus|nomen|mercātūs m|Markt; Handel|
+1498|meretrīx|nomen|meretrīcis f|Dirne|
+1499|messis|nomen|messis f|Ernte|
+1500|mīlitia|nomen|mīlitiae f|Kriegsdienst|mīlitiae: im Krieg
+1501|ministerium|nomen|ministeriī n|Dienst; Amt|
+1502|mōbilitās|nomen|mōbilitātis f|Beweglichkeit; Unbeständigkeit|
+1503|moderātor|nomen|moderātōris m|Lenker; Leiter|
+1506|mūnificentia|nomen|mūnificentiae f|Freigebigkeit|
+1507|mūtātiō|nomen|mūtātiōnis f|Veränderung; Wechsel|
+1508|nāvigātiō|nomen|nāvigātiōnis f|Schifffahrt; Seereise|
+1509|necessitūdō|nomen|necessitūdinis f|enge Verbindung; Verwandtschaft; Notlage|
+1510|neglegentia|nomen|neglegentiae f|Nachlässigkeit|
+1511|nēnia|nomen|nēniae f|Totenklage; Klagelied|
+1515|nūtus|nomen|nūtūs m|Wink; Wille|
+1516|oboedientia|nomen|oboedientiae f|Gehorsam|
+1517|obscūritās|nomen|obscūritātis f|Dunkelheit; Unklarheit; Niedrigkeit|
+1518|obsequium|nomen|obsequiī n|Gefälligkeit; Gehorsam|
+1519|obstinātiō|nomen|obstinātiōnis f|Hartnäckigkeit|
+1520|obtrectātiō|nomen|obtrectātiōnis f|Missgunst; Verkleinerung|
+1521|occāsus|nomen|occāsūs m|Untergang; Westen|sōlis occāsus: Sonnenuntergang
+1523|orbitās|nomen|orbitātis f|Verwaistsein; Kinderlosigkeit|
+1524|ortus|nomen|ortūs m|Aufgang; Ursprung; Osten|sōlis ortus: Sonnenaufgang
+1525|ōsculum|nomen|ōsculī n|Kuss|
+1526|ostium|nomen|ostiī n|Tür; Mündung|
+1527|pābulum|nomen|pābulī n|Futter|
+1528|pactum|nomen|pactī n|Vertrag; Vereinbarung; Art|quō pactō: auf welche Weise
+1529|parsimōnia|nomen|parsimōniae f|Sparsamkeit|
+1530|patientia|nomen|patientiae f|Geduld; Ausdauer|
+1531|patrimōnium|nomen|patrimōniī n|väterliches Erbe; Vermögen|
+1533|pellis|nomen|pellis f|Fell; Haut; Zelt|
+1534|pēnsum|nomen|pēnsī n|Tagesarbeit; Aufgabe|
+1535|perfuga|nomen|perfugae m|Überläufer|
+1537|perturbātiō|nomen|perturbātiōnis f|Verwirrung; Leidenschaft|
+1539|pīlum|nomen|pīlī n|Wurfspeer|
+1540|pīnus|nomen|pīnūs f|Pinie; Fichte; Schiff|
+1545|porcus|nomen|porcī m|Schwein|
+1546|posteritās|nomen|posteritātis f|Nachwelt; Zukunft|
+1547|postulātum|nomen|postulātī n|Forderung|
+1548|pōtiō|nomen|pōtiōnis f|Trank; Getränk|
+1549|praedō|nomen|praedōnis m|Räuber; Plünderer|
+1551|praesāgium|nomen|praesāgiī n|Vorahnung; Vorzeichen|
+1555|probitās|nomen|probitātis f|Rechtschaffenheit; Redlichkeit|
+1556|prōcōnsul|nomen|prōcōnsulis m|Prokonsul; Statthalter|
+1557|prōditiō|nomen|prōditiōnis f|Verrat|
+1560|prōmuntūrium|nomen|prōmunturiī n|Vorgebirge; Kap|
+1561|prōpositum|nomen|prōpositī n|Vorhaben; Absicht; Thema|
+1562|prōsperitās|nomen|prōsperitātis f|Glück; Gedeihen|
+1564|pūbēs|nomen|pūbis f|junge Mannschaft; Jugend|
+1566|pulchritūdō|nomen|pulchritūdinis f|Schönheit|
+1568|puppis|nomen|puppis f|Heck; Schiff|
+1569|quaestus|nomen|quaestūs m|Erwerb; Gewinn|
+1570|quadrīga|nomen|quadrīgae f|Viergespann|
+1571|rabiēs|nomen|rabiēī f|Wut; Raserei|
+1572|ratis|nomen|ratis f|Floß; Schiff|
+1573|recordātiō|nomen|recordātiōnis f|Erinnerung|
+1574|rēctor|nomen|rēctōris m|Lenker; Leiter|
+1576|rēgia|nomen|rēgiae f|Königspalast; Königsburg|
+1577|remissiō|nomen|remissiōnis f|Nachlassen; Erlass; Entspannung|
+1578|repulsa|nomen|repulsae f|Zurückweisung; Wahlniederlage|
+1579|rēs pūblica|nomen|reī pūblicae f|Staat; Gemeinwesen|
+1580|ruīna|nomen|ruīnae f|Einsturz; Trümmer; Untergang|
+1581|sacrārium|nomen|sacrāriī n|Heiligtum; Kapelle|
+1582|salum|nomen|salī n|offene See; Meer|
+1583|sānitās|nomen|sānitātis f|Gesundheit; Vernunft|
+1584|satietās|nomen|satietātis f|Sättigung; Überdruss|
+1585|sēcessiō|nomen|sēcessiōnis f|Auszug; Abspaltung|
+1586|sēcrētum|nomen|sēcrētī n|Geheimnis; Abgeschiedenheit|
+1588|sēgnitia|nomen|sēgnitiae f|Trägheit; Untätigkeit|
+1589|senātūs cōnsultum|nomen|senātūs cōnsultī n|Senatsbeschluss|
+1591|sīgnificātiō|nomen|sīgnificātiōnis f|Anzeichen; Bedeutung|
+1592|similitūdō|nomen|similitūdinis f|Ähnlichkeit; Vergleich|
+1593|simulātiō|nomen|simulātiōnis f|Verstellung; Vortäuschung|
+1595|sōlum|nomen|solī n|Boden; Erdboden|
+1596|spectātor|nomen|spectātōris m|Zuschauer|
+1597|splendor|nomen|splendōris m|Glanz; Pracht|
+1598|status|nomen|statūs m|Zustand; Lage; Stellung|
+1599|stirps|nomen|stirpis f|Stamm; Wurzel; Abstammung|
+1600|strāgēs|nomen|strāgis f|Verwüstung; Gemetzel|
+1601|subsidium|nomen|subsidiī n|Hilfe; Reserve|
+1602|successus|nomen|successūs m|Erfolg; Heranrücken|
+1603|sūmptus|nomen|sūmptūs m|Aufwand; Kosten|
+1604|superstitiō|nomen|superstitiōnis f|Aberglaube|
+1606|tabellārius|nomen|tabellāriī m|Briefbote|
+1607|tabernāculum|nomen|tabernāculī n|Zelt|
+1617|torrēns|nomen|torrentis m|Wildbach; Sturzbach|
+1618|tractus|nomen|tractūs m|Zug; Strecke; Gegend|
+1619|trānsitus|nomen|trānsitūs m|Übergang; Durchgang|
+1620|tribus|nomen|tribūs f|Tribus; Bezirk|
+1621|trīstitia|nomen|trīstitiae f|Traurigkeit|
+1623|tūtēla|nomen|tūtēlae f|Schutz; Vormundschaft|
+1624|ultiō|nomen|ultiōnis f|Rache|
+1625|umerus|nomen|umerī m|Schulter|
+1627|urbānitās|nomen|urbānitātis f|feine Lebensart; Witz|
+1629|valētūdō|nomen|valētūdinis f|Gesundheit; Gesundheitszustand; Krankheit|
+1630|varietās|nomen|varietātis f|Vielfalt; Abwechslung|
+1631|vāstitās|nomen|vāstitātis f|Verwüstung; Öde|
+1633|vehiculum|nomen|vehiculī n|Fahrzeug; Wagen|
+1634|vēnātiō|nomen|vēnātiōnis f|Jagd; Tierhetze|
+1635|vēnātor|nomen|vēnātōris m|Jäger|
+1636|venustās|nomen|venustātis f|Anmut; Schönheit|
+1637|verbera|nomen|verberum n|Schläge; Peitschenhiebe|Pl.
+1638|vestītus|nomen|vestītūs m|Kleidung|
+1639|vetustās|nomen|vetustātis f|Alter; lange Dauer|
+1640|vīcīnitās|nomen|vīcīnitātis f|Nachbarschaft|
+1641|vicissitūdō|nomen|vicissitūdinis f|Wechsel; Abwechslung|
+1642|vigilantia|nomen|vigilantiae f|Wachsamkeit|
+1643|vīlitās|nomen|vīlitātis f|Wohlfeilheit; Geringschätzung|
+1645|virgultum|nomen|virgultī n|Gebüsch; Gestrüpp|
+1646|vīsus|nomen|vīsūs m|Anblick; Sehkraft|
+1648|vocābulum|nomen|vocābulī n|Wort; Bezeichnung|
+1649|volūmen|nomen|volūminis n|Buchrolle; Band; Windung|
+1651|alibī|adverb||anderswo|
+1652|aliquantō|adverb||um einiges; beträchtlich|
+1653|apertē|adverb||offen; deutlich|
+1654|dēnuō|adverb||von neuem; wieder|
+1655|diūtius|adverb||länger|Komparativ zu diū
+1656|ēminus|adverb||aus der Ferne|
+1657|cominus|adverb||in der Nähe; Mann gegen Mann|
+1660|hāctenus|adverb||bis hierher; so weit|
+1662|ilicō|adverb||sofort; auf der Stelle|
+1663|interdum|adverb||manchmal; bisweilen|
+1664|intus|adverb||innen; drinnen|
+1665|merītō|adverb||mit Recht; verdientermaßen|
+1666|nēquīquam|adverb||vergeblich|
+1667|nusquam|adverb||nirgends|
+1669|perpetuō|adverb||ununterbrochen; für immer|
+1670|porrō|adverb||ferner; weiter|
+1672|prope modum|adverb||beinahe|auch propemodum
+1673|prorsus|adverb||geradezu; völlig|
+1674|quīn etiam|adverb||ja sogar|
+1676|quotiēscumque|adverb||sooft|
+1679|sēnsim|adverb||allmählich; unmerklich|
+1681|subinde|adverb||gleich darauf; immer wieder|
+1682|tantopere|adverb||so sehr|
+1683|temere|adverb||blindlings; unüberlegt; zufällig|
+1685|ūsquam|adverb||irgendwo|
+1686|utique|adverb||jedenfalls; unbedingt|
+1687|vicissim|adverb||abwechselnd; wiederum|
+1688|antea|adverb||vorher; früher|
+1689|deinceps|adverb||nacheinander; der Reihe nach|
+1690|haudquāquam|adverb||keineswegs|
+1692|idcircō|adverb||deshalb; darum|
+1693|magis magisque|adverb||immer mehr|
+1694|nōnne|adverb||etwa nicht?; nicht?|Fragepartikel (Antwort: ja)
+1695|occultē|adverb||heimlich|
+1697|parumper|adverb||ein Weilchen; kurz|
+1698|posthāc|adverb||künftig; in Zukunft|
+1699|prīmō|adverb||zuerst; anfangs|
+1700|quam prīmum|adverb||möglichst bald|
+1702|quōcumque|adverb||wohin auch immer|
+1703|sīcubi|adverb||wenn irgendwo|
+1705|ubicumque|adverb||wo auch immer|
+1706|undecumque|adverb||woher auch immer|
+1707|ūsquequāque|adverb||überall; in jeder Hinsicht|
+1708|cursim|adverb||im Lauf; eilig|
+1709|clam|adverb||heimlich|Präp. m. Akk.: ohne Wissen von
+1710|praeterquam|adverb||außer; abgesehen von|
