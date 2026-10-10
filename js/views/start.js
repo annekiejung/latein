@@ -7,6 +7,7 @@ import { h, daysSince, formatDate, todayStr } from '../ui.js';
 import { formQuestion } from '../vocab.js';
 import { isDue, streakInfo, getTestTermine, daysBetween } from '../leitner.js';
 import { loadCards, unlockedPackets } from '../gws.js';
+import { loadItems, isDueToday } from '../journal.js';
 
 export const title = 'Latein-Trainer';
 
@@ -52,6 +53,9 @@ export async function render(main) {
     const up = await unlockedPackets();
     coreDue = (await loadCards()).filter((c) => c.paket <= up && !c.imUnterricht && isDue(c, 'bedeutung', {})).length;
   } catch (e) { /* Wortliste nicht geladen – dann eben ohne */ }
+  const fehler = await loadItems();
+  const fehlerDue = fehler.filter(isDueToday).length;
+  const fehlerOffen = fehler.filter((i) => !i.erledigt).length;
   main.append(h('div', { class: 'card' },
     h('h2', {}, 'Heute'),
     h('div', { class: 'stat-row' },
@@ -69,7 +73,9 @@ export async function render(main) {
               s.todayReached ? ' – erreicht' : ''),
             h('div', { class: 'progress' }, h('span', { style: `width:${Math.min(100, Math.round((s.todayDone / s.goal) * 100))}%` }))),
           h('a', { class: 'btn block', href: '#/vokabeln/lernen', style: 'margin-top:14px' },
-            due ? 'Jetzt lernen' : 'Frei üben'))
+            due ? 'Jetzt lernen' : 'Frei üben')),
+    fehlerDue ? h('a', { class: 'btn secondary block', href: '#/fehler' },
+      `${fehlerDue} Fehler wiederholen`) : null
   ));
 
   // Anstehende Tests (Intensivmodus)
@@ -106,7 +112,9 @@ export async function render(main) {
       h('li', {}, h('a', { href: '#/vokabeln' }, 'Aktuelle Vokabeln'), ' – für den nächsten Test'),
       h('li', {}, h('a', { href: '#/wortschatz' }, 'Grundwortschatz'), ' – langfristig, in Etappen'),
       h('li', {}, h('a', { href: '#/grammatik' }, 'Grammatik'), ' – Einheiten aus deinem Buch üben'),
-      h('li', {}, h('a', { href: '#/pruefung' }, 'Prüfungsmodus'), ' – Übersetzung unter Zeitdruck')
+      h('li', {}, h('a', { href: '#/pruefung' }, 'Prüfungsmodus'), ' – Übersetzung unter Zeitdruck'),
+      h('li', {}, h('a', { href: '#/fehler' }, 'Fehlerjournal'),
+        fehler.length ? ` – ${fehlerOffen} offen, ${fehler.length - fehlerOffen} erledigt` : ' – deine Fehler gezielt wiederholen')
     )
   ));
 

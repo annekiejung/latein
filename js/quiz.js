@@ -7,14 +7,18 @@
  *   leitner: true  = Antworten verändern die Fächer (fällige Karten)
  *            false = freies Üben, Fächer bleiben unverändert
  *
+ * Karten mit Einträgen im Fehlerjournal: Eine richtige erste Antwort zählt dort als
+ * richtige Wiederholung (js/journal.js – erledigt nach 2 verschiedenen Tagen).
+ *
  * Falsch beantwortete Karten kommen am Ende der Runde noch einmal dran
  * (höchstens 3-mal). Für Fach und Statistik zählt nur die ERSTE Antwort.
  */
-import { put, newId, getSetting } from './db.js';
+import { put, getAll, newId, getSetting } from './db.js';
 import { h, todayStr } from './ui.js';
 import { headline, formQuestion } from './vocab.js';
 import { checkMeaning, checkForms, normDe } from './check.js';
 import { MODES, stateOf, review, daysToTest, getTestTermine, logAnswer, logSeconds, streakInfo } from './leitner.js';
+import { itemKey, markCorrect } from './journal.js';
 
 const MAX_REPEATS = 3;
 const MAX_SECONDS_PER_CARD = 90;   // längere Pausen zählen nicht als Lernzeit
@@ -27,11 +31,14 @@ export async function startQuiz(main, opts) {
   // Wohin wird der Lernstand gespeichert? Standard: aktuelle Vokabeln.
   // Der Grundwortschatz übergibt eigene save()- und typ-Werte (js/views/wortschatz.js).
   const save = opts.save || ((c) => put('vocab', c));
-  const journalTyp = opts.typ || 'vokabel';
+  // Ohne Angabe: Grundwortschatz-Karten (haben eine Nr.) vs. Unterrichtsvokabeln
+  const journalTyp = (c) => opts.typ || (c.nr ? 'grundwortschatz' : 'vokabel');
   window.quizActive = true;            // App nicht mitten in der Runde neu laden (app.js)
   const intervals = await getSetting('leitnerIntervals');
   const testTermine = await getTestTermine();
   const today = todayStr();
+  // Welche Karten haben (offene) Einträge im Fehlerjournal?
+  const fehlerKeys = new Set((await getAll('journal')).map(itemKey));
 
   // Warteschlange: { card, rep: 0 = erste Abfrage, >0 = Wiederholung }
   const queue = cards.map((card) => ({ card, rep: 0 }));
@@ -209,12 +216,15 @@ export async function startQuiz(main, opts) {
       results.push({ card: c, correct, given, vorher: before.fach, nachher: after.fach });
       if (!correct) {
         await put('journal', {
-          id: newId('j'), typ: journalTyp, modus: mode, karteId: c.id, lektion: c.lektion,
+          id: newId('j'), typ: journalTyp(c), modus: mode, karteId: c.id, lektion: c.lektion,
           frage: mode === 'formen' ? `${c.latein}: ${fq.frage}` : headline(c),
           erwartet: mode === 'formen' ? fq.antwort : c.bedeutungen.join(', '),
           gegeben: given, datum: today, zeit: new Date().toISOString()
         });
       }
+      const fKey = `${journalTyp(c)}|${mode}|${c.id}`;
+      if (correct && fehlerKeys.has(fKey)) await markCorrect(fKey);
+      if (!correct) fehlerKeys.add(fKey);
     }
     if (!correct && item.rep < MAX_REPEATS) queue.push({ card: c, rep: item.rep + 1 });
     pos++;

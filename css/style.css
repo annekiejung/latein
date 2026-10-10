@@ -383,3 +383,8 @@ table.forms tbody tr:nth-child(even) td { background: var(--surface-2); }
 .exam-input { min-height: 260px; font-size: 1rem; line-height: 1.5; }
 .vocab-help { margin: 0; padding-left: 1.2em; font-size: .9rem; line-height: 1.6; }
 .pre { white-space: pre-wrap; }
+
+/* ---------- Fehlerjournal ---------- */
+.bars li { padding: 8px 0; }
+.bar-label { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.bars .progress { height: 6px; margin: 0; }

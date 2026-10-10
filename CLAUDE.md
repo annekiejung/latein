@@ -83,6 +83,8 @@ js/exam.js            Prüfungsmodus: Texte laden, Versuche (start/saveDraft/fin
 js/views/pruefung.js  Textauswahl, Steckbrief (Zeitlimit, tippen/Papier), laufende Prüfung, Versuch,
                       Bewertung einfügen, Text-Import; Anleitung docs/workflow_pruefung.html
 data/pruefung.json    eingebaute Prüfungstexte – GEBAUT aus data-src/pruefung/*.json mit tools/build_pruefung.pl
+js/journal.js         Fehlerjournal: Fehler-Punkte (itemKey), erledigt-Regel, Wiederholung, Auswertung (analyse)
+js/views/fehler.js    Fehlerjournal: Überblick + Auswertung, Vokabel-Wiederholung (quiz.js), Fehler-Karteikarten, Liste
 data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
 tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
 tools/find_stellen.pl   sucht Sätze mit Stellenangabe (Buch,Kapitel,Paragraph) in Latin-Library-Texten
@@ -242,6 +244,19 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 - `extractJson` (vocab.js) liest zuerst UNVERÄNDERT (deutsche „…“ in Texten erlaubt), erst bei
   Fehler werden typografische Anführungszeichen ersetzt.
 
+### Fehlerjournal (js/journal.js, js/views/fehler.js) – Meilenstein 6a
+
+- Store `journal` = ein Eintrag pro Fehler. Typen: vokabel, grundwortschatz (quiz.js; typ je Karte: `nr` →
+  grundwortschatz), grammatik, formen, pruefung. `itemKey()` fasst Einträge derselben Sache zusammen.
+- Erledigt (Entscheidung 2026-10-10): an 2 verschiedenen Tagen richtig NACH dem letzten Fehler; neuer Fehler →
+  wieder offen. Richtige Wiederholungen: settings `fehlerStatus` { key: { richtig: [ISO] } } (max. 5).
+  quiz.js meldet JEDE richtige erste Antwort auf eine Karte mit Journal-Eintrag (auch normale Abfrage).
+- Fehler-Training: Vokabeln über quiz.js (leitner: false), Rest als Karteikarten (Selbstbewertung; „Noch nicht“
+  = neuer Journal-Eintrag mit `quelle: wiederholung`). Heute fällig = offen und heute noch nicht richtig.
+- Auswertung: `normPhaenomen()` vereinheitlicht Grammatikbegriffe (Regex-Liste) und verlinkt die eingebaute
+  Einheit; Prüfungs-Kategorien nach Fehlerpunkten; Zeitraum settings `fehlerZeitraum` (30 / 0 = alles).
+- Auf der Startseite (Entscheidung: keine neue Tab-Leiste): Knopf „N Fehler wiederholen“ + Eintrag unter Bereiche.
+
 ### Grammatik (js/grammar.js, js/views/grammatik.js)
 
 - Format "latein-grammatik" v1: `{ thema, bereich, regel: { kurz, punkte[], beispiel{latein,deutsch} },
@@ -312,5 +327,8 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    - 5e `workflow_pruefung.pdf` (3 Seiten) + Anleitung in der App – **fertig (0.8.1)**
      Beispiel-Prompt im PDF = Eutropius Coriolan (kürzester Text; längere Texte sprengen Blatt 3).
    → **Meilenstein 5 abgeschlossen** (Stand 2026-10-10)
-6. Fehlerjournal, Klassenarbeits-Planer, Statistik
+6. Fehlerjournal, Klassenarbeits-Planer, Statistik (alles über die Startseite erreichbar)
+   - 6a Fehlerjournal – **fertig (0.9.0)**
+   - 6b Klassenarbeits-Planer (Tagesportionen, Intensivmodus, .ics) – offen
+   - 6c Statistik – offen
 7. Eigene Vorschläge (Nutzerin wählt)
