@@ -16,9 +16,10 @@ import * as wortschatz from './views/wortschatz.js';
 import * as grammatik from './views/grammatik.js';
 import * as pruefung from './views/pruefung.js';
 import * as fehler from './views/fehler.js';
+import * as planer from './views/planer.js';
 import * as einstellungen from './views/einstellungen.js';
 
-const ROUTES = { start, vokabeln, wortschatz, grammatik, pruefung, fehler, einstellungen };
+const ROUTES = { start, vokabeln, wortschatz, grammatik, pruefung, fehler, planer, einstellungen };
 
 const main = document.getElementById('view');
 const titleEl = document.getElementById('page-title');

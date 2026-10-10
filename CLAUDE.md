@@ -85,6 +85,8 @@ js/views/pruefung.js  Textauswahl, Steckbrief (Zeitlimit, tippen/Papier), laufen
 data/pruefung.json    eingebaute Prüfungstexte – GEBAUT aus data-src/pruefung/*.json mit tools/build_pruefung.pl
 js/journal.js         Fehlerjournal: Fehler-Punkte (itemKey), erledigt-Regel, Wiederholung, Auswertung (analyse)
 js/views/fehler.js    Fehlerjournal: Überblick + Auswertung, Vokabel-Wiederholung (quiz.js), Fehler-Karteikarten, Liste
+js/planer.js          Klassenarbeits-Planer: Arbeiten (Store exams), Lernplan (buildPlan), Abhaken (doneMap), .ics
+js/views/planer.js    Planer: Liste, Formular, Lernplan nach Tagen; ui.js offerFile() = Datei teilen/herunterladen
 data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
 tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
 tools/find_stellen.pl   sucht Sätze mit Stellenangabe (Buch,Kapitel,Paragraph) in Latin-Library-Texten
@@ -257,6 +259,20 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
   Einheit; Prüfungs-Kategorien nach Fehlerpunkten; Zeitraum settings `fehlerZeitraum` (30 / 0 = alles).
 - Auf der Startseite (Entscheidung: keine neue Tab-Leiste): Knopf „N Fehler wiederholen“ + Eintrag unter Bereiche.
 
+### Klassenarbeits-Planer (js/planer.js, js/views/planer.js) – Meilenstein 6b
+
+- Store `exams`: `{ id ka_…, titel, art klassenarbeit|test, datum, start (ab hier verteilt), lektionen[],
+  grammatik[] (Einheit-ids), probetexte, uhrzeit, notiz, note (nach der Arbeit, für 6c), erledigt{ Datum|aufgabe: true } }`.
+- Plan wird NICHT gespeichert, sondern berechnet: Grammatik Runde 1 in den ersten 60 % der Tage, Runde 2
+  danach bis 2 Tage vorher; Probe-Klassenarbeiten 2/4/6 Tage vorher; jeden Tag Vokabeln + Fehlerjournal;
+  Vortag ohne neuen Stoff. „Ab heute neu verteilen“ setzt `start` = heute.
+- Vokabeln: Lektionen bekommen den Termin als Testtermin (Intensivmodus; früherer Termin gewinnt);
+  Löschen entfernt nur Testtermine mit genau diesem Datum.
+- Automatisch abgehakt: Grammatik-Einheit an dem Tag geübt (history), Probe-Arbeit an dem Tag abgegeben,
+  heute keine fälligen Vokabeln der Lektionen / keine fälligen Fehler. Sonst manuell.
+- Erinnerung: .ics (ein Termin pro Lerntag um `uhrzeit` mit Alarm, Arbeit als Ganztag; heutiger Termin entfällt,
+  wenn die Uhrzeit vorbei ist). Auf dem iPhone NOCH NICHT getestet. Startseite: Arbeiten ≤ 21 Tage mit Aufgaben von heute.
+
 ### Grammatik (js/grammar.js, js/views/grammatik.js)
 
 - Format "latein-grammatik" v1: `{ thema, bereich, regel: { kurz, punkte[], beispiel{latein,deutsch} },
@@ -329,6 +345,6 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    → **Meilenstein 5 abgeschlossen** (Stand 2026-10-10)
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik (alles über die Startseite erreichbar)
    - 6a Fehlerjournal – **fertig (0.9.0)**
-   - 6b Klassenarbeits-Planer (Tagesportionen, Intensivmodus, .ics) – offen
+   - 6b Klassenarbeits-Planer (Tagesportionen, Intensivmodus, .ics) – **fertig (0.10.0)**
    - 6c Statistik – offen
 7. Eigene Vorschläge (Nutzerin wählt)

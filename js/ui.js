@@ -163,3 +163,35 @@ export function comingSoon(milestone, text) {
     h('p', {}, text)
   );
 }
+
+/**
+ * Datei anbieten: erst Dialog (Safari erlaubt „Teilen“ nur direkt nach einem Fingertipp),
+ * dann Teilen-Menü (iPhone) oder Herunterladen. Gibt true zurück, wenn es geklappt hat.
+ */
+export async function offerFile(file, { title, text, shareLabel = 'Öffnen' }) {
+  const canShare = !!(navigator.canShare && navigator.canShare({ files: [file] }));
+  const ok = await dialog({
+    title,
+    body: h('p', {}, text),
+    buttons: [
+      { label: 'Abbrechen', value: false, class: 'secondary' },
+      { label: canShare ? shareLabel : 'Herunterladen', value: true }
+    ]
+  });
+  if (!ok) return false;
+  try {
+    if (canShare) await navigator.share({ files: [file], title: file.name });
+    else {
+      const url = URL.createObjectURL(file);
+      const a = h('a', { href: url, download: file.name });
+      document.body.append(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+    }
+  } catch (err) {
+    if (err && err.name === 'AbortError') return false;
+    throw err;
+  }
+  return true;
+}

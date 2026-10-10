@@ -8,6 +8,7 @@ import { formQuestion } from '../vocab.js';
 import { isDue, streakInfo, getTestTermine, daysBetween } from '../leitner.js';
 import { loadCards, unlockedPackets } from '../gws.js';
 import { loadItems, isDueToday } from '../journal.js';
+import { loadExams, buildPlan, doneMap, ARTEN } from '../planer.js';
 
 export const title = 'Latein-Trainer';
 
@@ -78,6 +79,22 @@ export async function render(main) {
       `${fehlerDue} Fehler wiederholen`) : null
   ));
 
+  // Klassenarbeiten mit Lernplan: die nächsten (bis 3 Wochen) mit den heutigen Aufgaben
+  const today = todayStr();
+  for (const e of (await loadExams()).filter((x) => x.datum >= today && daysBetween(today, x.datum) <= 21)) {
+    const d = daysBetween(today, e.datum);
+    const days = await buildPlan(e);
+    const heute = days.find((x) => x.datum === today);
+    const done = await doneMap(e, heute ? [heute] : []);
+    main.append(h('div', { class: 'card' },
+      h('a', { href: '#/planer/plan/' + encodeURIComponent(e.id), class: 'row-link' },
+        h('h3', { style: 'margin:0' }, e.titel || ARTEN[e.art]),
+        h('span', { class: 'badge warn' }, d === 0 ? 'heute' : d === 1 ? 'morgen' : `in ${d} Tagen`)),
+      heute && heute.aufgaben.length ? h('ul', { class: 'tasks' }, heute.aufgaben.map((a) => h('li', { class: done[`${today}|${a.id}`] ? 'done' : '' },
+        h('span', {}, done[`${today}|${a.id}`] ? '✓' : '○'),
+        a.href ? h('a', { href: a.href }, a.text) : h('span', {}, a.text)))) : null));
+  }
+
   // Anstehende Tests (Intensivmodus)
   const upcoming = Object.entries(termine)
     .map(([name, date]) => ({ name, date, d: daysBetween(todayStr(), date) }))
@@ -113,6 +130,7 @@ export async function render(main) {
       h('li', {}, h('a', { href: '#/wortschatz' }, 'Grundwortschatz'), ' – langfristig, in Etappen'),
       h('li', {}, h('a', { href: '#/grammatik' }, 'Grammatik'), ' – Einheiten aus deinem Buch üben'),
       h('li', {}, h('a', { href: '#/pruefung' }, 'Prüfungsmodus'), ' – Übersetzung unter Zeitdruck'),
+      h('li', {}, h('a', { href: '#/planer' }, 'Klassenarbeits-Planer'), ' – Lernplan bis zur nächsten Arbeit'),
       h('li', {}, h('a', { href: '#/fehler' }, 'Fehlerjournal'),
         fehler.length ? ` – ${fehlerOffen} offen, ${fehler.length - fehlerOffen} erledigt` : ' – deine Fehler gezielt wiederholen')
     )
