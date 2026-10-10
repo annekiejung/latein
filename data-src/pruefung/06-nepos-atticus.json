@@ -1,0 +1,32 @@
+{
+  "id": "nep-atticus-jugend",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Die Jugend des Atticus",
+  "einleitung": "Cornelius Nepos beginnt die Lebensbeschreibung seines Freundes Atticus, eines reichen und gebildeten römischen Ritters (1. Jh. v. Chr.), mit dessen Herkunft und Kindheit.",
+  "text": "T. Pomponius Atticus, ab origine ultima stirpis Romanae generatus, perpetuo a maioribus acceptam equestrem obtinuit dignitatem. Patre usus est diligente et, ut tum erant tempora, diti in primisque studioso litterarum. Hic, prout ipse amabat litteras, omnibus doctrinis, quibus puerilis aetas impertiri debet, filium erudivit. Erat autem in puero praeter docilitatem ingenii summa suavitas oris atque vocis, ut non solum celeriter acciperet, quae tradebantur, sed etiam excellenter pronuntiaret. Qua ex re in pueritia nobilis inter aequales ferebatur clariusque exsplendescebat, quam generosi condiscipuli animo aequo ferre possent. Itaque incitabat omnes studio suo.",
+  "quelle": { "autor": "Nepos", "werk": "Atticus", "stelle": "1,1–4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nep.att.shtml" },
+  "bearbeitung": "original",
+  "niveau": "mittel",
+  "schwerpunkte": ["PPP als Attribut/PC", "Relativsätze", "ut-Konsekutivsatz", "relativer Satzanschluss", "Komparativ + quam mit Konjunktiv", "ūtī mit doppeltem Ablativ"],
+  "vokabelhilfen": [
+    { "latein": "orīgō ultima stirpis", "deutsch": "älteste Abstammung des Geschlechts" },
+    { "latein": "generātus, -a, -um", "deutsch": "abstammend" },
+    { "latein": "perpetuō (Adv.)", "deutsch": "ununterbrochen" },
+    { "latein": "dignitās equestris", "deutsch": "Ritterstand" },
+    { "latein": "patre ūtī dīligente", "deutsch": "einen sorgfältigen Vater haben" },
+    { "latein": "dīs, dītis", "deutsch": "= dīves: reich" },
+    { "latein": "prōut", "deutsch": "so wie" },
+    { "latein": "doctrīna, -ae f.", "deutsch": "Wissensgebiet" },
+    { "latein": "impertīre (m. Abl.)", "deutsch": "an etwas teilhaben lassen" },
+    { "latein": "ērudīre", "deutsch": "unterrichten" },
+    { "latein": "docilitās, -ātis f.", "deutsch": "Gelehrigkeit" },
+    { "latein": "suāvitās, -ātis f.", "deutsch": "Wohlklang, Anmut" },
+    { "latein": "prōnūntiāre", "deutsch": "vortragen" },
+    { "latein": "aequālis, -is m.", "deutsch": "Altersgenosse" },
+    { "latein": "exsplendēscere", "deutsch": "hervorleuchten" },
+    { "latein": "generōsus, -a, -um", "deutsch": "adlig" },
+    { "latein": "condiscipulus, -ī m.", "deutsch": "Mitschüler" }
+  ],
+  "musteruebersetzung": "Titus Pomponius Atticus, der aus ältestem römischem Geschlecht stammte, behielt den Ritterstand, den er ununterbrochen von seinen Vorfahren übernommen hatte. Er hatte einen sorgfältigen Vater, der für die damaligen Verhältnisse reich und vor allem an Literatur interessiert war. Dieser unterrichtete seinen Sohn, so wie er selbst die Literatur liebte, in allen Wissensgebieten, an denen das Kindesalter teilhaben soll. Der Junge besaß aber außer einer gelehrigen Begabung eine überaus angenehme Aussprache und Stimme, sodass er nicht nur schnell auffasste, was gelehrt wurde, sondern es auch hervorragend vortrug. Deshalb galt er schon als Kind unter seinen Altersgenossen als berühmt und strahlte heller hervor, als es seine adligen Mitschüler gelassen ertragen konnten. Daher spornte er alle durch seinen Eifer an."
+}

@@ -1,0 +1,28 @@
+{
+  "id": "eutr-fabricius",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Fabricius und der Arzt des Pyrrhus",
+  "einleitung": "König Pyrrhus von Epirus führt Krieg gegen Rom (280–275 v. Chr.). Der Römer Fabricius war schon einmal als Gesandter bei ihm; damals hatte Pyrrhus vergeblich versucht, ihn zu bestechen.",
+  "text": "Interiecto anno contra Pyrrum Fabricius est missus, qui prius inter legatos sollicitari non potuerat, quarta regni parte promissa. Tum, cum vicina castra ipse et rex haberent, medicus Pyrri nocte ad eum venit, promittens veneno se Pyrrum occisurum, si sibi aliquid polliceretur. Quem Fabricius vinctum reduci iussit ad dominum Pyrroque dici quae contra caput eius medicus spopondisset. Tum rex admiratus eum dixisse fertur: „Ille est Fabricius, qui difficilius ab honestate quam sol a cursu suo averti potest.“ Tum rex ad Siciliam profectus est. Fabricius victis Lucanis et Samnitibus triumphavit.",
+  "quelle": { "autor": "Eutropius", "werk": "Breviarium ab urbe condita", "stelle": "2,14", "status": "geprüft", "link": "https://www.thelatinlibrary.com/eutropius/eutropius2.shtml" },
+  "bearbeitung": "original",
+  "niveau": "leicht",
+  "schwerpunkte": ["Abl. abs.", "PC", "AcI (Infinitiv Futur)", "NcI (fertur)", "cum mit Konjunktiv", "Relativsatz mit Konjunktiv", "Komparativ mit quam"],
+  "vokabelhilfen": [
+    { "latein": "Pyrrus (= Pyrrhus), -ī m.", "deutsch": "König von Epirus (Griechenland)" },
+    { "latein": "Fabricius, -ī m.", "deutsch": "römischer Feldherr" },
+    { "latein": "interiectō annō", "deutsch": "ein Jahr später" },
+    { "latein": "sollicitāre", "deutsch": "(zum Verrat) verleiten, bestechen" },
+    { "latein": "venēnum, -ī n.", "deutsch": "Gift" },
+    { "latein": "pollicērī", "deutsch": "versprechen" },
+    { "latein": "vincīre, vīnxī, vinctum", "deutsch": "fesseln" },
+    { "latein": "caput, -itis n.", "deutsch": "hier: Leben" },
+    { "latein": "spondēre, spopondī", "deutsch": "geloben, versprechen" },
+    { "latein": "honestās, -ātis f.", "deutsch": "Ehrenhaftigkeit" },
+    { "latein": "āvertere", "deutsch": "abbringen" },
+    { "latein": "Lūcānī, Samnītēs", "deutsch": "Völker in Süditalien" },
+    { "latein": "triumphāre", "deutsch": "einen Triumph feiern" }
+  ],
+  "musteruebersetzung": "Ein Jahr später wurde Fabricius gegen Pyrrhus geschickt, der sich vorher als Gesandter nicht hatte bestechen lassen, obwohl ihm ein Viertel des Königreichs versprochen worden war. Als er und der König dann benachbarte Lager hatten, kam der Arzt des Pyrrhus nachts zu ihm und versprach, er werde Pyrrhus mit Gift töten, wenn er ihm etwas dafür verspreche. Fabricius ließ ihn gefesselt zu seinem Herrn zurückbringen und Pyrrhus mitteilen, was der Arzt gegen sein Leben versprochen hatte. Da soll der König voller Bewunderung gesagt haben: „Das ist der Fabricius, der schwerer von der Ehrenhaftigkeit abzubringen ist als die Sonne von ihrer Bahn.“ Dann brach der König nach Sizilien auf. Fabricius besiegte die Lukaner und Samniten und feierte einen Triumph."
+}

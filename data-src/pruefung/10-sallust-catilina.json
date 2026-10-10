@@ -1,0 +1,31 @@
+{
+  "id": "sall-catilina-charakter",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Der Charakter Catilinas",
+  "einleitung": "Der Geschichtsschreiber Sallust (86–35 v. Chr.) beschreibt die Verschwörung des Catilina (63 v. Chr.). Zu Beginn stellt er den Charakter Catilinas vor. Sallust benutzt altertümliche Formen (z. B. maxuma statt maxima).",
+  "text": "L. Catilina, nobili genere natus, fuit magna vi et animi et corporis, sed ingenio malo pravoque. Huic ab adulescentia bella intestina, caedes, rapinae, discordia civilis grata fuere ibique iuventutem suam exercuit. Corpus patiens inediae, algoris, vigiliae supra quam cuiquam credibile est. Animus audax, subdolus, varius, cuius rei lubet simulator ac dissimulator, alieni adpetens, sui profusus, ardens in cupiditatibus; satis eloquentiae, sapientiae parum. Vastus animus inmoderata, incredibilia, nimis alta semper cupiebat. Hunc post dominationem L. Sullae lubido maxuma invaserat rei publicae capiundae; neque id quibus modis adsequeretur, dum sibi regnum pararet, quicquam pensi habebat.",
+  "quelle": { "autor": "Sallust", "werk": "De coniuratione Catilinae", "stelle": "5,1–6", "status": "geprüft", "link": "https://www.thelatinlibrary.com/sall.1.html" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["Ellipse (fehlendes esse)", "Abl. qualitatis", "Gen. partitivus (satis eloquentiae)", "Gerundiv (rei publicae capiundae)", "indirekte Frage", "dum mit Konjunktiv (wenn nur)", "altertümliche Formen"],
+  "vokabelhilfen": [
+    { "latein": "prāvus, -a, -um", "deutsch": "verdorben, schlecht" },
+    { "latein": "intestīnus, -a, -um", "deutsch": "innerer; bellum intestīnum: Bürgerkrieg" },
+    { "latein": "fuēre", "deutsch": "= fuērunt" },
+    { "latein": "inedia, -ae f.", "deutsch": "Hungern" },
+    { "latein": "algor, -ōris m.", "deutsch": "Kälte" },
+    { "latein": "vigilia, -ae f.", "deutsch": "hier: Schlaflosigkeit" },
+    { "latein": "subdolus, -a, -um", "deutsch": "hinterlistig" },
+    { "latein": "cuius reī lubet (= libet)", "deutsch": "in jeder beliebigen Sache" },
+    { "latein": "simulātor ac dissimulātor", "deutsch": "einer, der vortäuscht und verheimlicht" },
+    { "latein": "appetēns (m. Gen.)", "deutsch": "gierig nach" },
+    { "latein": "profūsus (m. Gen.)", "deutsch": "verschwenderisch mit" },
+    { "latein": "vāstus, -a, -um", "deutsch": "maßlos" },
+    { "latein": "inmoderātus = immoderātus", "deutsch": "maßlos" },
+    { "latein": "dominātiō, -ōnis f.", "deutsch": "Gewaltherrschaft" },
+    { "latein": "lubīdō = libīdō; maxuma = maxima; capiundae = capiendae", "deutsch": "altertümliche Formen" },
+    { "latein": "nihil (quicquam) pēnsī habēre", "deutsch": "sich keinerlei Gedanken machen" }
+  ],
+  "musteruebersetzung": "Lucius Catilina, der aus adligem Geschlecht stammte, besaß große Kraft des Geistes und des Körpers, aber eine schlechte und verdorbene Veranlagung. Ihm waren von Jugend an Bürgerkriege, Mord, Raub und Zwietracht unter den Bürgern willkommen, und darin übte er sich in seiner Jugend. Sein Körper ertrug Hunger, Kälte und Schlaflosigkeit über das hinaus, was irgendjemand für glaubhaft hält. Sein Geist war verwegen, hinterlistig, wankelmütig, in jeder beliebigen Sache ein Meister im Vortäuschen und Verheimlichen, gierig nach fremdem Gut, verschwenderisch mit dem eigenen, glühend in seinen Begierden; Redegewandtheit besaß er genug, Weisheit zu wenig. Sein maßloser Geist begehrte immer Maßloses, Unglaubliches, allzu Hohes. Nach der Gewaltherrschaft des Lucius Sulla hatte ihn die größte Gier ergriffen, die Herrschaft im Staat an sich zu reißen; und es kümmerte ihn überhaupt nicht, mit welchen Mitteln er das erreichte, wenn er sich nur die Königsherrschaft verschaffte."
+}

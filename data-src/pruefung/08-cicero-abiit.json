@@ -1,0 +1,32 @@
+{
+  "id": "cic-cat2-abiit",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Catilina hat Rom verlassen",
+  "einleitung": "Einen Tag nach Ciceros erster Rede hat Catilina Rom verlassen. Am 9. November 63 v. Chr. erklärt Cicero dem Volk, was das bedeutet.",
+  "text": "Tandem aliquando, Quirites, L. Catilinam furentem audacia, scelus anhelantem, pestem patriae nefarie molientem, vobis atque huic urbi ferro flammaque minitantem ex urbe vel eiecimus vel emisimus vel ipsum egredientem verbis prosecuti sumus. Abiit, excessit, evasit, erupit. Nulla iam pernicies a monstro illo atque prodigio moenibus ipsis intra moenia comparabitur. Atque hunc quidem unum huius belli domestici ducem sine controversia vicimus. Non enim iam inter latera nostra sica illa versabitur, non in campo, non in foro, non in curia, non denique intra domesticos parietes pertimescemus. Loco ille motus est, cum est ex urbe depulsus.",
+  "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "2,1", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat2.shtml" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["PC (gehäufte Partizipien Präsens)", "Asyndeton, Klimax", "Futur", "Abl. instrumenti", "cum identicum"],
+  "vokabelhilfen": [
+    { "latein": "Quirītēs, -ium m.", "deutsch": "Mitbürger (Anrede des römischen Volkes)" },
+    { "latein": "anhēlāre (m. Akk.)", "deutsch": "schnauben nach" },
+    { "latein": "nefāriē (Adv.)", "deutsch": "frevelhaft" },
+    { "latein": "mōlīrī", "deutsch": "planen, ins Werk setzen" },
+    { "latein": "minitārī (m. Dat.)", "deutsch": "drohen" },
+    { "latein": "prōsequī, -secūtus sum", "deutsch": "begleiten" },
+    { "latein": "ēvādere, -vāsī", "deutsch": "entkommen" },
+    { "latein": "ērumpere, -rūpī", "deutsch": "hinausstürzen, ausbrechen" },
+    { "latein": "perniciēs, -ēī f.", "deutsch": "Verderben" },
+    { "latein": "mōnstrum, -ī n.; prōdigium, -ī n.", "deutsch": "Ungeheuer, Scheusal" },
+    { "latein": "comparāre", "deutsch": "hier: vorbereiten" },
+    { "latein": "bellum domesticum", "deutsch": "Bürgerkrieg" },
+    { "latein": "latus, -eris n.", "deutsch": "Seite" },
+    { "latein": "sīca, -ae f.", "deutsch": "Dolch" },
+    { "latein": "campus, -ī m.", "deutsch": "hier: das Marsfeld" },
+    { "latein": "pariēs, -etis m.", "deutsch": "Wand" },
+    { "latein": "pertimēscere", "deutsch": "in große Angst geraten" }
+  ],
+  "musteruebersetzung": "Endlich, Mitbürger, haben wir Lucius Catilina, der vor Frechheit raste, nach Verbrechen schnaubte, frevelhaft den Untergang des Vaterlandes plante und euch und dieser Stadt mit Schwert und Feuer drohte, aus der Stadt entweder hinausgeworfen oder hinausgelassen oder ihn, als er von selbst hinausging, mit Worten begleitet. Er ist gegangen, hat sich davongemacht, ist entkommen, ist ausgebrochen. Kein Verderben wird mehr von diesem Ungeheuer und Scheusal gegen die Mauern selbst innerhalb der Mauern vorbereitet werden. Und diesen einen Anführer dieses Bürgerkriegs haben wir jedenfalls zweifellos besiegt. Denn nicht mehr wird jener Dolch zwischen unseren Seiten umgehen, nicht auf dem Marsfeld, nicht auf dem Forum, nicht in der Kurie, und schließlich werden wir nicht innerhalb der eigenen vier Wände in Angst geraten. Er ist aus seiner Stellung verdrängt worden, als er aus der Stadt vertrieben wurde."
+}

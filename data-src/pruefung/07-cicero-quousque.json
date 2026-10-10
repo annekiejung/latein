@@ -1,0 +1,28 @@
+{
+  "id": "cic-cat1-quousque",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Wie lange noch, Catilina?",
+  "einleitung": "8. November 63 v. Chr.: Der Konsul Cicero hat eine Verschwörung des Catilina aufgedeckt. In einer Senatssitzung, an der Catilina selbst teilnimmt, greift Cicero ihn direkt an.",
+  "text": "Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet? quem ad finem sese effrenata iactabit audacia? Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt? Patere tua consilia non sentis, constrictam iam horum omnium scientia teneri coniurationem tuam non vides? Quid proxima, quid superiore nocte egeris, ubi fueris, quos convocaveris, quid consilii ceperis, quem nostrum ignorare arbitraris? O tempora, o mores! Senatus haec intellegit. Consul videt; hic tamen vivit.",
+  "quelle": { "autor": "Cicero", "werk": "In Catilinam", "stelle": "1,1–2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/cat1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["rhetorische Fragen", "AcI (auch Inf. Passiv)", "indirekte Fragesätze (Konj. Perfekt)", "PPP prädikativ", "nd-Form (habendi senatus)", "Gen. partitivus (quid consilii, quem nostrum)"],
+  "vokabelhilfen": [
+    { "latein": "quō ūsque", "deutsch": "wie lange noch" },
+    { "latein": "abūtī (m. Abl.)", "deutsch": "missbrauchen; abūtēre = abūtēris" },
+    { "latein": "ēlūdere", "deutsch": "verspotten" },
+    { "latein": "effrēnātus, -a, -um", "deutsch": "zügellos" },
+    { "latein": "sē iactāre", "deutsch": "sich brüsten, prahlen" },
+    { "latein": "Palātium, -ī n.", "deutsch": "der Palatin (Hügel in Rom)" },
+    { "latein": "vigiliae, -ārum f.", "deutsch": "Wachen, Wachposten" },
+    { "latein": "concursus, -ūs m.", "deutsch": "Zusammenlauf" },
+    { "latein": "locus habendī senātūs", "deutsch": "Ort der Senatssitzung" },
+    { "latein": "voltus = vultus, -ūs m.", "deutsch": "Gesichtsausdruck, Miene" },
+    { "latein": "cōnstringere, -strīnxī, -strictum", "deutsch": "fesseln" },
+    { "latein": "coniūrātiō, -ōnis f.", "deutsch": "Verschwörung" },
+    { "latein": "superior nox", "deutsch": "die vorletzte Nacht" }
+  ],
+  "musteruebersetzung": "Wie lange noch, Catilina, wirst du unsere Geduld missbrauchen? Wie lange noch wird diese deine Raserei uns verspotten? Bis zu welchem Ende wird sich deine zügellose Frechheit brüsten? Hat dich etwa nicht die nächtliche Wache auf dem Palatin, nicht die Wachposten der Stadt, nicht die Angst des Volkes, nicht der Zusammenlauf aller Gutgesinnten, nicht dieser stark befestigte Ort der Senatssitzung, nicht die Mienen und Gesichter dieser Männer hier beeindruckt? Merkst du nicht, dass deine Pläne offenliegen? Siehst du nicht, dass deine Verschwörung durch das Wissen all dieser Männer hier schon gefesselt festgehalten wird? Was du in der letzten, was du in der vorletzten Nacht getan hast, wo du gewesen bist, wen du zusammengerufen hast, welchen Plan du gefasst hast – wer von uns, glaubst du, weiß das nicht? Was für Zeiten, was für Sitten! Der Senat erkennt dies, der Konsul sieht es; dieser aber lebt trotzdem."
+}

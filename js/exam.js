@@ -41,8 +41,107 @@ async function loadBuiltIn() {
   return builtIn;
 }
 
+/** Alle Texte: eingebaute zuerst, dann importierte (neueste zuerst). */
 export async function loadTexts() {
-  return loadBuiltIn();
+  const own = (await getAll('texte')).sort((a, b) => (b.importiert || '').localeCompare(a.importiert || ''));
+  return [...(await loadBuiltIn()), ...own];
+}
+
+/* ---------- Import aus der Claude-App ---------- */
+
+export const AUTOREN = ['Caesar', 'Nepos', 'Cicero', 'Sallust', 'Livius', 'Seneca', 'Ovid', 'Plinius', 'Phaedrus', 'Catull', 'Martial', 'Vergil'];
+const BEARBEITUNGEN = ['original', 'gekürzt', 'angepasst'];
+
+/** Längenzeichen entfernen (Klassenarbeitstexte stehen ohne Längen). */
+const stripMacrons = (s) => s.normalize('NFD').replace(/[̄̆]/g, '').normalize('NFC');
+
+/** Prüft einen importierten Text. errors = nicht speicherbar, warnings = Hinweise. */
+export function checkText(obj) {
+  const errors = [];
+  const warnings = [];
+  const str = (x) => (typeof x === 'string' ? x.trim() : '');
+  if (!obj || typeof obj !== 'object') return { errors: ['Kein gültiger Inhalt.'], warnings };
+  if (obj.format && obj.format !== FORMAT_NAME) errors.push(`Falsches Format „${obj.format}“ (erwartet: „${FORMAT_NAME}“).`);
+  if (!str(obj.text)) errors.push('Der lateinische Text fehlt.');
+  if (!str(obj.musteruebersetzung)) errors.push('Die Musterübersetzung fehlt.');
+  if (errors.length) return { errors, warnings };
+
+  const q = obj.quelle && typeof obj.quelle === 'object' ? obj.quelle : {};
+  const quelle = { autor: str(q.autor), werk: str(q.werk), stelle: str(q.stelle), link: str(q.link), status: 'bitte prüfen' };
+  if (!(quelle.autor && quelle.werk && quelle.stelle)) warnings.push('Quellenangabe unvollständig.');
+  // „geprüft“ nur mit Link – sonst kann niemand nachsehen
+  if (str(q.status) === 'geprüft' && quelle.link) quelle.status = 'geprüft';
+  else warnings.push('Quelle hat den Status „bitte prüfen“: Stelle und Wortlaut sind nicht nachgewiesen.');
+
+  const text = stripMacrons(str(obj.text));
+  const woerter = countWords(text);
+  if (woerter < 60) warnings.push(`Nur ${woerter} Wörter – für eine Klassenarbeit eher kurz.`);
+  if (woerter > 160) warnings.push(`${woerter} Wörter – für 45 Minuten eher lang.`);
+  const hilfen = Array.isArray(obj.vokabelhilfen)
+    ? obj.vokabelhilfen.filter((v) => v && str(v.latein) && str(v.deutsch)).map((v) => ({ latein: str(v.latein), deutsch: str(v.deutsch) }))
+    : [];
+  if (!hilfen.length) warnings.push('Keine Hilfsvokabeln angegeben.');
+  const bearbeitung = BEARBEITUNGEN.includes(obj.bearbeitung) ? obj.bearbeitung : 'angepasst';
+  if (obj.bearbeitung && !BEARBEITUNGEN.includes(obj.bearbeitung)) warnings.push(`Unbekannte Bearbeitung „${obj.bearbeitung}“ – als „angepasst“ markiert.`);
+
+  return {
+    errors, warnings,
+    text: {
+      format: FORMAT_NAME, version: 1,
+      titel: str(obj.titel) || `${quelle.autor || 'Text'} ${quelle.stelle}`.trim(),
+      einleitung: str(obj.einleitung), text, woerter, quelle, bearbeitung,
+      niveau: NIVEAU[obj.niveau] ? obj.niveau : 'mittel',
+      schwerpunkte: Array.isArray(obj.schwerpunkte) ? obj.schwerpunkte.map(str).filter(Boolean) : [],
+      vokabelhilfen: hilfen,
+      musteruebersetzung: str(obj.musteruebersetzung)
+    }
+  };
+}
+
+export async function saveText(text) {
+  const rec = { ...text, id: newId('pt'), importiert: new Date().toISOString() };
+  await put('texte', rec);
+  return rec;
+}
+
+export async function deleteText(id) {
+  await remove('texte', id);
+}
+
+/** Prompt für die Claude-App: einen passenden Originaltext heraussuchen. */
+export function buildTextPrompt({ autor, niveau, schwerpunkt }) {
+  const wer = autor ? `vom Autor ${autor}` : 'von einem Autor, den Schüler in Klasse 10 typischerweise lesen (z. B. Caesar, Nepos, Cicero, Sallust, Livius, Seneca)';
+  return `Ich lerne Latein (Klasse 10, Gymnasium Baden-Württemberg, Lehrbuchphase abgeschlossen, jetzt Lektüre) und übe für Klassenarbeiten. Such mir einen Übersetzungstext wie in einer Klassenarbeit heraus.
+
+VORGABEN
+1. Ein zusammenhängender ORIGINALTEXT ${wer}, etwa 90–120 Wörter, der für sich verständlich ist.
+2. Niveau: ${niveau || 'mittel'} (leicht = kurze Sätze, wenig Nebensätze · mittel = typische Klassenarbeit · fordernd = lange Satzgefüge, viele Konstruktionen).${schwerpunkt ? `\n3. Der Text soll möglichst diese Grammatik enthalten: ${schwerpunkt}.` : ''}
+- Nimm den Wortlaut aus einer zuverlässigen Ausgabe (z. B. The Latin Library oder Perseus). Am besten suchst du die Stelle per Websuche und übernimmst den Text genau.
+- "status": "geprüft" NUR, wenn du den Wortlaut gerade nachgesehen hast und "link" auf genau diese Seite zeigt – sonst "bitte prüfen". Erfinde keine Stellenangaben. Bist du unsicher, nimm eine andere Stelle.
+- "bearbeitung": "original", oder "gekürzt" (Auslassungen im Text mit … markieren), oder "angepasst".
+- Text OHNE Längenzeichen, wie in der Klassenarbeit.
+- "einleitung": 1–3 Sätze auf Deutsch, die erklären, worum es geht (wie der Einleitungstext einer Klassenarbeit).
+- "vokabelhilfen": Wörter, die über einen Grundwortschatz von ca. 1500 Wörtern hinausgehen, Eigennamen und schwierige Formen – MIT Längenzeichen und Grundform.
+- "musteruebersetzung": genaue, aber gut lesbare deutsche Übersetzung.
+- "schwerpunkte": die wichtigsten Konstruktionen im Text (z. B. "Abl. abs.", "AcI", "cum-Satz").
+
+AUSGABE: NUR ein JSON-Codeblock, kein Text davor oder danach.
+
+\`\`\`json
+{
+  "format": "${FORMAT_NAME}",
+  "version": 1,
+  "titel": "kurzer deutscher Titel",
+  "einleitung": "…",
+  "text": "…",
+  "quelle": { "autor": "…", "werk": "…", "stelle": "Buch,Kapitel,Paragraph", "status": "bitte prüfen", "link": "" },
+  "bearbeitung": "original",
+  "niveau": "${niveau || 'mittel'}",
+  "schwerpunkte": ["…"],
+  "vokabelhilfen": [ { "latein": "…", "deutsch": "…" } ],
+  "musteruebersetzung": "…"
+}
+\`\`\``;
 }
 
 export async function getText(id) {

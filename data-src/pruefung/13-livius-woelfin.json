@@ -1,0 +1,116 @@
+{
+  "id": "liv-woelfin",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Romulus, Remus und die Wölfin",
+  "einleitung": "Livius erzählt die Gründungssage Roms: König Amulius hat befohlen, die neugeborenen Zwillinge Romulus und Remus im Tiber zu ertränken. Der Fluss ist jedoch über die Ufer getreten, und die Diener kommen nicht bis an das tiefe Wasser heran.",
+  "text": "Ita velut defuncti regis imperio in proxima alluvie ubi nunc ficus Ruminalis est – Romularem vocatam ferunt – pueros exponunt. Vastae tum in his locis solitudines erant. Tenet fama cum fluitantem alveum, quo expositi erant pueri, tenuis in sicco aqua destituisset, lupam sitientem ex montibus qui circa sunt ad puerilem vagitum cursum flexisse; eam submissas infantibus adeo mitem praebuisse mammas ut lingua lambentem pueros magister regii pecoris invenerit – Faustulo fuisse nomen ferunt – ab eo ad stabula Larentiae uxori educandos datos. Sunt qui Larentiam volgato corpore lupam inter pastores vocatam putent; inde locum fabulae ac miraculo datum.",
+  "quelle": {
+    "status": "geprüft",
+    "werk": "Ab urbe condita",
+    "link": "https://www.thelatinlibrary.com/livy/liv.1.shtml",
+    "stelle": "1,4",
+    "autor": "Livius"
+  },
+  "bearbeitung": "original",
+  "niveau": "mittel",
+  "schwerpunkte": [
+    "indirekte Rede nach tenet fama (AcI)",
+    "cum mit Konj. Plusquamperfekt",
+    "PC",
+    "Gerundiv (educandos datos)",
+    "ut-Konsekutivsatz",
+    "ferunt + AcI"
+  ],
+  "vokabelhilfen": [
+    {
+      "latein": "velut dēfūnctī (m. Abl.)",
+      "deutsch": "als hätten sie (den Befehl) erledigt"
+    },
+    {
+      "latein": "alluviēs, -ēī f.",
+      "deutsch": "Überschwemmungslache"
+    },
+    {
+      "deutsch": "der Ruminalische Feigenbaum (in Rom)",
+      "latein": "fīcus Rūmīnālis f."
+    },
+    {
+      "deutsch": "des Romulus",
+      "latein": "Rōmulāris, -e"
+    },
+    {
+      "deutsch": "Einöde",
+      "latein": "sōlitūdō, -inis f."
+    },
+    {
+      "deutsch": "treiben, schwimmen",
+      "latein": "fluitāre"
+    },
+    {
+      "latein": "alveus, -ī m.",
+      "deutsch": "Wanne, Mulde"
+    },
+    {
+      "deutsch": "auf dem Trockenen",
+      "latein": "in siccō"
+    },
+    {
+      "latein": "dēstituere, -stituī",
+      "deutsch": "zurücklassen"
+    },
+    {
+      "deutsch": "Wölfin",
+      "latein": "lupa, -ae f."
+    },
+    {
+      "deutsch": "Durst haben",
+      "latein": "sitīre"
+    },
+    {
+      "latein": "vāgītus, -ūs m.",
+      "deutsch": "Wimmern"
+    },
+    {
+      "deutsch": "herabsenken, hinhalten",
+      "latein": "submittere, -mīsī, -missum"
+    },
+    {
+      "deutsch": "Zitze",
+      "latein": "mamma, -ae f."
+    },
+    {
+      "latein": "lambere",
+      "deutsch": "lecken"
+    },
+    {
+      "latein": "magister pecoris",
+      "deutsch": "Oberhirte"
+    },
+    {
+      "deutsch": "Stall, Hütte",
+      "latein": "stabulum, -ī n."
+    },
+    {
+      "latein": "Lārentia, -ae f.",
+      "deutsch": "Larentia (Frau des Faustulus)"
+    },
+    {
+      "deutsch": "manche",
+      "latein": "sunt quī (m. Konj.)"
+    },
+    {
+      "latein": "volgātō (= vulgātō) corpore",
+      "deutsch": "weil sie sich vielen Männern hingab"
+    },
+    {
+      "latein": "lupa, -ae f.",
+      "deutsch": "hier doppeldeutig: Wölfin bzw. (abwertend) Prostituierte"
+    },
+    {
+      "deutsch": "Wunder",
+      "latein": "mīrāculum, -ī n."
+    }
+  ],
+  "musteruebersetzung": "So setzen sie die Knaben, als hätten sie den Befehl des Königs erfüllt, in der nächsten Überschwemmungslache aus, wo jetzt der Ruminalische Feigenbaum steht – man sagt, er sei der „Romulische“ genannt worden. Damals gab es in dieser Gegend weite Einöden. Die Überlieferung hält fest: Als das seichte Wasser die treibende Wanne, in der die Knaben ausgesetzt worden waren, auf dem Trockenen zurückgelassen hatte, habe eine durstige Wölfin aus den umliegenden Bergen ihren Lauf zu dem kindlichen Wimmern hin gelenkt; sie habe den Kindern so sanft ihre Zitzen hingehalten, dass der Oberhirte des königlichen Viehs sie fand, wie sie die Knaben mit der Zunge leckte – sein Name soll Faustulus gewesen sein –; von ihm seien sie in seine Hütte gebracht und seiner Frau Larentia zur Erziehung übergeben worden. Manche meinen, Larentia sei, weil sie sich vielen Männern hingegeben habe, unter den Hirten „Wölfin“ genannt worden; daher habe die Sage vom Wunder ihren Ursprung."
+}

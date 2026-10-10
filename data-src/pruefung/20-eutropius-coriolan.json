@@ -1,0 +1,25 @@
+{
+  "id": "eutr-coriolan",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Coriolan zieht gegen Rom",
+  "einleitung": "Eutropius erzählt von der frühen römischen Republik. Der römische Feldherr Marcius hat die Stadt Corioli erobert, wird aber später aus Rom verbannt.",
+  "text": "Octavo decimo anno postquam reges eiecti erant expulsus ex urbe Q. Marcius, dux Romanus, qui Coriolos ceperat, Volscorum civitatem, ad ipsos Volscos contendit iratus et auxilia contra Romanos accepit. Romanos saepe vicit, usque ad quintum miliarium urbis accessit, oppugnaturus etiam patriam suam, legatis qui pacem petebant, repudiatis, nisi ad eum mater Veturia et uxor Volumnia ex urbe venissent, quarum fletu et deprecatione superatus removit exercitum. Atque hic secundus post Tarquinium fuit, qui dux contra patriam suam esset.",
+  "quelle": { "autor": "Eutropius", "werk": "Breviarium ab urbe condita", "stelle": "1,15", "status": "geprüft", "link": "https://www.thelatinlibrary.com/eutropius/eutropius1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "leicht",
+  "schwerpunkte": ["PC (PPP, Partizip Futur)", "Abl. abs.", "Irrealis (nisi + Konj. Plusquamperfekt)", "Relativsätze", "relativer Satzanschluss (quarum)"],
+  "vokabelhilfen": [
+    { "latein": "octāvus decimus", "deutsch": "der 18." },
+    { "latein": "Coriolī, -ōrum m.", "deutsch": "Corioli (Stadt der Volsker)" },
+    { "latein": "Volscī, -ōrum m.", "deutsch": "die Volsker (Volk südlich von Rom)" },
+    { "latein": "mīliārium, -ī n.", "deutsch": "Meilenstein" },
+    { "latein": "oppugnātūrus … nisi … vēnissent", "deutsch": "er hätte angegriffen …, wenn nicht … gekommen wären" },
+    { "latein": "repudiāre", "deutsch": "zurückweisen" },
+    { "latein": "Veturia, Volumnia", "deutsch": "Frauennamen" },
+    { "latein": "flētus, -ūs m.", "deutsch": "Weinen, Tränen" },
+    { "latein": "dēprecātiō, -ōnis f.", "deutsch": "Flehen, Bitten" },
+    { "latein": "Tarquinius, -ī m.", "deutsch": "Tarquinius, der letzte König Roms" }
+  ],
+  "musteruebersetzung": "Im achtzehnten Jahr nach der Vertreibung der Könige zog Quintus Marcius, ein römischer Feldherr, der Corioli, eine Stadt der Volsker, erobert hatte, nachdem er aus Rom verbannt worden war, voller Zorn zu eben diesen Volskern und erhielt Hilfstruppen gegen die Römer. Er besiegte die Römer oft und rückte bis zum fünften Meilenstein vor der Stadt vor; er hätte sogar seine Heimatstadt angegriffen und die Gesandten, die um Frieden baten, zurückgewiesen, wenn nicht seine Mutter Veturia und seine Frau Volumnia aus der Stadt zu ihm gekommen wären; von ihren Tränen und Bitten überwältigt, zog er das Heer ab. Und er war nach Tarquinius der zweite, der als Feldherr gegen seine eigene Heimat stand."
+}

@@ -3,6 +3,7 @@
  *   #/pruefung                 Textauswahl, laufender Versuch, frühere Versuche
  *   #/pruefung/text/<id>       Text-Steckbrief, Zeitlimit + Art wählen, starten
  *   #/pruefung/laeuft          Prüfung: Text, Hilfsvokabeln, Uhr, Eingabe
+ *   #/pruefung/import          Text-Prompt kopieren → Text einfügen → prüfen → speichern
  *   #/pruefung/versuch/<id>    Nach dem Abgeben: Prüf-Prompt, Bewertung einfügen/anzeigen, Musterübersetzung
  * Logik/Format: js/exam.js
  */
@@ -13,7 +14,8 @@ import { logSeconds } from '../leitner.js';
 import {
   loadTexts, getText, startAttempt, runningAttempt, saveDraft, finishAttempt, discardAttempt,
   getAttempt, attempts, clock, LIMITS,
-  buildExamPrompt, checkReview, saveReview, score, KATEGORIEN
+  buildExamPrompt, checkReview, saveReview, score, KATEGORIEN,
+  checkText, saveText, deleteText, buildTextPrompt, AUTOREN
 } from '../exam.js';
 
 export const title = 'Prüfungsmodus';
@@ -22,6 +24,7 @@ export async function render(main, params) {
   const [sub, arg] = params;
   if (sub === 'text' && arg) return renderText(main, decodeURIComponent(arg));
   if (sub === 'laeuft') return renderExam(main);
+  if (sub === 'import') return renderImport(main);
   if (sub === 'versuch' && arg) return renderAttempt(main, decodeURIComponent(arg));
   return renderList(main);
 }
@@ -42,6 +45,15 @@ function sourceBadges(t) {
   ];
 }
 
+/** Auswahlknöpfe (eine Option aktiv). */
+function choice(options, current, onPick) {
+  const btns = options.map(([value, label]) => h('button', {
+    class: 'btn btn-small ' + (value === current ? '' : 'secondary'),
+    onclick: (e) => { btns.forEach((b) => b.classList.add('secondary')); e.currentTarget.classList.remove('secondary'); onPick(value); }
+  }, label));
+  return h('div', { class: 'btn-row' }, btns);
+}
+
 /* =================== Liste =================== */
 
 async function renderList(main) {
@@ -58,16 +70,32 @@ async function renderList(main) {
   const lastByText = new Map();
   for (const a of done) if (!lastByText.has(a.textId)) lastByText.set(a.textId, a);
 
+  // Eingebaute Texte nach Autor, importierte als eigene Gruppe
+  const groups = new Map();
+  for (const t of texts) {
+    const key = t.eingebaut ? t.quelle.autor : 'Aus der Claude-App (importiert)';
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(t);
+  }
+  const NIV = { leicht: 1, mittel: 2, fordernd: 3 };
   main.append(h('div', { class: 'card' },
     h('h2', {}, 'Text wählen'),
     h('p', { class: 'muted small' }, 'Originaltexte mit etwa 100 Wörtern, Hilfsvokabeln wie in der Klassenarbeit. Den lateinischen Text siehst du erst, wenn die Uhr läuft.'),
-    h('ul', { class: 'list' }, texts.map((t) => {
-      const last = lastByText.get(t.id);
-      return h('li', {}, h('a', { href: textHref(t.id), class: 'row-link' },
-        h('span', {}, h('b', {}, t.quelle.autor), ' · ', t.titel,
-          h('br'), h('span', { class: 'muted small' }, `${t.woerter} Wörter · ${t.niveau || 'mittel'}`)),
-        h('span', { class: 'muted small' }, last ? 'zuletzt ' + formatDate(last.start) : '')));
-    }))));
+    [...groups].flatMap(([name, list]) => [
+      h('h3', { style: 'margin:14px 0 0' }, name),
+      h('ul', { class: 'list' }, list.sort((a, b) => (NIV[a.niveau] || 2) - (NIV[b.niveau] || 2)).map((t) => {
+        const last = lastByText.get(t.id);
+        return h('li', {}, h('a', { href: textHref(t.id), class: 'row-link' },
+          h('span', {}, t.titel,
+            h('br'), h('span', { class: 'muted small' }, `${t.woerter} Wörter · ${t.niveau || 'mittel'}`,
+              t.quelle.status === 'geprüft' ? '' : ' · Quelle bitte prüfen')),
+          h('span', { class: 'muted small' }, last ? (last.bewertung ? 'Note ' + last.bewertung.note : 'versucht') : '')));
+      }))
+    ])));
+  main.append(h('div', { class: 'card' },
+    h('h3', {}, 'Weiteren Text holen'),
+    h('p', { class: 'muted' }, 'Lass dir in der Claude-App einen Text heraussuchen – z. B. von deinem Lektüre-Autor – und importiere ihn hier.'),
+    h('a', { class: 'btn secondary block', href: '#/pruefung/import' }, 'Text importieren')));
 
   if (done.length) {
     main.append(h('div', { class: 'card' },
@@ -84,16 +112,6 @@ async function renderText(main, id) {
   const t = await getText(id);
   if (!t) { main.append(h('p', { class: 'card' }, 'Diesen Text gibt es nicht (mehr).')); return; }
   const prefs = { limit: 45, modus: 'tippen', ...((await getSetting('pruefungPrefs')) || {}) };
-
-  /** Auswahlknöpfe (eine Option aktiv). */
-  const choice = (options, current, onPick) => {
-    const btns = options.map(([value, label]) => h('button', {
-      class: 'btn btn-small ' + (value === current ? '' : 'secondary'),
-      onclick: () => { btns.forEach((b) => b.classList.add('secondary')); btn(value).classList.remove('secondary'); onPick(value); }
-    }, label));
-    const btn = (v) => btns[options.findIndex(([x]) => x === v)];
-    return h('div', { class: 'btn-row' }, btns);
-  };
 
   main.append(h('div', { class: 'card' },
     h('a', { href: '#/pruefung', class: 'back' }, '‹ Alle Texte'),
@@ -125,7 +143,16 @@ async function renderText(main, id) {
         await startAttempt(t, prefs.limit, prefs.modus);
         location.hash = '#/pruefung/laeuft';
       }
-    }, 'Prüfung starten')));
+    }, 'Prüfung starten')),
+  t.eingebaut ? null : h('button', {
+    class: 'btn danger block',
+    onclick: async () => {
+      if (!(await confirmDialog('Text löschen?', `„${t.titel}“ wird von diesem Gerät gelöscht. Deine Versuche bleiben im Verlauf.`, 'Löschen', true))) return;
+      await deleteText(t.id);
+      toast('Text gelöscht.');
+      location.hash = '#/pruefung';
+    }
+  }, 'Text löschen'));
 }
 
 /* =================== Prüfung läuft =================== */
@@ -348,4 +375,74 @@ function reviewImport(a, t, schluessel) {
     input,
     h('button', { class: 'btn block', style: 'margin-top:10px', onclick: check }, 'Prüfen'),
     preview);
+}
+
+/* =================== Text importieren =================== */
+
+async function renderImport(main) {
+  const opts = { autor: '', niveau: 'mittel', schwerpunkt: '' };
+  const fallback = h('div');
+  const autorSelect = h('select', { onchange: (e) => { opts.autor = e.target.value; } },
+    h('option', { value: '' }, 'Claude soll wählen'),
+    AUTOREN.map((a) => h('option', { value: a }, a)));
+  const focusInput = h('input', {
+    type: 'text', placeholder: 'z. B. Abl. abs., nd-Formen (optional)',
+    oninput: (e) => { opts.schwerpunkt = e.target.value.trim(); }
+  });
+
+  main.append(h('div', { class: 'card' },
+    h('a', { href: '#/pruefung', class: 'back' }, '‹ Prüfungsmodus'),
+    h('h2', {}, '1. Wünsche wählen'),
+    h('label', { class: 'field' }, h('span', {}, 'Autor'), autorSelect),
+    h('div', { class: 'field' }, h('span', {}, 'Niveau'),
+      choice([['leicht', 'leicht'], ['mittel', 'mittel'], ['fordernd', 'fordernd']], opts.niveau, (v) => { opts.niveau = v; })),
+    h('label', { class: 'field' }, h('span', {}, 'Grammatik-Schwerpunkt'), focusInput),
+    h('h2', { style: 'margin-top:14px' }, '2. Prompt kopieren'),
+    h('button', {
+      class: 'btn block',
+      onclick: async () => {
+        const p = buildTextPrompt(opts);
+        if (await copyText(p)) { toast('Prompt kopiert. Jetzt in der Claude-App einfügen.', 4000); fallback.replaceChildren(); }
+        else fallback.replaceChildren(h('p', { class: 'muted' }, 'Kopieren hat nicht geklappt – bitte markieren und kopieren:'), h('textarea', { rows: 8, readonly: true }, p));
+      }
+    }, 'Text-Prompt kopieren'),
+    fallback,
+    h('p', { class: 'muted small' }, 'In der Claude-App: neuen Chat öffnen, Prompt einfügen, senden. Tipp: Lies den Text nicht durch, bevor du ihn als Prüfung schreibst – kopiere nur den Block am Ende.')));
+
+  const input = h('textarea', { rows: 6, placeholder: 'Antwort von Claude hier einfügen …', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false' });
+  const preview = h('div');
+  main.append(h('div', { class: 'card' },
+    h('h2', {}, '3. Antwort einfügen'),
+    input,
+    h('button', { class: 'btn block', style: 'margin-top:10px', onclick: check }, 'Prüfen')), preview);
+
+  function check() {
+    preview.replaceChildren();
+    let obj;
+    try { obj = extractJson(input.value); }
+    catch (err) { preview.append(h('div', { class: 'card warn' }, h('h3', {}, 'Konnte nicht gelesen werden'), h('p', {}, err.message))); return; }
+    const res = checkText(obj);
+    if (res.errors.length) {
+      preview.append(h('div', { class: 'card warn' }, h('h3', {}, 'Import nicht möglich'), h('ul', {}, res.errors.map((e) => h('li', {}, e)))));
+      return;
+    }
+    const t = res.text;
+    // Vorschau bewusst OHNE lateinischen Text – sonst ist die Prüfung verdorben
+    preview.append(h('div', { class: 'card' },
+      h('h2', {}, '4. Vorschau'),
+      h('p', {}, h('b', {}, t.titel)),
+      h('p', { class: 'small' }, source(t.quelle), ' · ', `${t.woerter} Wörter · ${t.niveau}`),
+      h('p', { class: 'small' }, sourceBadges(t)),
+      ...res.warnings.map((w) => h('div', { class: 'msg warn', style: 'margin-left:0' }, w)),
+      h('p', { class: 'muted small', style: 'margin-top:10px' }, 'Den lateinischen Text zeigt die App erst in der Prüfung. Prüfe die Stelle über den Link, wenn du dich auf die Quellenangabe verlassen willst.'),
+      h('button', {
+        class: 'btn block',
+        onclick: async () => {
+          const rec = await saveText(t);
+          toast('Text gespeichert.');
+          location.hash = textHref(rec.id);
+        }
+      }, 'Text speichern')));
+    preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

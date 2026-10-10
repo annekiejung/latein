@@ -1,0 +1,29 @@
+{
+  "id": "cic-archia-studia",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Lob der Bildung",
+  "einleitung": "62 v. Chr. verteidigt Cicero vor Gericht den griechischen Dichter Archias, dessen römisches Bürgerrecht angezweifelt wird. Mitten in der Rede lobt er den Wert von Literatur und Bildung. Kurz zuvor hat er behauptet, dass gerade Menschen, die Begabung und Bildung verbinden, Großes leisten.",
+  "text": "Ex hoc esse hunc numero, quem patres nostri viderunt, divinum hominem Africanum; ex hoc C. Laelium, L. Furium, moderatissimos homines et continentissimos; ex hoc fortissimum virum et illis temporibus doctissimum, M. Catonem illum senem: qui profecto si nihil ad percipiendam virtutem litteris adiuvarentur, numquam se ad earum studium contulissent. Quod si non his tantus fructus ostenderetur, et si ex his studiis delectatio sola peteretur, tamen (ut opinor) hanc animi adversionem humanissimam ac liberalissimam iudicaretis. Nam ceterae neque temporum sunt neque aetatum omnium neque locorum: haec studia adulescentiam alunt, senectutem oblectant, secundas res ornant, adversis perfugium ac solacium praebent, delectant domi, non impediunt foris, pernoctant nobiscum, peregrinantur, rusticantur.",
+  "quelle": { "autor": "Cicero", "werk": "Pro Archia", "stelle": "16", "status": "geprüft", "link": "https://www.thelatinlibrary.com/cicero/arch.shtml" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["Irrealis (Konj. Imperfekt/Plusquamperfekt)", "AcI", "Gerundiv (ad percipiendam virtutem)", "Superlative", "Gen. possessivus (temporum sunt)", "Anapher, Asyndeton"],
+  "vokabelhilfen": [
+    { "latein": "ex hōc esse hunc numerō …", "deutsch": "zu dieser Gruppe (der Gebildeten) gehöre … (AcI, abhängig von „ich behaupte“)" },
+    { "latein": "Āfricānus, -ī m.", "deutsch": "Scipio Africanus (Sieger über Hannibal)" },
+    { "latein": "C. Laelius, L. Fūrius", "deutsch": "Freunde Scipios" },
+    { "latein": "continēns, -entis", "deutsch": "beherrscht" },
+    { "latein": "M. Catō senex", "deutsch": "Cato der Ältere" },
+    { "latein": "percipere", "deutsch": "erlangen" },
+    { "latein": "animī adversiō, -ōnis f.", "deutsch": "geistige Beschäftigung" },
+    { "latein": "līberālis, -e", "deutsch": "eines freien Menschen würdig, edel" },
+    { "latein": "oblectāre", "deutsch": "erfreuen" },
+    { "latein": "perfugium, -ī n.", "deutsch": "Zuflucht" },
+    { "latein": "forīs (Adv.)", "deutsch": "draußen, in der Öffentlichkeit" },
+    { "latein": "pernoctāre", "deutsch": "die Nacht verbringen" },
+    { "latein": "peregrīnārī", "deutsch": "reisen" },
+    { "latein": "rūsticārī", "deutsch": "auf dem Land leben" }
+  ],
+  "musteruebersetzung": "Zu dieser Gruppe gehöre der göttliche Mann Africanus, den unsere Väter noch gesehen haben; zu ihr Gaius Laelius und Lucius Furius, äußerst maßvolle und beherrschte Menschen; zu ihr der tapferste und für jene Zeiten gelehrteste Mann, der berühmte alte Marcus Cato. Diese hätten sich gewiss niemals dem Studium der Literatur gewidmet, wenn sie durch sie beim Erlangen der Tugend in keiner Weise unterstützt worden wären. Wenn aber dieser große Nutzen nicht sichtbar wäre und wenn man aus diesen Studien nur Vergnügen suchte, würdet ihr diese geistige Beschäftigung dennoch, wie ich meine, für die menschlichste und edelste halten. Denn die übrigen Beschäftigungen passen nicht zu allen Zeiten, Lebensaltern und Orten; diese Studien aber nähren die Jugend, erfreuen das Alter, schmücken das Glück, bieten im Unglück Zuflucht und Trost, erfreuen zu Hause, hindern nicht in der Öffentlichkeit, verbringen die Nacht mit uns, gehen mit uns auf Reisen und aufs Land."
+}

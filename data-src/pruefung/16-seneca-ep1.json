@@ -1,0 +1,27 @@
+{
+  "id": "sen-ep1-zeit",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Nutze deine Zeit!",
+  "einleitung": "Der Philosoph Seneca (ca. 1–65 n. Chr.) schreibt im Alter Briefe an seinen jüngeren Freund Lucilius, in denen er ihm Ratschläge für ein gutes Leben gibt. Dies ist der Anfang des ersten Briefes.",
+  "text": "Ita fac, mi Lucili: vindica te tibi, et tempus quod adhuc aut auferebatur aut subripiebatur aut excidebat collige et serva. Persuade tibi hoc sic esse ut scribo: quaedam tempora eripiuntur nobis, quaedam subducuntur, quaedam effluunt. Turpissima tamen est iactura quae per neglegentiam fit. Et si volueris attendere, magna pars vitae elabitur male agentibus, maxima nihil agentibus, tota vita aliud agentibus. Quem mihi dabis qui aliquod pretium tempori ponat, qui diem aestimet, qui intellegat se cotidie mori? In hoc enim fallimur, quod mortem prospicimus: magna pars eius iam praeterit; quidquid aetatis retro est mors tenet.",
+  "quelle": { "autor": "Seneca", "werk": "Epistulae morales", "stelle": "1,1–2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/sen/seneca.ep1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "mittel",
+  "schwerpunkte": ["Imperative", "AcI", "Dativus incommodi (male agentibus)", "Konjunktiv im Relativsatz (qui ponat)", "Gen. partitivus (quidquid aetatis)", "substantivierte Partizipien"],
+  "vokabelhilfen": [
+    { "latein": "Lūcīlius, -ī m.", "deutsch": "Lucilius (Freund Senecas); Vokativ: Lūcīlī" },
+    { "latein": "vindicā tē tibi", "deutsch": "nimm dich selbst in Besitz, befreie dich für dich" },
+    { "latein": "subripere", "deutsch": "heimlich wegnehmen, stehlen" },
+    { "latein": "excidere", "deutsch": "entgleiten" },
+    { "latein": "subdūcere", "deutsch": "entziehen" },
+    { "latein": "effluere", "deutsch": "verrinnen" },
+    { "latein": "iactūra, -ae f.", "deutsch": "Verlust" },
+    { "latein": "attendere", "deutsch": "aufmerksam sein, genau hinsehen" },
+    { "latein": "ēlābī", "deutsch": "entgleiten" },
+    { "latein": "aestimāre", "deutsch": "(wert)schätzen" },
+    { "latein": "prōspicere", "deutsch": "vor sich sehen" },
+    { "latein": "retrō (Adv.)", "deutsch": "zurück, hinter uns" }
+  ],
+  "musteruebersetzung": "Mach es so, mein Lucilius: Nimm dich selbst in Besitz und sammle und bewahre die Zeit, die dir bisher entweder weggenommen oder heimlich gestohlen wurde oder entglitt. Sei überzeugt, dass es so ist, wie ich schreibe: Manche Zeit wird uns entrissen, manche entzogen, manche verrinnt. Am schändlichsten ist jedoch der Verlust, der durch Nachlässigkeit entsteht. Und wenn du genau hinsehen willst: Ein großer Teil des Lebens entgleitet denen, die schlecht handeln, der größte denen, die nichts tun, das ganze Leben denen, die etwas anderes tun (als sie sollten). Wen wirst du mir nennen, der der Zeit irgendeinen Wert beimisst, der den Tag schätzt, der erkennt, dass er täglich stirbt? Darin nämlich täuschen wir uns, dass wir den Tod vor uns sehen: Ein großer Teil von ihm ist schon vorbei; alles, was an Lebenszeit hinter uns liegt, hat der Tod."
+}

@@ -10,17 +10,18 @@
  *   exams        Klassenarbeits-Termine                keyPath "id"
  *   history      Lern-Sitzungen/Prüfungsergebnisse     keyPath "id"
  *   reports      gemeldete Fehler in Wortschatz-Daten  keyPath "id"
+ *   texte        importierte Prüfungstexte (ab DB 2)  keyPath "id"
  *
  * Neue Stores: DB_VERSION erhöhen und in upgrade() einen neuen
  * "if (oldVersion < N)"-Block ergänzen. Bestehende Blöcke NIE ändern.
  */
 
 const DB_NAME = 'latein-trainer';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 export const STORES = [
   'settings', 'vocab', 'coreProgress', 'grammar',
-  'journal', 'exams', 'history', 'reports'
+  'journal', 'exams', 'history', 'reports', 'texte'
 ];
 
 let dbPromise = null;
@@ -36,6 +37,9 @@ function upgrade(db, oldVersion) {
     db.createObjectStore('exams', { keyPath: 'id' });
     db.createObjectStore('history', { keyPath: 'id' });
     db.createObjectStore('reports', { keyPath: 'id' });
+  }
+  if (oldVersion < 2) {
+    db.createObjectStore('texte', { keyPath: 'id' });   // importierte Prüfungstexte
   }
 }
 

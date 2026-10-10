@@ -1,0 +1,128 @@
+{
+  "id": "sall-sittenverfall",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Der Beginn des Sittenverfalls",
+  "einleitung": "Sallust erklärt, wie es zum Sittenverfall in Rom kam. Zuvor hat er die guten alten Zeiten geschildert, in denen Rom durch Tüchtigkeit groß wurde. Sallust benutzt altertümliche Formen (z. B. artis statt artes).",
+  "text": "Sed ubi labore atque iustitia res publica crevit, reges magni bello domiti, nationes ferae et populi ingentes vi subacti, Carthago, aemula imperi Romani, ab stirpe interiit, cuncta maria terraeque patebant, saevire fortuna ac miscere omnia coepit. Qui labores, pericula, dubias atque asperas res facile toleraverant, iis otium divitiaeque optanda alias, oneri miseriaeque fuere. Igitur primo imperi, deinde pecuniae cupido crevit: ea quasi materies omnium malorum fuere. Namque avaritia fidem, probitatem ceterasque artis bonas subvortit; pro his superbiam, crudelitatem, deos neglegere, omnia venalia habere edocuit. Ambitio multos mortalis falsos fieri subegit, aliud clausum in pectore, aliud in lingua promptum habere, amicitias inimicitiasque non ex re, sed ex commodo aestumare magisque voltum quam ingenium bonum habere.",
+  "quelle": {
+    "autor": "Sallust",
+    "link": "https://www.thelatinlibrary.com/sall.1.html",
+    "werk": "De coniuratione Catilinae",
+    "stelle": "10,1–5",
+    "status": "geprüft"
+  },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": [
+    "ubi mit Perfekt (Ellipse von sunt)",
+    "doppelter Dativ (oneri esse)",
+    "Gerundiv (optanda)",
+    "Infinitive als Objekt",
+    "vorangestellter Relativsatz (Qui … iis)",
+    "altertümliche Formen"
+  ],
+  "vokabelhilfen": [
+    {
+      "deutsch": "bezwingen",
+      "latein": "domāre, domuī, domitum"
+    },
+    {
+      "latein": "subigere, -ēgī, -āctum",
+      "deutsch": "unterwerfen"
+    },
+    {
+      "latein": "Carthāgō, -inis f.",
+      "deutsch": "Karthago (146 v. Chr. zerstört)"
+    },
+    {
+      "deutsch": "Rivalin",
+      "latein": "aemula, -ae f."
+    },
+    {
+      "deutsch": "verkürzte Genitivform",
+      "latein": "imperī = imperiī"
+    },
+    {
+      "latein": "ab stirpe",
+      "deutsch": "von Grund auf"
+    },
+    {
+      "latein": "saevīre",
+      "deutsch": "wüten"
+    },
+    {
+      "deutsch": "hier: gefährlich, unsicher",
+      "latein": "dubius, -a, -um"
+    },
+    {
+      "deutsch": "sonst, unter anderen Umständen",
+      "latein": "aliās (Adv.)"
+    },
+    {
+      "latein": "onus, oneris n.",
+      "deutsch": "Last"
+    },
+    {
+      "deutsch": "altertümliche Form",
+      "latein": "fuēre = fuērunt"
+    },
+    {
+      "latein": "cupīdō, -inis f.",
+      "deutsch": "Begierde, Gier"
+    },
+    {
+      "latein": "māteriēs, -ēī f.",
+      "deutsch": "Nährboden"
+    },
+    {
+      "deutsch": "Rechtschaffenheit",
+      "latein": "probitās, -ātis f."
+    },
+    {
+      "deutsch": "altertümliche Form",
+      "latein": "artīs = artēs"
+    },
+    {
+      "latein": "subvortere = subvertere",
+      "deutsch": "untergraben"
+    },
+    {
+      "latein": "vēnālis, -e",
+      "deutsch": "käuflich"
+    },
+    {
+      "latein": "ēdocēre",
+      "deutsch": "lehren"
+    },
+    {
+      "latein": "ambitiō, -ōnis f.",
+      "deutsch": "Ehrgeiz"
+    },
+    {
+      "latein": "mortālis = mortālēs",
+      "deutsch": "die Menschen"
+    },
+    {
+      "latein": "subigere (m. Inf.)",
+      "deutsch": "zwingen"
+    },
+    {
+      "deutsch": "bereit, offen",
+      "latein": "prōmptus, -a, -um"
+    },
+    {
+      "deutsch": "Vorteil",
+      "latein": "commodum, -ī n."
+    },
+    {
+      "latein": "aestumāre = aestimāre",
+      "deutsch": "bewerten"
+    },
+    {
+      "latein": "voltus = vultus, -ūs m.",
+      "deutsch": "Miene"
+    }
+  ],
+  "musteruebersetzung": "Aber als der Staat durch Arbeit und Gerechtigkeit gewachsen war, als große Könige im Krieg bezwungen, wilde Stämme und gewaltige Völker mit Gewalt unterworfen waren, als Karthago, die Rivalin der römischen Herrschaft, von Grund auf vernichtet war und alle Meere und Länder offenstanden, begann das Schicksal zu wüten und alles durcheinanderzubringen. Denen, die Mühen, Gefahren, unsichere und schwierige Lagen leicht ertragen hatten, wurden Ruhe und Reichtum, die sonst wünschenswert sind, zur Last und zum Unglück. Daher wuchs zuerst die Gier nach Macht, dann nach Geld: Dies war gleichsam der Nährboden aller Übel. Denn die Habgier untergrub Treue, Rechtschaffenheit und die übrigen guten Eigenschaften; stattdessen lehrte sie Hochmut, Grausamkeit, die Götter zu missachten und alles für käuflich zu halten. Der Ehrgeiz zwang viele Menschen, falsch zu werden, etwas anderes im Herzen verschlossen und etwas anderes auf der Zunge bereit zu haben, Freundschaften und Feindschaften nicht nach der Sache, sondern nach dem Vorteil zu bewerten und eher eine gute Miene als eine gute Gesinnung zu zeigen."
+}

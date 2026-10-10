@@ -1,0 +1,30 @@
+{
+  "id": "sall-iugurtha-jugend",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Der junge Iugurtha",
+  "einleitung": "In seinem Werk über den Krieg gegen Iugurtha stellt Sallust den numidischen Prinzen Iugurtha vor. Er ist ein Neffe des Königs Micipsa von Numidien (Nordafrika) und wächst an dessen Hof auf. „Qui“ am Anfang bezieht sich auf Iugurtha.",
+  "text": "Qui ubi primum adolevit, pollens viribus, decora facie, sed multo maxime ingenio validus, non se luxu neque inertiae corrumpendum dedit, sed, uti mos gentis illius est, equitare, iaculari; cursu cum aequalibus certare et, cum omnis gloria anteiret, omnibus tamen carus esse; ad hoc pleraque tempora in venando agere, leonem atque alias feras primus aut in primis ferire: plurimum facere, minimum ipse de se loqui. Quibus rebus Micipsa tametsi initio laetus fuerat, existimans virtutem Iugurthae regno suo gloriae fore, tamen, postquam hominem adulescentem exacta sua aetate et parvis liberis magis magisque crescere intellegit, vehementer eo negotio permotus multa cum animo suo volvebat.",
+  "quelle": { "autor": "Sallust", "werk": "Bellum Iugurthinum", "stelle": "6,1–2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/sall.2.html" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["historischer Infinitiv", "Gerundiv/Gerundium", "cum concessivum", "Abl. abs.", "doppelter Dativ (gloriae fore)", "AcI", "PC"],
+  "vokabelhilfen": [
+    { "latein": "adolēscere, -olēvī", "deutsch": "heranwachsen" },
+    { "latein": "pollēre", "deutsch": "stark sein" },
+    { "latein": "decōrus, -a, -um", "deutsch": "schön, anmutig" },
+    { "latein": "inertia, -ae f.", "deutsch": "Untätigkeit" },
+    { "latein": "uti = ut", "deutsch": "wie" },
+    { "latein": "equitāre", "deutsch": "reiten" },
+    { "latein": "iaculārī", "deutsch": "Speere werfen" },
+    { "latein": "equitāre … loquī", "deutsch": "historische Infinitive: wie Prädikate im Imperfekt übersetzen" },
+    { "latein": "anteīre (m. Akk.)", "deutsch": "übertreffen" },
+    { "latein": "ad hoc", "deutsch": "außerdem" },
+    { "latein": "vēnārī", "deutsch": "jagen" },
+    { "latein": "Micipsa, -ae m.", "deutsch": "König von Numidien" },
+    { "latein": "tametsī", "deutsch": "obwohl" },
+    { "latein": "exigere, -ēgī, -āctum", "deutsch": "hier: (Lebenszeit) zu Ende gehen lassen" },
+    { "latein": "volvere", "deutsch": "hier: überlegen, hin und her wälzen" }
+  ],
+  "musteruebersetzung": "Sobald dieser herangewachsen war, kräftig, von schönem Aussehen, aber vor allem stark an Geist, ließ er sich nicht durch Luxus und Untätigkeit verderben, sondern ritt, wie es Sitte dieses Volkes ist, warf Speere, wetteiferte mit seinen Altersgenossen im Laufen und war, obwohl er alle an Ruhm übertraf, dennoch allen lieb; außerdem verbrachte er die meiste Zeit mit Jagen und erlegte als Erster oder unter den Ersten den Löwen und andere wilde Tiere: Er leistete sehr viel und sprach selbst sehr wenig von sich. Obwohl Micipsa sich darüber anfangs gefreut hatte, weil er meinte, die Tüchtigkeit Iugurthas werde seinem Reich zum Ruhm gereichen, war er dennoch, nachdem er erkannt hatte, dass der junge Mann immer mehr an Ansehen gewann, während seine eigene Lebenszeit zu Ende ging und seine Kinder klein waren, über diese Sache heftig beunruhigt und wälzte viele Gedanken in seinem Herzen."
+}

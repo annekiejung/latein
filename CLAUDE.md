@@ -104,7 +104,7 @@ Immer in `APP_FILES` (sw.js) eintragen, sonst fehlt sie offline.
 
 ## Datenformate
 
-### IndexedDB `latein-trainer`, Version 1
+### IndexedDB `latein-trainer`, Version 2
 
 | Store | Schlüssel | Inhalt |
 |---|---|---|
@@ -116,6 +116,7 @@ Immer in `APP_FILES` (sw.js) eintragen, sonst fehlt sie offline.
 | exams | id | Klassenarbeits-Termine |
 | history | id | Lernsitzungen, Prüfungsergebnisse |
 | reports | id | gemeldete Fehler in Wortschatz-Daten |
+| texte | id | importierte Prüfungstexte (ab DB-Version 2) |
 
 Schema-Änderungen: `DB_VERSION` erhöhen, neuen `if (oldVersion < N)`-Block in
 `upgrade()` – alte Blöcke nie ändern.
@@ -218,6 +219,15 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
   settings `pruefungLaeuft` (id). Zeit läuft weiter, auch wenn die App zu ist; Entwurf wird
   laufend gespeichert. settings `pruefungPrefs` { limit, modus }.
 - Text erst sichtbar, wenn die Uhr läuft; Musterübersetzung erst nach dem Abgeben (eingeklappt).
+- Text-Import: `buildTextPrompt({autor, niveau, schwerpunkt})` → Claude-App → `checkText()` (entfernt
+  Längen, „geprüft“ nur mit Link, Wortzahl-Warnung) → Store `texte` (`id` pt_…, `importiert`). Vorschau zeigt
+  den lateinischen Text bewusst NICHT. Liste gruppiert eingebaute Texte nach Autor (sortiert nach Niveau).
+- 21 eingebaute Texte (3 je Autor: Caesar, Nepos, Cicero, Sallust, Livius, Seneca + 3 leichte von
+  Eutropius auf Wunsch der Nutzerin 2026-10-10), alle geprüft.
+  verify_quellen.pl kennt: gall1–7, cat1–4, arch, nepthem1/nephan1/nepatt1, sall1 (Catilina), sall2
+  (Iugurtha), liv1, senep1 (Seneca Briefe 1–12, Stelle Brief,§), eutr1/eutr2 (Eutropius, Buch,Kapitel). Livius/Archia: im Online-Text nur
+  Kapitel → Stelle "1,4" bzw. "16". Download: thelatinlibrary.com/{sall.1.html, sall.2.html,
+  cicero/cat3.shtml, cicero/arch.shtml, eutropius/eutropiusN.shtml, livy/liv.1.shtml, sen/seneca.ep1.shtml}.
 - Bewertung: `buildExamPrompt()` (Text, Hilfen, Musterübersetzung, Übersetzung bzw. „Foto“, Raster,
   Versuchs-id) → Claude-App → Antwort mit JSON-Block "latein-pruefung-bewertung" v1:
   `{ versuch, fehler[{kategorie vokabel|form|konstruktion|syntax|sinn|stil, gewicht 0.5|1|2, latein,
@@ -297,6 +307,7 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    - 5a Textauswahl, Uhr, tippen/Papier, Entwurf, Abgeben, Musterübersetzung, 2 Texte – **fertig (0.7.0)**
    - 5b Prüf-Prompt + 5c Bewertung einfügen → Journal/Verlauf, Notenschlüssel-Einstellung – **fertig (0.7.0)**
      Notenschlüssel der Lehrkraft: Nutzerin fragt nach (Stand 2026-10-09 Vorschlag 2/4/7/10/13).
-   - 5d 16 weitere Texte (3 je Autor = 18) + Text-Import   - 5e `workflow_pruefung.pdf` + Anleitung
+   - 5d 19 weitere Texte (3 je Autor + 3 Eutropius = 21) + Text-Import – **fertig (0.8.0)**
+   - 5e `workflow_pruefung.pdf` + Anleitung – offen
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik
 7. Eigene Vorschläge (Nutzerin wählt)

@@ -1,0 +1,32 @@
+{
+  "id": "sen-ep2-lesen",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Wer überall ist, ist nirgends",
+  "einleitung": "In seinem zweiten Brief an Lucilius lobt Seneca, dass sein Freund nicht ständig umherreist, und gibt ihm einen Rat zum Lesen.",
+  "text": "Ex iis quae mihi scribis et ex iis quae audio bonam spem de te concipio: non discurris nec locorum mutationibus inquietaris. Aegri animi ista iactatio est: primum argumentum compositae mentis existimo posse consistere et secum morari. Illud autem vide, ne ista lectio auctorum multorum et omnis generis voluminum habeat aliquid vagum et instabile. Certis ingeniis immorari et innutriri oportet, si velis aliquid trahere quod in animo fideliter sedeat. Nusquam est qui ubique est. Vitam in peregrinatione exigentibus hoc evenit, ut multa hospitia habeant, nullas amicitias; idem accidat necesse est iis qui nullius se ingenio familiariter applicant sed omnia cursim et properantes transmittunt.",
+  "quelle": { "autor": "Seneca", "werk": "Epistulae morales", "stelle": "2,1–2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/sen/seneca.ep1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "mittel",
+  "schwerpunkte": ["Infinitive als Subjekt/Objekt", "AcI", "ne nach vide", "Konjunktiv im Relativsatz", "ut-Satz nach evenit", "necesse est + Konjunktiv", "Gen. possessivus (aegri animi est)"],
+  "vokabelhilfen": [
+    { "latein": "discurrere", "deutsch": "umherlaufen, umherreisen" },
+    { "latein": "inquiētāre", "deutsch": "beunruhigen" },
+    { "latein": "iactātiō, -ōnis f.", "deutsch": "unruhiges Hin und Her" },
+    { "latein": "compositus, -a, -um", "deutsch": "ausgeglichen" },
+    { "latein": "cōnsistere", "deutsch": "zur Ruhe kommen" },
+    { "latein": "morārī", "deutsch": "verweilen" },
+    { "latein": "lēctiō, -ōnis f.", "deutsch": "Lektüre" },
+    { "latein": "volūmen, -inis n.", "deutsch": "Buch(rolle)" },
+    { "latein": "vagus, -a, -um", "deutsch": "unstet" },
+    { "latein": "immorārī (m. Dat.)", "deutsch": "verweilen bei" },
+    { "latein": "innūtrīrī (m. Dat.)", "deutsch": "sich nähren von" },
+    { "latein": "peregrīnātiō, -ōnis f.", "deutsch": "Reisen, Aufenthalt in der Fremde" },
+    { "latein": "exigere", "deutsch": "hier: verbringen" },
+    { "latein": "hospitium, -ī n.", "deutsch": "Gastfreundschaft" },
+    { "latein": "sē applicāre (m. Dat.)", "deutsch": "sich anschließen an" },
+    { "latein": "cursim (Adv.)", "deutsch": "eilig" },
+    { "latein": "trānsmittere", "deutsch": "hier: an sich vorbeiziehen lassen" }
+  ],
+  "musteruebersetzung": "Aus dem, was du mir schreibst, und aus dem, was ich höre, schöpfe ich gute Hoffnung für dich: Du reist nicht umher und lässt dich nicht durch Ortswechsel beunruhigen. Dieses Hin und Her ist das Kennzeichen eines kranken Geistes: Für den ersten Beweis eines ausgeglichenen Geistes halte ich es, zur Ruhe kommen und bei sich selbst verweilen zu können. Achte aber darauf, dass diese Lektüre vieler Autoren und Bücher jeder Art nicht etwas Unstetes und Unbeständiges an sich hat. Man muss bei bestimmten Geistern verweilen und sich von ihnen nähren, wenn man etwas gewinnen will, das sich dauerhaft im Geist festsetzt. Nirgends ist, wer überall ist. Denen, die ihr Leben auf Reisen verbringen, geht es so, dass sie viele Gastfreundschaften haben, aber keine Freundschaften; dasselbe muss notwendigerweise denen passieren, die sich keinem Geist vertraut anschließen, sondern alles eilig und hastig an sich vorbeiziehen lassen."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "caes-druiden",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Die Ausbildung der Druiden",
+  "einleitung": "Im 6. Buch beschreibt Caesar die Gesellschaft der Gallier. Hier geht es um die Druiden, die Priester und Gelehrten der Kelten, und um ihre Ausbildung.",
+  "text": "Druides a bello abesse consuerunt neque tributa una cum reliquis pendunt; militiae vacationem omniumque rerum habent immunitatem. Tantis excitati praemiis et sua sponte multi in disciplinam conveniunt et a parentibus propinquisque mittuntur. Magnum ibi numerum versuum ediscere dicuntur. Itaque annos nonnulli vicenos in disciplina permanent. Neque fas esse existimant ea litteris mandare, cum in reliquis fere rebus, publicis privatisque rationibus Graecis litteris utantur. Id mihi duabus de causis instituisse videntur, quod neque in vulgum disciplinam efferri velint neque eos, qui discunt, litteris confisos minus memoriae studere: quod fere plerisque accidit, ut praesidio litterarum diligentiam in perdiscendo ac memoriam remittant.",
+  "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "6,14,1–4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall6.shtml" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["NcI (dicuntur, videntur)", "AcI", "PC", "cum concessivum", "Konjunktiv im Kausalsatz (subjektiver Grund)", "ut-Satz nach accidit", "nd-Form"],
+  "vokabelhilfen": [
+    { "latein": "Druidēs, -um m.", "deutsch": "die Druiden (keltische Priester)" },
+    { "latein": "cōnsuērunt = cōnsuēvērunt", "deutsch": "sie pflegen, sind gewohnt" },
+    { "latein": "tribūtum, -ī n.", "deutsch": "Abgabe, Steuer" },
+    { "latein": "pendere", "deutsch": "zahlen" },
+    { "latein": "mīlitia, -ae f.", "deutsch": "Kriegsdienst" },
+    { "latein": "vacātiō, -ōnis f.", "deutsch": "Befreiung" },
+    { "latein": "immūnitās, -ātis f.", "deutsch": "Freiheit von Lasten" },
+    { "latein": "disciplīna, -ae f.", "deutsch": "hier: Lehre, Unterricht" },
+    { "latein": "propinquus, -ī m.", "deutsch": "Verwandter" },
+    { "latein": "ēdiscere", "deutsch": "auswendig lernen" },
+    { "latein": "vīcēnī, -ae, -a", "deutsch": "je zwanzig" },
+    { "latein": "fās (indekl.)", "deutsch": "(göttliches) Recht; fās est: es ist erlaubt" },
+    { "latein": "litterīs mandāre", "deutsch": "aufschreiben" },
+    { "latein": "ratiōnēs pūblicae prīvātaeque", "deutsch": "öffentliche und private Angelegenheiten" },
+    { "latein": "in vulgum efferre", "deutsch": "unter das Volk bringen, verbreiten" },
+    { "latein": "cōnfīsus, -a, -um (m. Dat./Abl.)", "deutsch": "im Vertrauen auf" },
+    { "latein": "perdiscere", "deutsch": "gründlich lernen" }
+  ],
+  "musteruebersetzung": "Die Druiden pflegen sich vom Krieg fernzuhalten und zahlen nicht zusammen mit den Übrigen Abgaben; sie haben Befreiung vom Kriegsdienst und Freiheit von allen Lasten. Angespornt durch so große Vorteile, kommen viele aus eigenem Antrieb zum Unterricht zusammen oder werden von Eltern und Verwandten geschickt. Dort sollen sie eine große Zahl von Versen auswendig lernen. Daher bleiben manche zwanzig Jahre lang in der Ausbildung. Sie halten es nicht für erlaubt, diese Inhalte aufzuschreiben, obwohl sie in fast allen übrigen Dingen, in öffentlichen und privaten Angelegenheiten, die griechische Schrift benutzen. Das haben sie, wie mir scheint, aus zwei Gründen eingeführt: weil sie nicht wollen, dass ihre Lehre unter das Volk gebracht wird, und auch nicht, dass die Lernenden sich im Vertrauen auf die Schrift weniger um ihr Gedächtnis bemühen; denn den meisten geschieht es ja, dass sie sich auf die Hilfe der Schrift verlassen und im gründlichen Lernen und im Auswendiglernen nachlassen."
+}

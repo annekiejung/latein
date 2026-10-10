@@ -1,0 +1,28 @@
+{
+  "id": "caes-gallia",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Gallien und seine Bewohner",
+  "einleitung": "Mit diesen Sätzen beginnt Caesar seinen Bericht über den Gallischen Krieg (58–50 v. Chr.). Er beschreibt, welche Völker in Gallien leben.",
+  "text": "Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt. Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.",
+  "quelle": { "autor": "Caesar", "werk": "De bello Gallico", "stelle": "1,1,1–4", "status": "geprüft", "link": "https://www.thelatinlibrary.com/caesar/gall1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "leicht",
+  "schwerpunkte": ["Relativsätze", "Superlative", "Kausalsätze (propterea quod, quod)", "nd-Form (ad effeminandos animos)", "cum explicativum"],
+  "vokabelhilfen": [
+    { "latein": "Belgae, -ārum m.", "deutsch": "die Belger" },
+    { "latein": "Aquītānī, -ōrum m.", "deutsch": "die Aquitanier" },
+    { "latein": "Celtae, -ārum m.", "deutsch": "die Kelten" },
+    { "latein": "īnstitūtum, -ī n.", "deutsch": "Einrichtung, Brauch" },
+    { "latein": "Garumna, -ae m.", "deutsch": "die Garonne (Fluss)" },
+    { "latein": "Matrona, -ae m.", "deutsch": "die Marne (Fluss)" },
+    { "latein": "Sēquana, -ae m.", "deutsch": "die Seine (Fluss)" },
+    { "latein": "cultus, -ūs m.", "deutsch": "Lebensweise" },
+    { "latein": "hūmānitās, -ātis f.", "deutsch": "Bildung, Zivilisation" },
+    { "latein": "commeāre", "deutsch": "verkehren, hinkommen" },
+    { "latein": "effēmināre", "deutsch": "verweichlichen" },
+    { "latein": "continenter (Adv.)", "deutsch": "ununterbrochen" },
+    { "latein": "praecēdere (m. Akk.)", "deutsch": "übertreffen" }
+  ],
+  "musteruebersetzung": "Gallien in seiner Gesamtheit ist in drei Teile geteilt; den einen davon bewohnen die Belger, einen anderen die Aquitanier, den dritten die, die in ihrer eigenen Sprache Kelten, in unserer Gallier genannt werden. Diese alle unterscheiden sich in Sprache, Einrichtungen und Gesetzen voneinander. Die Gallier trennt von den Aquitaniern der Fluss Garonne, von den Belgern die Marne und die Seine. Von diesen allen sind die Belger die tapfersten, weil sie von der Lebensweise und Zivilisation der Provinz am weitesten entfernt sind, Kaufleute am seltensten zu ihnen kommen und das einführen, was zur Verweichlichung der Gemüter beiträgt, und weil sie den Germanen am nächsten sind, die jenseits des Rheins wohnen und mit denen sie ununterbrochen Krieg führen. Aus diesem Grund übertreffen auch die Helvetier die übrigen Gallier an Tapferkeit, weil sie sich in fast täglichen Kämpfen mit den Germanen messen, indem sie diese entweder von ihrem eigenen Gebiet fernhalten oder selbst in deren Gebiet Krieg führen."
+}

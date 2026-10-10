@@ -1,0 +1,29 @@
+{
+  "id": "nep-themistokles-salamis",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Themistokles' List vor Salamis",
+  "einleitung": "480 v. Chr.: Der Perserkönig Xerxes hat Athen erobert; die griechische Flotte liegt bei der Insel Salamis. Die Verbündeten wollen abziehen und jeder seine eigene Stadt verteidigen. Nur der Athener Themistokles will die Schlacht – doch den spartanischen Oberbefehlshaber Eurybiades kann er nicht überzeugen.",
+  "text": "Quem cum minus, quam vellet, moveret, noctu de servis suis, quem habuit fidelissimum, ad regem misit, ut ei nuntiaret suis verbis adversarios eius in fuga esse: qui si discessissent, maiore cum labore et longinquiore tempore bellum confecturum, cum singulos consectari cogeretur; quos si statim aggrederetur, brevi universos oppressurum. Hoc eo valebat, ut ingratis ad depugnandum omnes cogerentur. Hac re audita barbarus, nihil doli subesse credens, postridie alienissimo sibi loco, contra opportunissimo hostibus, adeo angusto mari conflixit, ut eius multitudo navium explicari non potuerit. Victus ergo est magis etiam consilio Themistocli quam armis Graeciae.",
+  "quelle": { "autor": "Nepos", "werk": "Themistocles", "stelle": "4,3–5", "status": "geprüft", "link": "https://www.thelatinlibrary.com/nepos/nep.them.shtml" },
+  "bearbeitung": "original",
+  "niveau": "fordernd",
+  "schwerpunkte": ["indirekte Rede (AcI, Konjunktiv)", "Konditionalsätze in der indirekten Rede", "relativer Satzanschluss", "Abl. abs.", "PC", "ut-Sätze (final, konsekutiv)", "nd-Form"],
+  "vokabelhilfen": [
+    { "latein": "quem (am Anfang)", "deutsch": "= Eurybiadem" },
+    { "latein": "rēx", "deutsch": "hier: der Perserkönig Xerxes" },
+    { "latein": "suīs verbīs", "deutsch": "in seinem (des Themistokles) Namen" },
+    { "latein": "longinquus, -a, -um", "deutsch": "lang(wierig)" },
+    { "latein": "cōnsectārī", "deutsch": "verfolgen" },
+    { "latein": "hoc eō valēbat, ut", "deutsch": "das zielte darauf ab, dass" },
+    { "latein": "ingrātīs (Adv.)", "deutsch": "gegen ihren Willen" },
+    { "latein": "dēpugnāre", "deutsch": "eine Entscheidungsschlacht schlagen" },
+    { "latein": "barbarus, -ī m.", "deutsch": "der Barbar (= Xerxes)" },
+    { "latein": "subesse", "deutsch": "dahinterstecken" },
+    { "latein": "postrīdiē (Adv.)", "deutsch": "am folgenden Tag" },
+    { "latein": "cōnflīgere, -flīxī", "deutsch": "kämpfen" },
+    { "latein": "explicāre", "deutsch": "entfalten" },
+    { "latein": "Themistoclī", "deutsch": "Gen. von Themistoclēs" }
+  ],
+  "musteruebersetzung": "Als er ihn weniger beeindruckte, als er wollte, schickte er nachts denjenigen seiner Sklaven, den er für den treuesten hielt, zum König, um ihm in seinem Namen melden zu lassen, seine Gegner seien auf der Flucht: Wenn sie auseinandergingen, werde er den Krieg mit größerer Mühe und in längerer Zeit beenden, weil er gezwungen sei, sie einzeln zu verfolgen; wenn er sie dagegen sofort angreife, werde er sie in kurzer Zeit alle zusammen überwältigen. Das zielte darauf ab, dass alle gegen ihren Willen zur Entscheidungsschlacht gezwungen würden. Als der Barbar dies gehört hatte, glaubte er, dass keine List dahinterstecke, und kämpfte am folgenden Tag an einem für ihn äußerst ungünstigen, für die Feinde dagegen äußerst günstigen Ort, auf einem so engen Meer, dass sich seine große Zahl von Schiffen nicht entfalten konnte. Besiegt wurde er also noch mehr durch die Klugheit des Themistokles als durch die Waffen Griechenlands."
+}

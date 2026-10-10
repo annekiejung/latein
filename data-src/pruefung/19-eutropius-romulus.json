@@ -1,0 +1,23 @@
+{
+  "id": "eutr-romulus",
+  "format": "latein-pruefungstext",
+  "version": 1,
+  "titel": "Romulus, der erste König",
+  "einleitung": "Eutropius schrieb um 370 n. Chr. eine kurze Geschichte Roms von der Gründung bis in seine eigene Zeit. Hier geht es um Romulus, den ersten König Roms.",
+  "text": "Condita civitate, quam ex nomine suo Romam vocavit, haec fere egit. Multitudinem finitimorum in civitatem recepit, centum ex senioribus legit, quorum consilio omnia ageret, quos senatores nominavit propter senectutem. Tum, cum uxores ipse et populus suus non haberent, invitavit ad spectaculum ludorum vicinas urbi Romae nationes atque earum virgines rapuit. Commotis bellis propter raptarum iniuriam Caeninenses vicit, Antemnates, Crustuminos, Sabinos, Fidenates, Veientes. Haec omnia oppida urbem cingunt. Et cum orta subito tempestate non comparuisset, anno regni tricesimo septimo ad deos transisse creditus est et consecratus.",
+  "quelle": { "autor": "Eutropius", "werk": "Breviarium ab urbe condita", "stelle": "1,2", "status": "geprüft", "link": "https://www.thelatinlibrary.com/eutropius/eutropius1.shtml" },
+  "bearbeitung": "original",
+  "niveau": "leicht",
+  "schwerpunkte": ["Abl. abs.", "cum mit Konjunktiv", "Relativsätze (auch mit Konjunktiv)", "NcI (creditus est)", "PC"],
+  "vokabelhilfen": [
+    { "latein": "senior, -ōris m.", "deutsch": "Älterer" },
+    { "latein": "senātor, -ōris m.", "deutsch": "Senator (eigentlich: „der Ältere“)" },
+    { "latein": "vīcīnus, -a, -um (m. Dat.)", "deutsch": "benachbart" },
+    { "latein": "Caenīnēnsēs, Antemnātēs, Crustumīnī, Fīdēnātēs, Vēientēs", "deutsch": "Bewohner von Städten in der Nähe Roms" },
+    { "latein": "cingere", "deutsch": "umgeben" },
+    { "latein": "compārēre, -pāruī", "deutsch": "sichtbar sein" },
+    { "latein": "tricēsimus septimus", "deutsch": "der 37." },
+    { "latein": "cōnsecrāre", "deutsch": "für göttlich erklären" }
+  ],
+  "musteruebersetzung": "Nachdem er die Stadt gegründet hatte, die er nach seinem Namen Rom nannte, tat er ungefähr Folgendes. Er nahm eine Menge von Nachbarn in die Bürgerschaft auf und wählte hundert aus den Älteren aus, mit deren Rat er alles tun wollte; diese nannte er wegen ihres Alters Senatoren. Weil er selbst und sein Volk keine Ehefrauen hatten, lud er dann die Völker in der Nachbarschaft der Stadt Rom zu einem Festspiel ein und raubte ihre jungen Frauen. Nachdem wegen des Unrechts an den Geraubten Kriege ausgebrochen waren, besiegte er die Caeninenser, Antemnaten, Crustuminer, Sabiner, Fidenaten und Veienter. Alle diese Städte liegen rings um die Stadt. Und als er bei einem plötzlich aufgekommenen Unwetter nicht mehr zu sehen war, glaubte man, er sei im 37. Jahr seiner Herrschaft zu den Göttern übergegangen, und er wurde für göttlich erklärt."
+}
