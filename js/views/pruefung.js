@@ -95,7 +95,9 @@ async function renderList(main) {
   main.append(h('div', { class: 'card' },
     h('h3', {}, 'Weiteren Text holen'),
     h('p', { class: 'muted' }, 'Lass dir in der Claude-App einen Text heraussuchen – z. B. von deinem Lektüre-Autor – und importiere ihn hier.'),
-    h('a', { class: 'btn secondary block', href: '#/pruefung/import' }, 'Text importieren')));
+    h('a', { class: 'btn secondary block', href: '#/pruefung/import' }, 'Text importieren'),
+    h('p', { class: 'small' }, 'Anleitung: ', h('a', { href: 'docs/workflow_pruefung.html' }, 'Workflow ansehen'), ' · ',
+      h('a', { href: 'workflow_pruefung.pdf', target: '_blank' }, 'als PDF'))));
 
   if (done.length) {
     main.append(h('div', { class: 'card' },
@@ -357,6 +359,8 @@ function reviewImport(a, t, schluessel) {
   return h('div', { class: 'card' },
     h('h2', {}, 'Bewertung mit Claude'),
     h('p', { class: 'muted small' }, 'Dafür brauchst du Internet und die Claude-App. Die Prüf-App selbst bleibt offline.'),
+    h('p', { class: 'small' }, 'Anleitung: ', h('a', { href: 'docs/workflow_pruefung.html' }, 'Workflow ansehen'), ' · ',
+      h('a', { href: 'workflow_pruefung.pdf', target: '_blank' }, 'als PDF')),
     h('h3', {}, '1. Prompt kopieren'),
     h('button', {
       class: 'btn block',

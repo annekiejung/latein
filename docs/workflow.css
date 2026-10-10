@@ -64,3 +64,6 @@
     html.pdf th, html.pdf td { padding: 4px 6px; }
     html.pdf pre { font-size: 7.4px; line-height: 1.38; padding: 7px 9px; }
     html.pdf footer { margin-top: 10px; font-size: .9em; }
+    .small { font-size: .92em; }
+    html.pdf .steps.three { grid-template-columns: repeat(3, 1fr); }
+    html.pdf pre.long { font-size: 6.8px; line-height: 1.28; }

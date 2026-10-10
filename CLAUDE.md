@@ -80,7 +80,8 @@ js/morph.js           Formenlehre-Daten: Musterverben (ā, ē, ī, kons., gemisc
                       Adjektive, Pronomen; allForms()/describe() für das Formen-Training
 js/views/grammatik-formen.js  Tabellen-Ansichten + Formen-Training (Multiple Choice / selbst bestimmen)
 js/exam.js            Prüfungsmodus: Texte laden, Versuche (start/saveDraft/finish/discard), Uhr
-js/views/pruefung.js  Textauswahl, Steckbrief (Zeitlimit, tippen/Papier), laufende Prüfung, Versuch
+js/views/pruefung.js  Textauswahl, Steckbrief (Zeitlimit, tippen/Papier), laufende Prüfung, Versuch,
+                      Bewertung einfügen, Text-Import; Anleitung docs/workflow_pruefung.html
 data/pruefung.json    eingebaute Prüfungstexte – GEBAUT aus data-src/pruefung/*.json mit tools/build_pruefung.pl
 data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
 tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
@@ -308,6 +309,8 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    - 5b Prüf-Prompt + 5c Bewertung einfügen → Journal/Verlauf, Notenschlüssel-Einstellung – **fertig (0.7.0)**
      Notenschlüssel der Lehrkraft: Nutzerin fragt nach (Stand 2026-10-09 Vorschlag 2/4/7/10/13).
    - 5d 19 weitere Texte (3 je Autor + 3 Eutropius = 21) + Text-Import – **fertig (0.8.0)**
-   - 5e `workflow_pruefung.pdf` + Anleitung – offen
+   - 5e `workflow_pruefung.pdf` (3 Seiten) + Anleitung in der App – **fertig (0.8.1)**
+     Beispiel-Prompt im PDF = Eutropius Coriolan (kürzester Text; längere Texte sprengen Blatt 3).
+   → **Meilenstein 5 abgeschlossen** (Stand 2026-10-10)
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik
 7. Eigene Vorschläge (Nutzerin wählt)

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow: Übersetzung mit KI prüfen</title>
+  <!--
+    Anleitung "Übersetzung mit KI prüfen" – in der App offline + Quelle von workflow_pruefung.pdf:
+      swift tools/make_pdf.swift "http://localhost:8080/docs/workflow_pruefung.html?pdf" workflow_pruefung.pdf
+    Prompt + Notenschlüssel kommen aus js/exam.js (buildExamPrompt, DEFAULT_SCHLUESSEL, KATEGORIEN) – nicht abschreiben.
+  -->
+  <link rel="stylesheet" href="workflow.css">
+</head>
+<body>
+<main>
+  <section class="page">
+  <a class="back no-print" href="../index.html#/pruefung">‹ Zurück zur App</a>
+
+  <h1>Workflow: Übersetzung mit KI prüfen</h1>
+  <p class="lead">Klassenarbeit üben: Du übersetzt einen Originaltext von etwa 100 Wörtern unter Zeitdruck. Danach korrigiert
+    die Claude-App deine Übersetzung streng nach einem Raster, und die App rechnet die Note aus.</p>
+
+  <div class="box">
+    <p style="margin:0"><b>Offline oder online?</b> Die Lern-App läuft komplett <b>offline</b> – Text, Uhr, Schreiben und
+      Abgeben gehen auch im Flugmodus. <b>Nur die Korrektur (Schritt 4)</b> braucht Internet, weil sie in der
+      Claude-App passiert. Die Lern-App selbst hat keine KI und schickt nichts ins Internet.</p>
+  </div>
+
+  <div class="steps three">
+    <div class="step">
+      <h3><b class="n">1</b>Text wählen</h3>
+      <ul>
+        <li>App: <i>Prüfung</i> → Text antippen</li>
+        <li>Zeitlimit (z. B. 45 min) und <i>tippen</i> oder <i>auf Papier</i> wählen</li>
+        <li><i>Prüfung starten</i></li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">2</b>Übersetzen</h3>
+      <ul>
+        <li>Ohne Hilfe außer den angegebenen Vokabeln</li>
+        <li>Die Uhr läuft weiter, auch wenn du die App schließt</li>
+        <li>Fertig → <i>Abgeben</i></li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">3</b>Prompt kopieren</h3>
+      <ul>
+        <li><i>Prüf-Prompt kopieren</i> tippen</li>
+        <li>Er enthält Text, Hilfen, Musterübersetzung, deine Übersetzung und das Raster</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">4</b>Claude korrigiert</h3>
+      <ul>
+        <li>Claude-App: <b>neuer</b> Chat, Prompt einfügen</li>
+        <li>Bei Papier: <b>Foto</b> deines Blatts anhängen</li>
+        <li>Senden, Korrektur in Ruhe lesen</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">5</b>Zurück in die App</h3>
+      <ul>
+        <li>Ganze Antwort kopieren, einfügen → <i>Prüfen</i></li>
+        <li><i>Bewertung speichern</i></li>
+        <li>Fehler stehen im Fehlerjournal</li>
+      </ul>
+    </div>
+    <div class="step">
+      <h3><b class="n">6</b>Vergleichen</h3>
+      <ul>
+        <li>Erst jetzt die <i>Musterübersetzung</i> aufklappen</li>
+        <li>Tipps von Claude in die nächste Übung mitnehmen</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>So wird bewertet</h2>
+  <table>
+    <thead><tr><th style="width:22%">Kategorie</th><th>Was gemeint ist</th></tr></thead>
+    <tbody>
+      <tr><td><b>Vokabel</b></td><td>Falsche oder unpassende Wortbedeutung</td></tr>
+      <tr><td><b>Form</b></td><td>Kasus, Numerus, Tempus, Modus, Aktiv/Passiv oder Person falsch</td></tr>
+      <tr><td><b>Konstruktion</b></td><td>AcI, Abl. abs., PC, nd-Formen, cum-Satz … nicht erkannt oder falsch aufgelöst</td></tr>
+      <tr><td><b>Satzbau</b></td><td>Falsche Bezüge – welches Wort gehört wohin?</td></tr>
+      <tr><td><b>Sinn</b></td><td>Aussage verfälscht oder Teil ausgelassen</td></tr>
+      <tr><td><b>Stil</b></td><td>Holpriges Deutsch bei richtigem Verständnis (höchstens ½ Fehler)</td></tr>
+    </tbody>
+  </table>
+  <p class="small">Gewicht: <b>1</b> = ganzer Fehler, <b>½</b> = kleinere Ungenauigkeit, <b>2</b> = nur bei schweren Sinnfehlern.
+    Fehler pro 100 Wörter → Note. Vorschlag: <span id="schluessel"></span>
+    Deinen eigenen Schlüssel (wie deine Lehrkraft wertet) trägst du unter <i>Einstellungen → Notenschlüssel</i> ein.</p>
+  </section>
+
+  <section class="page">
+  <h2>Darauf kannst du dich verlassen – und darauf nicht</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:34%"><b>Die Note</b></td><td>rechnet die <b>App</b> selbst aus den Fehlern aus – Claude verzählt sich manchmal.
+        Weicht Claudes eigene Schätzung ab, siehst du beide. Es bleibt eine <b>Einschätzung</b>: Deine Lehrkraft kann anders werten.</td></tr>
+      <tr><td><b>Die Korrektur</b></td><td>ist von einer KI. Sie ist meist gut, kann aber richtige freie Lösungen als Fehler
+        werten oder Fehler übersehen. Bist du anderer Meinung: im selben Chat nachfragen („Warum ist … falsch?“).</td></tr>
+      <tr><td><b>Handschrift</b></td><td>Stellen, die Claude nicht sicher lesen kann, nennt es und wertet sie nicht.
+        Schreib deutlich, fotografiere gerade und hell.</td></tr>
+      <tr><td><b>Eingebaute Texte</b></td><td>Wortlaut und Stelle sind am Originaltext geprüft („Quelle geprüft“).
+        Einleitung, Hilfen und Musterübersetzung sind von Claude.</td></tr>
+      <tr><td><b>Importierte Texte</b></td><td>(<i>Prüfung → Text importieren</i>) stammen aus der Claude-App und sind meist
+        „Quelle bitte prüfen“ – gut zum Üben, aber nicht als sicheres Zitat.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box warn">
+    <p style="margin:0"><b>Ehrlich üben:</b> Den lateinischen Text siehst du erst, wenn die Uhr läuft. Schau während der Prüfung
+      nicht ins Wörterbuch oder in die Musterübersetzung – sonst sagt die Note nichts darüber, wie du in der Klassenarbeit stehst.</p>
+  </div>
+
+  <h2>Wenn etwas schiefgeht</h2>
+  <table>
+    <tbody>
+      <tr><td style="width:40%"><b>„Kein JSON-Block gefunden“</b></td><td>Im selben Chat schreiben: „Bitte gib den JSON-Block am Ende noch einmal aus.“</td></tr>
+      <tr><td><b>„Gehört zu einem anderen Versuch“</b></td><td>Du hast die Antwort zu einer anderen Prüfung eingefügt. Richtigen Chat suchen – oder nur speichern, wenn du sicher bist.</td></tr>
+      <tr><td><b>Antwort bricht mitten ab</b></td><td>„Bitte weiter“ schreiben und dann beide Teile zusammen einfügen.</td></tr>
+      <tr><td><b>Prüfung versehentlich gestartet</b></td><td>Unten auf <i>Prüfung abbrechen</i> – der Versuch wird gelöscht.</td></tr>
+    </tbody>
+  </table>
+  </section>
+
+  <section class="page">
+  <h2>Der Prüf-Prompt (Beispiel)</h2>
+  <p>Den Prompt baut die App für jeden Versuch neu – mit deinem Text und deiner Übersetzung. Du musst ihn nie abtippen.
+    So sieht er aus (Beispiel: Eutropius, Coriolan):</p>
+  <pre id="prompt" class="long">(Prompt wird geladen …)</pre>
+  <footer>Latein-Trainer · Workflow „Übersetzung mit KI prüfen“ · Version <span id="ver"></span></footer>
+  </section>
+</main>
+
+<script src="../js/version.js"></script>
+<script type="module">
+  if (location.search.includes('pdf')) document.documentElement.classList.add('pdf');
+  import { buildExamPrompt, DEFAULT_SCHLUESSEL } from '../js/exam.js';
+  document.getElementById('schluessel').textContent =
+    DEFAULT_SCHLUESSEL.map((max, i) => `Note ${i + 1} bis ${String(max).replace('.', ',')}`).join(' · ') + ' · darüber Note 6.';
+  document.getElementById('ver').textContent = self.APP_VERSION;
+  try {
+    const data = await (await fetch('../data/pruefung.json')).json();
+    const text = data.texte.find((t) => t.id === 'eutr-coriolan') || data.texte[0];
+    const beispiel = { id: 'p_beispiel', modus: 'tippen', limitMin: 45, sekunden: 38 * 60, uebersetzung: '(Hier steht deine Übersetzung.)' };
+    document.getElementById('prompt').textContent = buildExamPrompt(beispiel, text);
+  } catch (e) {
+    document.getElementById('prompt').textContent = 'Der Beispiel-Prompt konnte nicht geladen werden.';
+  }
+  document.body.dataset.ready = '1';
+</script>
+</body>
+</html>
