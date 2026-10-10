@@ -87,6 +87,7 @@ js/journal.js         Fehlerjournal: Fehler-Punkte (itemKey), erledigt-Regel, Wi
 js/views/fehler.js    Fehlerjournal: Überblick + Auswertung, Vokabel-Wiederholung (quiz.js), Fehler-Karteikarten, Liste
 js/planer.js          Klassenarbeits-Planer: Arbeiten (Store exams), Lernplan (buildPlan), Abhaken (doneMap), .ics
 js/views/planer.js    Planer: Liste, Formular, Lernplan nach Tagen; ui.js offerFile() = Datei teilen/herunterladen
+js/views/statistik.js Statistik: Kennzahlen, Lernzeit-Säulen (14 Tage), Quoten, Lernstand, Prüfungen, Schwachstellen
 data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
 tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
 tools/find_stellen.pl   sucht Sätze mit Stellenangabe (Buch,Kapitel,Paragraph) in Latin-Library-Texten
@@ -262,7 +263,7 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 ### Klassenarbeits-Planer (js/planer.js, js/views/planer.js) – Meilenstein 6b
 
 - Store `exams`: `{ id ka_…, titel, art klassenarbeit|test, datum, start (ab hier verteilt), lektionen[],
-  grammatik[] (Einheit-ids), probetexte, uhrzeit, notiz, note (nach der Arbeit, für 6c), erledigt{ Datum|aufgabe: true } }`.
+  grammatik[] (Einheit-ids), probetexte, uhrzeit, notiz, note (nach der Arbeit, für 6c), erledigt{ 'Datum|aufgabe': true } }`.
 - Plan wird NICHT gespeichert, sondern berechnet: Grammatik Runde 1 in den ersten 60 % der Tage, Runde 2
   danach bis 2 Tage vorher; Probe-Klassenarbeiten 2/4/6 Tage vorher; jeden Tag Vokabeln + Fehlerjournal;
   Vortag ohne neuen Stoff. „Ab heute neu verteilen“ setzt `start` = heute.
@@ -272,6 +273,14 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
   heute keine fälligen Vokabeln der Lektionen / keine fälligen Fehler. Sonst manuell.
 - Erinnerung: .ics (ein Termin pro Lerntag um `uhrzeit` mit Alarm, Arbeit als Ganztag; heutiger Termin entfällt,
   wenn die Uhrzeit vorbei ist). Auf dem iPhone NOCH NICHT getestet. Startseite: Arbeiten ≤ 21 Tage mit Aufgaben von heute.
+
+### Statistik (js/views/statistik.js) – Meilenstein 6c
+
+- Quellen: history `tag` (sekunden, antworten, richtig, ab 0.11.0 `bereiche` vokabel/grundwortschatz –
+  quiz.js ruft `logAnswer(correct, date, bereich)`), history grammatik/formen/pruefung, vocab (Fach),
+  gws (isLearned), exams (`note`), journal (`analyse`). Ältere Tage ohne `bereiche` → eigene Zeile.
+- Zeitraum settings `statistikZeitraum` (7/30/0). Nur echte Zahlen, sonst „–“.
+- Diagramme: eine Reihe in Akzentfarbe (CSS-Säulen, Tippen zeigt Wert), Tabellen statt Mehrfarben-Charts.
 
 ### Grammatik (js/grammar.js, js/views/grammatik.js)
 
@@ -346,5 +355,6 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 6. Fehlerjournal, Klassenarbeits-Planer, Statistik (alles über die Startseite erreichbar)
    - 6a Fehlerjournal – **fertig (0.9.0)**
    - 6b Klassenarbeits-Planer (Tagesportionen, Intensivmodus, .ics) – **fertig (0.10.0)**
-   - 6c Statistik – offen
+   - 6c Statistik – **fertig (0.11.0)**
+   → **Meilenstein 6 abgeschlossen** (Stand 2026-10-10)
 7. Eigene Vorschläge (Nutzerin wählt)

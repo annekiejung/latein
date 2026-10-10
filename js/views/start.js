@@ -132,7 +132,8 @@ export async function render(main) {
       h('li', {}, h('a', { href: '#/pruefung' }, 'Prüfungsmodus'), ' – Übersetzung unter Zeitdruck'),
       h('li', {}, h('a', { href: '#/planer' }, 'Klassenarbeits-Planer'), ' – Lernplan bis zur nächsten Arbeit'),
       h('li', {}, h('a', { href: '#/fehler' }, 'Fehlerjournal'),
-        fehler.length ? ` – ${fehlerOffen} offen, ${fehler.length - fehlerOffen} erledigt` : ' – deine Fehler gezielt wiederholen')
+        fehler.length ? ` – ${fehlerOffen} offen, ${fehler.length - fehlerOffen} erledigt` : ' – deine Fehler gezielt wiederholen'),
+      h('li', {}, h('a', { href: '#/statistik' }, 'Statistik'), ' – Lernzeit, Quoten, Schwachstellen')
     )
   ));
 

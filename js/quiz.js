@@ -212,7 +212,7 @@ export async function startQuiz(main, opts) {
         c[key] = after;
         await save(c);
       }
-      await logAnswer(correct, today);
+      await logAnswer(correct, today, journalTyp(c));
       results.push({ card: c, correct, given, vorher: before.fach, nachher: after.fach });
       if (!correct) {
         await put('journal', {

@@ -92,7 +92,8 @@ export function boxCounts(cards, mode) {
 /* ---------- Tagesprotokoll & Serie ---------- */
 /*
  * Store "history", ein Datensatz pro Tag:
- *   { id: 'tag-YYYY-MM-DD', typ: 'tag', datum, antworten, richtig, sekunden }
+ *   { id: 'tag-YYYY-MM-DD', typ: 'tag', datum, antworten, richtig, sekunden, bereiche }
+ *   bereiche (ab 0.11.0): { vokabel: { antworten, richtig }, grundwortschatz: { … } }
  * Gezählt werden nur ERSTE Antworten auf eine Karte (keine Wiederholungen in der Runde).
  */
 
@@ -101,10 +102,15 @@ export async function getDay(date = todayStr()) {
     { id: 'tag-' + date, typ: 'tag', datum: date, antworten: 0, richtig: 0, sekunden: 0 };
 }
 
-export async function logAnswer(correct, date = todayStr()) {
+export async function logAnswer(correct, date = todayStr(), bereich = 'vokabel') {
   const day = await getDay(date);
   day.antworten++;
   if (correct) day.richtig++;
+  // Ab 0.11.0 zusätzlich je Bereich (Unterrichtsvokabeln / Grundwortschatz) – für die Statistik
+  day.bereiche = day.bereiche || {};
+  const b = (day.bereiche[bereich] ||= { antworten: 0, richtig: 0 });
+  b.antworten++;
+  if (correct) b.richtig++;
   await put('history', day);
   return day;
 }

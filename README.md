@@ -32,7 +32,7 @@ Dann `http://localhost:8080` öffnen.
 | 3 | Grundwortschatz (2507 Wörter, 96 % abgeglichen) | fertig |
 | 4 | Grammatik (10 Einheiten, Formen-Training, Tabellen) | fertig |
 | 5 | Prüfungsmodus (21 geprüfte Originaltexte, Bewertung über die Claude-App) | fertig |
-| 6 | Fehlerjournal, Planer, Statistik | geplant |
+| 6 | Fehlerjournal, Klassenarbeits-Planer, Statistik | fertig |
 
 ## Quellen und Lizenzen
 

@@ -49,6 +49,7 @@ const APP_FILES = [
   './js/views/pruefung.js',
   './js/views/fehler.js',
   './js/views/planer.js',
+  './js/views/statistik.js',
   './js/views/einstellungen.js',
   './docs/workflow.css',
   './docs/workflow_vokabeln.html',

@@ -129,6 +129,7 @@ export const DEFAULT_SETTINGS = {
   notenschluessel: [2, 4, 7, 10, 13],    // max. Fehler pro 100 Wörter für Note 1–5 (darüber 6)
   fehlerStatus: {},                     // Fehlerjournal: { key: { richtig: [ISO-Zeiten] } } (js/journal.js)
   fehlerZeitraum: 30,                   // Auswertung: letzte 30 Tage (0 = alles)
+  statistikZeitraum: 30,                // Statistik: 7 / 30 / 0 = alles
 };
 
 export async function getSetting(key) {
