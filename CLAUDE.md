@@ -78,7 +78,8 @@ js/grammar.js         Grammatik-Einheiten: Format "latein-grammatik", Prüfung, 
 js/morph.js           Formenlehre-Daten: Musterverben (ā, ē, ī, kons., gemischt; Akt.+Pass.), unregelmäßige
                       Verben (esse, posse, prōdesse, īre, ferre, velle, nōlle, mālle, fierī), Deklinationen,
                       Adjektive, Pronomen; allForms()/describe() für das Formen-Training
-js/views/grammatik-formen.js  Tabellen-Ansichten + Formen-Training (Multiple Choice / selbst bestimmen)
+js/views/grammatik-formen.js  Tabellen-Ansichten + Formen-Training: Verben/Nomen/Adjektive/Pronomen/Steigerung,
+                      bestimmen (Verben: MC/selbst; Deklination: Kasus/Numerus/Genus) oder bilden (eintippen)
 js/exam.js            Prüfungsmodus: Texte laden, Versuche (start/saveDraft/finish/discard), Uhr
 js/views/pruefung.js  Textauswahl, Steckbrief (Zeitlimit, tippen/Papier), laufende Prüfung, Versuch,
                       Bewertung einfügen, Text-Import; Anleitung docs/workflow_pruefung.html
@@ -296,7 +297,11 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 - Ergebnisse: Store `history` `{ typ: 'grammatik', einheit, thema, richtig, gesamt, sekunden, zeit }`;
   Fehler: Store `journal` `{ typ: 'grammatik', thema, einheit, phaenomen, frage, erwartet, gegeben,
   bewertung }`.
-- Formen-Training: `{ typ: 'formen' }` in history/journal. Mehrdeutige Formen (fuerit = Fut. II
+- Formen-Training: `{ typ: 'formen' }` in history/journal. Ab 0.12.0 (7a): journal `modus` bestimmen|bilden, `thema`
+  Konjugation/Deklination/Adjektive/Pronomen/Steigerung, `phaenomen` = Wort; Bilden-Fragen beginnen mit „Bilde:“.
+  `declForms(tabelle)` (morph.js) zerlegt die Tabellen; `cellForms` kennt Alternativen „eī (iī)“, „-īs“, „ / “.
+  STEIGERUNG (morph.js): 16 Adjektive mit Komparativ, Superlativ, Adverb (von Claude zusammengestellt, NICHT extern
+  geprüft). Auswahl gemerkt in settings `formenPrefs`. Mehrdeutige Formen (fuerit = Fut. II
   oder Konj. Perf.) zählen bei jeder passenden Bestimmung (Index über ALLE Verben).
   Konj. Perf. wird mit kurzem i geschrieben (fuerim, fueris) – dadurch gleich wie Fut. II.
 
@@ -357,4 +362,8 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    - 6b Klassenarbeits-Planer (Tagesportionen, Intensivmodus, .ics) – **fertig (0.10.0)**
    - 6c Statistik – **fertig (0.11.0)**
    → **Meilenstein 6 abgeschlossen** (Stand 2026-10-10)
-7. Eigene Vorschläge (Nutzerin wählt)
+7. Eigene Vorschläge (Nutzerin wählt) – Auswahl 2026-10-11: (1) Formen-Drill für alles, (3) Mini-Klassenarbeit.
+   Nicht gewählt: Konstruktionen erkennen, Stammformen-Training, Regel-Karteikarten, Zeitdruck,
+   Wortfamilien, Realien-Quiz.
+   - 7a Formen-Drill für alles (bestimmen + bilden, Steigerung) – **fertig (0.12.0)**
+   - 7b Mini-Klassenarbeit (20 Min: Vokabeln, Formen, kurzer Übersetzungsabschnitt) – offen

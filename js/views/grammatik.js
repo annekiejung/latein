@@ -38,7 +38,7 @@ async function renderList(main) {
 
   main.append(h('div', { class: 'card' },
     h('h2', {}, 'Formen-Training und Tabellen'),
-    h('a', { class: 'btn block', href: '#/grammatik/formen' }, 'Formen bestimmen (unregelmäßige Verben)'),
+    h('a', { class: 'btn block', href: '#/grammatik/formen' }, 'Formen-Training (bestimmen und bilden)'),
     h('a', { class: 'btn secondary block', href: '#/grammatik/tabellen' }, 'Konjugations- und Deklinationstabellen')
   ));
   const groups = {};

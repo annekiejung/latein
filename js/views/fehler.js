@@ -150,7 +150,7 @@ async function renderTraining(main) {
     const it = round[pos];
     const area = h('div');
     const input = h('textarea', { rows: 2, placeholder: 'Deine Antwort (optional)', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false' });
-    const label = it.typ === 'pruefung' ? 'Übersetze' : it.typ === 'formen' ? 'Bestimme die Form' : null;
+    const label = it.typ === 'pruefung' ? 'Übersetze' : it.typ === 'formen' && !String(it.frage).startsWith('Bilde') ? 'Bestimme die Form' : null;
     const context = [...new Set([TYPEN[it.typ], it.typ === 'pruefung' ? KAT[it.kategorie] : null, it.phaenomen || it.thema].filter(Boolean))].join(' · ');
     main.replaceChildren(
       h('div', { class: 'quiz-top' },

@@ -483,3 +483,76 @@ export function describe(a, withGenus = true) {
 /** Sind zwei Analysen gleich (für mehrdeutige Formen)? */
 export const sameAnalysis = (a, b) =>
   a.person === b.person && a.numerus === b.numerus && a.tempus === b.tempus && a.modus === b.modus && a.genus === b.genus;
+
+/* ---------- Formen-Training: Deklination ---------- */
+
+/** Zelle → alle gültigen Formen: „eī (iī)“ → [eī, iī]; „turrēs (-īs)“ → [turrēs, turrīs]; „nostrī / nostrum“ → beide. */
+export function cellForms(cell) {
+  const s = String(cell || '').trim();
+  if (!s || s === '–') return [];
+  if (s.includes(' / ')) return s.split(' / ').map((x) => x.trim());
+  const m = s.match(/^(\S+)\s*\((.+)\)$/);
+  if (!m) return [s];
+  const [, base, alt] = m;
+  const alts = alt.split(',').map((x) => x.trim());
+  return [base, ...alts.map((a) => (a.startsWith('-') ? base.slice(0, base.length - (a.length - 1)) + a.slice(1) : a))];
+}
+
+const NUM = { Sg: 'Sg.', Pl: 'Pl.' };
+
+/**
+ * Alle Formen einer Deklinationstabelle (NOMEN, ADJEKTIVE, PRONOMEN):
+ * { form, alts[], wort, kasus, numerus, genus: ['m'] | ['m','f'] | null }
+ * Spalten: „Singular/Plural“, „m Sg.“/„m/f Pl.“ (Genus), „turris Sg.“ (Wort) oder Pronomen-Namen.
+ */
+export function declForms(t) {
+  const out = [];
+  const lemma = (t.titel.split(/[ ,·]/)[0] || '').trim();
+  t.spalten.forEach((sp, ci) => {
+    let wort = lemma;
+    let numerus = null;
+    let genus = null;
+    const g = sp.match(/^(m\/f|m|f|n)\s+(Sg|Pl)\.$/);
+    const w = sp.match(/^(\S+)\s+(Sg|Pl)\.$/);
+    if (sp === 'Singular' || sp === 'Plural') numerus = sp === 'Singular' ? 'Sg.' : 'Pl.';
+    else if (g) { genus = g[1].split('/'); numerus = NUM[g[2]]; }
+    else if (w) { wort = w[1]; numerus = NUM[w[2]]; }
+    else {                                              // Personalpronomen: Spalte = Wort
+      wort = sp.replace(/\s*\(.*\)$/, '');
+      numerus = { ego: 'Sg.', 'tū': 'Sg.', 'nōs': 'Pl.', 'vōs': 'Pl.' }[wort] || null;
+    }
+    for (const row of t.zeilen) {
+      const forms = cellForms(row[ci + 1]);
+      if (!forms.length) continue;
+      out.push({ form: forms[0], alts: forms, wort, titel: t.titel, kasus: row[0], numerus, genus });
+    }
+  });
+  return out;
+}
+
+/** Bestimmung als Text, z. B. „Dat. Pl. m“ */
+export function describeDecl(a) {
+  return [a.kasus, a.numerus, a.genus ? a.genus.join('/') : null].filter(Boolean).join(' ');
+}
+
+/* ---------- Steigerung und Adverb ---------- */
+
+/** { pos: Positiv (Lexikonform), komp: Komparativ m/f Nom. Sg., sup: Superlativ m Nom. Sg., adv: Adverb } */
+export const STEIGERUNG = [
+  { pos: 'longus, -a, -um', komp: 'longior', sup: 'longissimus', adv: 'longē' },
+  { pos: 'altus, -a, -um', komp: 'altior', sup: 'altissimus', adv: 'altē' },
+  { pos: 'fortis, -e', komp: 'fortior', sup: 'fortissimus', adv: 'fortiter' },
+  { pos: 'fēlīx, -īcis', komp: 'fēlīcior', sup: 'fēlīcissimus', adv: 'fēlīciter' },
+  { pos: 'prūdēns, -entis', komp: 'prūdentior', sup: 'prūdentissimus', adv: 'prūdenter' },
+  { pos: 'ācer, ācris, ācre', komp: 'ācrior', sup: 'ācerrimus', adv: 'ācriter', regel: 'Adjektive auf -er: Superlativ auf -errimus' },
+  { pos: 'miser, -era, -erum', komp: 'miserior', sup: 'miserrimus', adv: 'miserē', regel: 'Adjektive auf -er: Superlativ auf -errimus' },
+  { pos: 'pulcher, -chra, -chrum', komp: 'pulchrior', sup: 'pulcherrimus', adv: 'pulchrē', regel: 'Adjektive auf -er: Superlativ auf -errimus' },
+  { pos: 'facilis, -e', komp: 'facilior', sup: 'facillimus', adv: 'facile', regel: 'facilis, difficilis, similis …: Superlativ auf -illimus' },
+  { pos: 'difficilis, -e', komp: 'difficilior', sup: 'difficillimus', adv: 'difficulter', regel: 'facilis, difficilis, similis …: Superlativ auf -illimus' },
+  { pos: 'similis, -e', komp: 'similior', sup: 'simillimus', adv: 'similiter', regel: 'facilis, difficilis, similis …: Superlativ auf -illimus' },
+  { pos: 'bonus, -a, -um', komp: 'melior', sup: 'optimus', adv: 'bene', regel: 'unregelmäßig' },
+  { pos: 'malus, -a, -um', komp: 'peior', sup: 'pessimus', adv: 'male', regel: 'unregelmäßig' },
+  { pos: 'magnus, -a, -um', komp: 'maior', sup: 'maximus', adv: 'magnopere', regel: 'unregelmäßig' },
+  { pos: 'parvus, -a, -um', komp: 'minor', sup: 'minimus', adv: 'parum', regel: 'unregelmäßig' },
+  { pos: 'multus, -a, -um', komp: 'plūs / plūrēs', sup: 'plūrimus', adv: 'multum', regel: 'unregelmäßig; plūs (n. Sg., mit Genitiv) – Pl. plūrēs, plūra' }
+];

@@ -3,15 +3,16 @@
  *   #/grammatik/tabellen                  Übersicht aller Tabellen
  *   #/grammatik/tabelle/verb/<id>         Konjugationstabelle (Tempus wählen, Ind./Konj. nebeneinander)
  *   #/grammatik/tabelle/<nomen|adj|pron>/<id>  Deklinationstabelle
- *   #/grammatik/formen                    Formen-Training unregelmäßige Verben
+ *   #/grammatik/formen                    Formen-Training: Verben, Nomen, Adjektive, Pronomen, Steigerung (bestimmen/bilden)
  * Daten: js/morph.js
  */
-import { put, newId } from '../db.js';
+import { put, newId, getSetting, setSetting } from '../db.js';
 import { h, todayStr } from '../ui.js';
 import { logSeconds } from '../leitner.js';
+import { checkForms } from '../check.js';
 import {
-  VERBEN, UNREGELMAESSIG, NOMEN, ADJEKTIVE, PRONOMEN, TEMPORA, PERSONEN,
-  allForms, describe, sameAnalysis
+  VERBEN, NOMEN, ADJEKTIVE, PRONOMEN, TEMPORA, PERSONEN, STEIGERUNG,
+  allForms, describe, sameAnalysis, declForms, describeDecl
 } from '../morph.js';
 
 const fill = (el, ...parts) => el.replaceChildren(...parts.filter(Boolean));
@@ -140,48 +141,271 @@ function shuffle(arr) {
   return a;
 }
 
-export function renderDrill(main) {
-  const prefs = { verben: new Set(UNREGELMAESSIG.map((v) => v.id)), modus: 'mc', konj: true, anzahl: '20' };
-  const startBtn = h('button', { class: 'btn block' });
+/**
+ * Einstieg Formen-Training (Meilenstein 7a): Bereich + Richtung wählen.
+ *   Verben bestimmen   → drillSession (Multiple Choice / selbst bestimmen, wie bisher)
+ *   Deklination bestimmen → declSession (Kasus/Numerus/Genus antippen)
+ *   alles bilden       → buildSession (Form eintippen, Längen egal)
+ * Auswahl wird in settings "formenPrefs" gemerkt.
+ */
+export async function renderDrill(main) {
+  const saved = (await getSetting('formenPrefs')) || {};
+  const prefs = {
+    bereich: 'verben', richtung: 'bestimmen', modus: 'mc', konj: true, anzahl: '20',
+    ...saved,
+    auswahl: {
+      verben: new Set(saved.auswahl?.verben || VERBEN.map((v) => v.id)),
+      nomen: new Set(saved.auswahl?.nomen || NOMEN.map((t) => t.id)),
+      adj: new Set(saved.auswahl?.adj || ADJEKTIVE.map((t) => t.id)),
+      pron: new Set(saved.auswahl?.pron || PRONOMEN.map((t) => t.id)),
+      steig: new Set(saved.auswahl?.steig || ['komp', 'sup', 'adv'])
+    }
+  };
+  const QUELLEN = {
+    verben: VERBEN.map((v) => [v.id, v.name]),
+    nomen: NOMEN.map((t) => [t.id, t.titel]),
+    adj: ADJEKTIVE.map((t) => [t.id, t.titel]),
+    pron: PRONOMEN.map((t) => [t.id, t.titel]),
+    steig: [['komp', 'Komparativ'], ['sup', 'Superlativ'], ['adv', 'Adverb']]
+  };
+  const options = h('div');
+  const startBtn = h('button', { class: 'btn block' }, 'Training starten');
 
-  const seg = (key, options) => h('div', { class: 'seg', role: 'radiogroup' },
-    options.map(([value, label]) => h('label', {},
-      h('input', { type: 'radio', name: 'fd-' + key, value, checked: prefs[key] === value, onchange: () => { prefs[key] = value; } }),
+  const seg = (key, opts, onChange) => h('div', { class: 'seg seg-wrap', role: 'radiogroup' },
+    opts.map(([value, label]) => h('label', {},
+      h('input', { type: 'radio', name: 'fd-' + key, value, checked: prefs[key] === value,
+        onchange: () => { prefs[key] = value; if (onChange) onChange(); } }),
       h('span', {}, label))));
 
-  const chips = h('div', { class: 'chips' }, UNREGELMAESSIG.map((v) => h('label', { class: 'chip' },
-    h('input', {
-      type: 'checkbox', checked: true,
-      onchange: (e) => { e.target.checked ? prefs.verben.add(v.id) : prefs.verben.delete(v.id); startBtn.disabled = !prefs.verben.size; }
-    }),
-    h('span', { class: 'latin' }, v.name))));
-  const konj = h('input', { type: 'checkbox', checked: true, onchange: (e) => { prefs.konj = e.target.checked; } });
+  function drawOptions() {
+    const b = prefs.bereich;
+    if (b === 'steig') prefs.richtung = 'bilden';
+    const set = prefs.auswahl[b];
+    const chips = h('div', { class: 'chips' }, QUELLEN[b].map(([id, label]) => h('label', { class: 'chip' },
+      h('input', { type: 'checkbox', checked: set.has(id),
+        onchange: (e) => { e.target.checked ? set.add(id) : set.delete(id); startBtn.disabled = !set.size; } }),
+      h('span', { class: b === 'steig' ? '' : 'latin' }, label))));
+    startBtn.disabled = !set.size;
+    fill(options,
+      b === 'steig'
+        ? h('p', { class: 'muted small' }, 'Steigerung: Du bildest Komparativ, Superlativ oder Adverb.')
+        : h('div', { class: 'field' }, h('span', {}, 'Richtung'),
+            seg('richtung', [['bestimmen', 'Form bestimmen'], ['bilden', 'Form bilden']], drawOptions)),
+      h('div', { class: 'field' }, h('span', {}, b === 'verben' ? 'Welche Verben?' : b === 'steig' ? 'Was?' : 'Welche Wörter?'), chips),
+      b === 'verben' && prefs.richtung === 'bestimmen'
+        ? h('div', { class: 'field' }, h('span', {}, 'Wie?'), seg('modus', [['mc', 'Multiple Choice'], ['selbst', 'Selbst bestimmen']])) : null,
+      b === 'verben' ? h('label', { class: 'check-row' },
+        h('input', { type: 'checkbox', checked: prefs.konj, onchange: (e) => { prefs.konj = e.target.checked; } }),
+        h('span', {}, 'Konjunktivformen mit abfragen')) : null);
+  }
 
-  startBtn.textContent = 'Training starten';
-  startBtn.onclick = () => {
-    const verbs = UNREGELMAESSIG.filter((v) => prefs.verben.has(v.id));
-    let pool = verbs.flatMap((v) => allForms(v).map((a) => ({ ...a, v })))
-      .filter((a) => !a.form.includes('('));               // „futūrum esse (fore)“ nicht abfragen
-    if (!prefs.konj) pool = pool.filter((a) => a.modus !== 'Konjunktiv');
-    if (prefs.modus === 'selbst') pool = pool.filter((a) => a.modus === 'Indikativ' || a.modus === 'Konjunktiv');
-    // jede Form nur einmal pro Runde
-    const seen = new Set();
-    const items = shuffle(pool).filter((a) => !seen.has(a.form) && seen.add(a.form)).slice(0, parseInt(prefs.anzahl, 10));
-    drillSession(main, items, prefs.modus, verbs);
+  startBtn.onclick = async () => {
+    await setSetting('formenPrefs', {
+      ...prefs, auswahl: Object.fromEntries(Object.entries(prefs.auswahl).map(([k, s]) => [k, [...s]]))
+    });
+    const n = parseInt(prefs.anzahl, 10);
+    const b = prefs.bereich;
+    const set = prefs.auswahl[b];
+    if (b === 'verben') {
+      const verbs = VERBEN.filter((v) => set.has(v.id));
+      let pool = verbs.flatMap((v) => allForms(v).map((a) => ({ ...a, v })))
+        .filter((a) => !a.form.includes('('));               // „futūrum esse (fore)“ nicht abfragen
+      if (!prefs.konj) pool = pool.filter((a) => a.modus !== 'Konjunktiv');
+      if (prefs.richtung === 'bilden') {
+        const items = unique(shuffle(pool), (a) => describe(a, !!a.v.passiv) + a.verb).slice(0, n).map((a) => ({
+          frage: `${describe(a, !!a.v.passiv)} von ${a.v.grundformen}`, loesungen: [a.form],
+          thema: 'Konjugation', phaenomen: a.verb
+        }));
+        return buildSession(main, items);
+      }
+      if (prefs.modus === 'selbst') pool = pool.filter((a) => a.modus === 'Indikativ' || a.modus === 'Konjunktiv');
+      return drillSession(main, unique(shuffle(pool), (a) => a.form).slice(0, n), prefs.modus, verbs);
+    }
+    if (b === 'steig') {
+      const LABEL = { komp: 'Komparativ (m, Nom. Sg.) von', sup: 'Superlativ (m, Nom. Sg.) von', adv: 'Adverb zu' };
+      const items = STEIGERUNG.flatMap((s) => [...set].map((k) => ({
+        frage: `${LABEL[k]} ${s.pos}`, loesungen: s[k].split(' / '), thema: 'Steigerung', phaenomen: s.pos.split(',')[0],
+        erklaerung: s.regel || null
+      })));
+      return buildSession(main, shuffle(items).slice(0, n));
+    }
+    const tables = GRUPPEN[b].filter((t) => set.has(t.id));
+    const thema = { nomen: 'Deklination', adj: 'Adjektive', pron: 'Pronomen' }[b];
+    const forms = tables.flatMap((t) => declForms(t).map((a) => ({ ...a, tabelle: t.id })));
+    if (prefs.richtung === 'bilden') {
+      const items = shuffle(forms).slice(0, n).map((a) => ({
+        frage: `${describeDecl(a)} von ${wortTitel(a)}`,
+        loesungen: a.alts, thema, phaenomen: a.wort
+      }));
+      return buildSession(main, items);
+    }
+    const items = unique(shuffle(forms), (a) => a.tabelle + '|' + a.form).slice(0, n)
+      .map((a) => ({ ...a, analysen: forms.filter((x) => x.tabelle === a.tabelle && x.alts.includes(a.form)), thema }));
+    return declSession(main, items);
   };
 
   main.append(h('div', { class: 'card' },
     h('a', { href: '#/grammatik', class: 'back' }, '‹ Grammatik'),
-    h('h2', {}, 'Formen bestimmen'),
-    h('p', { class: 'muted small' }, 'Die App zeigt eine Form eines unregelmäßigen Verbs – du bestimmst Person, Numerus, Tempus, Modus (und ggf. Aktiv/Passiv).'),
-    h('div', { class: 'field' }, h('span', {}, 'Welche Verben?'), chips),
-    h('div', { class: 'field' }, h('span', {}, 'Wie?'),
-      seg('modus', [['mc', 'Multiple Choice'], ['selbst', 'Selbst bestimmen']])),
-    h('label', { class: 'check-row' }, konj, h('span', {}, 'Konjunktivformen mit abfragen')),
+    h('h2', {}, 'Formen-Training'),
+    h('div', { class: 'field' }, h('span', {}, 'Bereich'),
+      seg('bereich', [['verben', 'Verben'], ['nomen', 'Nomen'], ['adj', 'Adjektive'], ['pron', 'Pronomen'], ['steig', 'Steigerung']], drawOptions)),
+    options,
     h('div', { class: 'field' }, h('span', {}, 'Wie viele?'), seg('anzahl', [['10', '10'], ['20', '20'], ['40', '40']])),
     startBtn,
-    h('p', { style: 'margin-top:10px' }, h('a', { href: '#/grammatik/tabellen' }, 'Zu den Tabellen'))
-  ));
+    h('p', { style: 'margin-top:10px' }, h('a', { href: '#/grammatik/tabellen' }, 'Zu den Tabellen'))));
+  drawOptions();
+}
+
+/** Lexikonform des Wortes einer Form (bei Tabellen mit zwei Wörtern nur das passende). */
+const wortTitel = (a) => a.titel.split(' · ').find((s) => s.startsWith(a.wort)) || a.titel;
+
+/** Jede Sache nur einmal pro Runde. */
+function unique(arr, key) {
+  const seen = new Set();
+  return arr.filter((x) => { const k = key(x); if (seen.has(k)) return false; seen.add(k); return true; });
+}
+
+/** Gemeinsamer Abschluss für Deklinations- und Bilden-Runden. */
+async function finishRound(main, started, right, wrong, again, wrongLine) {
+  window.quizActive = false;
+  const done = right + wrong.length;
+  await logSeconds(Math.min((Date.now() - started) / 1000, done * 60));
+  if (done) await put('history', { id: newId('h'), typ: 'formen', richtig: right, gesamt: done, zeit: new Date().toISOString() });
+  fill(main,
+    h('div', { class: 'card' },
+      h('h2', {}, 'Training beendet'),
+      done ? h('div', { class: 'stat-row' },
+        h('div', { class: 'stat' }, h('b', {}, right), h('span', {}, 'richtig')),
+        h('div', { class: 'stat' }, h('b', {}, wrong.length), h('span', {}, 'falsch')),
+        h('div', { class: 'stat' }, h('b', {}, Math.round((right / done) * 100) + ' %'), h('span', {}, 'Quote'))) : h('p', {}, 'Nichts bearbeitet.')),
+    wrong.length ? h('div', { class: 'card' }, h('h3', {}, 'Diese nochmal ansehen'),
+      h('ul', { class: 'list' }, wrong.map(wrongLine))) : null,
+    wrong.length ? h('button', { class: 'btn secondary block', onclick: () => again(shuffle(wrong)) }, 'Die falschen nochmal') : '',
+    h('a', { class: 'btn block', href: '#/grammatik/formen' }, 'Fertig'));
+  window.scrollTo(0, 0);
+}
+
+const topBar = (main, pos, total, onEnd) => [
+  h('div', { class: 'quiz-top' },
+    h('span', { class: 'muted' }, `${pos + 1} / ${total}`),
+    h('button', { class: 'btn secondary btn-small', onclick: onEnd }, 'Beenden')),
+  h('div', { class: 'progress' }, h('span', { style: `width:${Math.round((pos / total) * 100)}%` }))];
+
+/* ----- Deklination bestimmen: Kasus, Numerus, Genus antippen ----- */
+function declSession(main, items) {
+  window.quizActive = true;
+  const started = Date.now();
+  let pos = 0, right = 0;
+  const wrong = [];
+  const solutions = (it) => unique(it.analysen.map(describeDecl), (x) => x);
+
+  function show() {
+    if (pos >= items.length) return finishRound(main, started, right, wrong, (w) => declSession(main, w),
+      (w) => h('li', {}, h('b', { class: 'latin' }, w.form), ` (${wortTitel(w)})`, h('div', { class: 'small muted' }, solutions(w).join(' / '))));
+    const it = items[pos];
+    const choice = {};
+    const needNum = it.analysen.some((a) => a.numerus);
+    const needGen = it.analysen.some((a) => a.genus);
+    const row = (key, label, opts) => h('div', { class: 'field' }, h('span', {}, label),
+      h('div', { class: 'seg seg-wrap', role: 'radiogroup' }, opts.map((o) => h('label', {},
+        h('input', { type: 'radio', name: `dc-${key}-${pos}`, value: o, onchange: () => { choice[key] = o; } }),
+        h('span', {}, o)))));
+    const area = h('div');
+    const body = h('div', { class: 'card' },
+      h('div', { class: 'quiz-card' }, h('div', { class: 'quiz-latin latin' }, it.form),
+        h('div', { class: 'muted' }, 'Bestimme die Form von ', h('span', { class: 'latin' }, wortTitel(it)), '.')),
+      row('kasus', 'Kasus', ['Nom.', 'Gen.', 'Dat.', 'Akk.', 'Abl.']),
+      needNum ? row('numerus', 'Numerus', ['Sg.', 'Pl.']) : null,
+      needGen ? row('genus', 'Genus', ['m', 'f', 'n']) : null,
+      area);
+    main.replaceChildren(...topBar(main, pos, items.length, () => { pos = items.length; show(); }), body);
+    area.append(h('button', {
+      class: 'btn block',
+      onclick: async (e) => {
+        const need = ['kasus', ...(needNum ? ['numerus'] : []), ...(needGen ? ['genus'] : [])];
+        if (need.some((k) => !choice[k])) { e.currentTarget.textContent = 'Bitte alles auswählen'; return; }
+        const ok = it.analysen.some((a) => a.kasus === choice.kasus
+          && (!a.numerus || a.numerus === choice.numerus) && (!a.genus || a.genus.includes(choice.genus)));
+        body.querySelectorAll('input').forEach((i) => { i.disabled = true; });
+        const gegeben = [choice.kasus, choice.numerus, choice.genus].filter(Boolean).join(' ');
+        if (ok) right++;
+        else {
+          wrong.push(it);
+          await put('journal', {
+            id: newId('j'), typ: 'formen', modus: 'bestimmen', thema: it.thema, phaenomen: it.wort,
+            frage: `${it.form} (${wortTitel(it)})`, erwartet: solutions(it).join(' / '), gegeben, bewertung: 0,
+            datum: todayStr(), zeit: new Date().toISOString()
+          });
+        }
+        fill(area,
+          h('div', { class: 'verdict ' + (ok ? 'ok' : 'bad') }, ok ? 'Richtig' : 'Falsch'),
+          h('div', { class: 'quiz-solution' },
+            h('div', { class: 'muted small' }, solutions(it).length > 1 ? 'Mehrdeutig – alle richtigen Bestimmungen:' : 'Lösung:'),
+            h('ul', { class: 'parts' }, solutions(it).map((s) => h('li', {}, s)))),
+          h('button', { class: 'btn block', onclick: () => { pos++; show(); } }, 'Weiter'));
+      }
+    }, 'Prüfen'));
+    window.scrollTo(0, 0);
+  }
+  show();
+}
+
+/* ----- Formen bilden: eintippen, Längen egal, Tippfehler entscheidet die Nutzerin ----- */
+function buildSession(main, items) {
+  window.quizActive = true;
+  const started = Date.now();
+  let pos = 0, right = 0;
+  const wrong = [];
+
+  async function verbuchen(it, ok, gegeben) {
+    if (ok) { right++; return; }
+    wrong.push(it);
+    await put('journal', {
+      id: newId('j'), typ: 'formen', modus: 'bilden', thema: it.thema, phaenomen: it.phaenomen,
+      frage: 'Bilde: ' + it.frage, erwartet: it.loesungen.join(' / '), gegeben, erklaerung: it.erklaerung || undefined,
+      bewertung: 0, datum: todayStr(), zeit: new Date().toISOString()
+    });
+  }
+
+  function show() {
+    if (pos >= items.length) return finishRound(main, started, right, wrong, (w) => buildSession(main, w),
+      (w) => h('li', {}, w.frage, h('div', { class: 'latin' }, w.loesungen.join(' / '))));
+    const it = items[pos];
+    const input = h('input', { type: 'text', class: 'latin', placeholder: 'Form eintippen', autocapitalize: 'off', autocorrect: 'off', autocomplete: 'off', spellcheck: 'false' });
+    const area = h('div');
+    const solution = () => h('div', { class: 'quiz-solution' },
+      h('div', { class: 'big latin' }, it.loesungen.join(' / ')),
+      it.erklaerung ? h('div', { class: 'muted small' }, it.erklaerung) : null);
+    const next = () => h('button', { class: 'btn block', onclick: () => { pos++; show(); } }, 'Weiter');
+    const check = async () => {
+      if (!input.value.trim()) return;
+      input.disabled = true;
+      const res = it.loesungen.map((l) => checkForms({ latein: '' }, l, input.value).result);
+      if (res.includes('richtig')) { await verbuchen(it, true); fill(area, h('div', { class: 'verdict ok' }, 'Richtig'), solution(), next()); return; }
+      if (res.includes('typo')) {
+        fill(area, h('div', { class: 'verdict warn' }, 'Fast – Tippfehler?'), solution(),
+          h('p', { class: 'muted small' }, 'Bei Formen kann schon ein Buchstabe den Kasus oder die Person ändern. Ehrlich entscheiden:'),
+          h('div', { class: 'btn-row' },
+            h('button', { class: 'btn danger', onclick: async () => { await verbuchen(it, false, input.value); pos++; show(); } }, 'Als falsch werten'),
+            h('button', { class: 'btn', onclick: async () => { await verbuchen(it, true); pos++; show(); } }, 'Als richtig werten')));
+        return;
+      }
+      await verbuchen(it, false, input.value);
+      fill(area, h('div', { class: 'verdict bad' }, 'Falsch'), h('p', { class: 'small' }, 'Deine Antwort: ', h('span', { class: 'latin' }, input.value)), solution(), next());
+    };
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+    main.replaceChildren(...topBar(main, pos, items.length, () => { pos = items.length; show(); }),
+      h('div', { class: 'card' },
+        h('p', { class: 'muted' }, 'Bilde:'),
+        h('p', { class: 'big' }, it.frage),
+        input, area));
+    area.append(h('div', { class: 'btn-row' },
+      h('button', { class: 'btn secondary', onclick: async () => { input.disabled = true; await verbuchen(it, false, '(weiß ich nicht)'); fill(area, h('div', { class: 'verdict bad' }, 'Nicht gewusst'), solution(), next()); } }, 'Weiß ich nicht'),
+      h('button', { class: 'btn', onclick: check }, 'Prüfen')));
+    input.focus();
+    window.scrollTo(0, 0);
+  }
+  show();
 }
 
 function drillSession(main, items, modus, verbs) {
@@ -195,7 +419,7 @@ function drillSession(main, items, modus, verbs) {
     else {
       wrong.push(item);
       await put('journal', {
-        id: newId('j'), typ: 'formen', thema: 'Unregelmäßige Verben', phaenomen: item.verb,
+        id: newId('j'), typ: 'formen', modus: 'bestimmen', thema: 'Konjugation', phaenomen: item.verb,
         frage: item.form, erwartet: correctList(item).join(' / '), gegeben, bewertung: 0,
         datum: todayStr(), zeit: new Date().toISOString()
       });
