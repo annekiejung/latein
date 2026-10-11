@@ -259,6 +259,33 @@ export async function renderDrill(main) {
 /** Lexikonform des Wortes einer Form (bei Tabellen mit zwei Wörtern nur das passende). */
 const wortTitel = (a) => a.titel.split(' · ').find((s) => s.startsWith(a.wort)) || a.titel;
 
+/**
+ * Gemischte „Bilde“-Aufgaben für die Mini-Klassenarbeit (js/views/mini.js):
+ * 1 regelmäßiges + 1 unregelmäßiges Verb, 2 Nomen, 1 Adjektiv, 1 Pronomen.
+ * Nom. Sg. wird ausgelassen (wäre einfach die Lexikonform).
+ */
+export function mixedBildenItems() {
+  const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const irr = (v) => v.art.startsWith('unregelmäßig');
+  const verbItem = (list) => {
+    const v = pick(list);
+    const a = pick(allForms(v).filter((x) => !x.form.includes('(') && (x.modus === 'Indikativ' || x.modus === 'Konjunktiv')));
+    return { frage: `${describe(a, !!v.passiv)} von ${v.grundformen}`, loesungen: [a.form], thema: 'Konjugation', phaenomen: v.name };
+  };
+  const declItem = (tables, thema, avoid) => {
+    let a;
+    do {
+      a = pick(declForms(pick(tables)).filter((x) => !(x.kasus === 'Nom.' && x.numerus !== 'Pl.')));
+    } while (avoid && a.wort === avoid);
+    return { frage: `${describeDecl(a)} von ${wortTitel(a)}`, loesungen: a.alts, thema, phaenomen: a.wort };
+  };
+  const n1 = declItem(NOMEN, 'Deklination');
+  return shuffle([
+    verbItem(VERBEN.filter((v) => !irr(v))), verbItem(VERBEN.filter(irr)),
+    n1, declItem(NOMEN, 'Deklination', n1.phaenomen),
+    declItem(ADJEKTIVE, 'Adjektive'), declItem(PRONOMEN, 'Pronomen')]);
+}
+
 /** Jede Sache nur einmal pro Runde. */
 function unique(arr, key) {
   const seen = new Set();

@@ -65,6 +65,11 @@ async function renderList(main) {
       h('a', { class: 'btn block', href: '#/pruefung/laeuft' }, 'Weiterschreiben')));
   }
 
+  main.append(h('div', { class: 'card' },
+    h('h3', {}, 'Mini-Klassenarbeit (20 Minuten)'),
+    h('p', { class: 'muted small' }, '10 Vokabeln, 6 Formen, ein Originalsatz – schnell zwischendurch.'),
+    h('a', { class: 'btn secondary block', href: '#/mini' }, 'Mini-Klassenarbeit starten')));
+
   const texts = await loadTexts();
   const done = await attempts();
   const lastByText = new Map();

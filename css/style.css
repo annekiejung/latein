@@ -414,3 +414,10 @@ details.card > summary { cursor: pointer; }
 .stat-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .weak { margin: 0; padding-left: 1.3em; }
 .weak li { padding: 4px 0; }
+
+/* ---------- Mini-Klassenarbeit ---------- */
+.mini-list { margin: 0; padding-left: 1.4em; }
+.mini-list li { padding: 8px 0; border-bottom: 1px solid var(--border); }
+.mini-list li:last-child { border-bottom: 0; }
+.mini-list input { margin-top: 6px; }
+.mini-ueb + .mini-ueb { border-top: 1px solid var(--border); margin-top: 12px; padding-top: 4px; }

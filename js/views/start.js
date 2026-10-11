@@ -130,6 +130,7 @@ export async function render(main) {
       h('li', {}, h('a', { href: '#/wortschatz' }, 'Grundwortschatz'), ' – langfristig, in Etappen'),
       h('li', {}, h('a', { href: '#/grammatik' }, 'Grammatik'), ' – Einheiten aus deinem Buch üben'),
       h('li', {}, h('a', { href: '#/pruefung' }, 'Prüfungsmodus'), ' – Übersetzung unter Zeitdruck'),
+      h('li', {}, h('a', { href: '#/mini' }, 'Mini-Klassenarbeit'), ' – 20 Minuten: Vokabeln, Formen, ein Satz'),
       h('li', {}, h('a', { href: '#/planer' }, 'Klassenarbeits-Planer'), ' – Lernplan bis zur nächsten Arbeit'),
       h('li', {}, h('a', { href: '#/fehler' }, 'Fehlerjournal'),
         fehler.length ? ` – ${fehlerOffen} offen, ${fehler.length - fehlerOffen} erledigt` : ' – deine Fehler gezielt wiederholen'),

@@ -89,6 +89,7 @@ js/views/fehler.js    Fehlerjournal: Überblick + Auswertung, Vokabel-Wiederholu
 js/planer.js          Klassenarbeits-Planer: Arbeiten (Store exams), Lernplan (buildPlan), Abhaken (doneMap), .ics
 js/views/planer.js    Planer: Liste, Formular, Lernplan nach Tagen; ui.js offerFile() = Datei teilen/herunterladen
 js/views/statistik.js Statistik: Kennzahlen, Lernzeit-Säulen (14 Tage), Quoten, Lernstand, Prüfungen, Schwachstellen
+js/views/mini.js      Mini-Klassenarbeit (20 Min): 8 Vokabeln, 6 Formen, 4 Grammatik-Aufgaben, Originalsatz
 data/grammatik.json   eingebaute Grammatik-Einheiten (von Claude verfasst, Originalsätze geprüft)
 tools/verify_quellen.pl  prüft Übersetzungssätze Wort für Wort gegen Latin-Library-Texte (.cache/texte)
 tools/find_stellen.pl   sucht Sätze mit Stellenangabe (Buch,Kapitel,Paragraph) in Latin-Library-Texten
@@ -283,6 +284,19 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
 - Zeitraum settings `statistikZeitraum` (7/30/0). Nur echte Zahlen, sonst „–“.
 - Diagramme: eine Reihe in Akzentfarbe (CSS-Säulen, Tippen zeigt Wert), Tabellen statt Mehrfarben-Charts.
 
+### Mini-Klassenarbeit (js/views/mini.js) – Meilenstein 7b
+
+- Einstellungen: Vokabeln aus (alle / Lektion / Grundwortschatz freigeschaltet); Grammatik + Übersetzung aus
+  „aktuelle Themen“ (Standard), allen Themen oder einer Einheit. Wunsch der Nutzerin 2026-10-11: mehr Grammatik,
+  bevorzugt aktuelle Themen. `aktuelleEinheiten()` = erste Stufe mit Treffern: nächste Klassenarbeit im Planer →
+  importierte Einheiten → in 14 Tagen geübt / mit Fehlern; sonst gemischt (wird angezeigt).
+- Teil 1: 8 Vokabeln (Wackelkandidaten zuerst). Teil 2: `mixedBildenItems()` (6). Teil 3: 4 Aufgaben reihum aus den
+  Einheiten (auswahl, luecke ≤ 3 Lücken, bestimmen), je 1,5 P.; Auswahl/Lücke automatisch, Bestimmen
+  Selbstbewertung. Teil 4: Übersetzung (10 P.), geprüfte bevorzugt, nie derselbe Satz wie eine Grammatik-Aufgabe,
+  ohne Längenzeichen. Summe 30. Tippfehler = ½. Note-Einschätzung 92/81/67/50/30 %. Nicht zwischengespeichert.
+- history `{ typ: 'mini', punkte, max, prozent, note, teile{vok,formen,gram,ueb}, sekunden, zeit }`
+  (vor 0.13.0 ohne gram, 10 Vokabeln/14 Übersetzung); journal mit `quelle: 'mini'`. Statistik: Ø % / Ø Note.
+
 ### Grammatik (js/grammar.js, js/views/grammatik.js)
 
 - Format "latein-grammatik" v1: `{ thema, bereich, regel: { kurz, punkte[], beispiel{latein,deutsch} },
@@ -366,4 +380,5 @@ Kommt aus der Claude-App (Prompt: `buildPrompt()` in js/vocab.js). Beispiel:
    Nicht gewählt: Konstruktionen erkennen, Stammformen-Training, Regel-Karteikarten, Zeitdruck,
    Wortfamilien, Realien-Quiz.
    - 7a Formen-Drill für alles (bestimmen + bilden, Steigerung) – **fertig (0.12.0)**
-   - 7b Mini-Klassenarbeit (20 Min: Vokabeln, Formen, kurzer Übersetzungsabschnitt) – offen
+   - 7b Mini-Klassenarbeit (20 Min: Vokabeln, Formen, kurzer Übersetzungsabschnitt) – **fertig (0.13.0)**
+   → **Meilenstein 7 (gewählte Vorschläge) abgeschlossen** (Stand 2026-10-11)

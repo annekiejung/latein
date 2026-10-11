@@ -50,6 +50,7 @@ const APP_FILES = [
   './js/views/fehler.js',
   './js/views/planer.js',
   './js/views/statistik.js',
+  './js/views/mini.js',
   './js/views/einstellungen.js',
   './docs/workflow.css',
   './docs/workflow_vokabeln.html',

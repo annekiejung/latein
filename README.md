@@ -33,6 +33,7 @@ Dann `http://localhost:8080` öffnen.
 | 4 | Grammatik (10 Einheiten, Formen-Training, Tabellen) | fertig |
 | 5 | Prüfungsmodus (21 geprüfte Originaltexte, Bewertung über die Claude-App) | fertig |
 | 6 | Fehlerjournal, Klassenarbeits-Planer, Statistik | fertig |
+| 7 | Formen-Training für alles, Mini-Klassenarbeit | fertig |
 
 ## Quellen und Lizenzen
 

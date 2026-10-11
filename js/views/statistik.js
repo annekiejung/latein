@@ -139,6 +139,7 @@ export async function render(main) {
     const exams = (await getAll('exams')).filter((e) => e.note && e.datum <= today && inRange(e.datum))
       .sort((a, b) => b.datum.localeCompare(a.datum));
     const avg = (arr, f) => arr.reduce((s, x) => s + f(x), 0) / arr.length;
+    const minis = history.filter((r) => r.typ === 'mini' && inRange(dayOf(r.zeit)));
     parts.push(h('div', { class: 'card' },
       h('h3', {}, 'Probe-Klassenarbeiten (bewertet)'),
       proben.length
@@ -153,6 +154,9 @@ export async function render(main) {
                 h('td', { class: 'num' }, p.bewertung.note))))),
             h('p', { class: 'muted small' }, 'Noten aus der App sind Einschätzungen nach deinem Notenschlüssel.'))
         : h('p', { class: 'muted' }, 'Im Zeitraum keine bewertete Probe-Klassenarbeit.'),
+      minis.length ? h('div', {},
+        h('h3', {}, 'Mini-Klassenarbeiten'),
+        h('p', {}, `${minis.length} geschrieben · Ø ${Math.round(avg(minis, (m) => m.prozent))} % · Ø Note ${comma(avg(minis, (m) => m.note))}`)) : null,
       exams.length ? h('div', {},
         h('h3', {}, 'Echte Klassenarbeiten'),
         h('table', { class: 'stat-table' }, h('tbody', {}, exams.map((e) => h('tr', {},
